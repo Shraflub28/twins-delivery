@@ -77,12 +77,22 @@ const animationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
+            // Also add visible class to support both animation systems
+            entry.target.classList.add('visible');
+        } else {
+            // Don't remove the classes on exit - this prevents fade-out
+            // entry.target.classList.remove('animate-in');
+            // entry.target.classList.remove('visible');
         }
     });
 }, animationObserverOptions);
 
 // Observe elements for animation
 document.querySelectorAll('.category-item, .restaurant-card, .feature, .app-content, .app-image').forEach(el => {
+    // Add fade-in class if needed for compatibility with inline script
+    if (!el.classList.contains('fade-in')) {
+        el.classList.add('fade-in');
+    }
     animationObserver.observe(el);
 });
 
@@ -97,8 +107,25 @@ document.querySelectorAll('.restaurant-card').forEach(card => {
     });
 });
 
-// Initialize AOS (Animate on Scroll)
+// Initialize AOS (Animate on Scroll) - focus on the download app section
 document.addEventListener('DOMContentLoaded', () => {
+    // Fix the app download section animation
+    const appDownloadSection = document.getElementById('download');
+    if (appDownloadSection) {
+        const appContent = appDownloadSection.querySelector('.app-content');
+        const appImage = appDownloadSection.querySelector('.app-image');
+        
+        if (appContent && !appContent.classList.contains('fade-in')) {
+            appContent.classList.add('fade-in');
+            animationObserver.observe(appContent);
+        }
+        
+        if (appImage && !appImage.classList.contains('fade-in')) {
+            appImage.classList.add('fade-in');
+            animationObserver.observe(appImage);
+        }
+    }
+
     // Add animation classes to elements
     document.querySelectorAll('.feature').forEach((feature, index) => {
         feature.style.animationDelay = `${index * 0.2}s`;
