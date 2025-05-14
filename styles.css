@@ -1541,4 +1541,46 @@ html {
     .empty-card-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Hidden Restaurant Cards */
+.hidden-restaurant {
+    display: none;
+}
+
+/* See More Button */
+.see-more-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.see-more-btn {
+    background-color: var(--primary-color, #1e88e5);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.see-more-btn:hover {
+    background-color: var(--primary-dark, #1565c0);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.see-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.see-more-btn.active i {
+    transform: rotate(180deg);
 } 

@@ -72,6 +72,7 @@
     <section id="restaurants" class="overlap-section">
         <h2><i class="fas fa-star"></i> Popular Restaurants</h2>
         <div class="restaurant-grid">
+            <!-- Initially visible restaurants -->
             <div class="restaurant-card">
                 <div class="card-badge"><i class="fas fa-crown"></i> Featured</div>
                 <img src="https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Big-Mac-1:1-4-product-tile-desktop" alt="McDonald's Big Mac">
@@ -99,7 +100,9 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 20-30 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            
+            <!-- Hidden restaurants (initially) -->
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-fire"></i> Popular</div>
                 <img src="pictures/pizza hut.jpeg" alt="Pizza Hut">
                 <div class="restaurant-info">
@@ -108,7 +111,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 25-35 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-gem"></i> Premium</div>
                 <img src="pictures/ladress.jpeg" alt="L'adresse">
                 <div class="restaurant-info">
@@ -117,7 +120,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 30-40 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-utensils"></i> New</div>
                 <img src="pictures/terrasse a petit drjeuner.jpeg" alt="Terrasse à Petit Déjeuner">
                 <div class="restaurant-info">
@@ -126,7 +129,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 15-25 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-cookie"></i> Sweet</div>
                 <img src="pictures/donuts factory.jpeg" alt="Donuts Factory">
                 <div class="restaurant-info">
@@ -135,7 +138,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 20-30 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-ice-cream"></i> Popular</div>
                 <img src="pictures/gelati dino.png" alt="Gelati Dino">
                 <div class="restaurant-info">
@@ -144,7 +147,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 10-20 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-pepper-hot"></i> Spicy</div>
                 <img src="pictures/katsura.png" alt="Katsura">
                 <div class="restaurant-info">
@@ -153,7 +156,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 25-35 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-fish"></i> Fresh</div>
                 <img src="pictures/suchi store.png" alt="Sushi Store">
                 <div class="restaurant-info">
@@ -162,7 +165,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 20-30 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-water"></i> Seafood</div>
                 <img src="pictures/patron de la mer.png" alt="Patron de la Mer">
                 <div class="restaurant-info">
@@ -171,7 +174,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 30-40 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-spa"></i> Healthy</div>
                 <img src="pictures/yoka suchi.webp" alt="Yoka Sushi">
                 <div class="restaurant-info">
@@ -180,7 +183,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 20-30 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-drum"></i> Traditional</div>
                 <img src="pictures/babakich.png" alt="Babakich">
                 <div class="restaurant-info">
@@ -189,7 +192,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 25-35 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-hamburger"></i> Gourmet</div>
                 <img src="pictures/kech burger.jpeg" alt="Kech Burger">
                 <div class="restaurant-info">
@@ -198,7 +201,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 15-25 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-star"></i> Top Rated</div>
                 <img src="pictures/oumnia sushi.jpeg" alt="Oumnia Sushi">
                 <div class="restaurant-info">
@@ -207,7 +210,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 25-35 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-pizza-slice"></i> Italian</div>
                 <img src="pictures/oliveri.jpeg" alt="Oliveri">
                 <div class="restaurant-info">
@@ -216,7 +219,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 20-30 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-coffee"></i> Cozy</div>
                 <img src="pictures/cafè lobo.jpeg" alt="Café Lobo">
                 <div class="restaurant-info">
@@ -225,7 +228,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 10-20 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-sun"></i> Brunch</div>
                 <img src="pictures/bruch terrasse.jpeg" alt="Brunch Terrasse">
                 <div class="restaurant-info">
@@ -234,7 +237,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 15-25 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-pepper-hot"></i> Spicy</div>
                 <img src="pictures/d-delicia thai.jpeg" alt="D-Delicia Thai">
                 <div class="restaurant-info">
@@ -243,7 +246,7 @@
                     <span class="delivery-time"><i class="fas fa-clock"></i> 25-35 min</span>
                 </div>
             </div>
-            <div class="restaurant-card">
+            <div class="restaurant-card hidden-restaurant">
                 <div class="card-badge"><i class="fas fa-fire"></i> Hot</div>
                 <img src="pictures/shwarma al agha.avif" alt="Shawarma Al Agha">
                 <div class="restaurant-info">
@@ -254,43 +257,12 @@
             </div>
         </div>
         
-        <div class="more-section">
-            <h3>More Options Available</h3>
-            <div class="empty-card-container">
-                <div class="empty-card">
-                    <div class="empty-card-placeholder">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="empty-info">
-                        <div class="empty-line"></div>
-                        <div class="empty-line small"></div>
-                    </div>
-                </div>
-                <div class="empty-card">
-                    <div class="empty-card-placeholder">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="empty-info">
-                        <div class="empty-line"></div>
-                        <div class="empty-line small"></div>
-                    </div>
-                </div>
-                <div class="empty-card">
-                    <div class="empty-card-placeholder">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="empty-info">
-                        <div class="empty-line"></div>
-                        <div class="empty-line small"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="view-more-container">
-                <a href="#" class="view-more-btn">
-                    <span>View More Restaurants</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+        <!-- See More Button -->
+        <div class="see-more-container">
+            <button id="see-more-btn" class="see-more-btn">
+                <span>See More Restaurants</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
         </div>
     </section>
 
@@ -408,6 +380,34 @@
             const scrollProgress = document.querySelector('.scroll-progress');
             const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+        });
+
+        // See More Restaurants functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const seeMoreBtn = document.getElementById('see-more-btn');
+            const hiddenRestaurants = document.querySelectorAll('.hidden-restaurant');
+
+            if (seeMoreBtn) {
+                seeMoreBtn.addEventListener('click', () => {
+                    const isActive = seeMoreBtn.classList.contains('active');
+                    
+                    if (!isActive) {
+                        // Show hidden restaurants
+                        hiddenRestaurants.forEach(restaurant => {
+                            restaurant.style.display = 'block';
+                        });
+                        seeMoreBtn.classList.add('active');
+                        seeMoreBtn.querySelector('span').textContent = 'Show Less';
+                    } else {
+                        // Hide restaurants
+                        hiddenRestaurants.forEach(restaurant => {
+                            restaurant.style.display = 'none';
+                        });
+                        seeMoreBtn.classList.remove('active');
+                        seeMoreBtn.querySelector('span').textContent = 'See More Restaurants';
+                    }
+                });
+            }
         });
 
         // Smooth Navigation
