@@ -32,13 +32,14 @@ A modern food delivery website with a clean blue and white theme. This website p
 twins-delivery/
 │
 ├── index.html          # Main HTML file
-├── styles.css         # CSS styles
+├── css/
+│   └── styles.css         # CSS styles
 └── README.md         # Project documentation
 ```
 
 ## Customization
 
-The website uses CSS variables for easy customization. You can modify the colors by changing the values in the `:root` selector in `styles.css`:
+The website uses CSS variables for easy customization. You can modify the colors by changing the values in the `:root` selector in `css/styles.css`:
 
 ```css
 :root {
