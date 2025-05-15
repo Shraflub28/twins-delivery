@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Restaurants - Twins Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <a href="index.html" style="text-decoration: none; color: white;">Twins Delivery</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
+                <a href="search.html" class="nav-link active"><i class="fas fa-search"></i> Search</a>
+                <a href="index.html#download" class="nav-link"><i class="fas fa-download"></i> Download App</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn-secondary"><i class="fas fa-user"></i> Sign In</button>
+                <button class="btn-primary"><i class="fas fa-shopping-cart"></i> Cart</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="search-container">
+        <div class="search-header">
+            <h1>Find Your Perfect Meal</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for restaurants or cuisines...">
+                <button class="btn-primary"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+
+        <div class="search-content">
+            <aside class="filters-sidebar">
+                <div class="filter-section">
+                    <h3>Quick Filters</h3>
+                    <div class="filter-group">
+                        <label>Cuisine Type</label>
+                        <select>
+                            <option value="">All Cuisines</option>
+                            <option value="italian">Italian</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="indian">Indian</option>
+                            <option value="mexican">Mexican</option>
+                            <option value="japanese">Japanese</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <div class="price-range">
+                            <input type="range" min="1" max="5" value="3">
+                            <div class="price-labels">
+                                <span>$</span>
+                                <span>$$</span>
+                                <span>$$$</span>
+                                <span>$$$$</span>
+                                <span>$$$$$</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Delivery Time</label>
+                        <select>
+                            <option value="">Any Time</option>
+                            <option value="15">Under 15 min</option>
+                            <option value="30">Under 30 min</option>
+                            <option value="45">Under 45 min</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Minimum Rating</label>
+                        <div class="rating-filter">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Advanced Filters</h3>
+                    <div class="filter-group">
+                        <label>Dietary Preferences</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox"> Vegetarian</label>
+                            <label><input type="checkbox"> Vegan</label>
+                            <label><input type="checkbox"> Gluten-Free</label>
+                            <label><input type="checkbox"> Halal</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Sort By</label>
+                        <select>
+                            <option value="popularity">Popularity</option>
+                            <option value="rating">Rating</option>
+                            <option value="delivery_time">Delivery Time</option>
+                            <option value="price_low">Price: Low to High</option>
+                            <option value="price_high">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn-primary apply-filters">
+                    <i class="fas fa-filter"></i> Apply Filters
+                </button>
+            </aside>
+
+            <section class="search-results">
+                <div class="results-header">
+                    <h2>Search Results</h2>
+                    <div class="results-count">Showing 24 restaurants</div>
+                </div>
+
+                <div class="restaurant-grid">
+                    <!-- Restaurant cards will be dynamically populated here -->
+                </div>
+
+                <div class="pagination">
+                    <button class="btn-secondary"><i class="fas fa-chevron-left"></i> Previous</button>
+                    <div class="page-numbers">
+                        <span class="active">1</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </div>
+                    <button class="btn-secondary">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <style>
+        .search-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .search-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .search-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--primary-light);
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+
+        .search-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .filters-sidebar {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-color) 100%);
+            padding: 2rem 1.5rem;
+            border-radius: 28px;
+            box-shadow: 0 8px 32px rgba(0, 55, 255, 0.10);
+            height: fit-content;
+            border: 1.5px solid var(--primary-light);
+            margin-bottom: 2rem;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+
+        .filter-section h3 {
+            margin-bottom: 1.2rem;
+            color: var(--primary-dark);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-section h3::before {
+            content: '\f0b0'; /* fa-filter */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        .filter-group {
+            margin-bottom: 2rem;
+            background: rgba(0, 55, 255, 0.04);
+            padding: 1rem 1rem 0.5rem 1rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 55, 255, 0.04);
+        }
+
+        .filter-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .filter-group select,
+        .filter-group input[type="range"] {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1.5px solid var(--primary-light);
+            border-radius: 10px;
+            background: #f4f8ff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            transition: border 0.2s;
+        }
+
+        .filter-group select:focus,
+        .filter-group input[type="range"]:focus {
+            border: 1.5px solid var(--accent-color);
+            outline: none;
+        }
+
+        .price-range input[type="range"] {
+            accent-color: var(--primary-color);
+            height: 4px;
+        }
+
+        .price-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .rating-filter {
+            display: flex;
+            gap: 0.3rem;
+            color: #ffd700;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .rating-filter i:hover,
+        .rating-filter i.active {
+            color: var(--accent-color);
+            transform: scale(1.2) rotate(-10deg);
+            text-shadow: 0 2px 8px rgba(255, 51, 102, 0.15);
+        }
+
+        .checkbox-group label {
+            font-weight: 500;
+            color: var(--text-color);
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 0.3rem 0.7rem;
+            margin-bottom: 0.3rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .checkbox-group input[type="checkbox"]:checked + label {
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .apply-filters {
+            width: 100%;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            box-shadow: 0 4px 16px rgba(255, 51, 102, 0.10);
+        }
+
+        .search-results {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--card-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .page-numbers {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .page-numbers span {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .page-numbers span.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        @media (max-width: 992px) {
+            .search-content {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-sidebar {
+                position: sticky;
+                top: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .restaurant-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script src="search.js"></script>
+    <script>
+        // Add loading state to search button
+        const searchButton = document.querySelector('.search-bar button');
+        searchButton.addEventListener('click', () => {
+            searchButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+            setTimeout(() => {
+                searchButton.innerHTML = '<i class="fas fa-search"></i> Search';
+            }, 1000);
+        });
+
+        // Add loading state to apply filters button
+        const applyFiltersButton = document.querySelector('.apply-filters');
+        applyFiltersButton.addEventListener('click', () => {
+            applyFiltersButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Applying...';
+            setTimeout(() => {
+                applyFiltersButton.innerHTML = '<i class="fas fa-filter"></i> Apply Filters';
+            }, 1000);
+        });
+
+        // Add hover effect to restaurant cards
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.closest('.restaurant-card')) {
+                const card = e.target.closest('.restaurant-card');
+                card.style.transform = 'translateY(-8px)';
+                card.style.boxShadow = 'var(--card-shadow)';
+            }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.closest('.restaurant-card')) {
+                const card = e.target.closest('.restaurant-card');
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'var(--shadow)';
+            }
+        });
+    </script>
+</body>
+</html> 
