@@ -675,8 +675,8 @@
                 allOrders[orderId] = orderData;
                 localStorage.setItem('twins_delivery_orders', JSON.stringify(allOrders));
 
-                // Generate confirmation page URL
-                const confirmationUrl = `${window.location.origin}/confirmation.html?id=${orderId}`;
+                // Generate confirmation page URL - use hash for GitHub Pages compatibility
+                const confirmationUrl = `${window.location.origin}/confirmation.html#${orderId}`;
                 
                 // ENGLISH VERSION
                 let orderText = `*Order Reference: ${orderId}*\n`;
@@ -861,7 +861,7 @@
                 
                 // Open confirmation page in a new tab after WhatsApp
                 setTimeout(function() {
-                    window.open(`confirmation.html?id=${orderId}`, '_blank');
+                    window.open(`confirmation.html#${orderId}`, '_blank');
                 }, 500);
                 
                 // We could clear the cart here, but it might be better to keep it

@@ -435,9 +435,18 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Parse URL parameters to get order data
-            const urlParams = new URLSearchParams(window.location.search);
-            const orderId = urlParams.get('id');
+            // Check for order ID in hash fragment first (for GitHub Pages compatibility)
+            let orderId = null;
+            
+            // If hash is present (format: #TD-123456789)
+            if (window.location.hash) {
+                orderId = window.location.hash.substring(1); // Remove the # character
+            } 
+            // If no hash, try traditional query parameter
+            else {
+                const urlParams = new URLSearchParams(window.location.search);
+                orderId = urlParams.get('id');
+            }
             
             // If no order ID in URL, try to get from localStorage
             if (!orderId) {
