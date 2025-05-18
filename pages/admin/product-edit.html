@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product - Twins Delivery Admin</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-form-container {
+            background-color: white;
+            border-radius: var(--admin-card-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .form-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--admin-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .form-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--admin-text);
+        }
+        
+        .form-content {
+            padding: 20px;
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--admin-text);
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--admin-gray);
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: var(--admin-primary);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / 3;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--admin-text);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--admin-gray);
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--admin-transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--admin-primary);
+            box-shadow: 0 0 0 3px rgba(0, 55, 255, 0.1);
+            outline: none;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--admin-gray);
+            border-radius: 5px;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            transition: var(--admin-transition);
+        }
+        
+        .form-select:focus {
+            border-color: var(--admin-primary);
+            box-shadow: 0 0 0 3px rgba(0, 55, 255, 0.1);
+            outline: none;
+        }
+        
+        .image-upload-container {
+            border: 2px dashed var(--admin-gray);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--admin-transition);
+        }
+        
+        .image-upload-container:hover {
+            border-color: var(--admin-primary);
+            background-color: rgba(0, 55, 255, 0.02);
+        }
+        
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--admin-primary);
+            margin-bottom: 15px;
+            opacity: 0.7;
+        }
+        
+        .upload-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+        
+        .upload-help {
+            font-size: 0.8rem;
+            color: #adb5bd;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .image-preview {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .preview-item {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .preview-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .preview-remove {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 24px;
+            height: 24px;
+            background-color: rgba(220, 53, 69, 0.8);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: var(--admin-transition);
+        }
+        
+        .preview-remove:hover {
+            background-color: #dc3545;
+        }
+        
+        .tag-input-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid var(--admin-gray);
+            border-radius: 5px;
+            min-height: 120px;
+        }
+        
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(0, 55, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .tag-text {
+            margin-right: 8px;
+        }
+        
+        .tag-remove {
+            width: 18px;
+            height: 18px;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: var(--admin-text);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.7rem;
+            transition: var(--admin-transition);
+        }
+        
+        .tag-remove:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .tag-input {
+            flex: 1;
+            min-width: 100px;
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-submit, .btn-cancel {
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--admin-transition);
+        }
+        
+        .btn-submit {
+            background-color: var(--admin-primary);
+            color: white;
+            border: none;
+        }
+        
+        .btn-cancel {
+            background-color: white;
+            color: var(--admin-text);
+            border: 1px solid var(--admin-gray);
+        }
+        
+        .btn-submit:hover {
+            background-color: var(--admin-dark);
+        }
+        
+        .btn-cancel:hover {
+            background-color: var(--admin-gray);
+        }
+        
+        .price-input-group {
+            position: relative;
+        }
+        
+        .price-input-group .form-control {
+            padding-left: 30px;
+        }
+        
+        .price-currency {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 992px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full-width {
+                grid-column: 1;
+            }
+            
+            .image-preview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--admin-primary);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: 500;
+            transition: var(--admin-transition);
+        }
+        
+        .back-link:hover {
+            color: var(--admin-dark);
+        }
+    </style>
+</head>
+<body class="admin-body">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="admin-badge">Admin Panel</div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html#dashboard" class="sidebar-link" data-section="dashboard">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="index.html#orders" class="sidebar-link" data-section="orders">
+                <i class="fas fa-shopping-bag"></i> Orders
+            </a>
+            <a href="index.html#products" class="sidebar-link active" data-section="products">
+                <i class="fas fa-hamburger"></i> Products
+            </a>
+            <a href="index.html#customers" class="sidebar-link" data-section="customers">
+                <i class="fas fa-users"></i> Customers
+            </a>
+            <a href="index.html#delivery-zones" class="sidebar-link" data-section="delivery-zones">
+                <i class="fas fa-map-marked-alt"></i> Delivery Zones
+            </a>
+            <a href="index.html#analytics" class="sidebar-link" data-section="analytics">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../../index.html" class="back-to-site">
+                <i class="fas fa-arrow-left"></i> Back to Website
+            </a>
+            <div class="admin-info">
+                <div class="admin-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="admin-details">
+                    <span class="admin-name">Admin User</span>
+                    <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for orders, products, customers...">
+            </div>
+            <div class="header-actions">
+                <div class="notification-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <button class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <a href="index.html#products" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Products
+        </a>
+
+        <div class="product-form-container">
+            <div class="form-header">
+                <div class="form-title">Edit Product</div>
+            </div>
+            
+            <div class="form-content">
+                <form id="product-form">
+                    <div class="form-section">
+                        <h3 class="section-title"><i class="fas fa-info-circle"></i> Basic Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="product-name">Product Name</label>
+                                <input type="text" id="product-name" class="form-control" value="Giant Burger" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="product-restaurant">Restaurant</label>
+                                <select id="product-restaurant" class="form-select" required>
+                                    <option value="">Select Restaurant</option>
+                                    <option value="1" selected>Quick</option>
+                                    <option value="2">KFC</option>
+                                    <option value="3">Pizza Hut</option>
+                                    <option value="4">Sushi Store</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="product-category">Category</label>
+                                <select id="product-category" class="form-select" required>
+                                    <option value="">Select Category</option>
+                                    <option value="burgers" selected>Burgers</option>
+                                    <option value="pizza">Pizza</option>
+                                    <option value="sushi">Sushi</option>
+                                    <option value="chicken">Chicken</option>
+                                    <option value="salads">Salads</option>
+                                    <option value="drinks">Drinks</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="product-price">Price</label>
+                                <div class="price-input-group">
+                                    <span class="price-currency">$</span>
+                                    <input type="number" id="product-price" class="form-control" value="12.99" step="0.01" min="0" required>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label class="form-label" for="product-description">Description</label>
+                                <textarea id="product-description" class="form-control" rows="4" required>Delicious beef patty with cheese, lettuce, tomato, and special sauce. Our signature burger made with 100% premium beef.</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title"><i class="fas fa-image"></i> Product Images</h3>
+                        <label class="form-label">Images</label>
+                        <div class="image-upload-container" id="image-upload">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="upload-text">Drag and drop images here or click to browse</div>
+                            <div class="upload-help">JPG, PNG or GIF, Max size: 5MB</div>
+                            <input type="file" id="file-input" class="file-input" multiple accept="image/*">
+                        </div>
+                        <div class="image-preview" id="image-preview">
+                            <div class="preview-item">
+                                <img src="../../pictures/quick.jpeg" class="preview-image" alt="Product image">
+                                <div class="preview-remove"><i class="fas fa-times"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title"><i class="fas fa-tag"></i> Additional Details</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="product-sku">SKU</label>
+                                <input type="text" id="product-sku" class="form-control" value="BRG-GIANT-001">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="product-stock">Stock Quantity</label>
+                                <input type="number" id="product-stock" class="form-control" value="100" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <div class="form-check">
+                                    <input type="radio" id="status-active" name="product-status" value="active" checked>
+                                    <label for="status-active">Active</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="status-draft" name="product-status" value="draft">
+                                    <label for="status-draft">Draft</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Featured</label>
+                                <div class="form-check">
+                                    <input type="checkbox" id="product-featured" checked>
+                                    <label for="product-featured">Mark as Featured Product</label>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label class="form-label">Tags</label>
+                                <div class="tag-input-container" id="tag-container">
+                                    <div class="tag">
+                                        <span class="tag-text">burger</span>
+                                        <div class="tag-remove"><i class="fas fa-times"></i></div>
+                                    </div>
+                                    <div class="tag">
+                                        <span class="tag-text">beef</span>
+                                        <div class="tag-remove"><i class="fas fa-times"></i></div>
+                                    </div>
+                                    <div class="tag">
+                                        <span class="tag-text">cheese</span>
+                                        <div class="tag-remove"><i class="fas fa-times"></i></div>
+                                    </div>
+                                    <input type="text" class="tag-input" placeholder="Add a tag and press Enter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="button" class="btn-cancel">Cancel</button>
+                        <button type="submit" class="btn-submit">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Image upload functionality
+            const uploadContainer = document.getElementById('image-upload');
+            const fileInput = document.getElementById('file-input');
+            const imagePreview = document.getElementById('image-preview');
+            
+            uploadContainer.addEventListener('click', () => {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', () => {
+                const files = fileInput.files;
+                if (files.length > 0) {
+                    for (let i = 0; i < files.length; i++) {
+                        if (i < 3) { // Limit to 3 new images for demo
+                            const file = files[i];
+                            const reader = new FileReader();
+                            
+                            reader.onload = function(e) {
+                                const previewItem = document.createElement('div');
+                                previewItem.className = 'preview-item';
+                                
+                                const previewImage = document.createElement('img');
+                                previewImage.className = 'preview-image';
+                                previewImage.src = e.target.result;
+                                previewImage.alt = 'Product image';
+                                
+                                const removeButton = document.createElement('div');
+                                removeButton.className = 'preview-remove';
+                                removeButton.innerHTML = '<i class="fas fa-times"></i>';
+                                removeButton.addEventListener('click', function(event) {
+                                    event.stopPropagation();
+                                    previewItem.remove();
+                                });
+                                
+                                previewItem.appendChild(previewImage);
+                                previewItem.appendChild(removeButton);
+                                imagePreview.appendChild(previewItem);
+                            };
+                            
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                }
+            });
+            
+            // Remove existing image
+            const removeButtons = document.querySelectorAll('.preview-remove');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    button.parentElement.remove();
+                });
+            });
+            
+            // Tags functionality
+            const tagContainer = document.getElementById('tag-container');
+            const tagInput = tagContainer.querySelector('.tag-input');
+            
+            tagInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && this.value.trim() !== '') {
+                    e.preventDefault();
+                    
+                    const tagText = this.value.trim();
+                    const tag = document.createElement('div');
+                    tag.className = 'tag';
+                    
+                    const text = document.createElement('span');
+                    text.className = 'tag-text';
+                    text.textContent = tagText;
+                    
+                    const removeButton = document.createElement('div');
+                    removeButton.className = 'tag-remove';
+                    removeButton.innerHTML = '<i class="fas fa-times"></i>';
+                    removeButton.addEventListener('click', function() {
+                        tag.remove();
+                    });
+                    
+                    tag.appendChild(text);
+                    tag.appendChild(removeButton);
+                    
+                    // Insert before the input
+                    tagContainer.insertBefore(tag, this);
+                    this.value = '';
+                }
+            });
+            
+            // Remove existing tags
+            const tagRemoveButtons = document.querySelectorAll('.tag-remove');
+            tagRemoveButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    button.parentElement.remove();
+                });
+            });
+            
+            // Form submission (demo)
+            const productForm = document.getElementById('product-form');
+            productForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                alert('Product updated successfully!');
+                
+                // In a real app, you would collect the form data and submit to server
+                // const formData = new FormData(productForm);
+                // fetch('/api/products', { method: 'POST', body: formData });
+            });
+            
+            // Cancel button
+            const cancelButton = document.querySelector('.btn-cancel');
+            cancelButton.addEventListener('click', function() {
+                window.location.href = 'index.html#products';
+            });
+        });
+    </script>
+</body>
+</html> 

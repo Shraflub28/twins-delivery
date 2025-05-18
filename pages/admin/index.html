@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Twins Delivery</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="admin-badge">Admin Panel</div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="sidebar-link active" data-section="dashboard">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </a>
+            <a href="#orders" class="sidebar-link" data-section="orders">
+                <i class="fas fa-shopping-bag"></i> Orders
+            </a>
+            <a href="#products" class="sidebar-link" data-section="products">
+                <i class="fas fa-hamburger"></i> Products
+            </a>
+            <a href="#customers" class="sidebar-link" data-section="customers">
+                <i class="fas fa-users"></i> Customers
+            </a>
+            <a href="#delivery-zones" class="sidebar-link" data-section="delivery-zones">
+                <i class="fas fa-map-marked-alt"></i> Delivery Zones
+            </a>
+            <a href="#analytics" class="sidebar-link" data-section="analytics">
+                <i class="fas fa-chart-line"></i> Analytics
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../../index.html" class="back-to-site">
+                <i class="fas fa-arrow-left"></i> Back to Website
+            </a>
+            <div class="admin-info">
+                <div class="admin-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="admin-details">
+                    <span class="admin-name">Admin User</span>
+                    <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for orders, products, customers...">
+            </div>
+            <div class="header-actions">
+                <div class="notification-bell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <button class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="admin-section active">
+            <div class="section-header">
+                <h1>Dashboard Overview</h1>
+                <p class="date-display">Today: <span id="current-date"></span></p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Total Orders</h3>
+                        <p class="stat-value">245</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 12% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Revenue</h3>
+                        <p class="stat-value">$8,354</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 8% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Customers</h3>
+                        <p class="stat-value">1,245</p>
+                        <p class="stat-change positive"><i class="fas fa-arrow-up"></i> 5% from last week</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Deliveries</h3>
+                        <p class="stat-value">182</p>
+                        <p class="stat-change negative"><i class="fas fa-arrow-down"></i> 3% from last week</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card recent-orders">
+                    <div class="card-header">
+                        <h2><i class="fas fa-shopping-bag"></i> Recent Orders</h2>
+                        <a href="#orders" class="view-all" data-section="orders">View All</a>
+                    </div>
+                    <div class="card-content">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-8924</td>
+                                    <td>Emily Johnson</td>
+                                    <td>$45.80</td>
+                                    <td><span class="status-badge delivered">Delivered</span></td>
+                                    <td>Today, 14:35</td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8923</td>
+                                    <td>Michael Smith</td>
+                                    <td>$29.50</td>
+                                    <td><span class="status-badge out-delivery">Out for Delivery</span></td>
+                                    <td>Today, 13:20</td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8922</td>
+                                    <td>Sarah Williams</td>
+                                    <td>$68.25</td>
+                                    <td><span class="status-badge processing">Processing</span></td>
+                                    <td>Today, 12:45</td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8921</td>
+                                    <td>David Brown</td>
+                                    <td>$32.75</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>Today, 11:10</td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8920</td>
+                                    <td>Jennifer Davis</td>
+                                    <td>$54.30</td>
+                                    <td><span class="status-badge cancelled">Cancelled</span></td>
+                                    <td>Today, 10:25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-card popular-items">
+                    <div class="card-header">
+                        <h2><i class="fas fa-star"></i> Popular Items</h2>
+                        <a href="#products" class="view-all" data-section="products">View All</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="popular-item">
+                            <div class="item-image">
+                                <img src="../../pictures/quick.jpeg" alt="Quick Burger">
+                            </div>
+                            <div class="item-details">
+                                <h3>Giant Burger</h3>
+                                <p>Quick</p>
+                                <div class="item-stats">
+                                    <span><i class="fas fa-shopping-cart"></i> 135 orders</span>
+                                    <span><i class="fas fa-star"></i> 4.7</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$12.99</div>
+                        </div>
+                        <div class="popular-item">
+                            <div class="item-image">
+                                <img src="../../pictures/pizza hut.jpeg" alt="Pizza Hut">
+                            </div>
+                            <div class="item-details">
+                                <h3>Pepperoni Pizza</h3>
+                                <p>Pizza Hut</p>
+                                <div class="item-stats">
+                                    <span><i class="fas fa-shopping-cart"></i> 120 orders</span>
+                                    <span><i class="fas fa-star"></i> 4.5</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$14.99</div>
+                        </div>
+                        <div class="popular-item">
+                            <div class="item-image">
+                                <img src="../../pictures/suchi store.png" alt="Sushi Store">
+                            </div>
+                            <div class="item-details">
+                                <h3>Sushi Combo</h3>
+                                <p>Sushi Store</p>
+                                <div class="item-stats">
+                                    <span><i class="fas fa-shopping-cart"></i> 98 orders</span>
+                                    <span><i class="fas fa-star"></i> 4.8</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$24.99</div>
+                        </div>
+                        <div class="popular-item">
+                            <div class="item-image">
+                                <img src="../../pictures/kfc.jpeg" alt="KFC">
+                            </div>
+                            <div class="item-details">
+                                <h3>Fried Chicken Bucket</h3>
+                                <p>KFC</p>
+                                <div class="item-stats">
+                                    <span><i class="fas fa-shopping-cart"></i> 87 orders</span>
+                                    <span><i class="fas fa-star"></i> 4.4</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$19.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Orders, Products, Customers, and other sections will be loaded via JavaScript -->
+
+    </main>
+
+    <script src="js/admin.js"></script>
+</body>
+</html> 
