@@ -143,6 +143,11 @@
             font-weight: 500;
         }
         
+        .form-group label.required::after {
+            content: " *";
+            color: #ff3366;
+        }
+        
         .form-group input {
             width: 100%;
             padding: 0.8rem 1rem;
@@ -154,6 +159,48 @@
         .form-group input:focus {
             outline: none;
             border-color: var(--primary-color);
+        }
+        
+        .location-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .location-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .location-button i {
+            font-size: 1.2rem;
+        }
+        
+        .location-details {
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .location-details.active {
+            display: block;
+        }
+        
+        .location-coordinates {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
         }
         
         .checkout-actions {
@@ -317,10 +364,6 @@
                 <span>Subtotal</span>
                 <span id="subtotal">0 MAD</span>
             </div>
-            <div class="summary-row">
-                <span>Delivery Fee</span>
-                <span id="delivery-fee">15 MAD</span>
-            </div>
             <div class="summary-row total">
                 <span>Total</span>
                 <span id="total">0 MAD</span>
@@ -330,16 +373,19 @@
         <div id="customer-info" class="customer-info" style="display:none;">
             <h3>Your Information</h3>
             <div class="form-group">
-                <label for="customer-name">Name</label>
-                <input type="text" id="customer-name" placeholder="Your name">
+                <label for="customer-name" class="required">Name</label>
+                <input type="text" id="customer-name" placeholder="Your name" required>
             </div>
+            
             <div class="form-group">
-                <label for="customer-address">Delivery Address</label>
-                <input type="text" id="customer-address" placeholder="Your address">
-            </div>
-            <div class="form-group">
-                <label for="customer-phone">Phone Number</label>
-                <input type="tel" id="customer-phone" placeholder="Your phone number">
+                <button id="get-location-btn" class="location-button">
+                    <i class="fas fa-map-marker-alt"></i> Get My Location
+                </button>
+                <div class="location-coordinates" id="location-coordinates"></div>
+                <div class="location-details" id="location-details">
+                    <label for="customer-address-detail">Additional Address Details</label>
+                    <input type="text" id="customer-address-detail" placeholder="Apartment number, building, landmark, etc.">
+                </div>
             </div>
         </div>
 
@@ -419,6 +465,13 @@
             const backButton = document.getElementById('back-button');
             const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout-btn');
             const restaurantDetails = document.getElementById('restaurant-details');
+            const getLocationBtn = document.getElementById('get-location-btn');
+            const locationCoordinates = document.getElementById('location-coordinates');
+            const locationDetails = document.getElementById('location-details');
+            
+            // Location variables
+            let userLatitude = null;
+            let userLongitude = null;
             
             // WhatsApp phone number
             const whatsappNumber = '+212637297017';
@@ -493,15 +546,15 @@
                 });
             }
             
-            // Function to calculate order total
+            // Function to calculate order total (without delivery fee)
             function calculateOrderTotal() {
                 let subtotal = 0;
                 cart.forEach(item => {
                     subtotal += parseFloat(item.price) * item.quantity;
                 });
                 
-                const deliveryFee = 15; // Fixed delivery fee
-                const total = subtotal + deliveryFee;
+                // Total is same as subtotal since we removed delivery fee
+                const total = subtotal;
                 
                 subtotalEl.textContent = `${subtotal.toFixed(2)} MAD`;
                 totalEl.textContent = `${total.toFixed(2)} MAD`;
@@ -511,14 +564,90 @@
                 return { subtotal, total };
             }
             
+            // Get location functionality
+            getLocationBtn.addEventListener('click', function() {
+                if (navigator.geolocation) {
+                    getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Getting location...';
+                    getLocationBtn.disabled = true;
+                    
+                    navigator.geolocation.getCurrentPosition(
+                        // Success
+                        function(position) {
+                            userLatitude = position.coords.latitude;
+                            userLongitude = position.coords.longitude;
+                            
+                            locationCoordinates.innerHTML = `
+                                <i class="fas fa-map-marker-alt"></i> Location found: 
+                                <a href="https://maps.google.com/?q=${userLatitude},${userLongitude}" target="_blank">
+                                    View on map
+                                </a>
+                            `;
+                            
+                            locationDetails.classList.add('active');
+                            getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Location Received';
+                            getLocationBtn.disabled = false;
+                            
+                            // Update WhatsApp link with new location
+                            updateWhatsAppLink();
+                        },
+                        // Error
+                        function(error) {
+                            let errorMessage = 'Could not get your location. ';
+                            
+                            switch(error.code) {
+                                case error.PERMISSION_DENIED:
+                                    errorMessage += 'You denied the request for geolocation.';
+                                    break;
+                                case error.POSITION_UNAVAILABLE:
+                                    errorMessage += 'Location information is unavailable.';
+                                    break;
+                                case error.TIMEOUT:
+                                    errorMessage += 'The request to get your location timed out.';
+                                    break;
+                                case error.UNKNOWN_ERROR:
+                                    errorMessage += 'An unknown error occurred.';
+                                    break;
+                            }
+                            
+                            locationCoordinates.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${errorMessage}`;
+                            locationCoordinates.style.color = '#ff3366';
+                            
+                            getLocationBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Try Again';
+                            getLocationBtn.disabled = false;
+                            
+                            // Show address field anyway
+                            locationDetails.classList.add('active');
+                        }
+                    );
+                } else {
+                    locationCoordinates.innerHTML = 'Geolocation is not supported by this browser.';
+                    locationCoordinates.style.color = '#ff3366';
+                    
+                    // Show address field anyway
+                    locationDetails.classList.add('active');
+                }
+            });
+            
             // Function to update WhatsApp checkout link
             function updateWhatsAppLink() {
                 const customerName = document.getElementById('customer-name').value;
-                const customerAddress = document.getElementById('customer-address').value;
-                const customerPhone = document.getElementById('customer-phone').value;
+                const customerAddressDetail = document.getElementById('customer-address-detail')?.value || '';
                 
                 const { total } = calculateOrderTotal();
                 
+                // Check if name is provided
+                if (!customerName.trim()) {
+                    whatsappCheckoutBtn.disabled = true;
+                    whatsappCheckoutBtn.style.opacity = '0.5';
+                    whatsappCheckoutBtn.title = 'Please provide your name';
+                    return;
+                } else {
+                    whatsappCheckoutBtn.disabled = false;
+                    whatsappCheckoutBtn.style.opacity = '1';
+                    whatsappCheckoutBtn.title = '';
+                }
+                
+                // ENGLISH VERSION
                 let orderText = "Hello! I would like to place an order:\n\n";
                 
                 // Add restaurant name
@@ -532,18 +661,90 @@
                     orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
                 });
                 
-                // Add totals
-                orderText += `\n*Subtotal:* ${subtotalEl.textContent}\n`;
-                orderText += `*Delivery:* 15 MAD\n`;
-                orderText += `*Total:* ${totalEl.textContent}\n\n`;
+                // Add total
+                orderText += `\n*Total:* ${totalEl.textContent}\n\n`;
                 
                 // Add customer info
                 orderText += "*Delivery Information:*\n";
-                orderText += `Name: ${customerName || 'Not provided'}\n`;
-                orderText += `Address: ${customerAddress || 'Not provided'}\n`;
-                orderText += `Phone: ${customerPhone || 'Not provided'}\n\n`;
+                orderText += `Name: ${customerName}\n`;
                 
-                orderText += "Thank you!";
+                // Add location info
+                if (userLatitude && userLongitude) {
+                    orderText += `Location: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                }
+                
+                // Add address details if provided
+                if (customerAddressDetail) {
+                    orderText += `Address Details: ${customerAddressDetail}\n`;
+                }
+
+                // SEPARATOR
+                orderText += "\n------------------\n\n";
+                
+                // FRENCH VERSION
+                orderText += "Bonjour! Je voudrais passer une commande:\n\n";
+                
+                // Add restaurant name in French
+                if (restaurantInfo) {
+                    orderText += `*Restaurant:* ${restaurantInfo.name}\n\n`;
+                }
+                
+                // Add order items in French
+                orderText += "*Articles commandés:*\n";
+                cart.forEach(item => {
+                    orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
+                });
+                
+                // Add total in French
+                orderText += `\n*Total:* ${totalEl.textContent}\n\n`;
+                
+                // Add customer info in French
+                orderText += "*Information de livraison:*\n";
+                orderText += `Nom: ${customerName}\n`;
+                
+                // Add location info in French
+                if (userLatitude && userLongitude) {
+                    orderText += `Emplacement: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                }
+                
+                // Add address details if provided in French
+                if (customerAddressDetail) {
+                    orderText += `Détails de l'adresse: ${customerAddressDetail}\n`;
+                }
+
+                // SEPARATOR
+                orderText += "\n------------------\n\n";
+                
+                // ARABIC VERSION
+                orderText += "مرحبا! أود طلب الطعام:\n\n";
+                
+                // Add restaurant name in Arabic
+                if (restaurantInfo) {
+                    orderText += `*المطعم:* ${restaurantInfo.name}\n\n`;
+                }
+                
+                // Add order items in Arabic
+                orderText += "*طلباتي:*\n";
+                cart.forEach(item => {
+                    orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
+                });
+                
+                // Add total in Arabic
+                orderText += `\n*المجموع:* ${totalEl.textContent}\n\n`;
+                
+                // Add customer info in Arabic
+                orderText += "*معلومات التوصيل:*\n";
+                orderText += `الاسم: ${customerName}\n`;
+                
+                // Add location info in Arabic
+                if (userLatitude && userLongitude) {
+                    orderText += `الموقع: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                }
+                
+                // Add address details if provided in Arabic
+                if (customerAddressDetail) {
+                    orderText += `تفاصيل العنوان: ${customerAddressDetail}\n`;
+                }
                 
                 // Encode the message for URL
                 const encodedMessage = encodeURIComponent(orderText);
@@ -554,11 +755,19 @@
             
             // Update WhatsApp link when customer info changes
             document.getElementById('customer-name').addEventListener('input', updateWhatsAppLink);
-            document.getElementById('customer-address').addEventListener('input', updateWhatsAppLink);
-            document.getElementById('customer-phone').addEventListener('input', updateWhatsAppLink);
+            if (document.getElementById('customer-address-detail')) {
+                document.getElementById('customer-address-detail').addEventListener('input', updateWhatsAppLink);
+            }
             
             // Initial WhatsApp link update
             updateWhatsAppLink();
+            
+            // Make the checkout button disabled initially if name is empty
+            if (!document.getElementById('customer-name').value.trim()) {
+                whatsappCheckoutBtn.disabled = true;
+                whatsappCheckoutBtn.style.opacity = '0.5';
+                whatsappCheckoutBtn.title = 'Please provide your name';
+            }
             
             // Global functions for quantity update and item removal
             window.updateQuantity = function(index, change) {
