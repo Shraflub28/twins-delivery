@@ -216,11 +216,93 @@
             opacity: 0.2;
             pointer-events: none;
         }
+        
+        /* Add cart button and notification styles */
+        .cart-button {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cart-button i {
+            font-size: 1.5rem;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent-color);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(-100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .notification i {
+            color: #4CAF50;
+        }
     </style>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress"></div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-message">Item added to cart</span>
+    </div>
+
+    <!-- Cart Button -->
+    <a href="checkout.html" class="cart-button" id="cart-button">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </a>
 
     <!-- Header with diagonal design -->
     <header>
@@ -327,6 +409,10 @@
         // Get restaurant name from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const restaurantName = urlParams.get('restaurant');
+        
+        // Initialize cart
+        let cart = JSON.parse(localStorage.getItem('twins_delivery_cart')) || [];
+        updateCartCount();
         
         // Restaurant information mapping (to be filled when linking from index.html)
         const restaurantInfo = {
@@ -575,7 +661,7 @@
                                     <p>${item.description || ''}</p>
                                     <div class="menu-item-price">
                                         <span>${item.price} ${item.currency}</span>
-                                        <button class="add-to-cart">
+                                        <button class="add-to-cart" data-name="${item.name}" data-price="${item.price}" data-currency="${item.currency}">
                                             <i class="fas fa-plus"></i>
                                         </button>
                                     </div>
@@ -590,13 +676,78 @@
             // Add click event to add-to-cart buttons
             document.querySelectorAll('.add-to-cart').forEach(button => {
                 button.addEventListener('click', () => {
-                    // Add to cart functionality
+                    const name = button.dataset.name;
+                    const price = button.dataset.price;
+                    const currency = button.dataset.currency;
+                    
+                    // Check if item is already in cart
+                    const existingItemIndex = cart.findIndex(item => item.name === name);
+                    
+                    if (existingItemIndex !== -1) {
+                        // Increment quantity if item already exists
+                        cart[existingItemIndex].quantity += 1;
+                    } else {
+                        // Add new item to cart
+                        cart.push({
+                            name,
+                            price,
+                            currency,
+                            quantity: 1
+                        });
+                    }
+                    
+                    // Save restaurant info to localStorage
+                    if (restaurantInfo[restaurantName]) {
+                        localStorage.setItem('twins_delivery_restaurant', JSON.stringify(restaurantInfo[restaurantName]));
+                    }
+                    
+                    // Save cart to localStorage
+                    localStorage.setItem('twins_delivery_cart', JSON.stringify(cart));
+                    
+                    // Update cart count
+                    updateCartCount();
+                    
+                    // Show added to cart notification
+                    showNotification(`${name} added to cart!`);
+                    
+                    // Change button to checkmark temporarily
                     button.innerHTML = '<i class="fas fa-check"></i>';
                     setTimeout(() => {
                         button.innerHTML = '<i class="fas fa-plus"></i>';
                     }, 1000);
                 });
             });
+        }
+        
+        // Function to update cart count
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            if (cartCount) {
+                let totalItems = 0;
+                cart.forEach(item => {
+                    totalItems += item.quantity;
+                });
+                cartCount.textContent = totalItems;
+                
+                // Show/hide cart button
+                const cartButton = document.getElementById('cart-button');
+                if (cartButton) {
+                    cartButton.style.display = totalItems > 0 ? 'flex' : 'none';
+                }
+            }
+        }
+        
+        // Function to show notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            
+            notificationMessage.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
         }
 
         // Scroll Progress Bar
