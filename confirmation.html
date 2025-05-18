@@ -568,8 +568,13 @@
             
             // Generate QR code
             const qrcodeElement = document.getElementById('qrcode');
+            
+            // Create full absolute URL for QR code
+            const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+            const qrUrl = `${window.location.origin}${basePath}confirmation.html#${orderData.orderId}`;
+            
             new QRCode(qrcodeElement, {
-                text: window.location.href,
+                text: qrUrl,
                 width: 128,
                 height: 128,
                 colorDark: "#000000",
