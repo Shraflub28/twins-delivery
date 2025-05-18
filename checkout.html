@@ -646,9 +646,42 @@
                     whatsappCheckoutBtn.style.opacity = '1';
                     whatsappCheckoutBtn.title = '';
                 }
+
+                // Generate a unique order ID - combine timestamp with random string
+                const timestamp = new Date().getTime();
+                const randomStr = Math.random().toString(36).substring(2, 10);
+                const orderId = `TD-${timestamp}-${randomStr}`;
+
+                // Save order data to localStorage
+                const orderData = {
+                    orderId: orderId,
+                    items: cart,
+                    restaurant: restaurantInfo,
+                    customer: {
+                        name: customerName,
+                        addressDetail: customerAddressDetail,
+                        latitude: userLatitude,
+                        longitude: userLongitude
+                    },
+                    orderDate: new Date().toISOString(),
+                    status: 'pending'
+                };
+
+                // Store current order for confirmation page
+                localStorage.setItem('twins_delivery_current_order', JSON.stringify(orderData));
+
+                // Also store in order history
+                const allOrders = JSON.parse(localStorage.getItem('twins_delivery_orders')) || {};
+                allOrders[orderId] = orderData;
+                localStorage.setItem('twins_delivery_orders', JSON.stringify(allOrders));
+
+                // Generate confirmation page URL
+                const confirmationUrl = `${window.location.origin}/confirmation.html?id=${orderId}`;
                 
                 // ENGLISH VERSION
-                let orderText = "Hello! I would like to place an order:\n\n";
+                let orderText = `*Order Reference: ${orderId}*\n`;
+                orderText += `View order details: ${confirmationUrl}\n\n`;
+                orderText += "Hello! I would like to place an order:\n\n";
                 
                 // Add restaurant name
                 if (restaurantInfo) {
@@ -682,6 +715,8 @@
                 orderText += "\n------------------\n\n";
                 
                 // FRENCH VERSION
+                orderText += `*Référence de commande: ${orderId}*\n`;
+                orderText += `Voir les détails de la commande: ${confirmationUrl}\n\n`;
                 orderText += "Bonjour! Je voudrais passer une commande:\n\n";
                 
                 // Add restaurant name in French
@@ -716,6 +751,8 @@
                 orderText += "\n------------------\n\n";
                 
                 // ARABIC VERSION
+                orderText += `*رقم الطلب: ${orderId}*\n`;
+                orderText += `عرض تفاصيل الطلب: ${confirmationUrl}\n\n`;
                 orderText += "مرحبا! أود طلب الطعام:\n\n";
                 
                 // Add restaurant name in Arabic
@@ -751,6 +788,9 @@
                 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
                 
                 whatsappCheckoutBtn.href = whatsappLink;
+
+                // Store order ID in the button's data attribute for reference
+                whatsappCheckoutBtn.dataset.orderId = orderId;
             }
             
             // Update WhatsApp link when customer info changes
@@ -816,6 +856,14 @@
 
             // Clear cart after WhatsApp checkout
             whatsappCheckoutBtn.addEventListener('click', function() {
+                // Get the order ID from data attribute
+                const orderId = this.dataset.orderId;
+                
+                // Open confirmation page in a new tab after WhatsApp
+                setTimeout(function() {
+                    window.open(`confirmation.html?id=${orderId}`, '_blank');
+                }, 500);
+                
                 // We could clear the cart here, but it might be better to keep it
                 // until the order is confirmed. Uncomment if you want to clear immediately:
                 // localStorage.removeItem('twins_delivery_cart');
