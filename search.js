@@ -2,19 +2,6 @@
 const restaurants = [
     {
         id: 1,
-        name: "McDonald's",
-        cuisine: "Fast Food",
-        rating: 4.5,
-        reviews: 2000,
-        deliveryTime: "10-20 min",
-        price: 2,
-        image: "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Big-Mac-1:1-4-product-tile-desktop",
-        badge: "Featured",
-        badgeIcon: "crown",
-        dietary: ["Halal"]
-    },
-    {
-        id: 2,
         name: "Quick",
         cuisine: "Fast Food",
         rating: 4.2,
@@ -27,7 +14,7 @@ const restaurants = [
         dietary: ["Halal"]
     },
     {
-        id: 3,
+        id: 2,
         name: "KFC",
         cuisine: "Chicken",
         rating: 4.4,
@@ -40,7 +27,7 @@ const restaurants = [
         dietary: ["Halal"]
     },
     {
-        id: 4,
+        id: 3,
         name: "Pizza Hut",
         cuisine: "Pizza",
         rating: 4.3,
@@ -53,7 +40,7 @@ const restaurants = [
         dietary: ["Vegetarian"]
     },
     {
-        id: 5,
+        id: 4,
         name: "L'adresse",
         cuisine: "Gourmet",
         rating: 4.8,
@@ -111,8 +98,12 @@ function displayRestaurants(restaurants) {
 function createRestaurantCard(restaurant) {
     const card = document.createElement('div');
     card.className = 'restaurant-card';
-    card.innerHTML = `
-        <div class="card-badge"><i class="fas fa-${restaurant.badgeIcon}"></i> ${restaurant.badge}</div>
+    
+    // Create a link to the menu page
+    const menuLink = document.createElement('a');
+    menuLink.href = `../../menu.html?restaurant=${restaurant.name}`;
+    
+    menuLink.innerHTML = `
         <img src="${restaurant.image}" alt="${restaurant.name}">
         <div class="restaurant-info">
             <h3>${restaurant.name}</h3>
@@ -120,6 +111,16 @@ function createRestaurantCard(restaurant) {
             <span class="delivery-time"><i class="fas fa-clock"></i> ${restaurant.deliveryTime}</span>
         </div>
     `;
+    
+    // Create the badge separately since it should be outside the link
+    const badge = document.createElement('div');
+    badge.className = 'card-badge';
+    badge.innerHTML = `<i class="fas fa-${restaurant.badgeIcon}"></i> ${restaurant.badge}`;
+    
+    // Add badge and link to the card
+    card.appendChild(badge);
+    card.appendChild(menuLink);
+    
     return card;
 }
 

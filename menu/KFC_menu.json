@@ -1,0 +1,360 @@
+{
+  "restaurant_name": "KFC",
+  "categories": [
+    {
+      "name": "Big Box Meals",
+      "items": [
+        {
+          "name": "Mighty Zinger Box",
+          "description": "Sandwich mighty zinger + 1 pièce de poulet (spicy ou original de poulet) + frites + salade coleslaw + boisson medium",
+          "price": 108.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/vbgdeKPAuHQkZar.png"
+        },
+        {
+          "name": "Zinger Box",
+          "description": "Sandwich zinger + 1 pièce de poulet (spicy ou original de poulet) + frites + salade coleslaw + boisson medium",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bsAUhRxU3YKnnrA.png"
+        },
+        {
+          "name": "Twister Box",
+          "description": "1 Sandwich Twister + 1 pièce de Poulet (spicy ou original de poulet) + petite coleslaw + petites frites + boisson",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bnA54fQ0hf7X2MP.png"
+        },
+        {
+          "name": "Suprême Box",
+          "description": "Sandwich suprême + 1 pièce de poulet + salade coleslaw + frites + boisson",
+          "price": 99.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/XQmzTxg30PMiAFs.jpeg"
+        },
+        {
+          "name": "Dynamite Burger Box",
+          "description": "Dynamite burger + 1 pc de poulet + frites moyennes + salade coleslaw + boisson",
+          "price": 77.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/h3CPZMtvuIpw7wv.png"
+        },
+        {
+          "name": "Royal Strips Box",
+          "description": "Sandwich royal + 2 strips + frites + boisson",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/KWPhopXiKyQixiA.png"
+        },
+        {
+          "name": "Royal Chicken Box",
+          "description": "Sandwich royal + 1 pièce de poulet + frites + boisson",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/0BNnOgRK5kTKjtB.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Bucket Meals",
+      "items": [
+        {
+          "name": "Family Strips",
+          "description": "10 Strips de poulet + salade coleslaw large + frites family + boisson 1L + 3 buns",
+          "price": 125.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/E4gB3O6Vp2qf4Be.jpeg"
+        },
+        {
+          "name": "18 Pcs Bucket",
+          "description": "18 Pcs de poulet + 2 family frites + 2 large coleslaw + boisson 1.5L + 7 buns",
+          "price": 339.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/E4gB3O6Vp2qf4Be.jpeg"
+        },
+        {
+          "name": "18 Pcs Super Bucket",
+          "description": "18 Pcs de poulet + 2 family frites + 2 large coleslaw + boisson 1.5L + 7 buns + 5 strips",
+          "price": 364.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/WCQGomibgh6gGek.jpeg"
+        },
+        {
+          "name": "16 Pcs Super Bucket",
+          "description": "16 Pcs de poulet + 1 family frites + 1 large coleslaw + boisson 1.5L + 5 buns + 5 strips",
+          "price": 324.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qnJKco0KCxcwpDe.jpeg"
+        },
+        {
+          "name": "16 Pcs Bucket",
+          "description": "16 Pcs de poulet + 1 family frites + 1 large coleslaw + boisson 1.5L + 5 buns",
+          "price": 299.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qnJKco0KCxcwpDe.jpeg"
+        },
+        {
+          "name": "12 Pcs Super Bucket",
+          "description": "12 Pcs de poulet + 1 family frites + 1 large coleslaw + boisson 1L +3 buns + 5 strips",
+          "price": 264.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TLYBO2PgQyuBRw7.jpeg"
+        },
+        {
+          "name": "12 Pcs Bucket",
+          "description": "12 Pcs de poulet + 1 family frites + 1 large coleslaw + boisson 1L + 3 buns",
+          "price": 239.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/svzsCc8FeMk60Xl.jpeg"
+        },
+        {
+          "name": "8 Pcs Super Bucket",
+          "description": "8 Pcs de poulet + 1 family frites + 1 large coleslaw + boisson 1L + 3 buns + 5 strips",
+          "price": 194.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TQAzKZKsEDs2xFW.jpeg"
+        },
+        {
+          "name": "8 Pcs Bucket",
+          "description": "8 Pcs de poulet + 1 family frites + 1 large coleslaw + boisson 1L + 3 buns",
+          "price": 169.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/PiFC7WB3U80zYmH.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Colonel'S Chicken Meals",
+      "items": [
+        {
+          "name": "Dinner Meal",
+          "description": "3 pièces de poulet + frites + salade coleslaw + pain + boisson",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3VhbAWlYueDQMCS.png"
+        },
+        {
+          "name": "Dinner Box Crispy Strips - 5 pièces",
+          "description": "5 pièces de filet de poulet croustillants + frites + salade coleslaw + boisson",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/UYLsqQBWNHJh5NU.png"
+        },
+        {
+          "name": "Super Dinner",
+          "description": "4 pièces de poulet + salade coleslaw + frites + boisson",
+          "price": 99.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/LCM5UNZCAB00XD1.png"
+        },
+        {
+          "name": "Snack Box Menu",
+          "description": "2 pièces de poulet + frites + pain + boisson",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/NT2lByQ90bVZvDs.png"
+        }
+      ]
+    },
+    {
+      "name": "Combo Meals",
+      "items": [
+        {
+          "name": "Mighty Zinger Meal",
+          "description": "Un burger double zinger avec fromage, spicy + frites + boisson 25cl",
+          "price": 93.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/X84WhxuA4ITsiOb.png"
+        },
+        {
+          "name": "Chicken Zinger Meal",
+          "description": "Un burger de poulet spicy + frites + boisson 25cl",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/isjIwB2fTwPOwaX.jpeg"
+        },
+        {
+          "name": "Supreme Box",
+          "description": "Supreme sandwich + frites + boisson + 1 COB + coleslaw",
+          "price": 99.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TDgmzRdUkHGTor8.jpeg"
+        },
+        {
+          "name": "Supreme",
+          "description": "Supreme snd+ Frites moy+ Boisson moy",
+          "price": 84.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Qp2kFlaBhPY0Kjh.jpeg"
+        },
+        {
+          "name": "Supreme combo",
+          "description": "Supreme sandwich+ frites + boisson",
+          "price": 84.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hWwT9wCfhlhU5tL.jpeg"
+        },
+        {
+          "name": "Dynamite Burger Combo",
+          "description": "Sandwich + frites + boisson",
+          "price": 62.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3OJJheUgsTyQJSM.png"
+        },
+        {
+          "name": "Twister",
+          "description": "TWISTER SND+ Frites moy+ Boisson moy",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/8KWzxbXWEtzWCpu.jpeg"
+        },
+        {
+          "name": "Royal Meal",
+          "description": "Sandwich royal + frites + boisson",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/wx5elf8YOZaYFTA.png"
+        }
+      ]
+    },
+    {
+      "name": "Sandwichs",
+      "items": [
+        {
+          "name": "Mighty Zinger",
+          "description": "Un burger double zinger avec fromage, spicy",
+          "price": 78.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/JE2lI4e5e1lGIG6.jpeg"
+        },
+        {
+          "name": "Chicken Zinger",
+          "description": "Un burger de poulet épice, spicy",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/o4x7UKN6qVoFVTp.png"
+        },
+        {
+          "name": "Sandwich Royal",
+          "description": "Sandwich royal poulet, laitue, sauce mayonnaise",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/VUZlSVmiWZ9Yje6.png"
+        },
+        {
+          "name": "Supreme sandwich",
+          "description": "Supreme sandwich",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/AYxeIuQFnyIDIeb.jpeg"
+        },
+        {
+          "name": "Dynamite Burger",
+          "description": "Burger double strips, un pain brioché, une galette de pomme de terre, fromage, sauce dynamite spicy",
+          "price": 47.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/gdbsyq73tTG0CKj.png"
+        },
+        {
+          "name": "Twister sandwich",
+          "description": "Twister sandwich",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/zcXpGxwgAKG2EMv.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Extras",
+      "items": [
+        {
+          "name": "Crispy Strips - 1 pièce",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/JfgZYfT1xtU4zVo.png"
+        },
+        {
+          "name": "Hot Shots",
+          "description": "Une boite de 180 gr de petits morceaux de poulets piquants servis avec une sauce BBQ",
+          "price": 55.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/GdrkMxc23zQ0Iv6.jpeg"
+        },
+        {
+          "name": "Coleslaw",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/znOboLTnABqNSYz.png"
+        },
+        {
+          "name": "Frites",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ZZczoop6SgTA79N.png"
+        }
+      ]
+    },
+    {
+      "name": "Snacks",
+      "items": [
+        {
+          "name": "Royal Strips",
+          "description": "Sandwich royal + 2 strips + frites + pain + boisson",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/kNsDGIOg3wc7Ua0.png"
+        },
+        {
+          "name": "Crispy Strips - 3 pièces",
+          "description": "3 Strips + 1 pain + frites + boisson",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TLnjQHElEeBUoqY.png"
+        }
+      ]
+    },
+    {
+      "name": "Boissons",
+      "items": [
+        {
+          "name": "Pepsi",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bnqu13xl9WXgGmr.jpeg"
+        },
+        {
+          "name": "Mirinda Orange",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/rtaColMP9rtWUj8.jpeg"
+        },
+        {
+          "name": "7 Up",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/flQald62ZO5UPKl.jpeg"
+        },
+        {
+          "name": "Jus d'orange",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/jlM1whMWSVbXRGL.jpeg"
+        },
+        {
+          "name": "Eau Minérale",
+          "description": "Small",
+          "price": 14.5,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/SS1BJZArcFdO5UB.jpeg"
+        }
+      ]
+    }
+  ]
+}

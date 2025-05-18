@@ -1,0 +1,566 @@
+{
+  "restaurant_name": "oumnia sushi",
+  "categories": [
+    {
+      "name": "Makis",
+      "items": [
+        {
+          "name": "Maki Avocat Cheese",
+          "description": "6 - Pièces",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Maki Surimi",
+          "description": "6 - Pièces",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Maki Saumon",
+          "description": "6 - Pièces",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Maki Crevettes Panées",
+          "description": "6 - Pièces",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Maki Saumon Cheese",
+          "description": "6 - Pièces",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Maki Concombre",
+          "description": "6 - Pièces",
+          "price": 26.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Maki Saumon Avocat",
+          "description": "6 - Pièces",
+          "price": 42.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nigiri",
+      "items": [
+        {
+          "name": "Nigiri Saumon",
+          "description": "2 - Pièces",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nigiri Tuna",
+          "description": "2 - Pièces",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nigiri Saumon Braisé",
+          "description": "2 - Pièces",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nigiri Crevettes",
+          "description": "2 - Pièces",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nigiri Avocat",
+          "description": "2 - Pièces",
+          "price": 26.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nigiri Unagi",
+          "description": "2 - Pièces",
+          "price": 38.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Harumaki",
+      "items": [
+        {
+          "name": "Harumaki Saumon",
+          "description": "6 - Pièces",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Harumaki Crevettes",
+          "description": "6 - Pièces",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Harumaki Chaki Yaki",
+          "description": "6 - Pièces",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Harumaki Crabe",
+          "description": "6 - Pièces",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Harumaki Tuna",
+          "description": "6 - Pièces",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Harumaki Oumnia",
+          "description": "6 - Pièces",
+          "price": 44.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Burritos",
+      "items": [
+        {
+          "name": "Burritos Chicken",
+          "description": "",
+          "price": 44.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Burritos Saumon",
+          "description": "",
+          "price": 51.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Burritos Crevettes",
+          "description": "",
+          "price": 51.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Sashimi",
+      "items": [
+        {
+          "name": "Sashimi Saumon",
+          "description": "4 - Pièces",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sashimi Tuna",
+          "description": "4 - Pièces",
+          "price": 42.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Fry Sushi",
+      "items": [
+        {
+          "name": "Fry Ebi Fry - 6 Pièces",
+          "description": "Crevette panée / cheese",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Volcano - 6 Pièces",
+          "description": "Crevette panée / cheese / ciboulettes / spicy mayonnaise",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Saumon Crispy - 6 Pièces",
+          "description": "Saumon / avocat / surimi / cheese / tobiko rouge / ciboulettes",
+          "price": 44.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Chicken Flash - 6 Pièces",
+          "description": "Poulet pané / avocat / cheese / ciboulettes / carotte",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coco Roll - 6 Pièces",
+          "description": "Saumon / avocat / surimi / cheese / tobiko rouge",
+          "price": 44.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tokyo Tuna - 6 Pièces",
+          "description": "Tuna / surimi / avocat / cheese / tobiko rouge",
+          "price": 44.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Aromaki Pané - 6 Pièces",
+          "description": "Saumon / surimi / cheese / avocat",
+          "price": 42.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Pizza Sushi",
+      "items": [
+        {
+          "name": "Pizza Saumon Mozzarella - 6 Pièces",
+          "description": "Saumon / surimi / avocat / cheese / mozzarella",
+          "price": 51.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Crevette - 6 Pièces",
+          "description": "Crevette / surimi / avocat / cheese",
+          "price": 51.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Crabe - 6 Pièces",
+          "description": "Crabe mariné / surimi / avocat / cheese",
+          "price": 57.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "California Rolls",
+      "items": [
+        {
+          "name": "California Rolls Classic  - 4 Pièces",
+          "description": "Saumon / avocat / concombre / sésame blanc",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "California Rolls Creme Cheese - 4 Pièces",
+          "description": "Saumon / surimi / avocat / cheese / tobiko rouge",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "California Rolls Ebi Fry - 4 Pièces",
+          "description": "Crevette panée / avocat / cheese / ciboulettes",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "California Black Chicken",
+          "description": "Poulet pané / avocat / cheese / sésame noir",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "California Rolls Shaky Yaki - 4 Pièces",
+          "description": "Saumon cuit mariné / avocat / cheese / tobiko vert",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "California Rolls Masago - 4 Pièces",
+          "description": "Surimi / avocat cheese / tobiko orange",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "California Rolls Veggie - 4 Pièces",
+          "description": "Carotte / concombre / choux mixte mariné / sésame blanc",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "California Rolls Red Tuna - 4 Pièces",
+          "description": "Tuna / avocat / cheese / ciboulette / togarashi",
+          "price": 42.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Fresh Roll",
+      "items": [
+        {
+          "name": "Fresh Roll Cheese",
+          "description": "Saumon frais / riz vinaigré / cheese",
+          "price": 57.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fresh Roll Avocat",
+          "description": "Saumon frais / riz vinaigré / avocat",
+          "price": 63.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fresh Roll Mangue",
+          "description": "Saumon frais / riz vinaigré / mangue",
+          "price": 63.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fresh Roll Saumon",
+          "description": "Saumon frais / riz vinaigré / cheese",
+          "price": 69.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Spécial Rolls",
+      "items": [
+        {
+          "name": "Tokyo Roll",
+          "description": "Crevette pané / surimi / avocat / cheese / saumon",
+          "price": 57.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Hawaiin Rool",
+          "description": "Crevette pané / crabe mariné / cheese avocat / mangue / tobiko verre",
+          "price": 57.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Dragon - 8 Pièces",
+          "description": "Saumon / surimi / cheese / concombre / ciboulettes / avocat",
+          "price": 57.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fantasia - 8 Pièces",
+          "description": "Saumon / mangue / avocat / cheese / tobiko rouge / fromage brise",
+          "price": 57.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Unagi Roll - 8 Pièces",
+          "description": "Unagi / surimi / cheese / avocat / concombre",
+          "price": 69.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crabe Magic - 8 Pièces",
+          "description": "Saumon pané / avocat / cheese surimi / ciboulettes / crabe",
+          "price": 69.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tiger D'Asie - 8 Pièces",
+          "description": "Saumon cuit mariné / avocat / cheese / surimi / ebi",
+          "price": 63.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Red Frenchie - 8 Pièces",
+          "description": "Surimi pané / mangue / concombre cheese / avocat / tuna",
+          "price": 69.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Koriyama Roll",
+          "description": "Crevette panée marinée / saumon / surimi / avocat / tobiko / cheese / avocat / saumon braisé",
+          "price": 69.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oumnia Roll - 8 Pièces",
+          "description": "Crevette panée / saumon / surimi / avocat / tobiko / cheese / avocat / crispy oignon",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Koutoubia Roll - 8 Pièces",
+          "description": "Filet de bœuf / concombre / avocat / crevette panée / surimi",
+          "price": 69.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Box",
+      "items": [
+        {
+          "name": "Fry small 18pièces",
+          "description": "Un assortiment varié de sushi frit",
+          "price": 100.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Single fresh 16pièces",
+          "description": "Un assortiment varié de sushi frais",
+          "price": 94.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Original box 16pièces",
+          "description": "Un mélange varié de sushi frit et frais",
+          "price": 100.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Vegan small 16pièces",
+          "description": "Un assortiment varié de sushi végétarien",
+          "price": 94.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Duos Boxes",
+      "items": [
+        {
+          "name": "Crunchy Mixte 30pièces",
+          "description": "Un assortiment de sushi frit",
+          "price": 167.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fresh boxe 30pièces",
+          "description": "Un assortiment varié de sushi frais",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Friends boxe 30pièces",
+          "description": "Un mélange varié de sushi frit et frais",
+          "price": 167.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Vegan large 30pièces",
+          "description": "Un assortiment varié de sushi végétarien",
+          "price": 154.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Salade De Fruits",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tiramisu",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cheese Cake",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Mojito",
+      "items": [
+        {
+          "name": "Virgin Mojito",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mojito Fruits Rouge",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mojito Bleu Sky",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mojito Coco",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Boissons",
+      "items": [
+        {
+          "name": "Café Noir Normale",
+          "description": "",
+          "price": 16.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café Nespresso",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café Américaine",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Thé A La Menthe",
+          "description": "",
+          "price": 16.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Soda 33cl",
+          "description": "",
+          "price": 16.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sidi Ali 1,5L",
+          "description": "",
+          "price": 16.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sidi Ali 50cl",
+          "description": "",
+          "price": 13.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oulmes 50cl",
+          "description": "",
+          "price": 13.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oulmes 1L",
+          "description": "",
+          "price": 19.0,
+          "currency": "Dh"
+        }
+      ]
+    }
+  ]
+}

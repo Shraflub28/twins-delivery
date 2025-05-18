@@ -158,19 +158,6 @@
         // Complete restaurant data from the main page
         const restaurants = [
             {
-                name: "McDonald's",
-                cuisine: "Fast Food",
-                rating: 4.5,
-                price: "$$",
-                image: "../../pictures/mcdonald.png",
-                deliveryTime: "10-20 min",
-                badge: {
-                    text: "Featured",
-                    icon: "crown",
-                    color: "#ff458b"
-                }
-            },
-            {
                 name: "Quick",
                 cuisine: "Fast Food",
                 rating: 4.2,
@@ -486,8 +473,8 @@
                     searchResults.innerHTML = `
                         <div class="no-results">
                             <i class="fas fa-search"></i>
-                            <h3>No results found</h3>
-                            <p>Try adjusting your search criteria</p>
+                            <h3>No Results Found</h3>
+                            <p>Try different search criteria or filters</p>
                         </div>
                     `;
                     return;
@@ -499,12 +486,14 @@
                             <div class="card-badge" style="background-color: ${restaurant.badge.color};">
                                 <i class="fas fa-${restaurant.badge.icon}"></i> ${restaurant.badge.text}
                             </div>
-                            <img src="${restaurant.image}" alt="${restaurant.name}">
-                            <div class="restaurant-info">
-                                <h3>${restaurant.name}</h3>
-                                <p><i class="fas fa-utensils"></i> ${restaurant.cuisine} • <i class="fas fa-star"></i> ${restaurant.rating}</p>
-                                <span class="delivery-time"><i class="fas fa-clock"></i> ${restaurant.deliveryTime}</span>
-                            </div>
+                            <a href="../../menu.html?restaurant=${restaurant.name}">
+                                <img src="${restaurant.image}" alt="${restaurant.name}">
+                                <div class="restaurant-info">
+                                    <h3>${restaurant.name}</h3>
+                                    <p><i class="fas fa-utensils"></i> ${restaurant.cuisine} • <i class="fas fa-star"></i> ${restaurant.rating}</p>
+                                    <span class="delivery-time"><i class="fas fa-clock"></i> ${restaurant.deliveryTime}</span>
+                                </div>
+                            </a>
                         </div>
                     `;
                     searchResults.innerHTML += restaurantCard;
