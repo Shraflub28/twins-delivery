@@ -274,6 +274,21 @@
             background: #e0e0e0;
         }
         
+        .data-retention-notice {
+            position: absolute;
+            bottom: 0.5rem;
+            right: 0;
+            font-size: 0.8rem;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .data-retention-notice i {
+            color: #0037ff;
+        }
+        
         .status-badge {
             position: absolute;
             right: 0;
@@ -331,6 +346,9 @@
             <button class="copy-link" id="copy-link-btn">
                 <i class="fas fa-copy"></i> Copy Link
             </button>
+            <div class="data-retention-notice">
+                <i class="fas fa-info-circle"></i> Order data will be automatically deleted after 7 days
+            </div>
         </div>
 
         <div class="order-id">
@@ -435,6 +453,9 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Clean up orders older than one week
+            cleanupOldOrders();
+            
             // Check for order ID in hash fragment first (for GitHub Pages compatibility)
             let orderId = null;
             
@@ -499,6 +520,37 @@
                 }
             });
         });
+        
+        // Function to clean up orders older than one week
+        function cleanupOldOrders() {
+            const allOrders = JSON.parse(localStorage.getItem('twins_delivery_orders')) || {};
+            const currentTime = new Date().getTime();
+            const oneWeek = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+            let ordersDeleted = 0;
+            
+            // Check each order's age
+            Object.keys(allOrders).forEach(orderId => {
+                const order = allOrders[orderId];
+                
+                // Skip if order doesn't have a date
+                if (!order.orderDate) return;
+                
+                const orderTime = new Date(order.orderDate).getTime();
+                const orderAge = currentTime - orderTime;
+                
+                // Delete if older than one week
+                if (orderAge > oneWeek) {
+                    delete allOrders[orderId];
+                    ordersDeleted++;
+                }
+            });
+            
+            // Save the cleaned up orders back to localStorage
+            if (ordersDeleted > 0) {
+                localStorage.setItem('twins_delivery_orders', JSON.stringify(allOrders));
+                console.log(`Cleaned up ${ordersDeleted} order(s) older than one week`);
+            }
+        }
         
         function displayOrderData(orderData) {
             // Set order reference
