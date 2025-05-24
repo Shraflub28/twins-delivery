@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Twins Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff5a5f;
+            --secondary-color: #484848;
+            --accent-color: #00a699;
+            --light-color: #f7f7f7;
+            --dark-color: #222;
+            --danger-color: #e74c3c;
+            --success-color: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+        
+        .login-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .login-header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .login-header p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .login-form {
+            padding: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+        
+        .form-group .input-with-icon {
+            position: relative;
+        }
+        
+        .form-group .input-with-icon i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            color: #aaa;
+        }
+        
+        .form-group .input-with-icon input {
+            padding-left: 40px;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .login-btn:hover {
+            background-color: #ff4146;
+        }
+        
+        .alert {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert-danger {
+            background-color: #fde8e8;
+            color: var(--danger-color);
+            border: 1px solid #fbd5d5;
+        }
+        
+        .alert-success {
+            background-color: #e8f8f0;
+            color: var(--success-color);
+            border: 1px solid #d1f2e4;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Twins Delivery Admin</h1>
+            <p>Login to manage restaurants and menus</p>
+        </div>
+        <div class="login-form">
+            <div id="login-alert" class="alert alert-danger"></div>
+            
+            <div class="form-group">
+                <label for="username">Username</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+            </div>
+            
+            <button type="button" id="login-btn" class="login-btn">Login</button>
+            
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Homepage
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('login-btn');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const loginAlert = document.getElementById('login-alert');
+            
+            // Check if user is already logged in
+            if (localStorage.getItem('adminLoggedIn') === 'true') {
+                window.location.href = 'admin-dashboard.html';
+            }
+            
+            // Handle login button click
+            loginBtn.addEventListener('click', function() {
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value.trim();
+                
+                // Hide previous alerts
+                loginAlert.style.display = 'none';
+                
+                // Validate inputs
+                if (!username || !password) {
+                    showAlert('Please enter both username and password', 'danger');
+                    return;
+                }
+                
+                // Check credentials (hardcoded for now)
+                if (username === 'admin' && password === '123') {
+                    // Set login state
+                    localStorage.setItem('adminLoggedIn', 'true');
+                    
+                    // Redirect to admin dashboard
+                    window.location.href = 'admin-dashboard.html';
+                } else {
+                    showAlert('Invalid username or password', 'danger');
+                }
+            });
+            
+            // Allow login on Enter key press
+            passwordInput.addEventListener('keyup', function(event) {
+                if (event.key === 'Enter') {
+                    loginBtn.click();
+                }
+            });
+            
+            // Helper function to show alerts
+            function showAlert(message, type) {
+                loginAlert.textContent = message;
+                loginAlert.className = `alert alert-${type}`;
+                loginAlert.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html> 

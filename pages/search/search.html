@@ -90,7 +90,11 @@
             </div>
 
             <div class="restaurant-grid" id="searchResults">
-                <!-- Search results will be dynamically populated here -->
+                <!-- Loading placeholder -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin fa-3x"></i>
+                    <p>Loading restaurants...</p>
+                </div>
             </div>
         </div>
     </main>
@@ -154,259 +158,126 @@
         </a>
     </div>
 
-    <script>
-        // Complete restaurant data from the main page
-        const restaurants = [
-            {
-                name: "Quick",
-                cuisine: "Fast Food",
-                rating: 4.2,
-                price: "$$",
-                image: "../../pictures/quick.jpeg",
-                deliveryTime: "15-25 min",
-                badge: {
-                    text: "20% OFF",
-                    icon: "percent",
-                    color: "#ff458b"
-                }
-            },
-            {
-                name: "KFC",
-                cuisine: "Chicken",
-                rating: 4.4,
-                price: "$$",
-                image: "../../pictures/kfc.jpeg",
-                deliveryTime: "20-30 min",
-                badge: {
-                    text: "Fast",
-                    icon: "bolt",
-                    color: "#ff7a2d"
-                }
-            },
-            {
-                name: "Pizza Hut",
-                cuisine: "Pizza",
-                rating: 4.3,
-                price: "$$",
-                image: "../../pictures/pizza hut.jpeg",
-                deliveryTime: "25-35 min",
-                badge: {
-                    text: "Popular",
-                    icon: "fire",
-                    color: "#ff5722"
-                }
-            },
-            {
-                name: "L'adresse",
-                cuisine: "Gourmet",
-                rating: 4.8,
-                price: "$$$",
-                image: "../../pictures/ladress.jpeg",
-                deliveryTime: "30-40 min",
-                badge: {
-                    text: "Premium",
-                    icon: "gem",
-                    color: "#9c27b0"
-                }
-            },
-            {
-                name: "Terrasse à Petit Déjeuner",
-                cuisine: "Breakfast",
-                rating: 4.6,
-                price: "$$",
-                image: "../../pictures/terrasse a petit drjeuner.jpeg",
-                deliveryTime: "15-25 min",
-                badge: {
-                    text: "New",
-                    icon: "utensils",
-                    color: "#4caf50"
-                }
-            },
-            {
-                name: "Donuts Factory",
-                cuisine: "Desserts",
-                rating: 4.7,
-                price: "$$",
-                image: "../../pictures/donuts factory.jpeg",
-                deliveryTime: "20-30 min",
-                badge: {
-                    text: "Sweet",
-                    icon: "cookie",
-                    color: "#e91e63"
-                }
-            },
-            {
-                name: "Gelati Dino",
-                cuisine: "Ice Cream",
-                rating: 4.9,
-                price: "$$",
-                image: "../../pictures/gelati dino.png",
-                deliveryTime: "10-20 min",
-                badge: {
-                    text: "Popular",
-                    icon: "ice-cream",
-                    color: "#3f51b5"
-                }
-            },
-            {
-                name: "Katsura",
-                cuisine: "Japanese",
-                rating: 4.5,
-                price: "$$$",
-                image: "../../pictures/katsura.png",
-                deliveryTime: "25-35 min",
-                badge: {
-                    text: "Spicy",
-                    icon: "pepper-hot",
-                    color: "#f44336"
-                }
-            },
-            {
-                name: "Sushi Store",
-                cuisine: "Sushi",
-                rating: 4.7,
-                price: "$$$",
-                image: "../../pictures/suchi store.png",
-                deliveryTime: "20-30 min",
-                badge: {
-                    text: "Fresh",
-                    icon: "fish",
-                    color: "#00bcd4"
-                }
-            },
-            {
-                name: "Patron de la Mer",
-                cuisine: "Seafood",
-                rating: 4.8,
-                price: "$$$",
-                image: "../../pictures/patron de la mer.png",
-                deliveryTime: "30-40 min",
-                badge: {
-                    text: "Seafood",
-                    icon: "water",
-                    color: "#2196f3"
-                }
-            },
-            {
-                name: "Yoka Sushi",
-                cuisine: "Sushi",
-                rating: 4.6,
-                price: "$$$",
-                image: "../../pictures/yoka suchi.webp",
-                deliveryTime: "20-30 min",
-                badge: {
-                    text: "Healthy",
-                    icon: "spa",
-                    color: "#8bc34a"
-                }
-            },
-            {
-                name: "Babakich",
-                cuisine: "Middle Eastern",
-                rating: 4.4,
-                price: "$$",
-                image: "../../pictures/babakich.png",
-                deliveryTime: "25-35 min",
-                badge: {
-                    text: "Traditional",
-                    icon: "drum",
-                    color: "#795548"
-                }
-            },
-            {
-                name: "Kech Burger",
-                cuisine: "Burgers",
-                rating: 4.5,
-                price: "$$",
-                image: "../../pictures/kech burger.jpeg",
-                deliveryTime: "15-25 min",
-                badge: {
-                    text: "Gourmet",
-                    icon: "hamburger",
-                    color: "#ff9800"
-                }
-            },
-            {
-                name: "Oumnia Sushi",
-                cuisine: "Japanese",
-                rating: 4.9,
-                price: "$$$",
-                image: "../../pictures/oumnia sushi.jpeg",
-                deliveryTime: "25-35 min",
-                badge: {
-                    text: "Top Rated",
-                    icon: "star",
-                    color: "#ffc107"
-                }
-            },
-            {
-                name: "Oliveri",
-                cuisine: "Italian",
-                rating: 4.7,
-                price: "$$$",
-                image: "../../pictures/oliveri.jpeg",
-                deliveryTime: "20-30 min",
-                badge: {
-                    text: "Italian",
-                    icon: "pizza-slice",
-                    color: "#4caf50"
-                }
-            },
-            {
-                name: "Café Lobo",
-                cuisine: "Café",
-                rating: 4.6,
-                price: "$$",
-                image: "../../pictures/cafè lobo.jpeg",
-                deliveryTime: "10-20 min",
-                badge: {
-                    text: "Cozy",
-                    icon: "coffee",
-                    color: "#795548"
-                }
-            },
-            {
-                name: "Brunch Terrasse",
-                cuisine: "Brunch",
-                rating: 4.8,
-                price: "$$$",
-                image: "../../pictures/bruch terrasse.jpeg",
-                deliveryTime: "15-25 min",
-                badge: {
-                    text: "Brunch",
-                    icon: "sun",
-                    color: "#ff9800"
-                }
-            },
-            {
-                name: "D-Delicia Thai",
-                cuisine: "Thai",
-                rating: 4.5,
-                price: "$$$",
-                image: "../../pictures/d-delicia thai.jpeg",
-                deliveryTime: "25-35 min",
-                badge: {
-                    text: "Spicy",
-                    icon: "pepper-hot",
-                    color: "#f44336"
-                }
-            },
-            {
-                name: "Shawarma Al Agha",
-                cuisine: "Middle Eastern",
-                rating: 4.4,
-                price: "$$",
-                image: "../../pictures/shwarma al agha.avif",
-                deliveryTime: "15-25 min",
-                badge: {
-                    text: "Hot",
-                    icon: "fire",
-                    color: "#ff5722"
-                }
-            }
-        ];
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <script src="../../js/supabase.js"></script>
 
-        document.addEventListener('DOMContentLoaded', function() {
+    <script>
+        // Restaurant data array - will be populated from Supabase
+        let restaurants = [];
+        
+        // Load restaurants from Supabase when the page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Initialize Supabase
+                await window.SupabaseWrapper.init();
+                
+                // Get restaurants from database
+                const { success, data, error } = await window.SupabaseWrapper.restaurants.getAll();
+                
+                if (!success || error) {
+                    console.error('Failed to load restaurants from database:', error);
+                    displayError('Could not load restaurant data from the database.');
+                    return;
+                }
+                
+                // Transform database results to the format our UI expects
+                restaurants = data.map((restaurant, index) => {
+                    // Generate a badge based on restaurant data
+                    const badge = getBadgeForRestaurant(restaurant, index);
+                    
+                    // Calculate price level 
+                    const priceLevel = restaurant.price_level || 2;
+                    const price = '$'.repeat(Math.min(priceLevel, 4));
+                    
+                    // Format delivery time
+                    const minTime = Math.floor(Math.random() * 15) + 15;
+                    const maxTime = minTime + Math.floor(Math.random() * 15) + 5;
+                    const deliveryTime = `${minTime}-${maxTime} min`;
+                    
+                    // Get image or use fallback naming convention
+                    const imageName = restaurant.image_url || 
+                        `../../pictures/${restaurant.name.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\s/g, '-')}.jpeg`;
+                    
+                    return {
+                        name: restaurant.name,
+                        cuisine: restaurant.cuisine || 'Various',
+                        rating: restaurant.rating || 4.0,
+                        price: price,
+                        image: imageName,
+                        deliveryTime: deliveryTime,
+                        badge: badge
+                    };
+                });
+                
+                // Update UI with the data
+                populateCuisineFilter();
+                displayResults(restaurants);
+                setupSearch();
+            } catch (error) {
+                console.error('Error loading data from Supabase:', error);
+                displayError('There was an error connecting to the restaurant database.');
+            }
+        });
+        
+        function displayError(message) {
+            document.getElementById('searchResults').innerHTML = `
+                <div class="no-results">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        // Generate a badge for a restaurant
+        function getBadgeForRestaurant(restaurant, index) {
+            const badges = [
+                { text: "20% OFF", icon: "percent", color: "#ff458b" },
+                { text: "Fast", icon: "bolt", color: "#ff7a2d" },
+                { text: "Popular", icon: "fire", color: "#ff5722" },
+                { text: "Premium", icon: "gem", color: "#9c27b0" },
+                { text: "New", icon: "utensils", color: "#4caf50" },
+                { text: "Sweet", icon: "cookie", color: "#e91e63" },
+                { text: "Top Rated", icon: "star", color: "#ffc107" },
+                { text: "Fresh", icon: "fish", color: "#00bcd4" }
+            ];
+            
+            // Try to assign badges intelligently
+            if (restaurant.cuisine) {
+                const cuisine = restaurant.cuisine.toLowerCase();
+                if (cuisine.includes('sushi')) return { text: "Fresh", icon: "fish", color: "#00bcd4" };
+                if (cuisine.includes('burger')) return { text: "Gourmet", icon: "hamburger", color: "#ff9800" };
+                if (cuisine.includes('pizza')) return { text: "Italian", icon: "pizza-slice", color: "#4caf50" };
+                if (cuisine.includes('dessert')) return { text: "Sweet", icon: "cookie", color: "#e91e63" };
+            }
+            
+            if (restaurant.rating >= 4.8) return { text: "Top Rated", icon: "star", color: "#ffc107" };
+            
+            return badges[index % badges.length];
+        }
+        
+        // Update the cuisine filter with actual cuisines from the data
+        function populateCuisineFilter() {
+            const cuisineFilter = document.getElementById('cuisineFilter');
+            const uniqueCuisines = [...new Set(restaurants.map(r => r.cuisine))].filter(Boolean);
+            
+            // Keep the "All Cuisines" option, remove others
+            while (cuisineFilter.options.length > 1) {
+                cuisineFilter.remove(1);
+            }
+            
+            // Add options from actual data
+            uniqueCuisines.sort().forEach(cuisine => {
+                const option = document.createElement('option');
+                option.value = cuisine.toLowerCase();
+                option.textContent = cuisine;
+                cuisineFilter.appendChild(option);
+            });
+        }
+        
+        // Setup search functionality
+        function setupSearch() {
             const searchInput = document.getElementById('searchInput');
             const searchResults = document.getElementById('searchResults');
             const suggestionsBox = document.getElementById('suggestions');
@@ -466,43 +337,6 @@
                 displayResults(filteredResults);
             }
 
-            function displayResults(results) {
-                searchResults.innerHTML = '';
-                
-                if (results.length === 0) {
-                    searchResults.innerHTML = `
-                        <div class="no-results">
-                            <i class="fas fa-search"></i>
-                            <h3>No Results Found</h3>
-                            <p>Try different search criteria or filters</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                results.forEach(restaurant => {
-                    const restaurantCard = `
-                        <div class="restaurant-card">
-                            <div class="card-badge" style="background-color: ${restaurant.badge.color};">
-                                <i class="fas fa-${restaurant.badge.icon}"></i> ${restaurant.badge.text}
-                            </div>
-                            <a href="../../menu.html?restaurant=${restaurant.name}">
-                                <img src="${restaurant.image}" alt="${restaurant.name}">
-                                <div class="restaurant-info">
-                                    <h3>${restaurant.name}</h3>
-                                    <p><i class="fas fa-utensils"></i> ${restaurant.cuisine} • <i class="fas fa-star"></i> ${restaurant.rating}</p>
-                                    <span class="delivery-time"><i class="fas fa-clock"></i> ${restaurant.deliveryTime}</span>
-                                </div>
-                            </a>
-                        </div>
-                    `;
-                    searchResults.innerHTML += restaurantCard;
-                });
-            }
-
-            // Initial display of all restaurants
-            displayResults(restaurants);
-
             // Search input event listeners with debounce for better performance
             let debounceTimeout;
             searchInput.addEventListener('input', function() {
@@ -527,42 +361,15 @@
                 }, 300); // Debounce for 300ms
             });
 
-            // Enhanced suggestions for better matching
-            function getSuggestions(query) {
-                if (!query) return [];
-                
-                // Get unique restaurant names and cuisines
-                const names = restaurants.map(r => r.name);
-                const cuisines = [...new Set(restaurants.map(r => r.cuisine))];
-                
-                // Combine with popular dishes (just for demonstration)
-                const popularDishes = ["Burger", "Pizza", "Sushi", "Pasta", "Chicken", "Salad", "Ice Cream"];
-                
-                const all = [...names, ...cuisines, ...popularDishes];
-                
-                // Create ranked suggestions based on match quality
-                return [...new Set(all)]
-                    .filter(item => item.toLowerCase().includes(query))
-                    .sort((a, b) => {
-                        // Prioritize items that start with the query
-                        const aStarts = a.toLowerCase().startsWith(query);
-                        const bStarts = b.toLowerCase().startsWith(query);
-                        
-                        if (aStarts && !bStarts) return -1;
-                        if (!aStarts && bStarts) return 1;
-                        
-                        // Otherwise sort by length (shorter = more relevant)
-                        return a.length - b.length;
-                    })
-                    .slice(0, 6); // Show no more than 6 suggestions
+            // Filter change event listeners
+            document.getElementById('cuisineFilter').addEventListener('change', performSearch);
+            document.getElementById('priceFilter').addEventListener('change', performSearch);
+            if (document.getElementById('ratingFilter')) {
+                document.getElementById('ratingFilter').addEventListener('change', performSearch);
             }
+            document.getElementById('sortBy').addEventListener('change', performSearch);
             
-            function renderSuggestions(suggestions) {
-                suggestionsBox.innerHTML = suggestions.map(s => {
-                    return `<div class='suggestion-item'><i class="fas fa-search"></i> ${s}</div>`;
-                }).join('');
-            }
-
+            // Suggestion box event handlers
             suggestionsBox.addEventListener('mousedown', function(e) {
                 if (e.target.classList.contains('suggestion-item')) {
                     // If they click the icon, we need to get the parent
@@ -578,14 +385,83 @@
                     suggestionsBox.style.display = 'none';
                 }
             });
+        }
 
-            // Filter change event listeners
-            document.getElementById('cuisineFilter').addEventListener('change', performSearch);
-            document.getElementById('priceFilter').addEventListener('change', performSearch);
-            if (document.getElementById('ratingFilter')) {
-                document.getElementById('ratingFilter').addEventListener('change', performSearch);
+        // Display search results
+        function displayResults(results) {
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>No Results Found</h3>
+                        <p>Try different search criteria or filters</p>
+                    </div>
+                `;
+                return;
             }
-            document.getElementById('sortBy').addEventListener('change', performSearch);
+
+            results.forEach(restaurant => {
+                // Set a fallback image in case the restaurant image is not found
+                const fallbackImage = '../../pictures/restaurant-default.jpg';
+                
+                const restaurantCard = `
+                    <div class="restaurant-card">
+                        <div class="card-badge" style="background-color: ${restaurant.badge.color};">
+                            <i class="fas fa-${restaurant.badge.icon}"></i> ${restaurant.badge.text}
+                        </div>
+                        <a href="../../menu.html?restaurant=${encodeURIComponent(restaurant.name)}">
+                            <img src="${restaurant.image}" alt="${restaurant.name}" onerror="this.src='${fallbackImage}'">
+                            <div class="restaurant-info">
+                                <h3>${restaurant.name}</h3>
+                                <p><i class="fas fa-utensils"></i> ${restaurant.cuisine} • <i class="fas fa-star"></i> ${restaurant.rating}</p>
+                                <span class="delivery-time"><i class="fas fa-clock"></i> ${restaurant.deliveryTime}</span>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                searchResults.innerHTML += restaurantCard;
+            });
+        }
+
+            // Enhanced suggestions for better matching
+            function getSuggestions(query) {
+                if (!query) return [];
+                
+                // Get unique restaurant names and cuisines
+                const names = restaurants.map(r => r.name);
+                const cuisines = [...new Set(restaurants.map(r => r.cuisine))];
+                
+                // Combine with popular dishes (just for demonstration)
+                const popularDishes = ["Burger", "Pizza", "Sushi", "Pasta", "Chicken", "Salad", "Ice Cream"];
+                
+                const all = [...names, ...cuisines, ...popularDishes];
+                
+                // Create ranked suggestions based on match quality
+                return [...new Set(all)]
+                .filter(item => item && item.toLowerCase().includes(query))
+                    .sort((a, b) => {
+                        // Prioritize items that start with the query
+                        const aStarts = a.toLowerCase().startsWith(query);
+                        const bStarts = b.toLowerCase().startsWith(query);
+                        
+                        if (aStarts && !bStarts) return -1;
+                        if (!aStarts && bStarts) return 1;
+                        
+                        // Otherwise sort by length (shorter = more relevant)
+                        return a.length - b.length;
+                    })
+                    .slice(0, 6); // Show no more than 6 suggestions
+            }
+            
+            function renderSuggestions(suggestions) {
+            const suggestionsBox = document.getElementById('suggestions');
+                suggestionsBox.innerHTML = suggestions.map(s => {
+                    return `<div class='suggestion-item'><i class="fas fa-search"></i> ${s}</div>`;
+                }).join('');
+            }
 
             // Scroll Progress Indicator
             window.addEventListener('scroll', () => {
@@ -603,7 +479,6 @@
                 floatingElements.forEach(element => {
                     const speed = element.offsetWidth / 100;
                     element.style.transform = `translate(${mouseX * speed}px, ${mouseY * speed}px)`;
-                });
             });
         });
     </script>

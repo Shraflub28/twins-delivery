@@ -1,0 +1,1597 @@
+{
+  "restaurant_name": "Yoka Sushi",
+  "categories": [
+    {
+      "name": "SALADES",
+      "items": [
+        {
+          "name": "Salade wakame concombre",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4887477612644c4caae55esevo.jpg"
+        },
+        {
+          "name": "Salade Choux Crevette",
+          "description": "Choux, crevettes, graines de sésame, sauce vinaigrette",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48886a7612644c4caae561PFRX.jpg"
+        },
+        {
+          "name": "Sea salade",
+          "description": "Chair de crabe, poulpe, crevettes, surimi, avocat",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4888f37612644c4caae5636XOH.jpg"
+        },
+        {
+          "name": "UMI Salade",
+          "description": "Fruits de mer",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488b5d134f4457f787d052qUo5.jpg"
+        },
+        {
+          "name": "Salade de Bœuf",
+          "description": "Salade verte, bœuf, poivrons rouge et vert",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4889e2134f4457f787d04eQEyt.jpg"
+        },
+        {
+          "name": "Salade Tari",
+          "description": "Salade verte, blanc de poulet mariné, choux",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4888a27612644c4caae5622Tr1.jpg"
+        },
+        {
+          "name": "Salade Choux saumon",
+          "description": "Choux, saumon, sauce vinaigrette, graines de sésame.",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4888437612644c4caae560qV40.jpg"
+        },
+        {
+          "name": "Salade de Choux",
+          "description": "Carottes, graines de sésame, sauce vinaigrette.",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade Saumon et Avocat",
+          "description": "",
+          "price": 67.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4889d17612644c4caae567yr59.jpg"
+        },
+        {
+          "name": "YOKA salade",
+          "description": "Crevettes, poulet, crudités",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488b37134f4457f787d051qQzc.jpg"
+        }
+      ]
+    },
+    {
+      "name": "SOUPES",
+      "items": [
+        {
+          "name": "Soba Udon Poulet",
+          "description": "",
+          "price": 52.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488c29134f4457f787d054TSG5.jpg"
+        },
+        {
+          "name": "Soupe sakana",
+          "description": "poisson blanc, vermicelles, champignons",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488be37612644c4caae56bfrgR.jpg"
+        },
+        {
+          "name": "Soupe Yasai",
+          "description": "Soupe de légumes",
+          "price": 58.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488a997612644c4caae568DekL.jpg"
+        },
+        {
+          "name": "Soupe saumon",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488ca3134f4457f787d057KViQ.jpg"
+        },
+        {
+          "name": "Tempura Crevetes",
+          "description": "",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488bd8134f4457f787d053Zziz.jpg"
+        },
+        {
+          "name": "Soupe fruits de mer",
+          "description": "",
+          "price": 63.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488c6d134f4457f787d056EuIZ.jpg"
+        },
+        {
+          "name": "Soupe ebi tofu",
+          "description": "tofu, crevettes, bouillon épicé",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488c177612644c4caae56cDpfH.jpg"
+        },
+        {
+          "name": "Soupe Tahi Lait",
+          "description": "",
+          "price": 69.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Soupe Thai Crevettes",
+          "description": "Crevettes, champignons noirs, avocat",
+          "price": 69.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Soupe Miso",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488c4d134f4457f787d055NdD9.jpg"
+        },
+        {
+          "name": "Soupe royal",
+          "description": "",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488bb27612644c4caae56a2uEp.jpg"
+        }
+      ]
+    },
+    {
+      "name": "MAKITO (NEW)",
+      "items": [
+        {
+          "name": "Volcano",
+          "description": "",
+          "price": 74.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Arizona",
+          "description": "",
+          "price": 84.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Milasia",
+          "description": "",
+          "price": 84.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Samourai",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bali",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "King Salmon",
+          "description": "",
+          "price": 74.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Hotate Fry",
+          "description": "",
+          "price": 74.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Smoking Fry",
+          "description": "",
+          "price": 74.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "LES WOKS & GYOZA (NEW)",
+      "items": [
+        {
+          "name": "Wok Vermicelle Filet De Poulet",
+          "description": "Poulet, champignons noirs, vermicelles",
+          "price": 81.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Wok Vermicelle Filet De Bœuf",
+          "description": "Bœuf, champignons noirs, vermicelles",
+          "price": 93.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gyoza Poulet",
+          "description": "Ravioles Japonaises accompagnées de légumes",
+          "price": 81.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gyoza Bœuf",
+          "description": "Ravioles Japonaises accompagnées de légumes",
+          "price": 87.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gyoza Saumon",
+          "description": "Ravioles Japonaises accompagnées de légumes",
+          "price": 87.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Wok Vermicelle Crevettes Grises",
+          "description": "Crevettes, champignons noirs, vermicelles",
+          "price": 93.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gyoza Crevettes",
+          "description": "Ravioles Japonaises accompagnées de légumes",
+          "price": 87.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "MAKIS",
+      "items": [
+        {
+          "name": "Crevettes",
+          "description": "6 pcs",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488015134f4457f787d03dP7Ms.jpg"
+        },
+        {
+          "name": "Saumon épicé",
+          "description": "6 pcs",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487ec27612644c4caae54ai9ml.jpg"
+        },
+        {
+          "name": "Maki Kappamaki",
+          "description": "Concombre, riz vinaigré - 6 pcs",
+          "price": 34.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48803b134f4457f787d03ePIh2.jpg"
+        },
+        {
+          "name": "Maki Ebi Tempura Roll",
+          "description": "Crevettes, riz vinaigré. 4 pcs",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4880207612644c4caae551BQIC.jpg"
+        },
+        {
+          "name": "Saumon cheese",
+          "description": "6 pcs",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487f8d7612644c4caae54dggET.jpg"
+        },
+        {
+          "name": "Végétarien",
+          "description": "4 pcs",
+          "price": 34.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487fe77612644c4caae54fCEf2.jpg"
+        },
+        {
+          "name": "Maki Tori Roll",
+          "description": "Riz vinaigré - 4 pcs",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4880dd134f4457f787d0405IQR.jpg"
+        },
+        {
+          "name": "Maki Freshmaki",
+          "description": "Fromage frais, ciboulette, concombre, riz vinaigré - 6 pcs",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487ee07612644c4caae54bm9H4.jpg"
+        },
+        {
+          "name": "Saumon avocat",
+          "description": "4 pcs",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4880037612644c4caae5500pax.jpg"
+        },
+        {
+          "name": "Shakemaki",
+          "description": "Saumon frais et cru, riz vinaigré - 6 pcs",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487e70134f4457f787d03c0Ae8.jpg"
+        },
+        {
+          "name": "Surimi",
+          "description": "6 pcs",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487fad7612644c4caae54eUfuN.jpg"
+        },
+        {
+          "name": "Tobiko",
+          "description": "6 pcs",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487f6d7612644c4caae54c5nqB.jpg"
+        },
+        {
+          "name": "Unagi",
+          "description": "Anguille, riz vinaigré - 6 pcs",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487e857612644c4caae548tVhh.jpg"
+        }
+      ]
+    },
+    {
+      "name": "YOKA CREATION (4 pièces)",
+      "items": [
+        {
+          "name": "Méditerranéen",
+          "description": "Saumon, avocat, cream cheese, surimi, feuille de riz.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48674fd07f164c07cd4acaovTJ.jpg"
+        },
+        {
+          "name": "Rock'n Roll",
+          "description": "Crevette, saumon, cream cheese - 4 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486832d07f164c07cd4acddtZ9.jpg"
+        },
+        {
+          "name": "Tokyo roll",
+          "description": "Chair de crabe, saumon, tobiko, crevette panée, surimi, cream cheese, feuille de riz.",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486888134f4457f787d013TkZi.jpg"
+        },
+        {
+          "name": "Yoka suprême",
+          "description": "Crevette, saumon cuit, chair de crabe, avocat, cream cheese.",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4867a4d07f164c07cd4acbaRRt.jpg"
+        },
+        {
+          "name": "Dragon roll",
+          "description": "Crevette panée, anguille, saumon cuit, chair de crabe, avocat, tobiko.",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486881d07f164c07cd4acekoe3.jpg"
+        },
+        {
+          "name": "Yoka extrême",
+          "description": "Rouleau de printemps spécial frit.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486976134f4457f787d016U4XL.jpg"
+        },
+        {
+          "name": "Summer roll",
+          "description": "Ebi, saumon, avocat, chair de crabe, surimi, crevette panée, cream cheese, feuille de riz.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486a01134f4457f787d017odmt.jpg"
+        },
+        {
+          "name": "Fresh Roll Double Cheese",
+          "description": "Saumon,cream cheese, cheddar, avocat.",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4867f0d07f164c07cd4acca01h.jpg"
+        },
+        {
+          "name": "Roll triangle",
+          "description": "Crevette panée, anguille, saumon cuit, chair de crabe, avocat, tobiko - 4 pcsCrevette panée, anguille, saumon cuit, chair de crabe, avocat, tobiko - 4 pcs",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4868a3d07f164c07cd4acfGnr8.jpg"
+        },
+        {
+          "name": "Nordique roll",
+          "description": "Saumon, avocat, tobiko, cream cheese.",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4868c3d07f164c07cd4ad00D9N.jpg"
+        }
+      ]
+    },
+    {
+      "name": "TEPPANYAKI & NOUILLES",
+      "items": [
+        {
+          "name": "Nouilles Poulet",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4857fe3b375156dd50ff1by3Th.jpg"
+        },
+        {
+          "name": "Accompagnement Riz cantonais crevettes",
+          "description": "",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4858f93b375156dd50ff1fEj5r.jpg"
+        },
+        {
+          "name": "Nouilles Fruits de mer",
+          "description": "Nouilles asiatiques, œufs, crevettes, crabe, calamar, sel, poivre, sauce.",
+          "price": 87.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4858283b375156dd50ff1chbmH.jpg"
+        },
+        {
+          "name": "Nouilles Végétariennes",
+          "description": "",
+          "price": 51.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4857b03b375156dd50ff19zorC.jpg"
+        },
+        {
+          "name": "Teppaniyaki Crevettes Façon Yoka",
+          "description": "Crevettes, gingembre, citron, ail - Servi avec légumes",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4855d76183374bca4c708cO6Ji.jpg"
+        },
+        {
+          "name": "Saumon Teppanyaki",
+          "description": "Filet de saumon - Servi avec légumes",
+          "price": 111.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4856163b375156dd50ff18BaCF.jpg"
+        },
+        {
+          "name": "Riz cantonais Accompagnement",
+          "description": "",
+          "price": 51.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48575c6183374bca4c7090bwzV.jpg"
+        },
+        {
+          "name": "Nouilles Crevettes",
+          "description": "Nouilles asiatiques, crevettes, sel, poivre, sauce.",
+          "price": 87.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48573c6183374bca4c708f4pzE.jpg"
+        },
+        {
+          "name": "Teppanyaki Poulet",
+          "description": "Sauce de soja, poulet, huile de sésame, poivre noir, oignon, gingembre, choux, poivron vert, graines de sésame - Servi avec légumes",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48557a3b375156dd50ff15Ip1i.jpg"
+        },
+        {
+          "name": "Accompagnement Riz cantonais mixte",
+          "description": "crevettes poulet",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4858a33b375156dd50ff1dyYQv.jpg"
+        },
+        {
+          "name": "Légumes sautés",
+          "description": "",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48580d6183374bca4c7091jmSR.jpg"
+        },
+        {
+          "name": "Teppanyaki Fruits de mer",
+          "description": "Servi avec légumes",
+          "price": 111.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4855566183374bca4c708aq5oz.jpg"
+        },
+        {
+          "name": "Riz Nature",
+          "description": "",
+          "price": 29.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48599b3b375156dd50ff20EOd0.jpg"
+        },
+        {
+          "name": "Accompagnement Riz cantonais fruit de mer",
+          "description": "",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4858d03b375156dd50ff1eJAAD.jpg"
+        },
+        {
+          "name": "Teppanyaki Crevettes grises",
+          "description": "Crevettes grises - Servi avec légumes",
+          "price": 111.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4855286183374bca4c7089TbCo.jpg"
+        },
+        {
+          "name": "Teppanyaki Filet de bœuf",
+          "description": "Filet de boeuf - Servi avec légumes",
+          "price": 111.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4855bd3b375156dd50ff16qCpJ.jpg"
+        },
+        {
+          "name": "Nouilles",
+          "description": "Nouilles",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4859bb3b375156dd50ff21ILTp.jpg"
+        }
+      ]
+    },
+    {
+      "name": "LES PIZZAS",
+      "items": [
+        {
+          "name": "Mozzarella",
+          "description": "Surimi, saumon cuit, mozzarella. 6 pcs",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48660f134f4457f787d012l6C6.jpg"
+        },
+        {
+          "name": "Saumon fumé crabe",
+          "description": "Saumon fumé, crabe, avocat.6 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486555d07f164c07cd4ac9gY66.jpg"
+        },
+        {
+          "name": "Classic",
+          "description": "Surimi, avocat.- 6 pcs",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48646dd07f164c07cd4ac5uuTb.jpg"
+        },
+        {
+          "name": "Fruits de mer",
+          "description": "Saumon, crevettes panées, chair de crabe, tobiko.6 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48648ad07f164c07cd4ac6mHEu.jpg"
+        },
+        {
+          "name": "Poulet spicy",
+          "description": "Poulet pané, sauce spicy - 6 pcs",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486535d07f164c07cd4ac838D7.jpg"
+        }
+      ]
+    },
+    {
+      "name": "CRISPY (6 pièces )",
+      "items": [
+        {
+          "name": "Crispy Sakura",
+          "description": "Saumon cuit, avocat, tobiko - 6 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486a18d07f164c07cd4ad5JhDv.jpg"
+        },
+        {
+          "name": "Crispy crevette",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4869a9d07f164c07cd4ad35i5w.jpg"
+        },
+        {
+          "name": "Crispy K-roll",
+          "description": "Saumon, crabe, ebi, tobiko, surimi - 6 pcs",
+          "price": 79.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486a37d07f164c07cd4ad6mnk9.jpg"
+        },
+        {
+          "name": "Crispy poulet",
+          "description": "",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4869ebd07f164c07cd4ad4su6d.jpg"
+        },
+        {
+          "name": "Crispy Red white",
+          "description": "Crevettes, saumon, surimi - 6 pcs",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486ad9134f4457f787d0185LVf.jpg"
+        },
+        {
+          "name": "Crispy Saumon",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486967d07f164c07cd4ad17zRu.jpg"
+        },
+        {
+          "name": "Crispy C'roll",
+          "description": "Avocat, surimi pané, saumon, crevettes - 6 pcs",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486a52d07f164c07cd4ad7s3xU.jpg"
+        }
+      ]
+    },
+    {
+      "name": "SUSHIS ( la paire/ 2pcs)",
+      "items": [
+        {
+          "name": "Ebi",
+          "description": "Crevettes, riz vinaigré.",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4875aa7612644c4caae53dgIku.jpg"
+        },
+        {
+          "name": "Saumon fumé",
+          "description": "Saumon fumé, riz vinaigré - 2 pcs",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48754a7612644c4caae53a1nnH.jpg"
+        },
+        {
+          "name": "Shaké gunkan",
+          "description": "Saumon, ciboulette - 2 pcs",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487ba97612644c4caae541Ijwo.jpg"
+        },
+        {
+          "name": "Saumon Shaké",
+          "description": "Saumon, riz vinaigré - 2 pcs",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487639134f4457f787d034Ixab.jpg"
+        },
+        {
+          "name": "Maguru",
+          "description": "Thon, riz vinaigré - 2 pcs",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48756e7612644c4caae53bOZrt.jpg"
+        },
+        {
+          "name": "Sushi avocat",
+          "description": "Avocat, riz vinaigré - 2 pcs",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487c48134f4457f787d037jiUV.jpg"
+        },
+        {
+          "name": "Unagi",
+          "description": "Anguille, riz vinaigré - 2 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487acf7612644c4caae53fXuDs.jpg"
+        }
+      ]
+    },
+    {
+      "name": "TACOS SUSHI",
+      "items": [
+        {
+          "name": "Mexico",
+          "description": "Lit de riz, anguille, sauce unagi - 2 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486272d07f164c07cd4ac2Aixh.jpg"
+        },
+        {
+          "name": "Mixte",
+          "description": "Lit de riz, saumon, surimi, avocat, tobiko. 2 pcs",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486331d07f164c07cd4ac3SOFe.jpg"
+        },
+        {
+          "name": "Saumon tobiko",
+          "description": "Lit de riz,ciboulette, sauce épicée. 2pcs",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4863a3134f4457f787d009X8A0.jpg"
+        },
+        {
+          "name": "Crevette panée",
+          "description": "Lit de riz, avocat, crevette, sauce unagi. 2pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4863c6134f4457f787d00asJn0.jpg"
+        },
+        {
+          "name": "Crabe",
+          "description": "Lit de riz saumon cuit, avocat, sauce unagi - 2 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48641a134f4457f787d00dZSH2.jpg"
+        }
+      ]
+    },
+    {
+      "name": "ROULEAUX DE PRINTEMPS (6 pièces )",
+      "items": [
+        {
+          "name": "Rouleaux De Printemps Végétarien",
+          "description": "",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/mJBwvoQrORZYVBW.avif"
+        },
+        {
+          "name": "Mixte",
+          "description": "saumon,crevette panée, chair de crabe, surimi, tobiko, cream cheese.",
+          "price": 74.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4871ee134f4457f787d02ay209.jpg"
+        },
+        {
+          "name": "Yoka",
+          "description": "Saumon fumé, avocat, gingembre, cream cheese.",
+          "price": 74.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487127d07f164c07cd4aedbjpF.jpg"
+        },
+        {
+          "name": "Spécial",
+          "description": "Extra saumon, chair de crabe, ebi, cream cheese.",
+          "price": 79.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4870f7d07f164c07cd4aebAC4C.jpg"
+        },
+        {
+          "name": "Saumon",
+          "description": "Saumon, avocat, surimi, tobiko, cream cheese.",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487198134f4457f787d028gaBQ.jpg"
+        },
+        {
+          "name": "Crevette",
+          "description": "Crevette panée, avocat,surimi, tobiko, cream cheese.",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4871b4134f4457f787d029P50f.jpg"
+        },
+        {
+          "name": "Exotique",
+          "description": "Saumon, avocat, mangue ou ananas.",
+          "price": 74.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487259134f4457f787d02bzsqW.jpg"
+        },
+        {
+          "name": "Végétarien",
+          "description": "Avocat, concombre, carottes, cream cheese.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487114d07f164c07cd4aecW6i4.jpg"
+        }
+      ]
+    },
+    {
+      "name": "NOS ASSORTIMENTS",
+      "items": [
+        {
+          "name": "CALIFORNIA LOVERS",
+          "description": "6 Maki saumon, 4 Cream cheese, 4 Rolls casher, 4 Sushi saumon.",
+          "price": 160.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4884937612644c4caae557Mhvd.jpg"
+        },
+        {
+          "name": "YOKA SLIM",
+          "description": "SLIM 4 Sashimi saumon, 4 Cream cheese, 4 Rolls saumon épicé.",
+          "price": 109.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4885ca7612644c4caae55aQXw0.jpg"
+        },
+        {
+          "name": "SEASON ROLL",
+          "description": "6 Rouleaux de printemps mixte, 4 Rolls du chef, 4 Sashimi saumon, 2 Sushi thon.",
+          "price": 179.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488791134f4457f787d04cFkmS.jpg"
+        },
+        {
+          "name": "HOT ROLL",
+          "description": "4 Crunchy, 4 Sushi pizza, 4 Fry Ebi Fry, 4 Rabat, 6 Aramaki Pami.4 Crunchy, 4 Sushi pizza, 4 Fry Ebi Fry, 4 Rabat, 6 Aramaki Pami.",
+          "price": 194.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c488613134f4457f787d049pmk5.jpg"
+        },
+        {
+          "name": "BIG ROLL",
+          "description": "4 Rolls classic, 4 Dragon Roll, 4 Arc en ciel, 4 Cream cheese, 4 Fresh Roll, 4 Ebi Fry, 4 Boston Roll, 4 Shake Roll, 4 Rolls saumon.",
+          "price": 309.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4886437612644c4caae55baGPF.jpg"
+        },
+        {
+          "name": "YOKA ROYAL",
+          "description": "4 Crunchy, 4 Arcs en ciel, 6 Rouleaux de printemps crevettes, 2 Sushi saumon, 4 Cream cheese, 4 Sashimi saumon.",
+          "price": 224.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48867a134f4457f787d04a6wkB.jpg"
+        },
+        {
+          "name": "FUNCKY JAPS",
+          "description": "4 Sashimi saumon, 4 Sushi saumon, 4 Boston Roll, 4 Rolls saumon, 6 Maki avocat.",
+          "price": 195.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4884ca7612644c4caae558CwCf.jpg"
+        },
+        {
+          "name": "OLD SCHOOL",
+          "description": "2 Sushi crevettes, 4 Sashimi saumon, 4 Rolls du chef, 4 Rolls classic, 6 Rouleaux de printemps saumon.",
+          "price": 204.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48871d7612644c4caae55dC7HK.jpg"
+        }
+      ]
+    },
+    {
+      "name": "YOKA FRITS (4 piéces)",
+      "items": [
+        {
+          "name": "Crunshy",
+          "description": "Crevette, avocat, surimi, cream cheese.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486c00d07f164c07cd4ad8RHGl.jpg"
+        },
+        {
+          "name": "Yoka",
+          "description": "Saumon, crevette, sauce aigre douce.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486c7dd07f164c07cd4adb5dlk.jpg"
+        },
+        {
+          "name": "Rabat",
+          "description": "Surimi, crevette, saumon, tobiko.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486de6134f4457f787d01bfnb8.jpg"
+        },
+        {
+          "name": "Casablanca",
+          "description": "Surimi, saumon, mozzarella, riz",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486c9ad07f164c07cd4adc6kJw.jpg"
+        },
+        {
+          "name": "Aromaki pami",
+          "description": "Saumon, avocat, surimi, cream cheese.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486c60d07f164c07cd4ada8wbF.jpg"
+        },
+        {
+          "name": "Tiger eye",
+          "description": "Saumon, avocat, surimi, sauce unagi.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486d33134f4457f787d0194b8z.jpg"
+        },
+        {
+          "name": "Fry ebi fry",
+          "description": "Crevettes, panée, cream cheese.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486c3fd07f164c07cd4ad9aay1.jpg"
+        },
+        {
+          "name": "Dragon eye",
+          "description": "Saumon, poireaux, tobiko.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486dca134f4457f787d01aPjIT.jpg"
+        }
+      ]
+    },
+    {
+      "name": "TEMPURA",
+      "items": [
+        {
+          "name": "Poulet frit à la japonaise",
+          "description": "Beignets de poulet à la japonaise.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48604ad07f164c07cd4abeBdC6.jpg"
+        },
+        {
+          "name": "Croquettes de saumon",
+          "description": "Croquettes de saumon",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486156d07f164c07cd4ac0aPNb.jpg"
+        },
+        {
+          "name": "Tempura Crevettes",
+          "description": "Crevettes à queue intacte, farine, maïs, sel, œufs, huile de friture, sauce aigre douce.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48618ac1e9c057e1138b1bW5I6.jpg"
+        },
+        {
+          "name": "Saumon frit aigre doux",
+          "description": "Beignets de saumon.",
+          "price": 73.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486138c1e9c057e1138b1arOHG.jpg"
+        },
+        {
+          "name": "Croquettes de crevettes",
+          "description": "",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48628cc1e9c057e1138b1f1giZ.jpg"
+        },
+        {
+          "name": "Sakana fry",
+          "description": "tranches de saumon pané",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4861b2c1e9c057e1138b1cenvx.jpg"
+        },
+        {
+          "name": "Végétarienne",
+          "description": "beignets de légumes",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4860ebc1e9c057e1138b19WC7x.jpg"
+        }
+      ]
+    },
+    {
+      "name": "TEMAKI 1 pièce",
+      "items": [
+        {
+          "name": "Mixte",
+          "description": "Ebi, saumon, thon, avocat, riz vinaigré - 1 pcs",
+          "price": 74.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4873bd134f4457f787d030Wolx.jpg"
+        },
+        {
+          "name": "Saumon avocat",
+          "description": "Saumon, avocat, riz vinaigré - 1 pcs",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487255d07f164c07cd4aeffXhX.jpg"
+        },
+        {
+          "name": "Unagi",
+          "description": "Anguille, riz vinaigré - 1 pcs",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487385134f4457f787d02e9euK.jpg"
+        }
+      ]
+    },
+    {
+      "name": "NEMS",
+      "items": [
+        {
+          "name": "Nems Fruits de mer",
+          "description": "6 pcs",
+          "price": 52.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485f4ec1e9c057e1138b17G6LV.jpg"
+        },
+        {
+          "name": "Nems Bœuf",
+          "description": "6 pcs",
+          "price": 52.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485e16d07f164c07cd4abc8auy.jpg"
+        },
+        {
+          "name": "Nems Poulet",
+          "description": "6 pcs",
+          "price": 52.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485f6ac1e9c057e1138b189Yvs.jpg"
+        }
+      ]
+    },
+    {
+      "name": "DON BURRI",
+      "items": [
+        {
+          "name": "L'hawaien",
+          "description": "Saumon mariné, brocolis, oignons crispy, ananas, riz nature.",
+          "price": 117.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485e8ac1e9c057e1138b16NH2q.jpg"
+        },
+        {
+          "name": "Spicy beef",
+          "description": "Bœuf épicé, oignons caramélisés, champignons, riz nature,crudités.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485e0ec1e9c057e1138b15wvuu.jpg"
+        },
+        {
+          "name": "Le buddha",
+          "description": "Bœuf mariné,oignons caramélisés,laitue, peanuts,épi de maïs,tobiko red.",
+          "price": 117.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485da4d07f164c07cd4abbExB5.jpg"
+        },
+        {
+          "name": "Poulet façon thai",
+          "description": "Poulet mariné, crevettes, sauce thai, riz nature.",
+          "price": 93.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485cc4d07f164c07cd4ab9raUg.jpg"
+        }
+      ]
+    },
+    {
+      "name": "CHIRASHIS, TARTARE & CARPACCIO",
+      "items": [
+        {
+          "name": "Tartare Saumon",
+          "description": "Saumon, jus de citron, huile d'olive, sel fin.",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4881fe134f4457f787d041Db8a.jpg"
+        },
+        {
+          "name": "Tartare Mixte",
+          "description": "Crabe, saumon, poisson blanc, thon, jus de citron, huile d'olive, sel fin.",
+          "price": 93.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4881f97612644c4caae553yMc9.jpg"
+        },
+        {
+          "name": "Chirashi Saumon",
+          "description": "Fines tranches de poisson cru, servies sur un lit de riz vinaigré.",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48833e134f4457f787d044MeEy.jpg"
+        },
+        {
+          "name": "Chirashi Thon",
+          "description": "Thon, riz vinaigré.",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48838c134f4457f787d0456xXj.jpg"
+        },
+        {
+          "name": "Chirashi mixte",
+          "description": "Thon, saumon, riz vinaigré.",
+          "price": 93.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4883f1134f4457f787d046m6xM.jpg"
+        },
+        {
+          "name": "Tartare Crabe",
+          "description": "Crabe, jus de citron, huile d'olive, sel fin.",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4882bb134f4457f787d043A81Y.jpg"
+        },
+        {
+          "name": "Carpaccio Saumon",
+          "description": "Saumon fondant, jus de citron, huile d'olive, poivre.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4883767612644c4caae555alBx.jpg"
+        },
+        {
+          "name": "Carpaccio Thon",
+          "description": "Thon fondant, jus de citron, huile d'olive, poivre.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4884d1134f4457f787d047a7my.jpg"
+        }
+      ]
+    },
+    {
+      "name": "SPRING ROLLS ( 4 piéces)",
+      "items": [
+        {
+          "name": "Spider roll",
+          "description": "Thon, eby, saumon, surimi, sauce okinawa.",
+          "price": 79.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c48707d134f4457f787d025UStd.jpg"
+        },
+        {
+          "name": "Jardin dété",
+          "description": "Saumon cuit, saumon, avocat, surimi, crabe, tobiko.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487016d07f164c07cd4ae8Mi8K.jpg"
+        },
+        {
+          "name": "Spring break",
+          "description": "Crevettes, saumon, surimi, avocat, chair de crabe, saumon fumé à l'exterieur, ciboulette.",
+          "price": 84.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486fd0d07f164c07cd4ae7LExe.jpg"
+        },
+        {
+          "name": "Spicy chicken",
+          "description": "Chicken fry, mayonnaise japonaise, cream cheese, avocat.",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486f49d07f164c07cd4ae5e2Hk.jpg"
+        },
+        {
+          "name": "Okaido",
+          "description": "Anguille, Saint-Jacques, eby, surimi, crabe, cream cheese.",
+          "price": 84.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486f93d07f164c07cd4ae6I1N0.jpg"
+        },
+        {
+          "name": "Onikawa",
+          "description": "Saumon, surimi, concombre, cream cheese, riz.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486f29d07f164c07cd4ae47MWG.jpg"
+        },
+        {
+          "name": "Mikado",
+          "description": "Crevettes, crabe, saumon, avocat, surimi, mayonnaise, riz.",
+          "price": 79.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487054d07f164c07cd4ae9Mjgc.jpg"
+        },
+        {
+          "name": "Asian spring",
+          "description": "Poulet, crevettes, choux, carottes, peanuts.",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487103134f4457f787d026T9Aj.jpg"
+        },
+        {
+          "name": "Spring field",
+          "description": "Crevettes, crabe, saumon, avocat, surimi, Saint-Jacques.",
+          "price": 79.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487146134f4457f787d027LA1z.jpg"
+        }
+      ]
+    },
+    {
+      "name": "BROCHETES YAKI",
+      "items": [
+        {
+          "name": "Brochettes mixte",
+          "description": "Bœuf au fromage, cuisse de poulet, boulette de poulet.",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485bad3b375156dd50ff26eU79.jpg"
+        },
+        {
+          "name": "Yaki guy cheese pané",
+          "description": "morceaux de bœuf au fromage panés",
+          "price": 87.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485aad3b375156dd50ff241Avg.jpg"
+        },
+        {
+          "name": "Shake yaki",
+          "description": "Carrés de saumon - 3 tiges - - Accompagnés de légumes sautés et riz",
+          "price": 93.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485acf3b375156dd50ff25q415.jpg"
+        },
+        {
+          "name": "Yaki tari",
+          "description": "cuisses de poulet",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4858f46183374bca4c7092e8of.jpg"
+        },
+        {
+          "name": "Brochettes Yaki Guy Cheese",
+          "description": "",
+          "price": 81.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485a763b375156dd50ff23zSB2.jpg"
+        },
+        {
+          "name": "Tsukume",
+          "description": "Brochettes de poulet - 3 tiges - Accompagnés de légumes sautés et riz",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c4859df6183374bca4c7093Q8D2.jpg"
+        },
+        {
+          "name": "Sasami",
+          "description": "Boulettes de blanc de poulet - 3 tiges - Accompagnés de légumes sautés et riz",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c485a0b6183374bca4c7094rQKU.jpg"
+        }
+      ]
+    },
+    {
+      "name": "MAKI WHITE ( 6 pièces)",
+      "items": [
+        {
+          "name": "Crabe",
+          "description": "Crabe, riz vinaigré.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487c747612644c4caae544rg1u.jpg"
+        },
+        {
+          "name": "Saumon, cream cheese et ciboulette",
+          "description": "Saumon, cream cheese, ciboulettes, riz vinaigré.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487e13134f4457f787d03bRHLs.jpg"
+        },
+        {
+          "name": "Avocat sésame",
+          "description": "Avocat, sésame, riz vinaigré.",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487c977612644c4caae545IDCl.jpg"
+        },
+        {
+          "name": "Maki White Mangue",
+          "description": "Mangue, riz vinaigré.",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487c397612644c4caae543m8cE.jpg"
+        },
+        {
+          "name": "Maki White Crevettes",
+          "description": "Crevettes, riz vinaigré.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487dca134f4457f787d03aNiXQ.jpg"
+        },
+        {
+          "name": "Surimi",
+          "description": "Surimi, riz vinaigré.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487d1b7612644c4caae546enZ5.jpg"
+        }
+      ]
+    },
+    {
+      "name": "YOKA ROLL (4 piéces )",
+      "items": [
+        {
+          "name": "Yoka Roll Végétarien",
+          "description": "Avocat, concombre, cream cheese, sésame blanc, riz.",
+          "price": 34.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486e54134f4457f787d01e3krk.jpg"
+        },
+        {
+          "name": "Shake roll",
+          "description": "Saumon, avocat, surimi.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486e70134f4457f787d01foNW7.jpg"
+        },
+        {
+          "name": "Roll saumon cuit",
+          "description": "Saumon cuit, avocat, graines de sésame.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486e0dd07f164c07cd4ae0kFoA.jpg"
+        },
+        {
+          "name": "Roll exotique",
+          "description": "Crevette, saumon, cream cheese, anguille.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487003134f4457f787d024Yx0K.jpg"
+        },
+        {
+          "name": "Roll saumon épicé",
+          "description": "Saumon épicé, concombre, sashimi, riz",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486fa3134f4457f787d022X51v.jpg"
+        },
+        {
+          "name": "Roll arc en ciel",
+          "description": "Saumon, avocat, surimi, cream cheese.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486d9ad07f164c07cd4adeFCkm.jpg"
+        },
+        {
+          "name": "Fresh roll",
+          "description": "Saumon, cream cheese, riz.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486fc3134f4457f787d023rl8W.jpg"
+        },
+        {
+          "name": "Classic roll",
+          "description": "surimi, avocat, concombre, riz.",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486e09134f4457f787d01cOTZc.jpg"
+        },
+        {
+          "name": "Roll thon épicé",
+          "description": "Thon épicé, avocat, riz.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486ed0d07f164c07cd4ae3pWgn.jpg"
+        },
+        {
+          "name": "Boston roll",
+          "description": "Crevettes, crabe, cream cheese, tobiko.",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486e66d07f164c07cd4ae2yxp1.jpg"
+        },
+        {
+          "name": "Ebi fry",
+          "description": "Crevettes, avocat, ciboulette.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486f42134f4457f787d021R5OQ.jpg"
+        },
+        {
+          "name": "Ebi tobiko",
+          "description": "Crevettes panées, avocat, tobiko.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486dbad07f164c07cd4adfCYQe.jpg"
+        },
+        {
+          "name": "Rainbow roll",
+          "description": "Crevette, avocat, poisson blanc, cream cheese.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486e48d07f164c07cd4ae1az7R.jpg"
+        },
+        {
+          "name": "Roll cream cheese",
+          "description": "Saumon, avocat, surimi, cream cheese, tobiko.",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486eec134f4457f787d020Zqm3.jpg"
+        },
+        {
+          "name": "Yoka Roll Casher",
+          "description": "Saumon, avocat, riz.",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c486e2b134f4457f787d01dnYBL.jpg"
+        }
+      ]
+    },
+    {
+      "name": "SASHIMI 4 pièces",
+      "items": [
+        {
+          "name": "Saumon",
+          "description": "Flets de saumon",
+          "price": 56.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c487459134f4457f787d031TlSU.jpg"
+        }
+      ]
+    },
+    {
+      "name": "DESSERTS",
+      "items": [
+        {
+          "name": "Banoffee pie",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484ef03b375156dd50ff0f4w9x.jpg"
+        },
+        {
+          "name": "Tiramisu",
+          "description": "",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484f993b375156dd50ff12JCQ1.jpg"
+        },
+        {
+          "name": "Nougat glacé",
+          "description": "",
+          "price": 51.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484e0b6183374bca4c7087b0hQ.jpg"
+        },
+        {
+          "name": "Fondant au chocolat",
+          "description": "",
+          "price": 63.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484e2d6183374bca4c70883ZKF.jpg"
+        },
+        {
+          "name": "Cheese cake",
+          "description": "",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484fbd3b375156dd50ff13v5qW.jpg"
+        },
+        {
+          "name": "Coupe d'ananas",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484d6e6183374bca4c7086RU3C.jpg"
+        },
+        {
+          "name": "Coupe de lychees",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484d486183374bca4c70853Z2o.jpg"
+        }
+      ]
+    },
+    {
+      "name": "BOISSONS",
+      "items": [
+        {
+          "name": "Jus de lychee",
+          "description": "",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484b876183374bca4c7081rNtn.jpg"
+        },
+        {
+          "name": "Sodas",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484bdf6183374bca4c7083CTg9.jpg"
+        },
+        {
+          "name": "Cocktail Yoka",
+          "description": "",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484c283b375156dd50ff0bzyEl.jpg"
+        },
+        {
+          "name": "Jus d'orange frais",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484c5a3b375156dd50ff0cCBKZ.jpg"
+        },
+        {
+          "name": "Jus de citron au gingembre frais",
+          "description": "",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484b666183374bca4c7080p7OW.jpg"
+        },
+        {
+          "name": "Eau Plate 1/2 L",
+          "description": "",
+          "price": 22.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5c484bf66183374bca4c7084XnKp.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Poke Bowls",
+      "items": [
+        {
+          "name": "Poke Beef",
+          "description": "Bœuf snacke épicé, avocat, choux rouge, edamame, radis, légumes croquants, tempura d’oignons, sauce teriyaki",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/71gBE7aKIxMy4HJ.jpeg"
+        },
+        {
+          "name": "Poke Poulet Crispy",
+          "description": "Poulet pané, mangue, avocat, légumes croquants, choux rouge, radis, cacahuètes, sauce okinawa",
+          "price": 97.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Uh8qDY6uHawRmTI.jpeg"
+        },
+        {
+          "name": "Poke Crevette",
+          "description": "Crevettes panées, mangue, avocat, légumes croquants, choux rouge, gingembre confit, noix de cajou, chili sauce",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/F4OWW7ikerh5CY1.jpeg"
+        },
+        {
+          "name": "Poke Salmon",
+          "description": "Saumon, mangue, avocat, edamame, légumes croquants, tobiko red, sésame",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/99LSMP9KnFbfeQk.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Crusty Rice",
+      "items": [
+        {
+          "name": "Crusty Rice Tuna Spicy",
+          "description": "Thon, riz",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/nDuSJDFYaKk7L9F.jpeg"
+        },
+        {
+          "name": "Crusty Rice Avocado Cheese",
+          "description": "Avocat, riz, tomate, cheese",
+          "price": 51.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/FsriSgGthG7iRgc.jpeg"
+        },
+        {
+          "name": "Crusty Rice Chili Salmon",
+          "description": "Saumon fumé, riz, saumon frais",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1gX3CVZsOMe6dHz.jpeg"
+        },
+        {
+          "name": "Crusty Rice Fire Fish",
+          "description": "Poisson blanc, riz, mayonnaise",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/MI4I1C4Qzcuwl6B.jpeg"
+        },
+        {
+          "name": "Crusty Rice Chicken Dragon",
+          "description": "Poulet, riz",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/dXnjYxLrIgzEAHn.jpeg"
+        },
+        {
+          "name": "Crusty Rice Sweet Jacques",
+          "description": "Saint jacques, riz",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Hn8K0uEciwNyell.jpeg"
+        }
+      ]
+    }
+  ]
+}

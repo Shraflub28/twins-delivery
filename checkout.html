@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <!-- Custom Supabase Integration -->
+    <script src="js/supabase.js"></script>
     <style>
         /* Checkout specific styles */
         .checkout-container {
@@ -378,6 +382,11 @@
             </div>
             
             <div class="form-group">
+                <label for="customer-phone" class="required">Phone Number</label>
+                <input type="tel" id="customer-phone" placeholder="Your phone number" required>
+            </div>
+            
+            <div class="form-group">
                 <button id="get-location-btn" class="location-button">
                     <i class="fas fa-map-marker-alt"></i> Get My Location
                 </button>
@@ -631,15 +640,16 @@
             // Function to update WhatsApp checkout link
             function updateWhatsAppLink() {
                 const customerName = document.getElementById('customer-name').value;
+                const customerPhone = document.getElementById('customer-phone').value;
                 const customerAddressDetail = document.getElementById('customer-address-detail')?.value || '';
                 
                 const { total } = calculateOrderTotal();
                 
-                // Check if name is provided
-                if (!customerName.trim()) {
+                // Check if name and phone are provided
+                if (!customerName.trim() || !customerPhone.trim()) {
                     whatsappCheckoutBtn.disabled = true;
                     whatsappCheckoutBtn.style.opacity = '0.5';
-                    whatsappCheckoutBtn.title = 'Please provide your name';
+                    whatsappCheckoutBtn.title = 'Please provide your name and phone number';
                     return;
                 } else {
                     whatsappCheckoutBtn.disabled = false;
@@ -651,38 +661,33 @@
                 const timestamp = new Date().getTime();
                 const randomStr = Math.random().toString(36).substring(2, 10);
                 const orderId = `TD-${timestamp}-${randomStr}`;
-
-                // Save order data to localStorage
+                
+                // Construct the Order Tracking Link
+                const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+                const orderTrackingLink = `${window.location.origin}${basePath}confirmation.html#${orderId}`;
+                
+                // Save the order data but DON'T open confirmation page yet
                 const orderData = {
                     orderId: orderId,
-                    items: cart,
-                    restaurant: restaurantInfo,
-                    customer: {
+                    items: JSON.stringify(cart),
+                    restaurant: restaurantInfo.name,
+                    customer: JSON.stringify({
                         name: customerName,
-                        addressDetail: customerAddressDetail,
-                        latitude: userLatitude,
-                        longitude: userLongitude
-                    },
+                        phone: customerPhone,
+                        address: customerAddressDetail,
+                        latitude: userLatitude || null,
+                        longitude: userLongitude || null
+                    }),
                     orderDate: new Date().toISOString(),
                     status: 'pending'
                 };
 
-                // Store current order for confirmation page
-                localStorage.setItem('twins_delivery_current_order', JSON.stringify(orderData));
-
-                // Also store in order history
-                const allOrders = JSON.parse(localStorage.getItem('twins_delivery_orders')) || {};
-                allOrders[orderId] = orderData;
-                localStorage.setItem('twins_delivery_orders', JSON.stringify(allOrders));
-
-                // Generate confirmation page URL - use absolute path to ensure it works with GitHub Pages
-                // Get the base path from the current URL (handles both local and GitHub Pages)
-                const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-                const confirmationUrl = `${window.location.origin}${basePath}confirmation.html#${orderId}`;
+                // Prepare order text but do not save or redirect yet
+                // Just prepare the WhatsApp link and store order ID
                 
                 // ENGLISH VERSION
                 let orderText = `*Order Reference: ${orderId}*\n`;
-                orderText += `View order details: ${confirmationUrl}\n\n`;
+                orderText += `View order details: ${orderTrackingLink}\n\n`;
                 orderText += "Hello! I would like to place an order:\n\n";
                 
                 // Add restaurant name
@@ -702,6 +707,7 @@
                 // Add customer info
                 orderText += "*Delivery Information:*\n";
                 orderText += `Name: ${customerName}\n`;
+                orderText += `Phone: ${customerPhone}\n`;
                 
                 // Add location info
                 if (userLatitude && userLongitude) {
@@ -718,7 +724,7 @@
                 
                 // FRENCH VERSION
                 orderText += `*Référence de commande: ${orderId}*\n`;
-                orderText += `Voir les détails de la commande: ${confirmationUrl}\n\n`;
+                orderText += `Voir les détails de la commande: ${orderTrackingLink}\n\n`;
                 orderText += "Bonjour! Je voudrais passer une commande:\n\n";
                 
                 // Add restaurant name in French
@@ -738,6 +744,7 @@
                 // Add customer info in French
                 orderText += "*Information de livraison:*\n";
                 orderText += `Nom: ${customerName}\n`;
+                orderText += `Téléphone: ${customerPhone}\n`;
                 
                 // Add location info in French
                 if (userLatitude && userLongitude) {
@@ -754,7 +761,7 @@
                 
                 // ARABIC VERSION
                 orderText += `*رقم الطلب: ${orderId}*\n`;
-                orderText += `عرض تفاصيل الطلب: ${confirmationUrl}\n\n`;
+                orderText += `عرض تفاصيل الطلب: ${orderTrackingLink}\n\n`;
                 orderText += "مرحبا! أود طلب الطعام:\n\n";
                 
                 // Add restaurant name in Arabic
@@ -774,6 +781,7 @@
                 // Add customer info in Arabic
                 orderText += "*معلومات التوصيل:*\n";
                 orderText += `الاسم: ${customerName}\n`;
+                orderText += `الهاتف: ${customerPhone}\n`;
                 
                 // Add location info in Arabic
                 if (userLatitude && userLongitude) {
@@ -785,18 +793,40 @@
                     orderText += `تفاصيل العنوان: ${customerAddressDetail}\n`;
                 }
                 
+                // Store the order ID for later use when the button is clicked
+                whatsappCheckoutBtn.dataset.orderId = orderId;
+                whatsappCheckoutBtn.dataset.orderData = JSON.stringify(orderData);
+                
                 // Encode the message for URL
                 const encodedMessage = encodeURIComponent(orderText);
                 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
                 
+                // Set the link but do NOT open the confirmation page yet
                 whatsappCheckoutBtn.href = whatsappLink;
-
-                // Store order ID in the button's data attribute for reference
-                whatsappCheckoutBtn.dataset.orderId = orderId;
             }
+            
+            // Add a separate event listener to handle the checkout button click
+            document.getElementById('whatsapp-checkout-btn').addEventListener('click', function(e) {
+                // Get the saved order data and ID
+                const orderId = this.dataset.orderId;
+                const orderData = JSON.parse(this.dataset.orderData || "{}");
+                
+                // Now save the order to Supabase/localStorage and open confirmation page
+                saveOrder(orderData).then(() => {
+                    // Open confirmation page in a new tab AFTER WhatsApp
+                    setTimeout(() => {
+                        // Get the base path from the current URL
+                        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+                        window.open(`${window.location.origin}${basePath}confirmation.html#${orderId}`, '_blank');
+                    }, 500);
+                });
+                
+                // Let the default link click continue to WhatsApp
+            });
             
             // Update WhatsApp link when customer info changes
             document.getElementById('customer-name').addEventListener('input', updateWhatsAppLink);
+            document.getElementById('customer-phone').addEventListener('input', updateWhatsAppLink);
             if (document.getElementById('customer-address-detail')) {
                 document.getElementById('customer-address-detail').addEventListener('input', updateWhatsAppLink);
             }
@@ -804,11 +834,11 @@
             // Initial WhatsApp link update
             updateWhatsAppLink();
             
-            // Make the checkout button disabled initially if name is empty
-            if (!document.getElementById('customer-name').value.trim()) {
+            // Make the checkout button disabled initially if name or phone is empty
+            if (!document.getElementById('customer-name').value.trim() || !document.getElementById('customer-phone').value.trim()) {
                 whatsappCheckoutBtn.disabled = true;
                 whatsappCheckoutBtn.style.opacity = '0.5';
-                whatsappCheckoutBtn.title = 'Please provide your name';
+                whatsappCheckoutBtn.title = 'Please provide your name and phone number';
             }
             
             // Global functions for quantity update and item removal
@@ -856,22 +886,47 @@
                 scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
             });
 
-            // Clear cart after WhatsApp checkout
-            whatsappCheckoutBtn.addEventListener('click', function() {
-                // Get the order ID from data attribute
-                const orderId = this.dataset.orderId;
+            // Save order to Supabase and localStorage
+            async function saveOrder(orderData) {
+                try {
+                    // Try to save to Supabase first
+                    await window.initSupabase();
+                    const result = await window.SupabaseWrapper.orders.create(orderData);
+                    
+                    if (result.success) {
+                        console.log('Order saved to Supabase:', result.data);
+                    } else {
+                        console.warn('Failed to save order to Supabase:', result.error);
+                        // Fall back to localStorage
+                        saveOrderToLocalStorage(orderData);
+                    }
+                } catch (error) {
+                    console.error('Error saving order to Supabase:', error);
+                    // Fall back to localStorage
+                    saveOrderToLocalStorage(orderData);
+                }
                 
-                // Open confirmation page in a new tab after WhatsApp
-                setTimeout(function() {
-                    // Get the base path from the current URL (handles both local and GitHub Pages)
-                    const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-                    window.open(`${window.location.origin}${basePath}confirmation.html#${orderId}`, '_blank');
-                }, 500);
+                // Always save to localStorage as backup
+                saveOrderToLocalStorage(orderData);
                 
-                // We could clear the cart here, but it might be better to keep it
-                // until the order is confirmed. Uncomment if you want to clear immediately:
-                // localStorage.removeItem('twins_delivery_cart');
-            });
+                return orderData;
+            }
+
+            // Helper to save to localStorage
+            function saveOrderToLocalStorage(orderData) {
+                localStorage.setItem('twins_delivery_current_order', JSON.stringify(orderData));
+                
+                // Also save to order history
+                let orderHistory = JSON.parse(localStorage.getItem('twins_delivery_orders') || '[]');
+                orderHistory.unshift(orderData); // Add to beginning of array
+                
+                // Keep only the last 10 orders
+                if (orderHistory.length > 10) {
+                    orderHistory = orderHistory.slice(0, 10);
+                }
+                
+                localStorage.setItem('twins_delivery_orders', JSON.stringify(orderHistory));
+            }
         });
     </script>
 </body>

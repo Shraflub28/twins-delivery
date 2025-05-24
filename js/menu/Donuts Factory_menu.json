@@ -1,0 +1,347 @@
+{
+  "restaurant_name": "Donuts Factory",
+  "categories": [
+    {
+      "name": "Donuts Fourrés",
+      "items": [
+        {
+          "name": "Donut Glaçage Nature",
+          "description": "Sugar glazed donut",
+          "price": 17.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/X1y1IiCzbeHm8Qq.avif"
+        },
+        {
+          "name": "Donut Caramel Beurre Salé Fourré",
+          "description": "Fourré à la crème caramel fait maison, création spéciale Donuts Factory",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/fFgjZz21ayW4kPN.avif"
+        },
+        {
+          "name": "Donut Choco Fraise Fourré",
+          "description": "Fourré à une somptueuse crème fait maison chocolat fraise",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/wz1g0nL8kxDMGkA.avif"
+        },
+        {
+          "name": "Donut Chocolat Amande Fourré",
+          "description": "Fourré au chocolat au lait",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/LR7548nLEZFnjAq.avif"
+        },
+        {
+          "name": "Donut Chocolat Noir Fourré",
+          "description": "Fourré à la crème chocolat noir 77%",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/z3XpoKRg3fVuTHX.avif"
+        },
+        {
+          "name": "Donut Citron Fourré",
+          "description": "Fourré à la crème citron",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/wmZj0976Wr5Pipz.avif"
+        },
+        {
+          "name": "Donut Citron Meringué Fourré",
+          "description": "Fourré à la crème citron",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/AGpzy0SCkLgX2SP.avif"
+        },
+        {
+          "name": "Donut Beurre de Cacahuètes",
+          "description": "Fourré à la crème beurre de cacahuète",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/PrtswcCk5nBvyfX.avif"
+        },
+        {
+          "name": "Donut Fraise Fourré",
+          "description": "Fourré à la crème fraise fait maison",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qkqh2w7QYFBq29o.avif"
+        },
+        {
+          "name": "Donut Fruits de la Passion Fourré",
+          "description": "Fourré à la crème mangue & fruit de la passion",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/tye5yysGvMzBai7.avif"
+        },
+        {
+          "name": "Donut Nutella Fourré",
+          "description": "Fourré au chocolat noisettes spécial Donuts Factory",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/aQUUVRqsDhoSKI6.avif"
+        },
+        {
+          "name": "Donut Kinder",
+          "description": "Fourré au chocolat Gjanduja",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/j3ZcXkbrQvuYu7M.avif"
+        },
+        {
+          "name": "Donut Oreo Fourré",
+          "description": "Fourré au chocolat et biscuit Oreo",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/EkyAh9NXyWYSIoK.avif"
+        },
+        {
+          "name": "Donut Red Velvet Fourré",
+          "description": "Fourré au crème cheese",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/xmyB6HdZ8DgrLdu.avif"
+        },
+        {
+          "name": "Donut Yaourt Fourré",
+          "description": "Fourré à la crème fait maison à base de yaourt perly",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/CWL9o9V5Z0k4oWz.avif"
+        },
+        {
+          "name": "Donut Caramel Fourré",
+          "description": "Fourré à la crème caramel",
+          "price": 29.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/BbDTryG2XHGulYM.avif"
+        },
+        {
+          "name": "Donut Chocolat Blanc Fourré",
+          "description": "Fourré à la crème chocolat blanc spéciale Donuts Factory",
+          "price": 29.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2UmaeR6QlAJXnwF.avif"
+        }
+      ]
+    },
+    {
+      "name": "Mini Donuts Fourrés",
+      "items": [
+        {
+          "name": "Mini Donut Kinder Fourré",
+          "description": "Fourré au chocolat Gjanduja",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/s35g7bDWIQQxUKF.jpeg"
+        },
+        {
+          "name": "Mini Donut Yaourt Fourré",
+          "description": "Fourré à la crème fait maison à base de yaourt perly",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/6vWBYGep5dSNUB9.jpeg"
+        },
+        {
+          "name": "Mini Donut Beurre De Cacahuètes Fourré",
+          "description": "Fourré à la crème beurre de cacahuète",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/UvvPtioGckxDdtS.jpeg"
+        },
+        {
+          "name": "Mini Donut Fruits de la Passion Fourré",
+          "description": "Fourré à la crème mangue & fruits de la passion",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/s0V18N9rMfRRTRH.jpeg"
+        },
+        {
+          "name": "Mini Donut Fruits de la Passion Fourré",
+          "description": "Fourré à la crème mangue & fruits de la passion",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/deLY8oJjwEAeoDs.jpeg"
+        },
+        {
+          "name": "Mini Donut Chocolat Amandes Fourré",
+          "description": "Fourré au chocolat au lait",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7Jezsp9Ag9WO7Pw.jpeg"
+        },
+        {
+          "name": "Mini Donut Chocolat Blanc Fourré",
+          "description": "Fourré à la crème chocolat blanc spéciale Donuts Factory",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/fsEi4auBzJfz3HP.jpeg"
+        },
+        {
+          "name": "Mini Donut Oreo Fourré",
+          "description": "Fourré au chocolat et biscuit Oreo",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TTAi2tBcSsROFAY.jpeg"
+        },
+        {
+          "name": "Mini Donut Red Velvet Fourré",
+          "description": "Fourré au crème cheese",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hnBivWpWuNfOEfY.jpeg"
+        },
+        {
+          "name": "Mini Donut Nature",
+          "description": "Sugar glazed donut",
+          "price": 17.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hnBivWpWuNfOEfY.jpeg"
+        },
+        {
+          "name": "Mini Donut Citron Meringué Fourré",
+          "description": "Fourré à la crème citron",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/H6N6io6MhO1xMJ1.jpeg"
+        },
+        {
+          "name": "Mini Donut Nutella Fourré",
+          "description": "Fourré au chocolat noisettes spécial Donuts Factory",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/4pVuBRLUP9WMQwN.jpeg"
+        },
+        {
+          "name": "Mini Donut Framboise Fourré",
+          "description": "Fourré à la crème framboise fait maison",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OS5L9D1i7Ldtnj7.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Bagels",
+      "items": [
+        {
+          "name": "Oeuf et jambon",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "oeuf et crème cheese",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oeuf, jambon et fromage",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oeuf, crème cheese et fromage",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oeuf, crème cheese, jambon et fromage",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oeuf, crème cheese et avocat",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Combos",
+      "items": [
+        {
+          "name": "Bagel et café",
+          "description": "",
+          "price": 69.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bagel et latte",
+          "description": "",
+          "price": 79.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bagel et milkshake",
+          "description": "",
+          "price": 79.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bagel, donut et boisson",
+          "description": "",
+          "price": 89.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Mini",
+      "items": [
+        {
+          "name": "Pièce",
+          "description": "",
+          "price": 23.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Boite de 6",
+          "description": "",
+          "price": 88.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Boite de 12",
+          "description": "",
+          "price": 166.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Maxi",
+      "items": [
+        {
+          "name": "Pièce",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Boite de 3",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Boite de 6",
+          "description": "",
+          "price": 109.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Boite de  12",
+          "description": "",
+          "price": 200.0,
+          "currency": "Dh"
+        }
+      ]
+    }
+  ]
+}
