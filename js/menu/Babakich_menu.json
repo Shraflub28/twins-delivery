@@ -1,0 +1,474 @@
+{
+  "restaurant_name": "Babakich",
+  "categories": [
+    {
+      "name": "Nos Entrées Froides",
+      "items": [
+        {
+          "name": "Salade Tomates Roquette",
+          "description": "Roquette, tomate, oignions, mélasse grenadine",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade Fattouche",
+          "description": "Laitue, concombre, pain grillé, radis, mélasse grenadine",
+          "price": 83.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Taboulé",
+          "description": "Persil, tomate, oignions, boulghour, menthe, huile d'olive, citron",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Labneh",
+          "description": "Fromage blanc, zaatar, huile d'olive",
+          "price": 66.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mouhammara",
+          "description": "Purée de poivrons rouges, noix, ail, huile d'olive, mélasse grenadine",
+          "price": 76.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Hummous",
+          "description": "Purée de pois chiches, crème de sésame, ail, jus de citron",
+          "price": 66.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Moutabel",
+          "description": "Caviar d'aubergine, crème de sésame, ail, menthe, jus de citron",
+          "price": 78.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Entrées Chaudes",
+      "items": [
+        {
+          "name": "Batata Harra",
+          "description": "Pommes de terre épicées libanaise",
+          "price": 62.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Ailes de poulet Citronnées aux épices Libanaise",
+          "description": "",
+          "price": 91.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Kebbeh - 3 Pièces",
+          "description": "Boulettes de viande hachée, oignions, boulghour",
+          "price": 88.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Makanek",
+          "description": "Petites saucisses citronnées, mélasse grenadine",
+          "price": 91.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fatayer - 4 Pièces",
+          "description": "Chaussons aux épinards",
+          "price": 83.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sambousik Fromage - 4 Pièces",
+          "description": "Chausson au fromage",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sambousik Viande - 4 Pièces",
+          "description": "Chausson à la viande hachée et oignon",
+          "price": 83.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Falafel (3 Pièces)",
+          "description": "Boulette de pois chiches et fèves",
+          "price": 71.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fetteh Hommous",
+          "description": "",
+          "price": 76.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/vl2pgr2j1iriKpN.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Nos Spécialités",
+      "items": [
+        {
+          "name": "Jallab",
+          "description": "Boisson rafraichissante à base de sirop de dattes, eau de rose",
+          "price": 54.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Manakishs (Galettes de Pain Libanaises)",
+      "items": [
+        {
+          "name": "Manakish Zaatar",
+          "description": "",
+          "price": 91.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Manakish Fromage (Akkawi)",
+          "description": "",
+          "price": 104.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Manakish Zaatar et Fromage",
+          "description": "",
+          "price": 97.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Manakish Lahem Baajin (Viande)",
+          "description": "",
+          "price": 122.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mouhmara Et Fromage",
+          "description": "",
+          "price": 116.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/iNLtJXmVnFajckg.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Nos Mezzés Dégustation",
+      "items": [
+        {
+          "name": "Mezzé Froid",
+          "description": "Moutabel, hummous, taboulé, warak enab, labneh, mouhammara",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mezzé Chaud",
+          "description": "kebbeh, fatayer, falafel samboussik fromage et viande, batata harra",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mezzé Mixte",
+          "description": "Moutabel, hummous, taboulé, kebbeh, fatayer, falafel",
+          "price": 160.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Viandes aux épices Spéciales",
+      "items": [
+        {
+          "name": "Shawarma Poulet au Plat",
+          "description": "Servi avec salade, frites et pain",
+          "price": 113.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Shawarma Viande au Plat",
+          "description": "Servi avec salade, frites et pain",
+          "price": 129.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Brochettes Kefta - 2 Brochettes",
+          "description": "Servi avec salade, frites et pain",
+          "price": 129.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Brochette Bœuf - 2 Brochettes",
+          "description": "Servi avec salade, frites et pain",
+          "price": 134.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Brochettes Poulet Taouk - 2 Brochettes",
+          "description": "Servi avec salade, frites et pain",
+          "price": 104.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mix Grill (Assortiments de brochettes)",
+          "description": "",
+          "price": 229.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Babakish Grill",
+          "description": "Mix grill accompagné de taboulé, lebné, hummous et moutabel",
+          "price": 220.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Shawarma En Poulet Ou En Kaak",
+      "items": [
+        {
+          "name": "Shawarma Poulet",
+          "description": "",
+          "price": 104.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Shawarma Viande",
+          "description": "",
+          "price": 116.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Shawarma Mixte",
+          "description": "",
+          "price": 110.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Kaaks (Pain brioché au Sésame avec frites)",
+      "items": [
+        {
+          "name": "Kaak Falafel",
+          "description": "Falafel, laitue, tomate, cornichon, tahina",
+          "price": 112.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Kaak Thon",
+          "description": "Thon, laitue, oignions, tomate, cornichon, mayonnaise",
+          "price": 100.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Suppléments",
+      "items": [
+        {
+          "name": "Pain Maison (2 Pièces)",
+          "description": "",
+          "price": 34.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Kaak Nature (1 Pièce)",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Desserts",
+      "items": [
+        {
+          "name": "Manakish au Nutella et noix de cajou",
+          "description": "",
+          "price": 72.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mouhalabieh",
+          "description": "Dessert lacté parfumé à la fleur d'oranger",
+          "price": 54.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Knafe",
+          "description": "Dessert chaud à base de fromage et sirop aromatisé",
+          "price": 79.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Cocktails",
+      "items": [
+        {
+          "name": "Mojito",
+          "description": "Citron, menthe, sucre, eau pétillante",
+          "price": 54.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Boost Me",
+          "description": "Orange, citron, eau pétillante, sirop framboise",
+          "price": 54.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fresh Bubble",
+          "description": "Orange, eau pétillante, sirop framboise",
+          "price": 54.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pink Lady",
+          "description": "Citron, eau pétillante, sirop framboise",
+          "price": 54.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sunny Babakish",
+          "description": "Gingembre, citron, menthe, eau pétillante",
+          "price": 54.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Boissons Froides",
+      "items": [
+        {
+          "name": "Eau Plate 50cl",
+          "description": "",
+          "price": 24.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Eau Plate 1.5L",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Eau Pétillante 50cl",
+          "description": "",
+          "price": 24.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Eau Pétillante 1L",
+          "description": "",
+          "price": 39.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus d'Orange Naturel",
+          "description": "",
+          "price": 46.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de Citron",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bière Sans Alcool",
+          "description": "",
+          "price": 58.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coca-Cola",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coca-Cola Zéro",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Hawaï",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Orangina",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Schweppes Citron",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Schweppes Tonic",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Red Bull",
+          "description": "",
+          "price": 60.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Boissons Chaudes",
+      "items": [
+        {
+          "name": "Café",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café Décafeiné",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café allongé",
+          "description": "",
+          "price": 41.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nous-Nous",
+          "description": "",
+          "price": 41.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café Au Lait",
+          "description": "",
+          "price": 41.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Thé à La Menthe",
+          "description": "",
+          "price": 41.0,
+          "currency": "Dh"
+        }
+      ]
+    }
+  ]
+}

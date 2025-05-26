@@ -1,0 +1,105 @@
+{
+  "restaurant_name": "Oliveri",
+  "categories": [
+    {
+      "name": "Gâteaux Glacés",
+      "items": [
+        {
+          "name": "Tranche Macarons",
+          "description": "Vanille, praliné, caramel, parfait café, macarons",
+          "price": 315.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d6b170936034e3da3cc2NxDN.jpg"
+        },
+        {
+          "name": "Tarte Spéciale",
+          "description": "Nougat, caramel, parfait café, praliné, amandes caramélisées, meringues",
+          "price": 335.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d64070936034e3da3cc0y9lt.jpg"
+        },
+        {
+          "name": "La Bûche Spéciale",
+          "description": "Nougat, Praliné, Caramel, Amandes Caramélisées, Meringues",
+          "price": 315.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d57e70936034e3da3cbclT9f.jpg"
+        },
+        {
+          "name": "Tarte de 10",
+          "description": "Vanille, nougat, pistache, fraise, praliné, chocolat, pain de savoie, parfait café, meringues",
+          "price": 195.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d51e70936034e3da3cbawUQM.jpg"
+        },
+        {
+          "name": "Tarte aux Macarons",
+          "description": "Vanille, praliné, caramel, parfait café, macarons",
+          "price": 315.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d5e470936034e3da3cbel23j.jpg"
+        },
+        {
+          "name": "Tranche Sorbet Macarons",
+          "description": "Mangue, fraise, citron, vanille, macarons citron & mangue",
+          "price": 315.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d6e670936034e3da3cc3rvAT.jpg"
+        },
+        {
+          "name": "Tarte de 12",
+          "description": "Vanille, nougat, pistache, fraise, praliné, chocolat, pain de savoie, parfait café, meringues",
+          "price": 245.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d5bd70936034e3da3cbdd4x4.jpg"
+        },
+        {
+          "name": "Cassate Sicilienne",
+          "description": "Praliné, pistache, fraise, pain de savoie, chantilly aux fruits confits",
+          "price": 195.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d67b70936034e3da3cc1FJa4.jpg"
+        },
+        {
+          "name": "Tarte Sorbet Macarons",
+          "description": "Mangue, fraise, citron, vanille, macarons citron & mangue",
+          "price": 315.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d60f70936034e3da3cbfcdFa.jpg"
+        },
+        {
+          "name": "Tarte de 6",
+          "description": "Vanille, Nougat, Pistache, Fraise, Praliné, Chocolat, Pain de savoie, Parfait Café, Meringues",
+          "price": 165.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5eb6d55470936034e3da3cbb6eKO.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pots et barquettes",
+      "items": [
+        {
+          "name": "Barquette ( 0,5l)",
+          "description": "parfum au choix : Chocolat, Caramel, Praliné, Nougat, Pistache, Parfait café, Orange, Moka, Vanille, Framboise, Citron, Mangue, Fraise",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5f55035856bf6345c2af9510MNth.jpg"
+        },
+        {
+          "name": "Barquette (1l)",
+          "description": "Parfum au choix : Chocolat, Caramel, Praliné, Nougat, Pistache, Parfait café, Orange, Moka, Vanille, Framboise, Citron, Mangue, Fraise",
+          "price": 120.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5f55049956bf6345c2af9520hpRv.jpg"
+        },
+        {
+          "name": "Le pot panaché (75 cl)",
+          "description": "Composition : Vanille, biscuit, parfait, chocolat, caramel, nougat",
+          "price": 90.0,
+          "currency": "Dh"
+        }
+      ]
+    }
+  ]
+}

@@ -1195,30 +1195,9 @@ html {
     animation: flyIcon 1s infinite;
 }
 
-@keyframes flyIcon {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(3px);
-    }
-}
 
 .newsletter-form button.success i {
     display: none;
-}
-
-/* Remove all newsletter-related styles */
-.newsletter,
-.newsletter-content,
-.newsletter-form,
-.newsletter-form button,
-.newsletter-form button.ready,
-.newsletter-form button.success,
-.newsletter-form button.success::before,
-.newsletter-form button i,
-.newsletter-form button:hover i {
-    /* These elements have been removed from the HTML */
 }
 
 /* Remove unused keyframes */
