@@ -10,9 +10,9 @@ header {
 }
 
 .search-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
     position: relative;
     z-index: 2;
 }
@@ -171,8 +171,8 @@ header {
 /* Restaurant Grid Enhancements */
 .restaurant-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .restaurant-card {
@@ -288,7 +288,7 @@ header {
 /* Responsive Design */
 @media (max-width: 768px) {
     .search-container {
-        padding: 1rem;
+        padding: 2rem 1rem;
     }
 
     .search-filters {
@@ -312,6 +312,36 @@ header {
 
     .sort-options select {
         width: 100%;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Add media query for very small screens */
+@media (max-width: 380px) {
+    .search-container {
+        padding: 1.5rem 0.5rem; /* Further reduce padding for very small screens */
+    }
+
+    .restaurant-grid {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+        gap: 1rem;
+    }
+
+    .restaurant-card .restaurant-info {
+        padding: 1rem; /* Reduce padding inside cards */
+    }
+
+    .results-header h2 {
+        font-size: 1.5rem; /* Adjust header size */
+    }
+
+    .filter-group select,
+    .search-bar input {
+        font-size: 0.9rem; /* Adjust font size in inputs */
     }
 }
 

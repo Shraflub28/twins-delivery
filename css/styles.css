@@ -23,9 +23,21 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html,
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 body {
     background-color: var(--background-light);
     color: var(--text-color);
+}
+
+img,
+video,
+iframe {
+    max-width: 100%; /* Ensure media doesn't overflow */
+    height: auto;    /* Maintain aspect ratio */
 }
 
 /* Header Styles */
