@@ -317,6 +317,7 @@ header {
     .restaurant-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1rem;
+        justify-items: center;
     }
 }
 
@@ -326,13 +327,10 @@ header {
         padding: 1.5rem 0.5rem; /* Further reduce padding for very small screens */
     }
 
-    .search-results {
-        padding: 1rem 0.5rem; /* Reduce padding for the results container */
-    }
-
     .restaurant-grid {
         grid-template-columns: 1fr; /* Single column for very small screens */
         gap: 1rem;
+        justify-items: center;
     }
 
     .restaurant-card .restaurant-info {

@@ -215,146 +215,223 @@
             scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
         });
 
-        // See More Restaurants functionality
+        // --- Pagination Variables ---
+        const INITIAL_LOAD_LIMIT = 6; // Number of restaurants to load initially
+        const BATCH_SIZE = 6; // Number of restaurants to load per "See More" click
+        let currentOffset = 0;
+        let allRestaurantsLoaded = false; // Flag to indicate if all restaurants are loaded
+        // --------------------------
+
         document.addEventListener('DOMContentLoaded', () => {
-            // Load restaurants from Supabase
-            loadRestaurantsFromDatabase();
-            
-            // Initialize see more functionality
-            initSeeMoreFunctionality();
+            // Load initial batch of restaurants
+            fetchAndDisplayRestaurants(currentOffset, INITIAL_LOAD_LIMIT);
+
+            // Initialize see more functionality (attaches click listener)
+            initSeeMoreButton();
+
+            // Initialize animations and effects that apply to static or dynamically added elements
+            initAnimationsAndEffects();
         });
 
-        // Function to load restaurants from Supabase database
-        async function loadRestaurantsFromDatabase() {
+        // Function to determine badge for restaurant (adapted from search.html)
+        function getBadgeForRestaurant(restaurant, index) {
+            const badges = [
+                { text: "20% OFF", icon: "percent", color: "#ff458b" },
+                { text: "Fast", icon: "bolt", color: "#ff7a2d" },
+                { text: "Popular", icon: "fire", color: "#ff5722" },
+                { text: "Premium", icon: "gem", color: "#9c27b0" },
+                { text: "New", icon: "utensils", color: "#4caf50" },
+                { text: "Sweet", icon: "cookie", color: "#e91e63" },
+                { text: "Top Rated", icon: "star", color: "#ffc107" },
+                { text: "Fresh", icon: "fish", color: "#00bcd4" }
+            ];
+
+            // Try to assign badges intelligently
+            if (restaurant.cuisine) {
+                const cuisine = restaurant.cuisine.toLowerCase();
+                if (cuisine.includes('sushi')) return { text: "Fresh", icon: "fish", color: "#00bcd4" };
+                if (cuisine.includes('burger')) return { text: "Gourmet", icon: "hamburger", color: "#ff9800" };
+                if (cuisine.includes('pizza')) return { text: "Italian", icon: "pizza-slice", color: "#4caf50" };
+                if (cuisine.includes('dessert')) return { text: "Sweet", icon: "cookie", color: "#e91e63" };
+            }
+
+            if (restaurant.rating >= 4.8) return { text: "Top Rated", icon: "star", color: "#ffc107" };
+
+            // Use a different badge for each item based on its index relative to the *total* number of items displayed so far
             const restaurantGrid = document.getElementById('restaurantGrid');
-            
+            const totalItemsDisplayed = restaurantGrid ? restaurantGrid.querySelectorAll('.restaurant-card').length : 0;
+            return badges[(totalItemsDisplayed + index) % badges.length];
+        }
+
+        // Function to create and append restaurant cards to the grid
+        function appendRestaurantsToGrid(restaurants) {
+            const restaurantGrid = document.getElementById('restaurantGrid');
+            const loadingSpinner = restaurantGrid ? restaurantGrid.querySelector('.loading-spinner') : null;
+
+            // Remove spinner before appending new restaurants if it exists
+            if (loadingSpinner) {
+                loadingSpinner.remove();
+            }
+
+            if (!restaurantGrid) {
+                console.error('Restaurant grid element not found!');
+                return;
+            }
+
+            if (!restaurants || restaurants.length === 0) {
+                 // If no restaurants returned, and it's the initial load, show message
+                 if (currentOffset === 0) {
+                     restaurantGrid.innerHTML = `
+                        <div class="no-restaurants">
+                            <i class="fas fa-exclamation-circle fa-3x"></i>
+                            <p>No restaurants found.</p>
+                        </div>
+                    `;
+                 }
+                 // If no restaurants returned and it's *not* the initial load, it means we've reached the end.
+                return;
+            }
+
+            restaurants.forEach((restaurant, index) => {
+                const badge = getBadgeForRestaurant(restaurant, index);
+
+                const restaurantCard = document.createElement('div');
+                restaurantCard.className = `restaurant-card fade-in`; // Add fade-in class for animation
+                // restaurantCard.style.display = 'block'; // Ensure it's displayed (CSS will handle hidden-restaurant class)
+
+                const imagePath = restaurant.image_url || `pictures/${restaurant.name.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\s/g, '-')}.jpeg`;
+                const fallbackImage = 'pictures/restaurant-default.jpg';
+
+                // Calculate price level string
+                const priceLevel = restaurant.price_level || 2; // Default to 2 if not present
+                const priceString = '$'.repeat(Math.min(priceLevel, 4));
+
+                // Use delivery_time from restaurant data or generate
+                const deliveryTime = restaurant.delivery_time || `${Math.floor(Math.random() * 15) + 15}-${Math.floor(Math.random() * 15) + 25} min`;
+
+                restaurantCard.innerHTML = `
+                    <div class="card-badge" style="background-color: ${badge.color};">
+                        <i class="fas fa-${badge.icon}"></i> ${badge.text}
+                    </div>
+                    <a href="menu.html?restaurant=${encodeURIComponent(restaurant.name)}">
+                        <img src="${imagePath}" alt="${restaurant.name}" onerror="this.src='${fallbackImage}'" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>${restaurant.name}</h3>
+                            <p>
+                                <i class="fas fa-utensils"></i> ${restaurant.cuisine || 'Various'} •
+                                <i class="fas fa-star"></i> ${restaurant.rating || '4.0'} •
+                                <span class="price-level">${priceString}</span>
+                            </p>
+                            <span class="delivery-time"><i class="fas fa-clock"></i> ${deliveryTime}</span>
+                        </div>
+                    </a>
+                `;
+
+                restaurantGrid.appendChild(restaurantCard);
+
+                // Observe the newly added card for animation
+                observeElementForAnimation(restaurantCard);
+            });
+
+            // Re-initialize 3D effect and hover effect listeners using event delegation
+            initRestaurantCardEffects();
+        }
+
+
+        // Function to fetch and display restaurants with pagination
+        async function fetchAndDisplayRestaurants(offset, limit) {
+            const restaurantGrid = document.getElementById('restaurantGrid');
+            const seeMoreBtn = document.getElementById('see-more-btn');
+
+            if (!restaurantGrid) return; // Exit if grid not found
+
+            // Show loading indicator
+             if (offset === 0) {
+                 // Show spinner only if it's the initial load and no restaurants are displayed yet
+                 if (restaurantGrid.querySelectorAll('.restaurant-card').length === 0) {
+                     restaurantGrid.innerHTML = `
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin fa-3x"></i>
+                            <p>Loading restaurants...</p>
+                        </div>
+                     `;
+                 }
+             } else if (seeMoreBtn) {
+                 seeMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                 seeMoreBtn.disabled = true; // Disable button while loading
+                 seeMoreBtn.classList.add('loading');
+             }
+
             try {
                 // Ensure Supabase is initialized
                 await window.SupabaseWrapper.init();
-                
-                // Get restaurants from Supabase
-                const { success, data, error } = await window.SupabaseWrapper.restaurants.getAll();
-                
-                if (!success || error) {
-                    throw new Error(error || 'Failed to fetch restaurants');
+
+                // Fetch a specific range of restaurants from Supabase
+                // Supabase range is inclusive, so fetch from 'offset' to 'offset + limit - 1'
+                const { data, error } = await window.SupabaseWrapper.client
+                    .from('restaurants')
+                    .select('*')
+                    .order('name') // Order by name or another relevant field
+                    .range(offset, offset + limit - 1);
+
+                if (error) {
+                    throw new Error(error.message);
                 }
-                
-                // Clear loading indicator
-                restaurantGrid.innerHTML = '';
-                
-                // Display restaurants
-                if (data && data.length > 0) {
-                    // Function to determine badge for restaurant (adapted from search.html)
-                    function getBadgeForRestaurant(restaurant, index) {
-                        const badges = [
-                            { text: "20% OFF", icon: "percent", color: "#ff458b" },
-                            { text: "Fast", icon: "bolt", color: "#ff7a2d" },
-                            { text: "Popular", icon: "fire", color: "#ff5722" },
-                            { text: "Premium", icon: "gem", color: "#9c27b0" },
-                            { text: "New", icon: "utensils", color: "#4caf50" },
-                            { text: "Sweet", icon: "cookie", color: "#e91e63" },
-                            { text: "Top Rated", icon: "star", color: "#ffc107" },
-                            { text: "Fresh", icon: "fish", color: "#00bcd4" }
-                        ];
-                        
-                        // Try to assign badges intelligently
-                        if (restaurant.cuisine) {
-                            const cuisine = restaurant.cuisine.toLowerCase();
-                            if (cuisine.includes('sushi')) return { text: "Fresh", icon: "fish", color: "#00bcd4" };
-                            if (cuisine.includes('burger')) return { text: "Gourmet", icon: "hamburger", color: "#ff9800" };
-                            if (cuisine.includes('pizza')) return { text: "Italian", icon: "pizza-slice", color: "#4caf50" };
-                            if (cuisine.includes('dessert')) return { text: "Sweet", icon: "cookie", color: "#e91e63" };
-                        }
-                        
-                        if (restaurant.rating >= 4.8) return { text: "Top Rated", icon: "star", color: "#ffc107" };
-                        
-                        return badges[index % badges.length];
+
+                // Append the fetched restaurants to the grid
+                appendRestaurantsToGrid(data);
+
+                // Update the offset for the next fetch
+                currentOffset += (data ? data.length : 0); // Add fetched count to offset
+
+                // Check if the number of fetched restaurants is less than the limit, indicating end of list
+                if (!data || data.length < limit) {
+                    allRestaurantsLoaded = true;
+                    if (seeMoreBtn) {
+                        seeMoreBtn.style.display = 'none'; // Hide the "See More" button
                     }
-                    
-                    data.forEach((restaurant, index) => {
-                        const badge = getBadgeForRestaurant(restaurant, index);
-                        const isHidden = index >= 3; // Show 3 restaurants initially
-                        
-                        const restaurantCard = document.createElement('div');
-                        restaurantCard.className = `restaurant-card${isHidden ? ' hidden-restaurant' : ''}`;
-                        restaurantCard.style.display = isHidden ? 'none' : 'block';
-                        
-                        const imagePath = restaurant.image_url || `pictures/${restaurant.name.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\s/g, '-')}.jpeg`;
-                        const fallbackImage = 'pictures/restaurant-default.jpg';
-
-                        // Calculate price level string
-                        const priceLevel = restaurant.price_level || 2; // Default to 2 if not present
-                        const priceString = '$'.repeat(Math.min(priceLevel, 4));
-
-                        // Use delivery_time from restaurant data or generate
-                        const deliveryTime = restaurant.delivery_time || `${Math.floor(Math.random() * 15) + 15}-${Math.floor(Math.random() * 15) + 25} min`;
-                        
-                        restaurantCard.innerHTML = `
-                            <div class="card-badge" style="background-color: ${badge.color};">
-                                <i class="fas fa-${badge.icon}"></i> ${badge.text}
-                            </div>
-                            <a href="menu.html?restaurant=${encodeURIComponent(restaurant.name)}">
-                                <img src="${imagePath}" alt="${restaurant.name}" onerror="this.src='${fallbackImage}'">
-                                <div class="restaurant-info">
-                                    <h3>${restaurant.name}</h3>
-                                    <p>
-                                        <i class="fas fa-utensils"></i> ${restaurant.cuisine || 'Various'} • 
-                                        <i class="fas fa-star"></i> ${restaurant.rating || '4.0'} •
-                                        <span class="price-level">${priceString}</span>
-                                    </p>
-                                    <span class="delivery-time"><i class="fas fa-clock"></i> ${deliveryTime}</span>
-                                </div>
-                            </a>
-                        `;
-                        
-                        restaurantGrid.appendChild(restaurantCard);
-                    });
                 } else {
-                    restaurantGrid.innerHTML = `
+                     // Restore button state if more restaurants were loaded
+                     if (seeMoreBtn) {
+                         seeMoreBtn.innerHTML = '<span>See More Restaurants</span><i class="fas fa-chevron-down"></i>';
+                         seeMoreBtn.disabled = false;
+                         seeMoreBtn.classList.remove('loading');
+                     }
+                }
+
+            } catch (error) {
+                console.error('Error fetching or loading restaurants:', error);
+                if (restaurantGrid.querySelector('.loading-spinner')) {
+                     restaurantGrid.innerHTML = `
                         <div class="no-restaurants">
-                            <i class="fas fa-exclamation-circle fa-3x"></i>
-                            <p>No restaurants found. Please check your database.</p>
+                            <i class="fas fa-exclamation-triangle fa-3x"></i>
+                            <p>Error loading restaurants: ${error.message}</p>
                         </div>
                     `;
+                } else if (seeMoreBtn) {
+                     seeMoreBtn.innerHTML = '<span>Error loading</span><i class="fas fa-exclamation-circle"></i>';
+                     seeMoreBtn.disabled = true; // Disable button on error
+                     seeMoreBtn.classList.remove('loading');
                 }
-            } catch (error) {
-                console.error('Error loading restaurants:', error);
-                restaurantGrid.innerHTML = `
-                    <div class="no-restaurants">
-                        <i class="fas fa-exclamation-triangle fa-3x"></i>
-                        <p>Error loading restaurants: ${error.message}</p>
-                    </div>
-                `;
+                 allRestaurantsLoaded = true; // Assume all are loaded on error to prevent further attempts
             }
         }
 
-        // Initialize see more functionality
-        function initSeeMoreFunctionality() {
+
+        // Initialize see more button functionality
+        function initSeeMoreButton() {
             const seeMoreBtn = document.getElementById('see-more-btn');
 
             if (seeMoreBtn) {
+                // Add event listener only once
                 seeMoreBtn.addEventListener('click', () => {
-                    const isActive = seeMoreBtn.classList.contains('active');
-                    const hiddenRestaurants = document.querySelectorAll('.hidden-restaurant');
-                    
-                    if (!isActive) {
-                        // Show hidden restaurants
-                        hiddenRestaurants.forEach(restaurant => {
-                            restaurant.style.display = 'block';
-                        });
-                        seeMoreBtn.classList.add('active');
-                        seeMoreBtn.querySelector('span').textContent = 'Show Less';
-                    } else {
-                        // Hide restaurants
-                        hiddenRestaurants.forEach(restaurant => {
-                            restaurant.style.display = 'none';
-                        });
-                        seeMoreBtn.classList.remove('active');
-                        seeMoreBtn.querySelector('span').textContent = 'See More Restaurants';
+                    if (!allRestaurantsLoaded) {
+                         fetchAndDisplayRestaurants(currentOffset, BATCH_SIZE);
                     }
                 });
             }
         }
+
 
         // Smooth Navigation
         document.querySelectorAll('.nav-link, .mobile-nav-item').forEach(link => {
@@ -364,9 +441,13 @@
                 // Only apply smooth scrolling to anchor links (those starting with #)
                 if (href.startsWith('#')) {
                     e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
                 // For external links, let the default navigation happen
             });
@@ -374,83 +455,128 @@
 
         // Active Navigation Item
         const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-item'); // Include mobile links
+
         window.addEventListener('scroll', () => {
             let current = '';
+            const scrollY = window.scrollY;
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                // Adjust the offset (e.g., -200) to change when the active state changes
+                if (scrollY >= sectionTop - sectionHeight / 3) {
                     current = section.getAttribute('id');
                 }
             });
 
-            document.querySelectorAll('.nav-link, .mobile-nav-item').forEach(link => {
+            navLinks.forEach(link => {
                 link.classList.remove('active');
                 const href = link.getAttribute('href');
-                // Only apply active class to elements that link to sections with IDs
-                if (href && href.startsWith('#') && href === `#${current}`) {
+                 // Check if the href is an internal anchor link before comparing
+                if (href && href.startsWith('#') && href.substring(1) === current) {
                     link.classList.add('active');
                 }
             });
         });
 
-        // Parallax Effect for Floating Elements
-        window.addEventListener('mousemove', (e) => {
-            const floatingElements = document.querySelectorAll('.floating-element');
-            const mouseX = e.clientX / window.innerWidth - 0.5;
-            const mouseY = e.clientY / window.innerHeight - 0.5;
+        // Location Input Enhancement
+        const addressInput = document.getElementById('location-input');
+        const searchBtn = document.querySelector('.search-btn');
 
-            floatingElements.forEach(element => {
-                const speed = element.offsetWidth / 100;
-                element.style.transform = `translate(${mouseX * speed}px, ${mouseY * speed}px)`;
+        if (addressInput && searchBtn) {
+            addressInput.addEventListener('focus', () => {
+                addressInput.parentElement.classList.add('focused');
             });
-        });
+
+            addressInput.addEventListener('blur', () => {
+                addressInput.parentElement.classList.remove('focused');
+            });
+
+            searchBtn.addEventListener('click', () => {
+                if (addressInput.value.trim() !== '') {
+                    searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+                    // Simulate search delay
+                    setTimeout(() => {
+                        searchBtn.innerHTML = '<i class="fas fa-search"></i> Find Food';
+                        // TODO: Implement actual search functionality
+                        alert('Searching for: ' + addressInput.value);
+                    }, 1500);
+                }
+            });
+        }
 
         // Intersection Observer for Fade-in Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        const animationObserverOptions = {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Start observing 50px before the bottom of the viewport
         };
 
-        const observer = new IntersectionObserver((entries) => {
+        const animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    // Optional: Stop observing once visible if animation only happens once
+                    // animationObserver.unobserve(entry.target);
+                } else {
+                    // Optional: Remove 'visible' class if you want elements to animate in again when scrolling back
+                    // entry.target.classList.remove('visible');
                 }
             });
-        }, observerOptions);
+        }, animationObserverOptions);
 
-        // Observe all sections and cards
-        document.querySelectorAll('section, .restaurant-card, .category-item, .feature').forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
-        });
+        // Function to observe a single element
+        function observeElementForAnimation(el) {
+             if (el && !el.classList.contains('fade-in')) {
+                 el.classList.add('fade-in'); // Add the base fade-in class if not present
+             }
+             if (el) {
+                animationObserver.observe(el);
+             }
+        }
 
-        // Location Search Animation
-        const locationInput = document.getElementById('location-input');
-        const searchBtn = document.querySelector('.search-btn');
+        // Restaurant Cards Hover and 3D Effect (using event delegation)
+        function initRestaurantCardEffects() {
+            const restaurantGrid = document.getElementById('restaurantGrid');
+            if (!restaurantGrid) return;
 
-        locationInput.addEventListener('focus', () => {
-            document.querySelector('.location-bar').classList.add('focused');
-        });
+            // Remove existing listeners to prevent duplicates
+            restaurantGrid.removeEventListener('mouseover', handleCardEffectMouseOver);
+            restaurantGrid.removeEventListener('mouseout', handleCardEffectMouseOut);
+            restaurantGrid.removeEventListener('mousemove', handleCard3DEffectMouseMove);
 
-        locationInput.addEventListener('blur', () => {
-            document.querySelector('.location-bar').classList.remove('focused');
-        });
+            // Add new listeners
+            restaurantGrid.addEventListener('mouseover', handleCardEffectMouseOver);
+            restaurantGrid.addEventListener('mouseout', handleCardEffectMouseOut);
+            restaurantGrid.addEventListener('mousemove', handleCard3DEffectMouseMove);
+        }
 
-        // Add loading animation to search button
-        searchBtn.addEventListener('click', () => {
-            searchBtn.classList.add('loading');
-            setTimeout(() => {
-                searchBtn.classList.remove('loading');
-            }, 2000);
-        });
+        function handleCardEffectMouseOver(e) {
+            const targetCard = e.target.closest('.restaurant-card');
+            if (targetCard) {
+                 targetCard.style.transform = 'translateY(-10px)'; // Keep simple translateY for hover
+            }
+        }
 
-        // 3D Card Effect
-        document.addEventListener('click', function() {
-        document.querySelectorAll('.restaurant-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
+        function handleCardEffectMouseOut(e) {
+            const targetCard = e.target.closest('.restaurant-card');
+            if (targetCard) {
+                 // Only reset if not currently applying 3D effect
+                 // This simple example might interfere slightly; a more robust solution would track active state
+                 if (!targetCard.classList.contains('applying-3d')) {
+                     targetCard.style.transform = 'translateY(0)';
+                 }
+            }
+        }
+
+        function handleCard3DEffectMouseMove(e) {
+            const targetCard = e.target.closest('.restaurant-card');
+            if (!targetCard) return; // Only proceed if the mouse is over a restaurant card
+
+            // Add a class to indicate 3D effect is being applied (optional, helps with hover interaction)
+            targetCard.classList.add('applying-3d');
+
+            const rect = targetCard.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 
@@ -460,14 +586,59 @@
                 const angleX = (y - centerY) / 20;
                 const angleY = (centerX - x) / 20;
                 
-                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.05, 1.05, 1.05)`;
-            });
+            targetCard.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.05, 1.05, 1.05)`;
+        }
 
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        // Reset 3D effect when mouse leaves the grid (or use mouseout on the card itself)
+        document.getElementById('restaurantGrid').addEventListener('mouseleave', (e) => {
+             const targetCard = e.target.closest('.restaurant-card');
+             if (targetCard) {
+                 targetCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                 targetCard.classList.remove('applying-3d');
+             }
+        });
+
+        // Parallax Effect for Floating Elements (Refactored)
+        function initFloatingElementParallax() {
+             document.addEventListener('mousemove', (e) => {
+                const floatingElements = document.querySelectorAll('.floating-element');
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+
+                floatingElements.forEach(element => {
+                    // Use data-speed attribute for speed, default to 2
+                    const speed = parseFloat(element.getAttribute('data-speed')) || 2;
+                    const x = (mouseX - 0.5) * speed * 50; // Multiply by a factor for noticeable movement
+                    const y = (mouseY - 0.5) * speed * 50;
+                    element.style.transform = `translate(${x}px, ${y}px)`;
                 });
             });
-        });
+        }
+
+        // Function to initialize all necessary animations and effects
+        function initAnimationsAndEffects() {
+            // Observe static elements for fade-in animation
+             document.querySelectorAll('section, .category-item, .feature, .app-content, .app-image').forEach(el => {
+                 observeElementForAnimation(el);
+             });
+
+            // Initialize parallax for floating elements
+            initFloatingElementParallax();
+
+             // Feature item animation delay
+            document.querySelectorAll('.feature').forEach((feature, index) => {
+                feature.style.animationDelay = `${index * 0.1}s`; // Slightly faster delay
+                feature.classList.add('fade-up'); // Assuming you have a fade-up class
+            });
+
+             // Initialize restaurant card effects (hover and 3D)
+             initRestaurantCardEffects();
+        }
+
+
+         // Note: The 3D card effect and hover effect listeners are now handled
+         // with event delegation by calling initRestaurantCardEffects().
+
     </script>
     
     <!-- Supabase Integration -->
@@ -477,4 +648,4 @@
     <!-- Data Migration Script Removed -->
     <!-- <script src="js/data-migration.js"></script> -->
 </body>
-</html> 
+</html
