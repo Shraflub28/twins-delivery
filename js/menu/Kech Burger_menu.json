@@ -1,0 +1,381 @@
+{
+  "restaurant_name": "Kech Burger",
+  "categories": [
+    {
+      "name": "Burgers",
+      "items": [
+        {
+          "name": "Burger Le Classique",
+          "description": "Bun, steak haché, iceberg (accompagné de coleslaw et frites)",
+          "price": 54.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/NRyV90oT4a9xJ1G.png"
+        },
+        {
+          "name": "Le Trio Burger",
+          "description": "La black, l'original et le chicken Accompagné de coleslaw et frites",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/6euHzoh4IDPayMp.png"
+        },
+        {
+          "name": "Burger Le Beldi",
+          "description": "Bun, steak haché mariné, concassé de tomate, aubergine méchoui, marmelade d'oignons, olive noire (accompagné de coleslaw et frites)",
+          "price": 74.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/mkrS3jiJN268tdg.png"
+        },
+        {
+          "name": "Burger L'Espagnol",
+          "description": "Bun, steak haché, manchego, tortilla, iceberg, 3 poivrons marinés, olive noire (accompagné de coleslaw et frites)",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OiBkYpCj7SLkkWS.png"
+        },
+        {
+          "name": "Burger Le Black",
+          "description": "Bun black, poulet haché mariné, cheddar, iceberg, tomate, oignons sautés (accompagné de coleslaw et frites)",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qbbPeOzQUKPLBIy.png"
+        },
+        {
+          "name": "Burger l'Original Cheese",
+          "description": "Bun, steak haché, iceberg, tomate, pickels, cheddar (accompagné de coleslaw et frites)",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/NRyV90oT4a9xJ1G.png"
+        },
+        {
+          "name": "Burger Le BBQ",
+          "description": "Bun, steak haché, iceberg, tomate, pickels, oignons frits, sauce barbecue (accompagné de coleslaw et frites)",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/VgFj6rkvpuGSxZZ.png"
+        },
+        {
+          "name": "Burger Le Royal Bacon",
+          "description": "Bun, steak haché, bacon bœuf, œuf au plat, double cheddar, tomate, pickles, iceberg (accompagné de coleslaw et frites)",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ooeRKS5oVgaUppi.png"
+        },
+        {
+          "name": "Burger le Double Cheese",
+          "description": "Bun, double steak haché, double cheddar, tomate, pickles, iceberg (accompagné de coleslaw et frites)",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/j0t0B3tyOC9G1Kp.png"
+        },
+        {
+          "name": "Burger L'Agneau Méchoui",
+          "description": "Bun, agneau méchoui, 3 poivrons marinés, iceberg, tomate, marmelade d'oignons, cheddar (accompagné de coleslaw et frites)",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Kas8sqclr790Nr8.png"
+        },
+        {
+          "name": "Burger Le Rustique",
+          "description": "Bun, steak haché, raclette, oignons caramélisées, roquette, sauce barbecue (accompagné de coleslaw et frites)",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ZYzK6v7ueSZeL34.png"
+        },
+        {
+          "name": "Burger Le Chicken",
+          "description": "Bun, poulet, tomate, sauce tartare, iceberg (accompagné de coleslaw et frites)",
+          "price": 68.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/mzM48sPQClOqe66.png"
+        },
+        {
+          "name": "Burger Le Chèvre",
+          "description": "Bun, filet de poulet, chèvre pané, marmelade de pomme, roquette (accompagné de coleslaw et frites)",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/LjVoMgjX6UA0TuP.png"
+        },
+        {
+          "name": "Burger Le Fish",
+          "description": "Bun, saint pierre, tomate, sauce tartare, iceberg (accompagné de coleslaw et frites)",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/iAPaLNaUzpH0niL.png"
+        },
+        {
+          "name": "Burger Le Kech",
+          "description": "Bun, steak haché, bacon bœuf, double cheddar, marmelade d'oignons, champignons sautés, tomate, iceberg (accompagné de coleslaw et frites)",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ZfaapbvCsaCusoi.png"
+        },
+        {
+          "name": "Doigts de Poulet",
+          "description": "Croustillant pané au cornflakes (accompagné de coleslaw et frites)",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/yORATxU6Uv1wglR.png"
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Tiramisu",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/aAesA36VpD2VEZe.jpeg"
+        },
+        {
+          "name": "Mousse au Chocolat",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/aAesA36VpD2VEZe.jpeg"
+        },
+        {
+          "name": "Crème Brulée",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/aAesA36VpD2VEZe.jpeg"
+        },
+        {
+          "name": "Moelleux au Chocolat",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/GeV8nsk6a7gLkjv.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Mocktails",
+      "items": [
+        {
+          "name": "Marrakech Mocktail",
+          "description": "Fraise, banane, jus d'orange",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2gY50NjI1FOSikQ.png"
+        },
+        {
+          "name": "Détox Mocktail",
+          "description": "Citron, gingembre, concombre, menthe, pomme",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/4ZYR8MFzfGX4Zi5.png"
+        },
+        {
+          "name": "Citron, gingembre, concombre, menthe, pomme",
+          "description": "Citron, menthe fraîche, limonade",
+          "price": 35.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/4ZYR8MFzfGX4Zi5.png"
+        },
+        {
+          "name": "Mojito Mocktail",
+          "description": "Citron, menthe fraîche, limonade",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ZfaapbvCsaCusoi.png"
+        }
+      ]
+    },
+    {
+      "name": "Smoothies",
+      "items": [
+        {
+          "name": "Mango Berry Smoothie",
+          "description": "Fraise, framboise, mangue, jus d'orange",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TP1rK7jzxrv01JQ.png"
+        },
+        {
+          "name": "Very Berry Smoothie",
+          "description": "Fraise, framboise, fruits rouge de saison",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/G2ThYgYang54ucO.png"
+        },
+        {
+          "name": "Tahiti Smoothie",
+          "description": "Ananas, banane, mangue",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/CDDixujqweuUd8P.webp"
+        }
+      ]
+    },
+    {
+      "name": "Iced Tea",
+      "items": [
+        {
+          "name": "Iced Tea Pêche",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1Wq37BienzsdgIz.jpeg"
+        },
+        {
+          "name": "Oasis Tropical",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/E7ELfLaDaRAIggh.jpeg"
+        },
+        {
+          "name": "Oasis Pomme Cassis",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/zf6c8KZ8dDgTmzO.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Eau / Café",
+      "items": [
+        {
+          "name": "Sidi Ali",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/PzDWbt69fC8Otpu.jpeg"
+        },
+        {
+          "name": "Still Water",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/HhkjmtDcnjB2PId.jpeg"
+        },
+        {
+          "name": "Oulmes",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/BRA4ujXIAk6DVRt.jpeg"
+        },
+        {
+          "name": "Sparkling Water",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/q256xUNQtresFcL.jpeg"
+        },
+        {
+          "name": "Café Capsule",
+          "description": "",
+          "price": 24.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/5BDqQkCEuN204Uh.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Jus de Fruits Frais",
+      "items": [
+        {
+          "name": "Jus d'Orange Pressé",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/wBKJZInPcqDLEod.jpeg"
+        },
+        {
+          "name": "Jus de Carotte Orange",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/wBKJZInPcqDLEod.jpeg"
+        },
+        {
+          "name": "Jus de Fraise Orange",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/x65JtfRUqiFXBqM.jpeg"
+        },
+        {
+          "name": "Jus d'Ananas Orange",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/A80myrcsoGGbDbA.png"
+        },
+        {
+          "name": "Jus Citronnade Gingembre",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hOoZSDw4PQZygmG.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Sodas",
+      "items": [
+        {
+          "name": "Coca Cola",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hOoZSDw4PQZygmG.jpeg"
+        },
+        {
+          "name": "Coca Zéro",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2H0WWWDfr0sHO1z.jpeg"
+        },
+        {
+          "name": "Schweppes Tonic",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/aQuiLAKhvhqFgrP.jpeg"
+        },
+        {
+          "name": "Sprite",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/R5LhNLt3SM057co.jpeg"
+        },
+        {
+          "name": "Schweppes Citron",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/YyDjdboNEOJKAhh.jpeg"
+        },
+        {
+          "name": "Hawaï",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/NYpcE0MH3Ii0S2M.jpeg"
+        },
+        {
+          "name": "Pom's",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Ig7YnkJtAb2V41C.jpeg"
+        },
+        {
+          "name": "Orangina",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/FwSBBnyw1QToyvY.jpeg"
+        }
+      ]
+    }
+  ]
+}

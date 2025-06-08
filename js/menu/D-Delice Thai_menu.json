@@ -1,0 +1,565 @@
+{
+  "restaurant_name": "D-Delice Thai",
+  "categories": [
+    {
+      "name": "Starters",
+      "items": [
+        {
+          "name": "Nems",
+          "description": "Servis Par 4 pièces",
+          "price": 69.5,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/WOlk8TrtIwtbIBk.jpeg"
+        },
+        {
+          "name": "Starters Tempuras",
+          "description": "Servis par 4 pièces tempuras de crevettes",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/x8kCzScnU0B9iR8.jpeg"
+        },
+        {
+          "name": "Starters Crevettes Panées",
+          "description": "Crevettes panées, sauce kamikaze, ciboulette (4 piéces)",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/F181DOBaokIs6oW.jpeg"
+        },
+        {
+          "name": "Starters Crevettes Panées Shiitake",
+          "description": "Crevettes panées sauce kamikaze ciboulette 4 pièces",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/gAKsKLQo7D7waXz.jpeg"
+        },
+        {
+          "name": "Starters Poulet Caragué",
+          "description": "Poulets pané, sauce caragué",
+          "price": 50.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/wLrekVIrUq93Syt.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Soupes & Vapeurs",
+      "items": [
+        {
+          "name": "Soupe Miso",
+          "description": "Tofu, poireau, wakamé",
+          "price": 55.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2Unuq6FbZT6weiX.jpeg"
+        },
+        {
+          "name": "Soupe Royale",
+          "description": "Crevettes, saumon, calamars, surimi, vermicelle, citronnelle",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/5lhzpR98HLVhXwq.jpeg"
+        },
+        {
+          "name": "Soupe Ka Kai",
+          "description": "Soupe de poulet au lait de coco et galanga",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/aVJsmbIxrEyKimg.jpeg"
+        },
+        {
+          "name": "Soupe Fruits De mer",
+          "description": "Crevettes, saumon, calamars, surimi, ciboulette",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Q0szPLPb23KGNzM.jpeg"
+        },
+        {
+          "name": "Vapeurs",
+          "description": "Sauce aigre - douce, servis par 4 pièces",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Ip1pV5pGLEilWSn.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Salades",
+      "items": [
+        {
+          "name": "Umi Salade",
+          "description": "Mesclun, saumon, thon, poisson blanc, oignon rouge",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/P9KrCpUjHrMgVb6.jpeg"
+        },
+        {
+          "name": "Udon Salade",
+          "description": "Udon, légumes croquants, crabe, saumon cuit, crevettes, surimi, avocat, roquette, shiitake, tomate cerise",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/BukNZU8iwxSnUF2.jpeg"
+        },
+        {
+          "name": "Exotique Salade",
+          "description": "Légumes croquants, crevettes, surimi, mangue",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sZNIbLd6maJnFzh.jpeg"
+        },
+        {
+          "name": "Salade De Choux",
+          "description": "Choux et carottes",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1iQoA2BnX69ANXB.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Tartares",
+      "items": [
+        {
+          "name": "Tartare Saumon Guacamole",
+          "description": "Saumon, guacamole, fil d'ange, tobiko, Servis avec galette au riz croustillante",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Vftf3i8K4TD9AKT.jpeg"
+        },
+        {
+          "name": "Tartare Crabe Avocat",
+          "description": "Crabe, avocat, masago, ciboulette, Servis avec galette au riz croustillante",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/xg8PiFLV8g1M9jX.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Nigiri & Gunkan ( 2Pièces)",
+      "items": [
+        {
+          "name": "Nigiri Saumon",
+          "description": "Servis Par 2 Pièces",
+          "price": 55.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/A39C0ccAYbUlSDq.jpeg"
+        },
+        {
+          "name": "Nigiri Saumon Braisé",
+          "description": "Servis Par 2 Pièces",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/uHxqWghl3CDLj9s.jpeg"
+        },
+        {
+          "name": "Nigiri Avocat",
+          "description": "Servis Par 2 Pièces",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/vezUDE8NfYrslZE.jpeg"
+        },
+        {
+          "name": "Ebi Kamikaze",
+          "description": "Servis Par 2 Pièces",
+          "price": 50.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/yuI2LZHvStPvwSw.jpeg"
+        },
+        {
+          "name": "Gunkan Saumon Ciboulette",
+          "description": "Servis Par 2 Pièces",
+          "price": 55.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/E9roTGsKWvC2YIc.jpeg"
+        },
+        {
+          "name": "Gunkan Crabe Ciboulette",
+          "description": "Servis Par 2 Pièces",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/L5jAp3c0Lrm1cYI.jpeg"
+        },
+        {
+          "name": "Nigiri Ebi Kamikaze",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/dL5YwIocK5F6piS.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Futomaki (4Pièces)",
+      "items": [
+        {
+          "name": "Futomaki  Crabe",
+          "description": "Crabe, avocat ebi fry surimi, cheese, tobiko, ciboulette, servis par 4 pièces",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/KQf4wJEFkZRg25t.jpeg"
+        },
+        {
+          "name": "Futomaki Saumon",
+          "description": "Mangue saumon, cheese, chouga, masago, mangue, servis par 4 pièces",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/LoZ201XRRNZB8Kn.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Classic Rolls (4Pièces)",
+      "items": [
+        {
+          "name": "Classic Rolls Cream Cheese",
+          "description": "Cheese, saumon, surimi avocat tobico",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/5CzvX2OJb7TKIxl.jpeg"
+        },
+        {
+          "name": "Classic Rolls Saumon Avocat",
+          "description": "Saumon, avocat, cheese, sésame",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Q4LwqYdOhZzjYkP.jpeg"
+        },
+        {
+          "name": "Classic Rolls Saumon Cuit",
+          "description": "Saumon cuit, avocat, tobiko",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ey3kBz7Gz72866E.jpeg"
+        },
+        {
+          "name": "Classic Rolls Classic Roll",
+          "description": "Surimi, concombre, avocat, tobiko, sésame",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Vmaiuo75NU1C2Tt.jpeg"
+        },
+        {
+          "name": "Classic Rolls Bling Salmon",
+          "description": "Epinards tempura, saumon épicé, poireau, sésame",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/53TamHkxY18lldp.jpeg"
+        },
+        {
+          "name": "Classic Rolls Bling Tuna",
+          "description": "Epinards tempura, thon épicé, poireau, sésame",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sEbrtyYblxT8YeA.jpeg"
+        },
+        {
+          "name": "Classic Rolls Ebi Fry",
+          "description": "Ebi fry, avocat, ciboulette",
+          "price": 55.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/HDHtRBkpAt7E2oo.jpeg"
+        },
+        {
+          "name": "Classic Rolls Red Roll",
+          "description": "Ebi fry, avocat, cheese, tobiko",
+          "price": 49.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/LqFPpwAmovfUKs9.jpeg"
+        },
+        {
+          "name": "Classic Rolls Veggie Roll",
+          "description": "Concombre, salade, cheese, mangue roquette, avocat",
+          "price": 65.5,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/nXezQfkCKlqG6lf.jpeg"
+        },
+        {
+          "name": "Classic Rolls Raimbow",
+          "description": "Crabe, avocat, ciboulette, anguille, tobiko",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/g3KfeCh1IWyzQnZ.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Spring Rolls ( 6Pièces)",
+      "items": [
+        {
+          "name": "Spring Rolls Saumon Avocat",
+          "description": "Saumon, surimi, cheese, avocat, tobiko",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TMh1RAMauIOLNZ6.jpeg"
+        },
+        {
+          "name": "Spring Rolls Crevette Avocat",
+          "description": "Surimi, ebi fry, avocat, cheese tobiko",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/nmXFYEaX7xwYlZV.jpeg"
+        },
+        {
+          "name": "Spring Rolls Saumon Mangue",
+          "description": "Saumon crabe, Surimi, mangue, cheese, tobiko",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/MUC1RCsGBXxYmoT.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Crunchy ( 6Pièces)",
+      "items": [
+        {
+          "name": "Crunchy Saumon",
+          "description": "Saumon, cheese, choga, tobiko",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/pLTc42b7ESwu3Z3.jpeg"
+        },
+        {
+          "name": "Crunchy Ebi Fry",
+          "description": "Crevettes, cheese, tobiko",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/frINKc80bh7b3fq.jpeg"
+        },
+        {
+          "name": "Crunchy Anguille Surimi",
+          "description": "Anguille, saumon, choga, avocat, cheese, masago",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ZVArBtNVg0ybsMJ.jpeg"
+        },
+        {
+          "name": "Crunchy Ebi Avocat",
+          "description": "Crevette , cheese, tobiko, avocat",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/lDzxO7cX3blqzSx.jpeg"
+        },
+        {
+          "name": "Crunchy Maki Gratiné",
+          "description": "saumon, tobiko, mozzarella",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OvMVLrAJU0RLGeF.jpeg"
+        },
+        {
+          "name": "Crunchy Ebi Tempura",
+          "description": "Ebi Tempura, Tanoki, shichimi",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Drcyl5XemoAEDvh.jpeg"
+        },
+        {
+          "name": "Crunchy Tartare Gratiné",
+          "description": "Saumon, mozzarella, tobiko",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7Cdz6oGCzsIij8q.jpeg"
+        },
+        {
+          "name": "Crunchy Tartare",
+          "description": "Saumon, avocat, masago",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/J2hgghSm9a7pIHp.jpeg"
+        },
+        {
+          "name": "Crunchy Chouga Tartare",
+          "description": "Saumon, avocat, chouga, crabe, tobiko",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/BTZ44NH5TPoRQZo.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Formules Midi",
+      "items": [
+        {
+          "name": "Lunch 1",
+          "description": "Soupe Miso, Nems poulet (2 P), Maki Avocat cheese (6 P)",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/l8qGJIY7qC4BLLd.jpeg"
+        },
+        {
+          "name": "Lunch 2",
+          "description": "Nems poulet (2 P), Maki Ebi (6 P), Brochettes Saumon",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1bhmZQCZJrRhinN.jpeg"
+        },
+        {
+          "name": "Lunch 3",
+          "description": "Salade de choux, Bling salmon (4 P), Brochettes bœuf fromage (2 P)",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ASeMGCQ5izwOC6R.jpeg"
+        },
+        {
+          "name": "Lunch 4",
+          "description": "Riz Contonnais végétarien, Maki saumon (5 P), Tempura crevettes (5 P)",
+          "price": 120.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/E6afc0grK8P7sWW.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Plats",
+      "items": [
+        {
+          "name": "Plats D-delice Thaï Chicken",
+          "description": "Poulet pané, sauce curry riz ciboulette, germe de soja, légumes croquants",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/HUjvGMeWb94CdCy.jpeg"
+        },
+        {
+          "name": "Plats Végétarien",
+          "description": "Nouilles de riz germe de soja, carotte, ciboulette, tofu, œufs, sauce tamarin",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/BrFi7ddIk2uqxiV.jpeg"
+        },
+        {
+          "name": "Plats Pad Thaï Poulet",
+          "description": "Nouilles thaï aux œufs, ciboulette, cacahuètes, germe de soja, sauce tamarin poulet",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/dyoxKWG7xGW6jwc.jpeg"
+        },
+        {
+          "name": "Plats Curry Thaï",
+          "description": "Servi avec riz, lait de coco, curry rouge, poivrons, haricot vert, champignons frais, basilic,",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/IUsO3ayF9ocv41w.jpeg"
+        },
+        {
+          "name": "Plats Nouilles Sautées",
+          "description": "Carottes, oignons, courgettes, champignons noirs, choux, brocoli, gambas, poulet végétarien",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/r8PBJLzwMfi0hXt.jpeg"
+        },
+        {
+          "name": "Plats Saté Fruits De Mer",
+          "description": "Servi avec riz saté, poulet saté, crevettes saté, fruits de mer",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sfosYW4iGVmeIQF.jpeg"
+        },
+        {
+          "name": "Plats Wok",
+          "description": "Servi avec riz, sauce aux choix, basilic épicé, Noix de cajou et gingembre",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Oz0r0nNyKffWBCH.jpeg"
+        },
+        {
+          "name": "Plats Riz Cantonais",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/byIpG82KwKh3MKP.jpeg"
+        },
+        {
+          "name": "Plats Extras",
+          "description": "Riz vinaigré ,riz nature",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/PZgJDGz5KNmisZv.jpeg"
+        },
+        {
+          "name": "Plats Pad Thaï Crevettes",
+          "description": "Nouilles thaï aux œufs, ciboulette, cacahuètes, germe de soja, sauce tamarin crevettes",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/B6mOg58OHQHPHKi.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Banoffee Pie",
+          "description": "Banane",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/WoutJhxEIjlcs0u.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Nos Jus",
+      "items": [
+        {
+          "name": "Jus De Kiwi & Gingembre",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/k5gCLHyYFjbD9Em.jpeg"
+        },
+        {
+          "name": "Litchi",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/6thtJPR20l0aGwV.jpeg"
+        },
+        {
+          "name": "Jus De Mangue",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/F6WzlPOnvjmsshu.jpeg"
+        },
+        {
+          "name": "Jus De Citron Gingembre",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OLxBU4B1TnmbzMG.jpeg"
+        },
+        {
+          "name": "Jus De Citron & Menthe",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/x1QFSutWQ1EmcnE.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Boissons",
+      "items": [
+        {
+          "name": "Eau Minérale",
+          "description": "",
+          "price": 25.5,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/tSB5IwB0kwZCocs.jpeg"
+        },
+        {
+          "name": "Eau Gazeuse",
+          "description": "",
+          "price": 26.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/mO87YR6OHcXtebf.jpeg"
+        },
+        {
+          "name": "Soda",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/b1sWHgtCefLrgkm.jpeg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu - Twins Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Menu specific styles */
+        :root {
+            --menu-primary: #5b21b6;
+            --menu-secondary: #7c3aed;
+            --menu-accent: #f59e0b;
+            --menu-light: #f3f4f6;
+            --menu-dark: #1f2937;
+        }
+        
+        body {
+            background-color: #f9fafb;
+        }
+        
+        .menu-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Restaurant Header Design */
+        .restaurant-header {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .restaurant-banner {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .restaurant-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--menu-dark);
+            border: none;
+            padding: 0.6rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+        }
+        
+        .back-button:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .restaurant-info-container {
+            display: flex;
+            padding: 0 1.5rem 1.5rem;
+            background: white;
+            position: relative;
+        }
+        
+        .restaurant-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-top: -60px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+            background: white;
+        }
+        
+        .restaurant-info-large {
+            padding: 1rem 0 0 1.5rem;
+            flex: 1;
+        }
+        
+        .restaurant-header h1 {
+            font-size: 2rem;
+            margin: 0 0 0.5rem;
+            color: var(--menu-dark);
+        }
+        
+        .restaurant-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--menu-light);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--menu-dark);
+        }
+        
+        .restaurant-description {
+            margin-top: 1rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        /* Menu Categories Navigation */
+        .menu-categories-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 1rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .menu-categories {
+            display: flex;
+            overflow-x: auto;
+            gap: 0.75rem;
+            padding: 0 1rem;
+            scrollbar-width: none; /* For Firefox */
+        }
+        
+        .menu-categories::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        
+        .category-button {
+            white-space: nowrap;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            border: 2px solid var(--menu-light);
+            color: var(--menu-dark);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .category-button.active {
+            background: var(--menu-primary);
+            color: white;
+            border-color: var(--menu-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(91, 33, 182, 0.2);
+        }
+        
+        .category-button:hover:not(.active) {
+            border-color: var(--menu-primary);
+            color: var(--menu-primary);
+            transform: translateY(-2px);
+        }
+        
+        .category-button:focus-visible {
+            outline: 2px solid var(--menu-primary);
+            outline-offset: 2px;
+        }
+        
+        /* Skeleton loading for category buttons */
+        .category-button.skeleton-loading {
+            background-color: #e0e0e0;
+            color: transparent;
+            border-color: #e0e0e0;
+            min-width: 100px; /* Adjust as needed */
+            pointer-events: none;
+        }
+        .category-button.skeleton-loading::before {
+            content: "\\00a0"; /* Non-breaking space */
+        }
+        
+        /* Menu Sections */
+        .menu-section {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .menu-section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .menu-section-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--menu-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+        }
+        
+        .menu-section h2 {
+            font-size: 1.5rem;
+            color: var(--menu-dark);
+            margin: 0;
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* Menu Item Card */
+        .menu-item {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-item:hover .menu-item-image {
+            transform: scale(1.05);
+        }
+        
+        .menu-item-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.3s ease; /* For hover zoom effect */
+        }
+        
+        .menu-item-image-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+        }
+        .menu-item-image-placeholder i {
+            font-size: 40px;
+        }
+        
+        .menu-item-info {
+            padding: 1.2rem;
+        }
+        
+        .menu-item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--menu-dark);
+        }
+        
+        .menu-item-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--menu-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .menu-item-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--menu-accent);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .add-to-cart {
+            background: var(--menu-primary);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(91, 33, 182, 0.2);
+        }
+        
+        .add-to-cart:hover {
+            background: var(--menu-secondary);
+            transform: scale(1.1);
+        }
+        
+        .add-to-cart:focus-visible {
+            outline: 2px solid var(--menu-secondary);
+            outline-offset: 2px;
+            background: var(--menu-secondary);
+        }
+        
+        .add-to-cart i {
+            font-size: 1.1rem;
+        }
+        
+        /* Loading States */
+        .loading-container {
+            width: 100%;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(91, 33, 182, 0.1);
+            border-left-color: var(--menu-primary);
+            border-radius: 50%;
+            animation: spinner 1s linear infinite;
+        }
+        
+        .loading-text {
+            display: block;
+            margin-top: 1rem;
+            color: var(--menu-primary);
+            font-weight: 500;
+        }
+        
+        /* Skeleton loader for menu items */
+        .skeleton-item-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .skeleton-image {
+            width: 100%;
+            height: 180px;
+            background-color: #e0e0e0;
+        }
+        .skeleton-text {
+            height: 1em;
+            background-color: #e0e0e0;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+        .skeleton-text-short {
+            width: 60%;
+        }
+        .skeleton-button {
+            width: 45px;
+            height: 45px;
+            background-color: #e0e0e0;
+            border-radius: 12px;
+        }
+        .skeleton-info {
+            padding: 1.2rem;
+        }
+        .skeleton-price-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        @keyframes spinner {
+            to {transform: rotate(360deg);}
+        }
+        
+        .error-message {
+            text-align: center;
+            color: #ef4444;
+            padding: 2rem;
+            background: #fef2f2;
+            border-radius: 10px;
+            border: 1px solid #fee2e2;
+            margin: 2rem 0;
+        }
+        
+        .error-message i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Cart button and notification styles */
+        .cart-button {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--menu-primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: var(--menu-secondary);
+        }
+        
+        .cart-button i {
+            font-size: 1.5rem;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--menu-accent);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--menu-dark);
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--menu-primary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(150%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .notification i {
+            color: #10b981;
+            font-size: 1.5rem;
+        }
+        
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 0;
+            color: #6b7280;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .restaurant-info-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .restaurant-image {
+                margin-top: -50px;
+                width: 100px;
+                height: 100px;
+            }
+            
+            .restaurant-info-large {
+                padding: 1rem 0 0;
+            }
+            
+            .restaurant-stats {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-message">Item added to cart</span>
+    </div>
+
+    <!-- Cart Button -->
+    <a href="checkout.html" class="cart-button" id="cart-button" style="display: none;">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </a>
+
+    <!-- Header with diagonal design -->
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
+                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="index.html#restaurants" class="nav-link active"><i class="fas fa-store"></i> Restaurants</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu-container">
+        <!-- Restaurant info header -->
+        <div class="restaurant-header" id="restaurant-header">
+            <div class="restaurant-banner" id="restaurant-banner">
+                <a href="index.html#restaurants" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            <div class="restaurant-info-container">
+            <img id="restaurant-image" src="" alt="" class="restaurant-image">
+            <div class="restaurant-info-large">
+                <h1 id="restaurant-name"></h1>
+                    <div class="restaurant-stats" id="restaurant-stats">
+                        <!-- Stats will be loaded dynamically -->
+            </div>
+                    <p class="restaurant-description" id="restaurant-description"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu categories navigation -->
+        <div class="menu-categories-wrapper">
+        <div class="menu-categories" id="categories-nav">
+            <!-- Categories will be dynamically added here -->
+                <div class="category-button skeleton-loading"></div>
+                <div class="category-button skeleton-loading"></div>
+                <div class="category-button skeleton-loading"></div>
+            </div>
+        </div>
+
+        <!-- Menu content -->
+        <div id="menu-content">
+            <!-- Loading state -->
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <span class="loading-text">Loading menu...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Footer Section -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
+                <p>The best food delivery experience</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="groceries.html"><i class="fas fa-chevron-right"></i> Groceries</a></li>
+                    <li><a href="index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="groceries.html" class="mobile-nav-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Groceries</span>
+        </a>
+        <a href="index.html#categories" class="mobile-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="index.html#restaurants" class="mobile-nav-item active">
+            <i class="fas fa-store"></i>
+            <span>Restaurants</span>
+        </a>
+        <a href="pages/search/search.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+    </div>
+
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <script src="js/supabase.js"></script>
+
+    <script>
+        // Get restaurant name from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const restaurantName = urlParams.get('restaurant');
+        
+        // Initialize cart
+        let cart = JSON.parse(localStorage.getItem('twins_delivery_cart')) || [];
+        let currentRestaurant = null;
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', async function() {
+        updateCartCount();
+        
+            if (!restaurantName) {
+                showError('No restaurant specified', 'Please select a restaurant from the home page.');
+                return;
+            }
+            
+            try {
+                // Initialize Supabase
+                await window.SupabaseWrapper.init();
+
+                // Load restaurant data
+                await loadRestaurantData(restaurantName);
+            
+            // Load menu data
+                await loadMenuData(currentRestaurant.id);
+            } catch (error) {
+                console.error('Error initializing page:', error);
+                showError('Failed to load data', 'There was an error loading the restaurant information. Please try again later.');
+            }
+        });
+        
+        // Function to load restaurant data from Supabase
+        async function loadRestaurantData(restaurantName) {
+            try {
+                // Get restaurant by name
+                const { success, data, error } = await window.SupabaseWrapper.restaurants.getByName(restaurantName);
+                
+                if (!success || error || !data) {
+                    throw new Error(error || 'Restaurant not found');
+                }
+                
+                // Store restaurant data
+                currentRestaurant = data;
+                
+                // Update page title
+                document.title = `${data.name} Menu - Twins Delivery`;
+                
+                // Update restaurant header
+                document.getElementById('restaurant-name').textContent = data.name;
+                document.getElementById('restaurant-image').src = data.image_url || `pictures/${data.name.toLowerCase().replace(/\s+/g, '-')}.jpeg`;
+                document.getElementById('restaurant-image').alt = data.name;
+                
+                // Set banner image
+                const bannerEl = document.getElementById('restaurant-banner');
+                bannerEl.style.backgroundImage = `url('${data.banner_url || data.image_url || `pictures/${data.name.toLowerCase().replace(/\s+/g, '-')}.jpeg`}')`;
+                
+                // Set restaurant description
+                const descEl = document.getElementById('restaurant-description');
+                descEl.textContent = data.description || `Enjoy delicious ${data.cuisine || 'food'} delivered to your door.`;
+                
+                // Add restaurant stats
+                const statsEl = document.getElementById('restaurant-stats');
+                statsEl.innerHTML = `
+                    <div class="stat-item"><i class="fas fa-utensils"></i> ${data.cuisine || 'Various'}</div>
+                `;
+                
+                return data;
+            } catch (error) {
+                console.error('Error loading restaurant data:', error);
+                showError('Restaurant not found', 'The requested restaurant could not be found.');
+                throw error;
+            }
+        }
+        
+        // Function to load menu data
+        async function loadMenuData(restaurantId) {
+            try {
+                // Get full menu structure with categories and items
+                const { success, data: menuData, error } = await window.SupabaseWrapper.menu.getFullMenu(restaurantId);
+                
+                if (!success || error) {
+                    throw new Error(error || 'Failed to load menu data');
+                }
+                
+                if (!menuData || !menuData.categories || menuData.categories.length === 0) {
+                    throw new Error('No menu data available');
+                }
+                
+                displayMenu(menuData);
+                return menuData;
+            } catch (error) {
+                console.error('Error loading menu data:', error);
+                
+                // Try fallback to local JSON file
+                try {
+                    const response = await fetch(`menu/${restaurantName.replace(/\s+/g, " ")}_menu.json`);
+                    if (!response.ok) {
+                        throw new Error('Menu data not found');
+                    }
+                    const menuData = await response.json();
+                    displayMenu(menuData);
+                    return menuData;
+                } catch (fallbackError) {
+                    showError('Menu not available', 'We could not load the menu for this restaurant. Please try again later.');
+                    throw error;
+                }
+            }
+        }
+        
+        // Function to display menu data
+        function displayMenu(menuData) {
+            const menuContent = document.getElementById('menu-content');
+            const categoriesNav = document.getElementById('categories-nav');
+            
+            // Clear loading state
+            menuContent.innerHTML = '';
+            categoriesNav.innerHTML = '';
+            
+            // Create categories navigation
+            menuData.categories.forEach((category, index) => {
+                const button = document.createElement('button');
+                button.className = `category-button ${index === 0 ? 'active' : ''}`;
+                button.textContent = category.name;
+                button.dataset.target = `category-${index}`;
+                button.addEventListener('click', (e) => {
+                    // Handle category button click
+                    document.querySelectorAll('.category-button').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    // Scroll to category
+                    document.getElementById(e.target.dataset.target).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+                categoriesNav.appendChild(button);
+            });
+            
+            // Get icons for categories
+            const categoryIcons = {
+                'Appetizers': 'utensils',
+                'Starters': 'fire',
+                'Main Course': 'hamburger',
+                'Mains': 'hamburger',
+                'Burgers': 'hamburger',
+                'Pizza': 'pizza-slice',
+                'Salads': 'leaf',
+                'Pasta': 'utensils',
+                'Seafood': 'fish',
+                'Desserts': 'ice-cream',
+                'Drinks': 'glass-whiskey',
+                'Beverages': 'glass-whiskey',
+                'Sides': 'cookie',
+                'Specials': 'star',
+                'Breakfast': 'coffee',
+                'Lunch': 'bread-slice',
+                'Dinner': 'drumstick-bite',
+                'Sandwiches': 'bread-slice',
+                'Wraps': 'bread-slice',
+                'Soups': 'hotdog',
+                'Chicken': 'drumstick-bite',
+                'Beef': 'bacon',
+                'Vegetarian': 'seedling',
+                'Vegan': 'seedling',
+                'Kids Menu': 'child',
+                'Sushi': 'fish',
+                'Rolls': 'cheese'
+            };
+            
+            // Create menu sections for each category
+            menuData.categories.forEach((category, index) => {
+                const section = document.createElement('div');
+                section.className = 'menu-section';
+                section.id = `category-${index}`;
+                
+                // Get icon for category or use default
+                const iconName = categoryIcons[category.name] || 'utensils';
+                
+                // Create section header
+                const sectionHeader = document.createElement('div');
+                sectionHeader.className = 'menu-section-header';
+                sectionHeader.innerHTML = `
+                    <div class="menu-section-icon">
+                        <i class="fas fa-${iconName}"></i>
+                    </div>
+                    <h2>${category.name}</h2>
+                `;
+                section.appendChild(sectionHeader);
+                
+                // Check if there are items
+                if (!category.items || category.items.length === 0) {
+                    const emptyState = document.createElement('div');
+                    emptyState.className = 'empty-state';
+                    emptyState.innerHTML = `
+                        <i class="fas fa-box-open"></i>
+                        <p>No items available in this category</p>
+                    `;
+                    section.appendChild(emptyState);
+                    menuContent.appendChild(section);
+                    return;
+                }
+                
+                // Create menu items grid
+                const itemsGrid = document.createElement('div');
+                itemsGrid.className = 'menu-items';
+                
+                // Add menu items
+                category.items.forEach(item => {
+                    const menuItem = document.createElement('div');
+                    menuItem.className = 'menu-item';
+                    
+                    // Special badges
+                    let badgeHtml = '';
+                    if (item.is_popular) {
+                        badgeHtml = `<div class="menu-item-badge">Popular</div>`;
+                    } else if (item.is_vegetarian) {
+                        badgeHtml = `<div class="menu-item-badge" style="background: #10b981;">Vegetarian</div>`;
+                    } else if (item.is_spicy) {
+                        badgeHtml = `<div class="menu-item-badge" style="background: #ef4444;">Spicy</div>`;
+                    }
+                    
+                    // Menu item HTML
+                    menuItem.innerHTML = `
+                        ${badgeHtml}
+                        ${item.image_url ? `<img src="${item.image_url}" alt="${item.name}" class="menu-item-image" onerror="this.style.display='none'">` : ''}
+                                <div class="menu-item-info">
+                            <h3 class="menu-item-name">${item.name}</h3>
+                            <p class="menu-item-description">${item.description || ''}</p>
+                                    <div class="menu-item-price">
+                                <span>${item.price} ${item.currency || 'MAD'}</span>
+                                <button class="add-to-cart" data-name="${item.name}" data-price="${item.price}" data-currency="${item.currency || 'MAD'}">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                    </div>
+                `;
+                    
+                    itemsGrid.appendChild(menuItem);
+                });
+                
+                section.appendChild(itemsGrid);
+                menuContent.appendChild(section);
+            });
+            
+            // Add click event to add-to-cart buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', () => {
+                    const name = button.dataset.name;
+                    const price = button.dataset.price;
+                    const currency = button.dataset.currency;
+                    
+                    // Check if item is already in cart
+                    const existingItemIndex = cart.findIndex(item => item.name === name);
+                    
+                    if (existingItemIndex !== -1) {
+                        // Increment quantity if item already exists
+                        cart[existingItemIndex].quantity += 1;
+                    } else {
+                        // Add new item to cart
+                        cart.push({
+                            name,
+                            price,
+                            currency,
+                            quantity: 1
+                        });
+                    }
+                    
+                    // Save restaurant info to localStorage
+                    if (currentRestaurant) {
+                        localStorage.setItem('twins_delivery_restaurant', JSON.stringify({
+                            name: currentRestaurant.name,
+                            image: currentRestaurant.image_url,
+                            cuisine: currentRestaurant.cuisine,
+                            rating: currentRestaurant.rating,
+                            deliveryTime: currentRestaurant.delivery_time || '20-35 min'
+                        }));
+                    }
+                    
+                    // Save cart to localStorage
+                    localStorage.setItem('twins_delivery_cart', JSON.stringify(cart));
+                    
+                    // Update cart count
+                    updateCartCount();
+                    
+                    // Show added to cart notification
+                    showNotification(`${name} added to cart!`);
+                    
+                    // Change button to checkmark temporarily
+                    button.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        button.innerHTML = '<i class="fas fa-plus"></i>';
+                    }, 1000);
+                });
+            });
+            
+            // Add 3D tilt effect to menu items
+            addTiltEffect();
+        }
+        
+        // Add 3D tilt effect to menu items
+        function addTiltEffect() {
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('mousemove', (e) => {
+                    const rect = item.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const angleX = (y - centerY) / 30;
+                    const angleY = (centerX - x) / 30;
+                    
+                    item.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateZ(10px)`;
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    item.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+                });
+            });
+        }
+        
+        // Function to update cart count
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            if (cartCount) {
+                let totalItems = 0;
+                cart.forEach(item => {
+                    totalItems += item.quantity;
+                });
+                cartCount.textContent = totalItems;
+                
+                // Show/hide cart button
+                const cartButton = document.getElementById('cart-button');
+                if (cartButton) {
+                    cartButton.style.display = totalItems > 0 ? 'flex' : 'none';
+                }
+            }
+        }
+        
+        // Function to show notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            
+            notificationMessage.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Function to show error
+        function showError(title, message) {
+            const menuContent = document.getElementById('menu-content');
+            
+            menuContent.innerHTML = `
+                <div class="error-message">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>${title}</h3>
+                    <p>${message}</p>
+                    <a href="index.html#restaurants" class="category-button" style="display: inline-block; margin-top: 1rem;">
+                        <i class="fas fa-arrow-left"></i> Back to Restaurants
+                    </a>
+                </div>
+            `;
+        }
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+        });
+        
+        // Smooth scroll to categories
+        function scrollToCategory(categoryId) {
+            const element = document.getElementById(categoryId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
+            }
+        }
+    </script>
+</body>
+</html> 

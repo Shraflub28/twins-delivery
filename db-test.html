@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twins Delivery - Database Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <script src="js/supabase.js"></script>
+    <style>
+        .test-section {
+            margin-bottom: 2rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            padding: 1rem;
+        }
+        .test-result {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            min-height: 100px;
+            background-color: #f8f9fa;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .test-result.success {
+            background-color: #d1e7dd;
+        }
+        .test-result.error {
+            background-color: #f8d7da;
+        }
+        .status-badge {
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <h1 class="mb-4">
+            <i class="fas fa-database me-2"></i>
+            Twins Delivery - Database Test
+        </h1>
+        
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle me-2"></i>
+            This page helps verify that the Supabase database is properly connected and functioning. Run the tests below to check various aspects of the database integration.
+        </div>
+        
+        <!-- Connection Test -->
+        <div class="test-section">
+            <h2>
+                <i class="fas fa-plug me-2"></i>
+                Connection Test
+                <span id="connection-status" class="status-badge badge bg-secondary">Not Run</span>
+            </h2>
+            <p>Tests if we can connect to the Supabase database and retrieve data.</p>
+            <button id="test-connection" class="btn btn-primary">
+                <i class="fas fa-play me-2"></i>
+                Run Test
+            </button>
+            <div id="connection-result" class="test-result">Results will appear here...</div>
+        </div>
+        
+        <!-- Table Creation Test -->
+        <div class="test-section">
+            <h2>
+                <i class="fas fa-table me-2"></i>
+                Table Test
+                <span id="table-status" class="status-badge badge bg-secondary">Not Run</span>
+            </h2>
+            <p>Verifies that the required tables exist in the database.</p>
+            <button id="test-tables" class="btn btn-primary">
+                <i class="fas fa-play me-2"></i>
+                Run Test
+            </button>
+            <div id="table-result" class="test-result">Results will appear here...</div>
+        </div>
+        
+        <!-- Data Operations Test -->
+        <div class="test-section">
+            <h2>
+                <i class="fas fa-exchange-alt me-2"></i>
+                Data Operations
+                <span id="data-status" class="status-badge badge bg-secondary">Not Run</span>
+            </h2>
+            <p>Tests CRUD operations with the orders table.</p>
+            <button id="test-data-ops" class="btn btn-primary">
+                <i class="fas fa-play me-2"></i>
+                Run Test
+            </button>
+            <div id="data-result" class="test-result">Results will appear here...</div>
+        </div>
+        
+        <!-- Restaurant Data Test -->
+        <div class="test-section">
+            <h2>
+                <i class="fas fa-utensils me-2"></i>
+                Restaurant Data
+                <span id="restaurant-status" class="status-badge badge bg-secondary">Not Run</span>
+            </h2>
+            <p>Retrieves and displays restaurant data from the database.</p>
+            <button id="test-restaurants" class="btn btn-primary">
+                <i class="fas fa-play me-2"></i>
+                Run Test
+            </button>
+            <div id="restaurant-result" class="test-result">Results will appear here...</div>
+        </div>
+        
+        <!-- Menu Data Test -->
+        <div class="test-section">
+            <h2>
+                <i class="fas fa-list me-2"></i>
+                Menu Data
+                <span id="menu-status" class="status-badge badge bg-secondary">Not Run</span>
+            </h2>
+            <p>Tests retrieving menu categories and items for a specific restaurant.</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Restaurant ID</span>
+                <input type="text" class="form-control" id="restaurant-id-input" placeholder="Enter a restaurant ID from the restaurant test">
+            </div>
+            <button id="test-menu" class="btn btn-primary">
+                <i class="fas fa-play me-2"></i>
+                Run Test
+            </button>
+            <div id="menu-result" class="test-result">Results will appear here...</div>
+        </div>
+        
+        <!-- Server Info -->
+        <div class="test-section">
+            <h2>
+                <i class="fas fa-server me-2"></i>
+                Server Information
+                <span id="server-status" class="status-badge badge bg-secondary">Not Run</span>
+            </h2>
+            <p>Displays information about the Supabase configuration.</p>
+            <button id="show-server-info" class="btn btn-primary">
+                <i class="fas fa-play me-2"></i>
+                Show Info
+            </button>
+            <div id="server-result" class="test-result">Results will appear here...</div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Test Connection
+            document.getElementById('test-connection').addEventListener('click', async function() {
+                const resultEl = document.getElementById('connection-result');
+                const statusEl = document.getElementById('connection-status');
+                
+                resultEl.textContent = 'Testing connection...';
+                resultEl.className = 'test-result';
+                statusEl.className = 'status-badge badge bg-warning';
+                statusEl.textContent = 'Running';
+                
+                try {
+                    // Initialize Supabase if needed
+                    if (window.initSupabase) {
+                        await window.initSupabase();
+                    }
+                    
+                    const result = await window.SupabaseWrapper.testConnection();
+                    
+                    if (result.success) {
+                        resultEl.textContent = 'Connection successful!\n\nResponse: ' + JSON.stringify(result.data, null, 2);
+                        resultEl.className = 'test-result success';
+                        statusEl.className = 'status-badge badge bg-success';
+                        statusEl.textContent = 'Success';
+                    } else {
+                        resultEl.textContent = 'Connection failed!\n\nError: ' + JSON.stringify(result.error, null, 2);
+                        resultEl.className = 'test-result error';
+                        statusEl.className = 'status-badge badge bg-danger';
+                        statusEl.textContent = 'Failed';
+                    }
+                } catch (err) {
+                    resultEl.textContent = 'Test error: ' + err.message + '\n\n' + err.stack;
+                    resultEl.className = 'test-result error';
+                    statusEl.className = 'status-badge badge bg-danger';
+                    statusEl.textContent = 'Error';
+                }
+            });
+            
+            // Test Tables
+            document.getElementById('test-tables').addEventListener('click', async function() {
+                const resultEl = document.getElementById('table-result');
+                const statusEl = document.getElementById('table-status');
+                
+                resultEl.textContent = 'Checking tables...';
+                resultEl.className = 'test-result';
+                statusEl.className = 'status-badge badge bg-warning';
+                statusEl.textContent = 'Running';
+                
+                try {
+                    // Initialize Supabase if needed
+                    if (window.initSupabase) {
+                        await window.initSupabase();
+                    }
+                    
+                    // Query for table information
+                    const client = window.SupabaseWrapper.client;
+                    const { data, error } = await client.rpc('get_schema_info');
+                    
+                    if (error) throw error;
+                    
+                    // Check for required tables
+                    const tables = data || [];
+                    const ordersTable = tables.find(t => t.table_name === 'orders');
+                    const restaurantsTable = tables.find(t => t.table_name === 'restaurants');
+                    const menuCategoriesTable = tables.find(t => t.table_name === 'menu_categories');
+                    const menuItemsTable = tables.find(t => t.table_name === 'menu_items');
+                    
+                    let output = 'Schema Information:\n\n';
+                    output += JSON.stringify(tables, null, 2);
+                    
+                    output += '\n\n--- Required Tables Check ---\n';
+                    output += 'orders table: ' + (ordersTable ? '✅ Found' : '❌ Missing') + '\n';
+                    output += 'restaurants table: ' + (restaurantsTable ? '✅ Found' : '❌ Missing') + '\n';
+                    output += 'menu_categories table: ' + (menuCategoriesTable ? '✅ Found' : '❌ Missing') + '\n';
+                    output += 'menu_items table: ' + (menuItemsTable ? '✅ Found' : '❌ Missing') + '\n';
+                    
+                    resultEl.textContent = output;
+                    
+                    if (ordersTable && restaurantsTable && menuCategoriesTable && menuItemsTable) {
+                        resultEl.className = 'test-result success';
+                        statusEl.className = 'status-badge badge bg-success';
+                        statusEl.textContent = 'Success';
+                    } else {
+                        resultEl.className = 'test-result error';
+                        statusEl.className = 'status-badge badge bg-danger';
+                        statusEl.textContent = 'Tables Missing';
+                    }
+                } catch (err) {
+                    let output = 'Error checking tables: ' + err.message + '\n\n';
+                    
+                    // If the RPC function failed, it might not exist
+                    output += 'Note: This test requires the get_schema_info function to be created in your database.\n';
+                    output += 'You can create it with:\n\n';
+                    output += 'CREATE OR REPLACE FUNCTION get_schema_info()\n';
+                    output += 'RETURNS TABLE (table_name text, column_count bigint)\n';
+                    output += 'LANGUAGE sql\n';
+                    output += 'SECURITY DEFINER\n';
+                    output += 'AS $$\n';
+                    output += '  SELECT table_name::text, COUNT(column_name)::bigint\n';
+                    output += '  FROM information_schema.columns\n';
+                    output += '  WHERE table_schema = \'public\'\n';
+                    output += '  GROUP BY table_name\n';
+                    output += '  ORDER BY table_name;\n';
+                    output += '$$;';
+                    
+                    // Let's try a simpler check
+                    output += '\n\n--- Attempting alternate check ---\n';
+                    
+                    try {
+                        const tables = ['orders', 'restaurants', 'menu_categories', 'menu_items'];
+                        const results = {};
+                        
+                        for (const table of tables) {
+                    try {
+                        const { data, error } = await window.SupabaseWrapper.client
+                                    .from(table)
+                            .select('count');
+                            
+                        if (error) {
+                                    results[table] = '❌ Error: ' + error.message;
+                        } else {
+                                    results[table] = '✅ Table exists';
+                                }
+                            } catch (e) {
+                                results[table] = '❌ Error: ' + e.message;
+                            }
+                        }
+                        
+                        output += 'Table checks:\n';
+                        for (const [table, result] of Object.entries(results)) {
+                            output += `${table}: ${result}\n`;
+                        }
+                        
+                        const allTablesExist = Object.values(results).every(r => r.startsWith('✅'));
+                        
+                        if (allTablesExist) {
+                            resultEl.className = 'test-result success';
+                            statusEl.className = 'status-badge badge bg-success';
+                            statusEl.textContent = 'Success';
+                        } else {
+                            resultEl.className = 'test-result error';
+                            statusEl.className = 'status-badge badge bg-danger';
+                            statusEl.textContent = 'Failed';
+                        }
+                    } catch (err2) {
+                        output += 'Alternate check failed: ' + err2.message;
+                        resultEl.className = 'test-result error';
+                        statusEl.className = 'status-badge badge bg-danger';
+                        statusEl.textContent = 'Error';
+                    }
+                    
+                    resultEl.textContent = output;
+                }
+            });
+            
+            // Test Data Operations
+            document.getElementById('test-data-ops').addEventListener('click', async function() {
+                const resultEl = document.getElementById('data-result');
+                const statusEl = document.getElementById('data-status');
+                
+                resultEl.textContent = 'Testing data operations...';
+                resultEl.className = 'test-result';
+                statusEl.className = 'status-badge badge bg-warning';
+                statusEl.textContent = 'Running';
+                
+                try {
+                    // Initialize Supabase if needed
+                    if (window.initSupabase) {
+                        await window.initSupabase();
+                    }
+                    
+                    let output = '';
+                    
+                    // Create a test order
+                    const testOrderId = 'TEST-' + Date.now();
+                    const testOrder = {
+                        orderId: testOrderId,
+                        items: JSON.stringify([{ name: 'Test Item', price: 9.99, quantity: 1 }]),
+                        restaurant: 'Test Restaurant',
+                        customer: JSON.stringify({ name: 'Test Customer', phone: '123456789' }),
+                        orderDate: new Date().toISOString(),
+                        status: 'test'
+                    };
+                    
+                    output += '1. Creating test order...\n';
+                    const createResult = await window.SupabaseWrapper.orders.create(testOrder);
+                    
+                    if (createResult.success) {
+                        output += '✅ Order created successfully!\n';
+                        output += 'Created order: ' + JSON.stringify(createResult.data, null, 2) + '\n\n';
+                        
+                        // Fetch the order
+                        output += '2. Fetching order by ID...\n';
+                        const getResult = await window.SupabaseWrapper.orders.getById(testOrderId);
+                        
+                        if (getResult.success) {
+                            output += '✅ Order fetched successfully!\n';
+                            output += 'Fetched order: ' + JSON.stringify(getResult.data, null, 2) + '\n\n';
+                            
+                            // Update the order status
+                            output += '3. Updating order status...\n';
+                            const updateResult = await window.SupabaseWrapper.orders.updateStatus(testOrderId, 'test-updated');
+                            
+                            if (updateResult.success) {
+                                output += '✅ Order status updated successfully!\n';
+                                output += 'Updated order: ' + JSON.stringify(updateResult.data, null, 2) + '\n\n';
+                                
+                                // Cleanup - delete the test order
+                                output += '4. Cleaning up (deleting test order)...\n';
+                                const deleteResult = await window.SupabaseWrapper.client
+                                    .from('orders')
+                                    .delete()
+                                    .eq('orderId', testOrderId);
+                                    
+                                if (deleteResult.error) {
+                                    output += '❌ Error deleting test order: ' + deleteResult.error.message + '\n';
+                                } else {
+                                    output += '✅ Test order deleted successfully!\n';
+                                }
+                                
+                                resultEl.className = 'test-result success';
+                                statusEl.className = 'status-badge badge bg-success';
+                                statusEl.textContent = 'Success';
+                            } else {
+                                output += '❌ Error updating order: ' + JSON.stringify(updateResult.error, null, 2) + '\n';
+                                resultEl.className = 'test-result error';
+                                statusEl.className = 'status-badge badge bg-danger';
+                                statusEl.textContent = 'Failed';
+                            }
+                        } else {
+                            output += '❌ Error fetching order: ' + JSON.stringify(getResult.error, null, 2) + '\n';
+                            resultEl.className = 'test-result error';
+                            statusEl.className = 'status-badge badge bg-danger';
+                            statusEl.textContent = 'Failed';
+                        }
+                    } else {
+                        output += '❌ Error creating order: ' + JSON.stringify(createResult.error, null, 2) + '\n';
+                        resultEl.className = 'test-result error';
+                        statusEl.className = 'status-badge badge bg-danger';
+                        statusEl.textContent = 'Failed';
+                    }
+                    
+                    resultEl.textContent = output;
+                } catch (err) {
+                    resultEl.textContent = 'Test error: ' + err.message + '\n\n' + err.stack;
+                    resultEl.className = 'test-result error';
+                    statusEl.className = 'status-badge badge bg-danger';
+                    statusEl.textContent = 'Error';
+                }
+            });
+
+            // Test Restaurant Data
+            document.getElementById('test-restaurants').addEventListener('click', async function() {
+                const resultEl = document.getElementById('restaurant-result');
+                const statusEl = document.getElementById('restaurant-status');
+                
+                resultEl.textContent = 'Fetching restaurant data...';
+                resultEl.className = 'test-result';
+                statusEl.className = 'status-badge badge bg-warning';
+                statusEl.textContent = 'Running';
+                
+                try {
+                    // Initialize Supabase if needed
+                    if (window.initSupabase) {
+                        await window.initSupabase();
+                    }
+                    
+                    // Get first 5 restaurants
+                    const { data, error } = await window.SupabaseWrapper.client
+                        .from('restaurants')
+                        .select('*')
+                        .limit(5);
+                    
+                    if (error) throw error;
+                    
+                    if (data && data.length > 0) {
+                        let output = `Found ${data.length} restaurants in the database.\n\n`;
+                        
+                        // Display restaurant details
+                        output += data.map((restaurant, index) => {
+                            return `Restaurant #${index + 1}:\n` +
+                                   `ID: ${restaurant.id}\n` +
+                                   `Name: ${restaurant.name}\n` +
+                                   `Cuisine: ${restaurant.cuisine || 'Not specified'}\n` +
+                                   `Rating: ${restaurant.rating || 'Not rated'}\n` +
+                                   '-'.repeat(40);
+                        }).join('\n\n');
+                        
+                        output += '\n\nUse one of these IDs in the Menu Data test below.';
+                        
+                        resultEl.textContent = output;
+                        resultEl.className = 'test-result success';
+                        statusEl.className = 'status-badge badge bg-success';
+                        statusEl.textContent = 'Success';
+                        
+                        // Populate the restaurant ID input for the menu test
+                        if (data[0] && data[0].id) {
+                            document.getElementById('restaurant-id-input').value = data[0].id;
+                        }
+                    } else {
+                        resultEl.textContent = 'No restaurants found in the database. Have you imported the CSV data yet?';
+                        resultEl.className = 'test-result error';
+                        statusEl.className = 'status-badge badge bg-warning';
+                        statusEl.textContent = 'No Data';
+                    }
+                } catch (err) {
+                    resultEl.textContent = 'Error fetching restaurants: ' + err.message + '\n\n' + err.stack;
+                    resultEl.className = 'test-result error';
+                    statusEl.className = 'status-badge badge bg-danger';
+                    statusEl.textContent = 'Error';
+                }
+            });
+            
+            // Test Menu Data
+            document.getElementById('test-menu').addEventListener('click', async function() {
+                const resultEl = document.getElementById('menu-result');
+                const statusEl = document.getElementById('menu-status');
+                const restaurantId = document.getElementById('restaurant-id-input').value.trim();
+                
+                if (!restaurantId) {
+                    resultEl.textContent = 'Please enter a restaurant ID. Run the Restaurant Data test first to get an ID.';
+                    resultEl.className = 'test-result error';
+                    statusEl.className = 'status-badge badge bg-warning';
+                    statusEl.textContent = 'Missing ID';
+                    return;
+                }
+                
+                resultEl.textContent = 'Fetching menu data...';
+                resultEl.className = 'test-result';
+                statusEl.className = 'status-badge badge bg-warning';
+                statusEl.textContent = 'Running';
+                
+                try {
+                    // Initialize Supabase if needed
+                    if (window.initSupabase) {
+                        await window.initSupabase();
+                    }
+                    
+                    // Get restaurant info
+                    const { data: restaurantData, error: restaurantError } = await window.SupabaseWrapper.client
+                        .from('restaurants')
+                        .select('*')
+                        .eq('id', restaurantId)
+                        .single();
+                    
+                    if (restaurantError) throw new Error(`Restaurant not found: ${restaurantError.message}`);
+                    
+                    // Get menu categories
+                    const { data: categories, error: categoriesError } = await window.SupabaseWrapper.client
+                        .from('menu_categories')
+                        .select('*')
+                        .eq('restaurant_id', restaurantId);
+                    
+                    if (categoriesError) throw categoriesError;
+                    
+                    let output = `Menu data for restaurant: ${restaurantData.name}\n\n`;
+                    
+                    if (categories && categories.length > 0) {
+                        output += `Found ${categories.length} menu categories.\n\n`;
+                        
+                        // For each category, get the menu items
+                        for (const category of categories) {
+                            output += `Category: ${category.name}\n`;
+                            output += '-'.repeat(40) + '\n';
+                            
+                            const { data: items, error: itemsError } = await window.SupabaseWrapper.client
+                                .from('menu_items')
+                                .select('*')
+                                .eq('category_id', category.id);
+                            
+                            if (itemsError) {
+                                output += `Error fetching menu items: ${itemsError.message}\n\n`;
+                                continue;
+                            }
+                            
+                            if (items && items.length > 0) {
+                                output += `Found ${items.length} menu items in this category.\n\n`;
+                                
+                                // Show the first 3 items
+                                const displayItems = items.slice(0, 3);
+                                
+                                output += displayItems.map(item => {
+                                    return `${item.name}: ${item.price} ${item.currency}\n` +
+                                           `${item.description || 'No description'}\n`;
+                                }).join('\n');
+                                
+                                if (items.length > 3) {
+                                    output += `\n... and ${items.length - 3} more items\n`;
+                                }
+                            } else {
+                                output += 'No menu items found in this category.\n';
+                            }
+                            
+                            output += '\n';
+                        }
+                        
+                        resultEl.textContent = output;
+                        resultEl.className = 'test-result success';
+                        statusEl.className = 'status-badge badge bg-success';
+                        statusEl.textContent = 'Success';
+                    } else {
+                        output += 'No menu categories found for this restaurant.';
+                        resultEl.textContent = output;
+                        resultEl.className = 'test-result error';
+                        statusEl.className = 'status-badge badge bg-warning';
+                        statusEl.textContent = 'No Data';
+                    }
+                } catch (err) {
+                    resultEl.textContent = 'Error fetching menu data: ' + err.message + '\n\n' + err.stack;
+                    resultEl.className = 'test-result error';
+                    statusEl.className = 'status-badge badge bg-danger';
+                    statusEl.textContent = 'Error';
+                }
+            });
+            
+            // Server Info
+            document.getElementById('show-server-info').addEventListener('click', async function() {
+                const resultEl = document.getElementById('server-result');
+                const statusEl = document.getElementById('server-status');
+                
+                resultEl.textContent = 'Fetching server info...';
+                resultEl.className = 'test-result';
+                statusEl.className = 'status-badge badge bg-warning';
+                statusEl.textContent = 'Running';
+                
+                try {
+                    let output = '';
+                    
+                    // Show Supabase configuration (with masked key)
+                    output += '--- Supabase Configuration ---\n';
+                    output += 'URL: ' + SUPABASE_CONFIG.url + '\n';
+                    const maskedKey = SUPABASE_CONFIG.key.substring(0, 10) + '...' + 
+                                    SUPABASE_CONFIG.key.substring(SUPABASE_CONFIG.key.length - 5);
+                    output += 'Key: ' + maskedKey + '\n\n';
+                    
+                    // Get initialization status
+                    output += '--- Initialization Status ---\n';
+                    output += 'Wrapper Initialized: ' + window.SupabaseWrapper.initialized + '\n';
+                    output += 'Client Available: ' + (window.SupabaseWrapper.client !== null) + '\n\n';
+                    
+                    // Browser info
+                    output += '--- Browser Information ---\n';
+                    output += 'User Agent: ' + navigator.userAgent + '\n';
+                    output += 'Language: ' + navigator.language + '\n';
+                    output += 'Online: ' + navigator.onLine + '\n\n';
+                    
+                    // Check if we've had any errors in console
+                    output += '--- Console Errors ---\n';
+                    const originalError = console.error;
+                    let errors = [];
+                    
+                    // This will only show errors from this point forward
+                    console.error = function() {
+                        errors.push(Array.from(arguments).join(' '));
+                        originalError.apply(console, arguments);
+                    };
+                    
+                    if (errors.length > 0) {
+                        output += 'Recent errors:\n' + errors.join('\n');
+                    } else {
+                        output += 'No recent errors detected';
+                    }
+                    
+                    // Restore original console.error
+                    console.error = originalError;
+                    
+                    resultEl.textContent = output;
+                    resultEl.className = 'test-result success';
+                    statusEl.className = 'status-badge badge bg-success';
+                    statusEl.textContent = 'Completed';
+                    
+                } catch (err) {
+                    resultEl.textContent = 'Error getting server info: ' + err.message + '\n\n' + err.stack;
+                    resultEl.className = 'test-result error';
+                    statusEl.className = 'status-badge badge bg-danger';
+                    statusEl.textContent = 'Error';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,420 @@
+{
+  "restaurant_name": "Pizza Hut",
+  "categories": [
+    {
+      "name": "Pizza Inédite Individuelle",
+      "items": [
+        {
+          "name": "Pizza Margherita",
+          "description": "Spécialité traditionnelle et historique, composée de mozzarella et sauce tomate aux herbes",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Beefy",
+          "description": "Viande hachée (bœuf), oignons, poivrons verts, mozzarella et sauce tomate aux herbes",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ada9516e573c2895603407hH.jpg"
+        },
+        {
+          "name": "Pizza Spicy Hot",
+          "description": "Expérience épicée, à base de viande hachée ou poulet, piments verts, tomates fraîches, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ad6d516e573c28956031TxgB.jpg"
+        },
+        {
+          "name": "Pizza Poulet Sauce Barbecue",
+          "description": "Délicieux morceaux de poulet grillés, oignons, poivrons verts et mozzarella, le tout sur une base sauce barbecue",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Marina",
+          "description": "Thon, olives noires, dés de tomate, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ad2ed08f69395e54e8cdiosX.jpg"
+        },
+        {
+          "name": "Pizza Forestière",
+          "description": "Viande hachée, champignons, tomates fraîches, mozzarella et sauce tomate aux herbes",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ad81516e573c289560334jpu.jpg"
+        },
+        {
+          "name": "Pizza Végétarienne",
+          "description": "Combinaison de champignons, poivrons verts, oignons, tomates fraiches, olives noires, mozzarella et sauce tomate aux herbes",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155acddd08f69395e54e8cbdOrx.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pizza Spéciale Individuelle",
+      "items": [
+        {
+          "name": "Pizza Suprême",
+          "description": "Viande hachée avec de délicieuses tranches de pepperoni, champignons, poivrons verts, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155aafdd08f69395e54e8b82AkB.jpg"
+        },
+        {
+          "name": "Pizza Pepperoni Lovers",
+          "description": "Extra portion de pepperoni, mozzarella et sauce tomate aux herbes",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155aae3d08f69395e54e8b6NpZf.jpg"
+        },
+        {
+          "name": "Pizza Poulet Sauce Ranch",
+          "description": "Poulet grillé, champignons, poivrons verts, oignons, mozzarella et sauce ranch",
+          "price": 75.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Pizzas Gourmande Individuelle",
+      "items": [
+        {
+          "name": "Pizza Pêcheur",
+          "description": "La seule et unique pizza pêcheur, généreuse, composée de crevettes, calamars, origan, tomates fraîches, olives noires, mozzarella et sauce tomate aux herbes",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155aa2b516e573c28956010x5wU.jpg"
+        },
+        {
+          "name": "Pizza Fruits de Mer Sauce Alfredo",
+          "description": "Crevettes et calamars avec sauce Alfredo, oignons, citron et mozzarella",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a9fc516e573c2895600dRUjt.jpg"
+        },
+        {
+          "name": "Pizza Super Suprême",
+          "description": "Notre célèbre combinaison de viande hachée et une double portion de pepperoni, accompagnés de champignons, poivrons verts, olives noires, oignons, mozzarella, et sauce tomates aux herbes.",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a9add08f69395e54e8aetcsA.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pizza Inédite Double",
+      "items": [
+        {
+          "name": "Pizza Forestière",
+          "description": "Viande hachée, champignons, tomates fraîches, mozzarella et sauce tomate aux herbes",
+          "price": 125.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ace9516e573c2895602aKS9O.jpg"
+        },
+        {
+          "name": "Pizza Beefy",
+          "description": "Viande hachée (bœuf), oignons, poivrons verts, mozzarella et sauce tomate aux herbes",
+          "price": 125.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ad13516e573c2895602cdlAK.jpg"
+        },
+        {
+          "name": "Pizza Margherita",
+          "description": "Spécialité traditionnelle et historique, composée de mozzarella et sauce tomate aux herbes",
+          "price": 90.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Marina",
+          "description": "Thon, olives noires, dés de tomate, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 125.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ac97d08f69395e54e8caxm1b.jpg"
+        },
+        {
+          "name": "Pizza Spicy Hot",
+          "description": "Expérience épicée, à base de viande hachée ou poulet, piments verts, tomates fraîches, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 125.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ac71d08f69395e54e8c6oQ9y.jpg"
+        },
+        {
+          "name": "Pizza Poulet Sauce Barbecue",
+          "description": "Délicieux morceaux de poulet grillés, oignons, poivrons verts et mozzarella, le tout sur une base sauce barbecue",
+          "price": 125.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Végétarienne",
+          "description": "Combinaison de champignons, poivrons verts, oignons, tomates fraiches, olives noires, mozzarella et sauce tomate aux herbes",
+          "price": 125.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155acac516e573c28956026r2p3.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pizza Spéciale Double",
+      "items": [
+        {
+          "name": "Pizza Poulet Sauce Ranch",
+          "description": "Poulet grillé, champignons, poivrons verts, oignons, mozzarella et sauce ranch",
+          "price": 135.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Suprême",
+          "description": "Viande hachée avec de délicieuses tranches de pepperoni, champignons, poivrons verts, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 135.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155aa7fd08f69395e54e8b3PinO.jpg"
+        },
+        {
+          "name": "Pizza Pepperoni Lovers",
+          "description": "Extra portion de pepperoni, mozzarella et sauce tomate aux herbes",
+          "price": 135.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155aad2516e573c2895601b86aS.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pizzas Gourmande Double",
+      "items": [
+        {
+          "name": "Pizza Pêcheur",
+          "description": "La seule et unique pizza pêcheur, généreuse, composée de crevettes, calamars, origan, tomates fraîches, olives noires, mozzarella et sauce tomate aux herbes",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a968d08f69395e54e8accwua.jpg"
+        },
+        {
+          "name": "Pizza Super Suprême",
+          "description": "Notre célèbre combinaison de viande hachée et une double portion de pepperoni, accompagnés de champignons, poivrons verts, olives noires, oignons, mozzarella, et sauce tomates aux herbes.",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a9ae516e573c289560097arl.jpg"
+        },
+        {
+          "name": "Pizza Fruits de Mer Sauce Alfredo",
+          "description": "Crevettes et calamars avec sauce Alfredo, oignons, citron et mozzarella",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a924d08f69395e54e8a8dcxk.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pizza Inédite Triple",
+      "items": [
+        {
+          "name": "Pizza Beefy",
+          "description": "Viande hachée (bœuf), oignons, poivrons verts, mozzarella et sauce tomate aux herbes",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ac71516e573c28956025Lprx.jpg"
+        },
+        {
+          "name": "Pizza Spicy Hot",
+          "description": "Expérience épicée, à base de viande hachée ou poulet, piments verts, tomates fraîches, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155abbbd08f69395e54e8bd54j2.jpg"
+        },
+        {
+          "name": "Pizza Forestière",
+          "description": "Viande hachée, champignons, tomates fraîches, mozzarella et sauce tomate aux herbes",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155abd3d08f69395e54e8beRD2j.jpg"
+        },
+        {
+          "name": "Pizza Margherita",
+          "description": "Spécialité traditionnelle et historique, composée de mozzarella et sauce tomate aux herbes",
+          "price": 110.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Végétarienne",
+          "description": "Combinaison de champignons, poivrons verts, oignons, tomates fraiches, olives noires, mozzarella et sauce tomate aux herbes",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155ab7dd08f69395e54e8b9ILKi.jpg"
+        },
+        {
+          "name": "Pizza Poulet Sauce Barbecue",
+          "description": "Délicieux morceaux de poulet grillés, oignons, poivrons verts et mozzarella, le tout sur une base sauce barbecue",
+          "price": 155.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Marina",
+          "description": "Thon, olives noires, dés de tomate, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155abf4d08f69395e54e8bf3nsZ.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pizza Spéciale Triple",
+      "items": [
+        {
+          "name": "Pizza Pepperoni Lovers",
+          "description": "Extra portion de pepperoni, mozzarella et sauce tomate aux herbes",
+          "price": 165.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a9ffd08f69395e54e8b11XZ0.jpg"
+        },
+        {
+          "name": "Pizza Poulet Sauce Ranch",
+          "description": "Poulet grillé, champignons, poivrons verts, oignons, mozzarella et sauce ranch",
+          "price": 165.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Suprême",
+          "description": "Viande hachée avec de délicieuses tranches de pepperoni, champignons, poivrons verts, oignons, mozzarella et sauce tomate aux herbes",
+          "price": 165.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155aa99516e573c28956017yAgo.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Pizza Gourmande Triple",
+      "items": [
+        {
+          "name": "Pizza Pêcheur",
+          "description": "La seule et unique pizza pêcheur, généreuse, composée de crevettes, calamars, origan, tomates fraîches, olives noires, mozzarella et sauce tomate aux herbes",
+          "price": 180.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a5447899fb393f80cb54jjI1.jpg"
+        },
+        {
+          "name": "Pizza Super Suprême",
+          "description": "Notre célèbre combinaison de viande hachée et une double portion de pepperoni, accompagnés de champignons, poivrons verts, olives noires, oignons, mozzarella, et sauce tomates aux herbes.",
+          "price": 180.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a5cb9d4a963c1cf35fddNOeS.jpg"
+        },
+        {
+          "name": "Pizza Fruits de Mer Sauce Alfredo",
+          "description": "Crevettes et calamars avec sauce Alfredo, oignons, citron et mozzarella",
+          "price": 180.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a5837899fb393f80cb58gvD1.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Sandwichs & Calzones",
+      "items": [
+        {
+          "name": "Calzone Cheese",
+          "description": "Notre célèbre pizza en forme de calzone fourrée de fromage mozzarella et sauce pizza aux herbes.",
+          "price": 58.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a4dc9d4a963c1cf35fd6iVDJ.jpg"
+        },
+        {
+          "name": "Calzone Beef Pepperoni",
+          "description": "Notre célèbre pizza en forme de calzone fourrée de viande hachée, pepperoni, mozzarella et sauce tomate aux herbes.",
+          "price": 58.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a4a49d4a963c1cf35fd37N65.jpg"
+        },
+        {
+          "name": "Calzone Suprême",
+          "description": "Notre célèbre pizza en forme de calzone fourrée de viande hachée, pepperoni, champignons, poivrons verts, oignons, mozzarella et sauce tomate aux herbes.",
+          "price": 58.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a4c49d4a963c1cf35fd4Y4ij.jpg"
+        },
+        {
+          "name": "Sandwich Pepperoni Lovers",
+          "description": "Baguette croustillante légèrement dorée au four, composée d'une double ration de pepperoni, sur une base classique (fromage, laitue, tomate et mayonnaise), servi avec des potatoes",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a5119d4a963c1cf35fd8rZEe.jpg"
+        },
+        {
+          "name": "Calzone Poulet Barbecue",
+          "description": "Notre célèbre pizza en forme de calzone fourrée de poulet grillé, oignons, poivrons verts, mozzarella et sauce barbecue",
+          "price": 58.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sandwich Super Beef",
+          "description": "Baguette croustillante légèrement dorée au four, composée d'une double ration de viande hachée, sur une base classique (fromage, laitue, tomate et mayonnaise), servi avec des potatoes.",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a4fa9d4a963c1cf35fd77Rhe.jpg"
+        },
+        {
+          "name": "Sandwich au Thon",
+          "description": "Baguette croustillante légèrement dorée au four, composée de thon sur une base classique (fromage, laitue, tomate et mayonnaise), servi avec des potatoes",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a4017899fb393f80cb4c999C.jpg"
+        },
+        {
+          "name": "Sandwich Super Suprême",
+          "description": "Baguette croustillante légèrement dorée au four, composée d'un mélange de pepperoni et viande hachée sur une base classique (fromage, laitue, tomate et mayonnaise)",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a4de7899fb393f80cb53Pyz1.jpg"
+        },
+        {
+          "name": "Sandwich Poulet",
+          "description": "Baguette croustillante légèrement dorée au four, composée de poulet grillé sur une base classique (fromage, laitue, tomate et mayonnaise), servi avec des potatoes",
+          "price": 60.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Boissons",
+      "items": [
+        {
+          "name": "Pepsi Sans Sucre (1L)",
+          "description": "",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a3ae7899fb393f80cb4aRtoI.jpg"
+        },
+        {
+          "name": "Mirinda",
+          "description": "",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a3f89d4a963c1cf35fcdCJy0.jpg"
+        },
+        {
+          "name": "Aquafina (50cl)",
+          "description": "",
+          "price": 24.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a34c9d4a963c1cf35fc61n30.jpg"
+        },
+        {
+          "name": "7 Up",
+          "description": "",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155a35d9d4a963c1cf35fc7F1kR.jpg"
+        },
+        {
+          "name": "Pepsi'",
+          "description": "",
+          "price": 23.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/6155c4c80448703c7fd6621aRFph.jpg"
+        }
+      ]
+    }
+  ]
+}

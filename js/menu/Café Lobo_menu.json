@@ -1,0 +1,240 @@
+{
+  "restaurant_name": "Café Lobo",
+  "categories": [
+    {
+      "name": "Entrées",
+      "items": [
+        {
+          "name": "Salade Niçoise",
+          "description": "Salade verte, thon, tomates cerises, haricots verts, pommes de terre, olives noires, œufs, filets d’anchois, vinaigrette",
+          "price": 87.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bizMOa7yrHEZbba.jpeg"
+        },
+        {
+          "name": "Salade La Traditionnelle César",
+          "description": "La Traditionnelle César\tLaitue, Poulet grillé, Croûtons à l’ail, Copeaux de Parmesan, Sauce César Maison",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/V8Gm1YcJZ5i3alT.jpeg"
+        },
+        {
+          "name": "Salade Tomate Mozzarella",
+          "description": "Tomates fraîches, Mozzarella, Basilic, Huile d’olive, Vinaigre balsamique",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7znrLFj7AvUtG1s.jpeg"
+        },
+        {
+          "name": "Salade Marocaine au Thon",
+          "description": "Tomates fraîches, Poivron fumé, Oignon et Thon",
+          "price": 74.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/uD4Qlp47Xm04xA9.png"
+        }
+      ]
+    },
+    {
+      "name": "Pâtes Italien",
+      "items": [
+        {
+          "name": "Pasta Napolitana",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2z78YchzQhYRvPB.jpeg"
+        },
+        {
+          "name": "Pasta Arrabiata",
+          "description": "",
+          "price": 76.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/L5HfBU0PlVXPrVd.jpeg"
+        },
+        {
+          "name": "Pasta Bolognaise",
+          "description": "",
+          "price": 94.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/g5dlniC3sjUq2zv.jpeg"
+        },
+        {
+          "name": "Pasta Poulet Champignons",
+          "description": "",
+          "price": 106.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/LWbeWvAkrJPnVvk.jpeg"
+        },
+        {
+          "name": "Pasta Quatre Fromages",
+          "description": "",
+          "price": 118.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/QM4DWQ60WFzshLc.jpeg"
+        },
+        {
+          "name": "Pasta Saumon",
+          "description": "",
+          "price": 118.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1YO3yUcICDpoUVh.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Plats",
+      "items": [
+        {
+          "name": "Plat Émincé de Poulet",
+          "description": "Deux accompagnements au choix : Légumes sautés, frites maison, riz, purée",
+          "price": 94.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/fZia4Z1hz320Lfw.jpeg"
+        },
+        {
+          "name": "Plat Émincé de Bœuf",
+          "description": "",
+          "price": 112.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/4yyQki4sDy343a7.png"
+        },
+        {
+          "name": "Tagine Poulet au Citron Confit",
+          "description": "Blanc de poulet au citron confit",
+          "price": 112.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ZUMpTzoA8iMro44.jpeg"
+        },
+        {
+          "name": "Tagine Viande Hachée",
+          "description": "",
+          "price": 112.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bsfxdqARZ5PZyNp.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Snacking",
+      "items": [
+        {
+          "name": "Tacos Viande Hachée Avec Frites",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qgAtyJ5cObQWTIt.jpeg"
+        },
+        {
+          "name": "Tacos Mixte Avec Frites",
+          "description": "",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/HiB7sK2cvzgXgTc.jpeg"
+        },
+        {
+          "name": "Sandwich Poulet Avec Frites",
+          "description": "",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/mcbb5LfgmQGQ9Ra.jpeg"
+        },
+        {
+          "name": "Sandwich Viande Hachée Avec Frites",
+          "description": "",
+          "price": 76.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/BlH3yxFDl70Q65B.jpeg"
+        },
+        {
+          "name": "Sandwich Thon Avec Frites",
+          "description": "",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/SNGruq6Jnc13RWy.jpeg"
+        },
+        {
+          "name": "Club Sandwich Thon Avec Frites",
+          "description": "",
+          "price": 76.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ezcJQ7JcpkRyztO.jpeg"
+        },
+        {
+          "name": "Club Sandwich Poulet Avec Frites",
+          "description": "",
+          "price": 76.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7tWrkCL4LAbG5il.jpeg"
+        },
+        {
+          "name": "Cheese Burger Avec Frites",
+          "description": "",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Ryc4gurYE8CANb2.png"
+        },
+        {
+          "name": "Burger Aux Champignons Avec Frites",
+          "description": "",
+          "price": 112.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/gyXShDqtKq4fPhb.png"
+        }
+      ]
+    },
+    {
+      "name": "Pizza",
+      "items": [
+        {
+          "name": "Pizza Végétarienne",
+          "description": "Sauce Tomate, Mozzarella, Poivrons, Champignons, Oignons, Courgettes, Aubergine, Olives noires, Origan, Huile d’olive",
+          "price": 70.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hbvVrFpIf2QZtl1.png"
+        },
+        {
+          "name": "Pizza Margarita",
+          "description": "Sauce Tomate, Mozzarella, Huile d’olive",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/uvzQMLvwO77NmB7.jpeg"
+        },
+        {
+          "name": "Pizza Quatre Fromages",
+          "description": "Sauce Tomate, Mozzarella, Parmesan, Fromage bleu, Fromage de Chèvre, Origan, Huile d’olive",
+          "price": 118.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/KQXqBFFhI86VFMC.jpeg"
+        },
+        {
+          "name": "Pizza Viande Hachée",
+          "description": "Sauce Tomate, Mozzarella, Viande Hachée, Oignons, Poivrons, Origan, Huile d’olive",
+          "price": 94.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/eGXMAm7VwQ9ywQI.png"
+        },
+        {
+          "name": "Pizza aux Fruits de Mer",
+          "description": "Sauce Blanche, Mozzarella, Mélange de fruits de mer (crevettes, calamars, moules), Ail, Persil, Huile d’olive",
+          "price": 106.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/jma7h46YDME22bz.jpeg"
+        },
+        {
+          "name": "Pizza Thon",
+          "description": "Sauce Tomate, Mozzarella, Thon, Oignons, Olives noires, Origan, Huile d’olive",
+          "price": 94.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/XV5sKGtQPbxHRFi.jpeg"
+        },
+        {
+          "name": "Pizza 4 Parts",
+          "description": "",
+          "price": 118.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3MJBWF5s7bEChxq.png"
+        }
+      ]
+    }
+  ]
+}

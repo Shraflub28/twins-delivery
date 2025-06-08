@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twins Delivery - Unique Food Delivery Experience</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Header with diagonal design -->
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
+                <a href="#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>Delicious Food<br>Delivered To Your Door</h1>
+            <p>Choose from thousands of restaurants and get your food delivered fast</p>
+            <div class="location-bar">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" placeholder="Enter your delivery address" id="location-input">
+                <button class="search-btn"><i class="fas fa-search"></i> Find Food</button>
+            </div>
+        </div>
+        <div class="pattern-grid"></div>
+        <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%;"></div>
+        <div class="floating-element" style="width: 150px; height: 150px; top: 60%; right: 15%;"></div>
+    </header>
+
+    <!-- Categories section with diagonal layout -->
+    <section id="categories" class="diagonal-section">
+        <div class="categories-container">
+            <div class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-pizza-slice"></i>
+                </div>
+                <h3>Pizza</h3>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-hamburger"></i>
+                </div>
+                <h3>Burgers</h3>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-fish"></i>
+                </div>
+                <h3>Sushi</h3>
+            </div>
+            <div class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Healthy</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants with unique grid layout -->
+    <section id="restaurants" class="overlap-section">
+        <h2><i class="fas fa-star"></i> Popular Restaurants</h2>
+        <div class="restaurant-grid" id="restaurantGrid">
+            <!-- Restaurants will be loaded dynamically from Supabase -->
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin fa-3x"></i>
+                <p>Loading restaurants...</p>
+            </div>
+        </div>
+        
+        <!-- See More Button -->
+        <div class="see-more-container">
+            <button id="see-more-btn" class="see-more-btn">
+                <span>See More Restaurants</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Features with wave pattern -->
+    <section class="wave-section">
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Lightning Fast Delivery</h3>
+                <p>Get your food delivered in under 30 minutes</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Best Restaurants</h3>
+                <p>Partner with top-rated local restaurants</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3>Real-time Tracking</h3>
+                <p>Track your order from restaurant to doorstep</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App download section with diagonal design -->
+    <section id="download" class="app-download diagonal-section">
+        <div class="app-container">
+            <div class="app-content">
+                <h2><i class="fas fa-mobile-alt"></i> Download Our App</h2>
+                <p>Get the best food delivery experience on your phone</p>
+            </div>
+            <div class="app-image">
+                <a href="#" class="store-button app-store-btn">
+                    <i class="fab fa-apple"></i>
+                    <span>
+                        <small>Download on the</small>
+                        App Store
+                    </span>
+                </a>
+                <a href="#" class="store-button play-store-btn">
+                    <i class="fab fa-google-play"></i>
+                    <span>
+                        <small>Get it on</small>
+                        Google Play
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="pattern-grid"></div>
+        <div class="floating-element" style="width: 120px; height: 120px; bottom: 20%; right: 10%;"></div>
+    </section>
+
+    <!-- Modern Footer Section -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
+                <p>The best food delivery experience</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
+                    <li><a href="#download"><i class="fas fa-chevron-right"></i> Download App</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="mobile-nav">
+        <a href="#home" class="mobile-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="groceries.html" class="mobile-nav-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Groceries</span>
+        </a>
+        <a href="#categories" class="mobile-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="#restaurants" class="mobile-nav-item">
+            <i class="fas fa-store"></i>
+            <span>Restaurants</span>
+        </a>
+        <a href="pages/search/search.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+    </div>
+
+    <script>
+        // Scroll Progress Indicator
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+        });
+
+        // --- Pagination Variables ---
+        const INITIAL_LOAD_LIMIT = 6; // Number of restaurants to load initially
+        const BATCH_SIZE = 6; // Number of restaurants to load per "See More" click
+        let currentOffset = 0;
+        let allRestaurantsLoaded = false; // Flag to indicate if all restaurants are loaded
+        // --------------------------
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load initial batch of restaurants
+            fetchAndDisplayRestaurants(currentOffset, INITIAL_LOAD_LIMIT);
+
+            // Initialize see more functionality (attaches click listener)
+            initSeeMoreButton();
+
+            // Initialize animations and effects that apply to static or dynamically added elements
+            initAnimationsAndEffects();
+        });
+
+        // Function to determine badge for restaurant (adapted from search.html)
+        function getBadgeForRestaurant(restaurant, index) {
+            const badges = [
+                { text: "20% OFF", icon: "percent", color: "#ff458b" },
+                { text: "Fast", icon: "bolt", color: "#ff7a2d" },
+                { text: "Popular", icon: "fire", color: "#ff5722" },
+                { text: "Premium", icon: "gem", color: "#9c27b0" },
+                { text: "New", icon: "utensils", color: "#4caf50" },
+                { text: "Sweet", icon: "cookie", color: "#e91e63" },
+                { text: "Top Rated", icon: "star", color: "#ffc107" },
+                { text: "Fresh", icon: "fish", color: "#00bcd4" }
+            ];
+
+            // Try to assign badges intelligently
+            if (restaurant.cuisine) {
+                const cuisine = restaurant.cuisine.toLowerCase();
+                if (cuisine.includes('sushi')) return { text: "Fresh", icon: "fish", color: "#00bcd4" };
+                if (cuisine.includes('burger')) return { text: "Gourmet", icon: "hamburger", color: "#ff9800" };
+                if (cuisine.includes('pizza')) return { text: "Italian", icon: "pizza-slice", color: "#4caf50" };
+                if (cuisine.includes('dessert')) return { text: "Sweet", icon: "cookie", color: "#e91e63" };
+            }
+
+            if (restaurant.rating >= 4.8) return { text: "Top Rated", icon: "star", color: "#ffc107" };
+
+            // Use a different badge for each item based on its index relative to the *total* number of items displayed so far
+            const restaurantGrid = document.getElementById('restaurantGrid');
+            const totalItemsDisplayed = restaurantGrid ? restaurantGrid.querySelectorAll('.restaurant-card').length : 0;
+            return badges[(totalItemsDisplayed + index) % badges.length];
+        }
+
+        // Function to create and append restaurant cards to the grid
+        function appendRestaurantsToGrid(restaurants) {
+            const restaurantGrid = document.getElementById('restaurantGrid');
+            const loadingSpinner = restaurantGrid ? restaurantGrid.querySelector('.loading-spinner') : null;
+
+            // Remove spinner before appending new restaurants if it exists
+            if (loadingSpinner) {
+                loadingSpinner.remove();
+            }
+
+            if (!restaurantGrid) {
+                console.error('Restaurant grid element not found!');
+                return;
+            }
+
+            if (!restaurants || restaurants.length === 0) {
+                 // If no restaurants returned, and it's the initial load, show message
+                 if (currentOffset === 0) {
+                     restaurantGrid.innerHTML = `
+                        <div class="no-restaurants">
+                            <i class="fas fa-exclamation-circle fa-3x"></i>
+                            <p>No restaurants found.</p>
+                        </div>
+                    `;
+                 }
+                 // If no restaurants returned and it's *not* the initial load, it means we've reached the end.
+                return;
+            }
+
+            restaurants.forEach((restaurant, index) => {
+                const badge = getBadgeForRestaurant(restaurant, index);
+
+                const restaurantCard = document.createElement('div');
+                restaurantCard.className = `restaurant-card fade-in`; // Add fade-in class for animation
+                // restaurantCard.style.display = 'block'; // Ensure it's displayed (CSS will handle hidden-restaurant class)
+
+                const imagePath = restaurant.image_url || `pictures/${restaurant.name.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\s/g, '-')}.jpeg`;
+                const fallbackImage = 'pictures/restaurant-default.jpg';
+
+                restaurantCard.innerHTML = `
+                    <div class="card-badge" style="background-color: ${badge.color};">
+                        <i class="fas fa-${badge.icon}"></i> ${badge.text}
+                    </div>
+                    <a href="menu.html?restaurant=${encodeURIComponent(restaurant.name)}">
+                        <img src="${imagePath}" alt="${restaurant.name}" onerror="this.src='${fallbackImage}'" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>${restaurant.name}</h3>
+                            <p>
+                                <i class="fas fa-utensils"></i> ${restaurant.cuisine || 'Various'}
+                            </p>
+                        </div>
+                    </a>
+                `;
+
+                restaurantGrid.appendChild(restaurantCard);
+
+                // Observe the newly added card for animation
+                observeElementForAnimation(restaurantCard);
+            });
+
+            // Re-initialize 3D effect and hover effect listeners using event delegation
+            initRestaurantCardEffects();
+        }
+
+
+        // Function to fetch and display restaurants with pagination
+        async function fetchAndDisplayRestaurants(offset, limit) {
+            const restaurantGrid = document.getElementById('restaurantGrid');
+            const seeMoreBtn = document.getElementById('see-more-btn');
+
+            if (!restaurantGrid) return; // Exit if grid not found
+
+            // Show loading indicator
+             if (offset === 0) {
+                 // Show spinner only if it's the initial load and no restaurants are displayed yet
+                 if (restaurantGrid.querySelectorAll('.restaurant-card').length === 0) {
+                     restaurantGrid.innerHTML = `
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin fa-3x"></i>
+                            <p>Loading restaurants...</p>
+                        </div>
+                     `;
+                 }
+             } else if (seeMoreBtn) {
+                 seeMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                 seeMoreBtn.disabled = true; // Disable button while loading
+                 seeMoreBtn.classList.add('loading');
+             }
+
+            try {
+                // Ensure Supabase is initialized
+                await window.SupabaseWrapper.init();
+
+                // Fetch a specific range of restaurants from Supabase
+                // Supabase range is inclusive, so fetch from 'offset' to 'offset + limit - 1'
+                const { data, error } = await window.SupabaseWrapper.client
+                    .from('restaurants')
+                    .select('*')
+                    .order('display_order', { ascending: true }) // Order by admin-set order
+                    .order('name', { ascending: true }) // Secondary sort by name
+                    .range(offset, offset + limit - 1);
+
+                if (error) {
+                    throw new Error(error.message);
+                }
+
+                // Append the fetched restaurants to the grid
+                appendRestaurantsToGrid(data);
+
+                // Update the offset for the next fetch
+                currentOffset += (data ? data.length : 0); // Add fetched count to offset
+
+                // Check if the number of fetched restaurants is less than the limit, indicating end of list
+                if (!data || data.length < limit) {
+                    allRestaurantsLoaded = true;
+                    if (seeMoreBtn) {
+                        seeMoreBtn.style.display = 'none'; // Hide the "See More" button
+                    }
+                } else {
+                     // Restore button state if more restaurants were loaded
+                     if (seeMoreBtn) {
+                         seeMoreBtn.innerHTML = '<span>See More Restaurants</span><i class="fas fa-chevron-down"></i>';
+                         seeMoreBtn.disabled = false;
+                         seeMoreBtn.classList.remove('loading');
+                     }
+                }
+
+            } catch (error) {
+                console.error('Error fetching or loading restaurants:', error);
+                if (restaurantGrid.querySelector('.loading-spinner')) {
+                     restaurantGrid.innerHTML = `
+                        <div class="no-restaurants">
+                            <i class="fas fa-exclamation-triangle fa-3x"></i>
+                            <p>Error loading restaurants: ${error.message}</p>
+                        </div>
+                    `;
+                } else if (seeMoreBtn) {
+                     seeMoreBtn.innerHTML = '<span>Error loading</span><i class="fas fa-exclamation-circle"></i>';
+                     seeMoreBtn.disabled = true; // Disable button on error
+                     seeMoreBtn.classList.remove('loading');
+                }
+                 allRestaurantsLoaded = true; // Assume all are loaded on error to prevent further attempts
+            }
+        }
+
+
+        // Initialize see more button functionality
+        function initSeeMoreButton() {
+            const seeMoreBtn = document.getElementById('see-more-btn');
+
+            if (seeMoreBtn) {
+                // Add event listener only once
+                seeMoreBtn.addEventListener('click', () => {
+                    if (!allRestaurantsLoaded) {
+                         fetchAndDisplayRestaurants(currentOffset, BATCH_SIZE);
+                    }
+                });
+            }
+        }
+
+
+        // Smooth Navigation
+        document.querySelectorAll('.nav-link, .mobile-nav-item').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                
+                // Only apply smooth scrolling to anchor links (those starting with #)
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+                // For external links, let the default navigation happen
+            });
+        });
+
+        // Active Navigation Item
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-item'); // Include mobile links
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollY = window.scrollY;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Adjust the offset (e.g., -200) to change when the active state changes
+                if (scrollY >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                 // Check if the href is an internal anchor link before comparing
+                if (href && href.startsWith('#') && href.substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Location Input Enhancement
+        const addressInput = document.getElementById('location-input');
+        const searchBtn = document.querySelector('.search-btn');
+
+        if (addressInput && searchBtn) {
+            addressInput.addEventListener('focus', () => {
+                addressInput.parentElement.classList.add('focused');
+            });
+
+            addressInput.addEventListener('blur', () => {
+                addressInput.parentElement.classList.remove('focused');
+            });
+
+            searchBtn.addEventListener('click', () => {
+                if (addressInput.value.trim() !== '') {
+                    searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+                    // Simulate search delay
+                    setTimeout(() => {
+                        searchBtn.innerHTML = '<i class="fas fa-search"></i> Find Food';
+                        // TODO: Implement actual search functionality
+                        alert('Searching for: ' + addressInput.value);
+                    }, 1500);
+                }
+            });
+        }
+
+        // Intersection Observer for Fade-in Animation
+        const animationObserverOptions = {
+            threshold: 0.1, // Trigger when 10% of the element is visible
+            rootMargin: '0px 0px -50px 0px' // Start observing 50px before the bottom of the viewport
+        };
+
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: Stop observing once visible if animation only happens once
+                    // animationObserver.unobserve(entry.target);
+                } else {
+                    // Optional: Remove 'visible' class if you want elements to animate in again when scrolling back
+                    // entry.target.classList.remove('visible');
+                }
+            });
+        }, animationObserverOptions);
+
+        // Function to observe a single element
+        function observeElementForAnimation(el) {
+             if (el && !el.classList.contains('fade-in')) {
+                 el.classList.add('fade-in'); // Add the base fade-in class if not present
+             }
+             if (el) {
+                animationObserver.observe(el);
+             }
+        }
+
+        // Restaurant Cards Hover and 3D Effect (using event delegation)
+        function initRestaurantCardEffects() {
+            const restaurantGrid = document.getElementById('restaurantGrid');
+            if (!restaurantGrid) return;
+
+            // Remove existing listeners to prevent duplicates
+            restaurantGrid.removeEventListener('mouseover', handleCardEffectMouseOver);
+            restaurantGrid.removeEventListener('mouseout', handleCardEffectMouseOut);
+            restaurantGrid.removeEventListener('mousemove', handleCard3DEffectMouseMove);
+
+            // Add new listeners
+            restaurantGrid.addEventListener('mouseover', handleCardEffectMouseOver);
+            restaurantGrid.addEventListener('mouseout', handleCardEffectMouseOut);
+            restaurantGrid.addEventListener('mousemove', handleCard3DEffectMouseMove);
+        }
+
+        function handleCardEffectMouseOver(e) {
+            const targetCard = e.target.closest('.restaurant-card');
+            if (targetCard) {
+                 targetCard.style.transform = 'translateY(-10px)'; // Keep simple translateY for hover
+            }
+        }
+
+        function handleCardEffectMouseOut(e) {
+            const targetCard = e.target.closest('.restaurant-card');
+            if (targetCard) {
+                 // Only reset if not currently applying 3D effect
+                 // This simple example might interfere slightly; a more robust solution would track active state
+                 if (!targetCard.classList.contains('applying-3d')) {
+                     targetCard.style.transform = 'translateY(0)';
+                 }
+            }
+        }
+
+        function handleCard3DEffectMouseMove(e) {
+            const targetCard = e.target.closest('.restaurant-card');
+            if (!targetCard) return; // Only proceed if the mouse is over a restaurant card
+
+            // Add a class to indicate 3D effect is being applied (optional, helps with hover interaction)
+            targetCard.classList.add('applying-3d');
+
+            const rect = targetCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const angleX = (y - centerY) / 20;
+                const angleY = (centerX - x) / 20;
+                
+            targetCard.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.05, 1.05, 1.05)`;
+        }
+
+        // Reset 3D effect when mouse leaves the grid (or use mouseout on the card itself)
+        document.getElementById('restaurantGrid').addEventListener('mouseleave', (e) => {
+             const targetCard = e.target.closest('.restaurant-card');
+             if (targetCard) {
+                 targetCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                 targetCard.classList.remove('applying-3d');
+             }
+        });
+
+        // Parallax Effect for Floating Elements (Refactored)
+        function initFloatingElementParallax() {
+             document.addEventListener('mousemove', (e) => {
+                const floatingElements = document.querySelectorAll('.floating-element');
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+
+                floatingElements.forEach(element => {
+                    // Use data-speed attribute for speed, default to 2
+                    const speed = parseFloat(element.getAttribute('data-speed')) || 2;
+                    const x = (mouseX - 0.5) * speed * 50; // Multiply by a factor for noticeable movement
+                    const y = (mouseY - 0.5) * speed * 50;
+                    element.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+        }
+
+        // Function to initialize all necessary animations and effects
+        function initAnimationsAndEffects() {
+            // Observe static elements for fade-in animation
+             document.querySelectorAll('section, .category-item, .feature, .app-content, .app-image').forEach(el => {
+                 observeElementForAnimation(el);
+             });
+
+            // Initialize parallax for floating elements
+            initFloatingElementParallax();
+
+             // Feature item animation delay
+            document.querySelectorAll('.feature').forEach((feature, index) => {
+                feature.style.animationDelay = `${index * 0.1}s`; // Slightly faster delay
+                feature.classList.add('fade-up'); // Assuming you have a fade-up class
+            });
+
+             // Initialize restaurant card effects (hover and 3D)
+             initRestaurantCardEffects();
+        }
+
+
+         // Note: The 3D card effect and hover effect listeners are now handled
+         // with event delegation by calling initRestaurantCardEffects().
+
+    </script>
+    
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <script src="js/supabase.js"></script>
+    
+    <!-- Data Migration Script Removed -->
+    <!-- <script src="js/data-migration.js"></script> -->
+</body>
+</html

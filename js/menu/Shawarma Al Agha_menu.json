@@ -1,0 +1,238 @@
+{
+  "restaurant_name": "Shawarma Al Agha",
+  "categories": [
+    {
+      "name": "SHAWARMA",
+      "items": [
+        {
+          "name": "SHAWARMA NORMALE + FRITES",
+          "description": "",
+          "price": 28.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA DOUBLE + FRITES",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE SAMURAI + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE MAROCAINE + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE PITAIOLI + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA 1 KG",
+          "description": "",
+          "price": 200.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA EXTRA + FRITES",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA PLAT",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA CHEEZY EASY + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA FROMAGE + FRITES",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SANS FRITES",
+          "description": "",
+          "price": 24.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE ALGERIENNE + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA DOUBLE FROMAGE + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA DOUBLE + FROMAGE + FRITES",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE ANDALOUSI + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE CHILI + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE TARTARE + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SHAWARMA SAUCE BIGGY + FRITES",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "SANDWICH",
+      "items": [
+        {
+          "name": "SANDWICH CRISPY",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "PLAT CRISPY",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "BURGER",
+      "items": [
+        {
+          "name": "CHIKEN BURGER",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "MINI CHICKEN",
+          "description": "",
+          "price": 23.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "KING BURGER",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "FALAFEL",
+      "items": [
+        {
+          "name": "FALAFEL PLAT",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "FALAFEL SANDWICH",
+          "description": "",
+          "price": 15.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "FALAFEL DOUBLE + FRITES",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "FALAFEL DOUBLE",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "LES EXTRAS",
+      "items": [
+        {
+          "name": "FRITES",
+          "description": "",
+          "price": 7.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SAUCE",
+          "description": "",
+          "price": 5.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "DRINKS & DESSERTS",
+      "items": [
+        {
+          "name": "Limonade",
+          "description": "",
+          "price": 7.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "JUS DE CITRON",
+          "description": "",
+          "price": 9.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "MAHALABIA",
+          "description": "",
+          "price": 9.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "BOISSONS",
+      "items": [
+        {
+          "name": "SIDI ALI 50 CL",
+          "description": "",
+          "price": 5.0,
+          "currency": "Dh"
+        }
+      ]
+    }
+  ]
+}

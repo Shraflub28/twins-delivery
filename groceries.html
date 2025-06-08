@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Order - Twins Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase Client Library (though not directly used for saving groceries to DB in this version) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <!-- Custom Supabase Integration (for initSupabase if needed by shared functions) -->
+    <script src="js/supabase.js"></script>
+    <style>
+        /* Groceries specific styles */
+        .groceries-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .groceries-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 1rem;
+        }
+        
+        .groceries-header h1 {
+            font-size: 2rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .groceries-header h1 i {
+            color: var(--accent-color); /* Or choose a specific color for groceries */
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group label.required::after {
+            content: " *";
+            color: #ff3366;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .location-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex; /* Changed from flex to inline-flex */
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .location-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .location-button i {
+            font-size: 1.2rem;
+        }
+        
+        .location-details {
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .location-details.active {
+            display: block;
+        }
+        
+        .location-coordinates {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .groceries-actions {
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            margin-top: 2rem;
+        }
+        
+        .whatsapp-order-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex; /* Changed from flex to inline-flex */
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-order-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-order-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .groceries-actions {
+                justify-content: center; /* Center button on mobile */
+            }
+            .whatsapp-order-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Header with diagonal design -->
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="groceries.html" class="nav-link active"><i class="fas fa-shopping-basket"></i> Groceries</a>
+                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="groceries-container">
+        <div class="groceries-header">
+            <h1><i class="fas fa-shopping-basket"></i> Order Your Groceries</h1>
+        </div>
+
+        <form id="groceries-form">
+            <div class="form-group">
+                <label for="grocery-list" class="required">Your Grocery List</label>
+                <textarea id="grocery-list" placeholder="e.g., 2L Milk, 1kg Apples, Bread, Eggs..." required></textarea>
+            </div>
+
+            <div class="customer-info">
+                <h3>Your Information</h3>
+                <div class="form-group">
+                    <label for="customer-name" class="required">Name</label>
+                    <input type="text" id="customer-name" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-phone" class="required">Phone Number</label>
+                    <input type="tel" id="customer-phone" placeholder="Your phone number (e.g., +2126...)" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="button" id="get-location-btn" class="location-button">
+                        <i class="fas fa-map-marker-alt"></i> Get My Location
+                    </button>
+                    <div class="location-coordinates" id="location-coordinates"></div>
+                    <div class="location-details" id="location-details">
+                        <label for="customer-address-detail">Additional Address Details (Optional)</label>
+                        <input type="text" id="customer-address-detail" placeholder="Apartment number, building, landmark, etc.">
+                    </div>
+                </div>
+            </div>
+
+            <div class="groceries-actions">
+                <a href="#" class="whatsapp-order-btn" id="whatsapp-order-btn">
+                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                </a>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
+                <p>The best food delivery experience</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="groceries.html"><i class="fas fa-chevron-right"></i> Groceries</a></li>
+                    <li><a href="index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
+                    <li><a href="index.html#download"><i class="fas fa-chevron-right"></i> Download App</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="groceries.html" class="mobile-nav-item active"> <!-- Active state for groceries page -->
+            <i class="fas fa-shopping-basket"></i>
+            <span>Groceries</span>
+        </a>
+        <a href="index.html#categories" class="mobile-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="index.html#restaurants" class="mobile-nav-item">
+            <i class="fas fa-store"></i>
+            <span>Restaurants</span>
+        </a>
+        <a href="pages/search/search.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const groceriesForm = document.getElementById('groceries-form');
+            const groceryListInput = document.getElementById('grocery-list');
+            const customerNameInput = document.getElementById('customer-name');
+            const customerPhoneInput = document.getElementById('customer-phone');
+            const getLocationBtn = document.getElementById('get-location-btn');
+            const locationCoordinatesEl = document.getElementById('location-coordinates');
+            const locationDetailsEl = document.getElementById('location-details');
+            const customerAddressDetailInput = document.getElementById('customer-address-detail');
+            const whatsappOrderBtn = document.getElementById('whatsapp-order-btn');
+
+            let userLatitude = null;
+            let userLongitude = null;
+            const whatsappNumber = '+212621240971'; // Same number as in checkout/confirmation
+
+            // Function to check form validity for enabling button
+            function checkFormValidity() {
+                const isGroceryListValid = groceryListInput.value.trim() !== '';
+                const isNameValid = customerNameInput.value.trim() !== '';
+                const isPhoneValid = customerPhoneInput.value.trim() !== '';
+                
+                whatsappOrderBtn.disabled = !(isGroceryListValid && isNameValid && isPhoneValid);
+                if (whatsappOrderBtn.disabled) {
+                    whatsappOrderBtn.title = 'Please fill in all required fields.';
+                } else {
+                    whatsappOrderBtn.title = '';
+                }
+            }
+
+            // Add event listeners for input validation
+            groceryListInput.addEventListener('input', checkFormValidity);
+            customerNameInput.addEventListener('input', checkFormValidity);
+            customerPhoneInput.addEventListener('input', checkFormValidity);
+
+            // Initial check
+            checkFormValidity();
+
+
+            getLocationBtn.addEventListener('click', function() {
+                if (navigator.geolocation) {
+                    getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Getting location...';
+                    getLocationBtn.disabled = true;
+                    
+                    navigator.geolocation.getCurrentPosition(
+                        function(position) { // Success
+                            userLatitude = position.coords.latitude;
+                            userLongitude = position.coords.longitude;
+                            
+                            locationCoordinatesEl.innerHTML = `
+                                <i class="fas fa-map-marker-alt"></i> Location found: 
+                                <a href="https://maps.google.com/?q=${userLatitude},${userLongitude}" target="_blank">
+                                    View on map
+                                </a>`;
+                            locationCoordinatesEl.style.color = '#666'; // Reset color
+                            locationDetailsEl.classList.add('active');
+                            getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Location Received';
+                            getLocationBtn.disabled = false;
+                        },
+                        function(error) { // Error
+                            let errorMessage = 'Could not get your location. ';
+                            switch(error.code) {
+                                case error.PERMISSION_DENIED: errorMessage += 'Permission denied.'; break;
+                                case error.POSITION_UNAVAILABLE: errorMessage += 'Location unavailable.'; break;
+                                case error.TIMEOUT: errorMessage += 'Timeout.'; break;
+                                default: errorMessage += 'Unknown error.'; break;
+                            }
+                            locationCoordinatesEl.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${errorMessage}`;
+                            locationCoordinatesEl.style.color = '#ff3366';
+                            getLocationBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Try Again';
+                            getLocationBtn.disabled = false;
+                            locationDetailsEl.classList.add('active'); // Show address field anyway
+                        }
+                    );
+                } else {
+                    locationCoordinatesEl.innerHTML = 'Geolocation is not supported by this browser.';
+                    locationCoordinatesEl.style.color = '#ff3366';
+                    locationDetailsEl.classList.add('active'); // Show address field anyway
+                }
+            });
+
+            // Helper to save to localStorage (similar to checkout.html)
+            function saveOrderToLocalStorage(orderData) {
+                localStorage.setItem('twins_delivery_current_order', JSON.stringify(orderData));
+                
+                let orderHistory = JSON.parse(localStorage.getItem('twins_delivery_orders') || '[]');
+                orderHistory.unshift(orderData); // Add to beginning
+                if (orderHistory.length > 10) { // Keep last 10
+                    orderHistory = orderHistory.slice(0, 10);
+                }
+                localStorage.setItem('twins_delivery_orders', JSON.stringify(orderHistory));
+                console.log('Grocery order saved to localStorage:', orderData);
+            }
+
+            // Save order to Supabase and localStorage (similar to checkout.html)
+            async function saveOrder(orderData) {
+                try {
+                    // Ensure Supabase is initialized (assuming initSupabase is globally available or part of SupabaseWrapper)
+                    if (window.SupabaseWrapper && typeof window.SupabaseWrapper.init === 'function') {
+                        await window.SupabaseWrapper.init();
+                    } else if (typeof window.initSupabase === 'function') {
+                        await window.initSupabase(); // Fallback if initSupabase is a global function
+                    }
+
+                    // Try to save to Supabase first using the new groceryOrders wrapper
+                    if (window.SupabaseWrapper && window.SupabaseWrapper.groceryOrders && typeof window.SupabaseWrapper.groceryOrders.create === 'function') {
+                        const result = await window.SupabaseWrapper.groceryOrders.create(orderData);
+                        
+                        if (result && result.success) {
+                            console.log('Grocery order saved to Supabase (grocery_orders table):', result.data);
+                        } else {
+                            console.warn('Failed to save grocery order to Supabase (grocery_orders table). Result:', result);
+                            // Fall back to localStorage
+                            saveOrderToLocalStorage(orderData);
+                        }
+                    } else {
+                        console.warn('SupabaseWrapper.groceryOrders.create function not found. Falling back to localStorage.');
+                        saveOrderToLocalStorage(orderData);
+                    }
+                } catch (error) {
+                    console.error('Error saving grocery order to Supabase (grocery_orders table):', error);
+                    // Fall back to localStorage
+                    saveOrderToLocalStorage(orderData);
+                }
+            }
+
+            whatsappOrderBtn.addEventListener('click', async function(e) {
+                e.preventDefault(); // Prevent default link behavior
+
+                if (whatsappOrderBtn.disabled) return;
+
+                const groceryList = groceryListInput.value.trim();
+                const customerName = customerNameInput.value.trim();
+                const customerPhone = customerPhoneInput.value.trim();
+                const customerAddressDetail = customerAddressDetailInput.value.trim();
+
+                if (!groceryList || !customerName || !customerPhone) {
+                    alert('Please fill in all required fields: Grocery List, Name, and Phone Number.');
+                    return;
+                }
+
+                // Generate a unique order ID for groceries
+                const timestamp = new Date().getTime();
+                const randomStr = Math.random().toString(36).substring(2, 8);
+                const orderId = `TDG-${timestamp}-${randomStr}`; // TDG for Twins Delivery Groceries
+
+                const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+                const orderTrackingLink = `${window.location.origin}${basePath}confirmation.html#${orderId}`;
+
+                const orderData = {
+                    orderId: orderId,
+                    items: JSON.stringify([{ name: "Grocery List", quantity: 1, price: "N/A", currency: "Items" }]),
+                    notes: groceryList, 
+                    restaurant: "Personal Grocery Shopper",
+                    customer: JSON.stringify({
+                        name: customerName,
+                        phone: customerPhone,
+                        address: customerAddressDetail,
+                        latitude: userLatitude,
+                        longitude: userLongitude
+                    }),
+                    orderDate: new Date().toISOString(),
+                    status: 'pending'
+                };
+
+                // Save order (Supabase primary, localStorage fallback)
+                await saveOrder(orderData);
+
+
+                // Construct WhatsApp message
+                let message = `*Grocery Order Request: ${orderId}*\n`;
+                message += `View order details: ${orderTrackingLink}\n\n`;
+                message += "Hello! I would like to order the following groceries:\n\n";
+                message += "*Grocery List:*\n";
+                message += `${groceryList}\n\n`;
+                
+                message += "*Delivery Information:*\n";
+                message += `Name: ${customerName}\n`;
+                message += `Phone: ${customerPhone}\n`;
+                
+                if (userLatitude && userLongitude) {
+                    message += `Location: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                }
+                if (customerAddressDetail) {
+                    message += `Address Details: ${customerAddressDetail}\n`;
+                }
+                message += "\nThank you!";
+                
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                // Open WhatsApp
+                window.open(whatsappLink, '_blank');
+
+                // Optionally, redirect to confirmation page or show a message
+                // For consistency with checkout, open confirmation in new tab after a delay
+                setTimeout(() => {
+                    window.open(orderTrackingLink, '_blank');
+                }, 1500); // Delay to allow WhatsApp to open
+
+                // Clear form or give feedback
+                // groceriesForm.reset(); // Uncomment to clear form after submission
+                // userLatitude = null; userLongitude = null;
+                // locationCoordinatesEl.innerHTML = '';
+                // locationDetailsEl.classList.remove('active');
+                alert('Your grocery order request has been prepared for WhatsApp! A confirmation link has also been opened.');
+                checkFormValidity(); // Re-check validity to disable button
+            });
+
+            // Scroll Progress Indicator
+            window.addEventListener('scroll', () => {
+                const scrollProgress = document.querySelector('.scroll-progress');
+                if (scrollProgress) {
+                    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

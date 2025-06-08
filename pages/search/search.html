@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Twins Delivery</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Header with diagonal design -->
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="../../groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
+                <a href="../../index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="../../index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
+                <a href="search.html" class="nav-link active"><i class="fas fa-search"></i> Search</a>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>Find Your Perfect Meal</h1>
+            <p>Search through our extensive collection of restaurants and cuisines</p>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search for restaurants, cuisines, or dishes..." autocomplete="off">
+                <div id="suggestions" class="suggestions-dropdown" style="display:none;"></div>
+            </div>
+        </div>
+        <div class="pattern-grid"></div>
+        <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%;"></div>
+        <div class="floating-element" style="width: 150px; height: 150px; top: 60%; right: 15%;"></div>
+    </header>
+
+    <main class="search-container">
+        <div class="search-results">
+            <div class="results-header">
+                <h2><i class="fas fa-utensils"></i> Search Results</h2>
+            </div>
+
+            <div class="restaurant-grid" id="searchResults">
+                <!-- Loading placeholder -->
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin fa-3x"></i>
+                    <p>Loading restaurants...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Footer Section -->
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
+                <p>The best food delivery experience</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="../../groceries.html"><i class="fas fa-chevron-right"></i> Groceries</a></li>
+                    <li><a href="../../index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="../../index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-envelope"></i> Contact</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="mobile-nav">
+        <a href="../../index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="../../groceries.html" class="mobile-nav-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Groceries</span>
+        </a>
+        <a href="../../index.html#categories" class="mobile-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="../../index.html#restaurants" class="mobile-nav-item">
+            <i class="fas fa-store"></i>
+            <span>Restaurants</span>
+        </a>
+        <a href="search.html" class="mobile-nav-item active">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+    </div>
+
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <script src="../../js/supabase.js"></script>
+
+    <script>
+        // Restaurant data array - will be populated from Supabase
+        let restaurants = [];
+        
+        // Load restaurants from Supabase when the page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Initialize Supabase
+                await window.SupabaseWrapper.init();
+                
+                // Get restaurants from database
+                const { success, data, error } = await window.SupabaseWrapper.restaurants.getAll();
+                
+                if (!success || error) {
+                    console.error('Failed to load restaurants from database:', error);
+                    displayError('Could not load restaurant data from the database.');
+                    return;
+                }
+                
+                // Transform database results to the format our UI expects
+                restaurants = data.map((restaurant, index) => {
+                    // Generate a badge based on restaurant data
+                    const badge = getBadgeForRestaurant(restaurant, index);
+                    
+                    // Get image or use fallback naming convention
+                    const imageName = restaurant.image_url || 
+                        `../../pictures/${restaurant.name.toLowerCase().replace(/\s+/g, ' ').trim().replace(/\s/g, '-')}.jpeg`;
+                    
+                    return {
+                        name: restaurant.name,
+                        cuisine: restaurant.cuisine || 'Various',
+                        image: imageName,
+                        badge: badge
+                    };
+                });
+                
+                // Update UI with the data
+                displayResults(restaurants);
+                setupSearch();
+            } catch (error) {
+                console.error('Error loading data from Supabase:', error);
+                displayError('There was an error connecting to the restaurant database.');
+            }
+        });
+        
+        function displayError(message) {
+            document.getElementById('searchResults').innerHTML = `
+                <div class="no-results">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error</h3>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        // Generate a badge for a restaurant
+        function getBadgeForRestaurant(restaurant, index) {
+            const badges = [
+                { text: "20% OFF", icon: "percent", color: "#ff458b" },
+                { text: "Fast", icon: "bolt", color: "#ff7a2d" },
+                { text: "Popular", icon: "fire", color: "#ff5722" },
+                { text: "Premium", icon: "gem", color: "#9c27b0" },
+                { text: "New", icon: "utensils", color: "#4caf50" },
+                { text: "Sweet", icon: "cookie", color: "#e91e63" },
+                { text: "Top Rated", icon: "star", color: "#ffc107" },
+                { text: "Fresh", icon: "fish", color: "#00bcd4" }
+            ];
+            
+            // Try to assign badges intelligently
+            if (restaurant.cuisine) {
+                const cuisine = restaurant.cuisine.toLowerCase();
+                if (cuisine.includes('sushi')) return { text: "Fresh", icon: "fish", color: "#00bcd4" };
+                if (cuisine.includes('burger')) return { text: "Gourmet", icon: "hamburger", color: "#ff9800" };
+                if (cuisine.includes('pizza')) return { text: "Italian", icon: "pizza-slice", color: "#4caf50" };
+                if (cuisine.includes('dessert')) return { text: "Sweet", icon: "cookie", color: "#e91e63" };
+            }
+            
+            if (restaurant.rating >= 4.8) return { text: "Top Rated", icon: "star", color: "#ffc107" };
+            
+            return badges[index % badges.length];
+        }
+        
+        // Setup search functionality
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const suggestionsBox = document.getElementById('suggestions');
+            
+            // Add focus effect to search bar
+            searchInput.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            searchInput.addEventListener('blur', function() {
+                setTimeout(() => {
+                    this.parentElement.classList.remove('focused');
+                }, 200);
+            });
+
+            function performSearch() {
+                const query = searchInput.value.toLowerCase();
+
+                // Filter restaurants based on search criteria
+                let filteredResults = restaurants.filter(restaurant => {
+                    return !query || 
+                        restaurant.name.toLowerCase().includes(query) ||
+                        restaurant.cuisine.toLowerCase().includes(query);
+                });
+
+                displayResults(filteredResults);
+            }
+
+            // Search input event listeners with debounce for better performance
+            let debounceTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(() => {
+                    const query = searchInput.value.trim().toLowerCase();
+                    
+                    // Only show suggestions if there's input
+                    if (query.length > 0) {
+                        const suggestions = getSuggestions(query);
+                        if (suggestions.length > 0) {
+                            renderSuggestions(suggestions);
+                            suggestionsBox.style.display = 'block';
+                        } else {
+                            suggestionsBox.style.display = 'none';
+                        }
+                    } else {
+                        suggestionsBox.style.display = 'none';
+                    }
+                    
+                    performSearch();
+                }, 300); // Debounce for 300ms
+            });
+            
+            // Suggestion box event handlers
+            suggestionsBox.addEventListener('mousedown', function(e) {
+                if (e.target.classList.contains('suggestion-item')) {
+                    // If they click the icon, we need to get the parent
+                    const text = e.target.innerText.trim();
+                    searchInput.value = text;
+                    suggestionsBox.style.display = 'none';
+                    performSearch();
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!suggestionsBox.contains(e.target) && e.target !== searchInput) {
+                    suggestionsBox.style.display = 'none';
+                }
+            });
+        }
+
+        // Display search results
+        function displayResults(results) {
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search"></i>
+                        <h3>No Results Found</h3>
+                        <p>Try different search criteria or filters</p>
+                    </div>
+                `;
+                return;
+            }
+
+            results.forEach(restaurant => {
+                // Set a fallback image in case the restaurant image is not found
+                const fallbackImage = '../../pictures/restaurant-default.jpg';
+                
+                const restaurantCard = `
+                    <div class="restaurant-card">
+                        <div class="card-badge" style="background-color: ${restaurant.badge.color};">
+                            <i class="fas fa-${restaurant.badge.icon}"></i> ${restaurant.badge.text}
+                        </div>
+                        <a href="../../menu.html?restaurant=${encodeURIComponent(restaurant.name)}">
+                            <img src="${restaurant.image}" alt="${restaurant.name}" onerror="this.src='${fallbackImage}'">
+                            <div class="restaurant-info">
+                                <h3>${restaurant.name}</h3>
+                                <p><i class="fas fa-utensils"></i> ${restaurant.cuisine}</p>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                searchResults.innerHTML += restaurantCard;
+            });
+        }
+
+            // Enhanced suggestions for better matching
+            function getSuggestions(query) {
+                if (!query) return [];
+                
+                // Get unique restaurant names and cuisines
+                const names = restaurants.map(r => r.name);
+                const cuisines = [...new Set(restaurants.map(r => r.cuisine))];
+                
+                // Combine with popular dishes (just for demonstration)
+                const popularDishes = ["Burger", "Pizza", "Sushi", "Pasta", "Chicken", "Salad", "Ice Cream"];
+                
+                const all = [...names, ...cuisines, ...popularDishes];
+                
+                // Create ranked suggestions based on match quality
+                return [...new Set(all)]
+                .filter(item => item && item.toLowerCase().includes(query))
+                    .sort((a, b) => {
+                        // Prioritize items that start with the query
+                        const aStarts = a.toLowerCase().startsWith(query);
+                        const bStarts = b.toLowerCase().startsWith(query);
+                        
+                        if (aStarts && !bStarts) return -1;
+                        if (!aStarts && bStarts) return 1;
+                        
+                        // Otherwise sort by length (shorter = more relevant)
+                        return a.length - b.length;
+                    })
+                    .slice(0, 6); // Show no more than 6 suggestions
+            }
+            
+            function renderSuggestions(suggestions) {
+            const suggestionsBox = document.getElementById('suggestions');
+                suggestionsBox.innerHTML = suggestions.map(s => {
+                    return `<div class='suggestion-item'><i class="fas fa-search"></i> ${s}</div>`;
+                }).join('');
+            }
+
+            // Scroll Progress Indicator
+            window.addEventListener('scroll', () => {
+                const scrollProgress = document.querySelector('.scroll-progress');
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+            });
+
+            // Parallax Effect for Floating Elements
+            window.addEventListener('mousemove', (e) => {
+                const floatingElements = document.querySelectorAll('.floating-element');
+                const mouseX = e.clientX / window.innerWidth - 0.5;
+                const mouseY = e.clientY / window.innerHeight - 0.5;
+
+                floatingElements.forEach(element => {
+                    const speed = element.offsetWidth / 100;
+                    element.style.transform = `translate(${mouseX * speed}px, ${mouseY * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,693 @@
+{
+  "restaurant_name": "Quick",
+  "categories": [
+    {
+      "name": "Giant Family (Menu)",
+      "items": [
+        {
+          "name": "Menu Méga Giant Beef",
+          "description": "En vrai fan, tu l'auras reconnu : voilà le Mega Giant ! Avec deux mégas steaks hachés généreux, une tranche de cheddar fondu, des petits morceaux d'oignons, de la salade et sa fameuse sauce Giant ! Simplement méga bon !",
+          "price": 99.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/KkODzZ7pU6Iwp1P.jpeg"
+        },
+        {
+          "name": "Menu Triple Giant",
+          "description": "3 steaks hachés, 2 tranches de fromage cheddar, de la salade, des oignons en dès le tout accompagné de l'inimitable sauce Giant. En ce début d'année, Quick décline son burger Mythique, le Giant en 1 version encore plus grande.",
+          "price": 82.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sCI02mvqH31thdp.jpeg"
+        },
+        {
+          "name": "Menu Giant",
+          "description": "2 steaks hachés pur bœuf, du Cheddar fondu, des oignons et de la salade craquante dans un pain chaud + sauce Giant inimitable, à base de mayonnaise, de ketchup et de notes de câpres.",
+          "price": 72.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/XMONgcAupbBkcS6.jpeg"
+        },
+        {
+          "name": "Menu Junior Giant",
+          "description": "Toutes les saveurs du Giant dans un petit format ! Retrouvez son steak haché 100% pur bœuf et sa tranche de cheddar accompagnés de dés d'oignon croquants. Et pour finir en beauté, sa délicieuse sauce Giant !",
+          "price": 51.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/9DbswEC9fHuQDSr.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Incontournables (Menu)",
+      "items": [
+        {
+          "name": "Menu Quick'n Toast",
+          "description": "Deux tranches de pain toastées, ses tranches de bacon de bœuf Halal sur un steak haché pur bœuf et sa sauce délicatement poivrée",
+          "price": 89.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/mW4FhIiLriXC5hb.jpeg"
+        },
+        {
+          "name": "Menu Double Chicken",
+          "description": "Pain rond, double poulet pané, fromage fondu, sauce chicken, cheese",
+          "price": 72.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/CcedFdO5j16JOmQ.jpeg"
+        },
+        {
+          "name": "Menu Double Spicy",
+          "description": "Pain rond, double steak haché, fromage fondu, sauce au goût fumé, cheddar",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/26o2E2BRNVjlNKJ.jpeg"
+        },
+        {
+          "name": "Menu Double Cheese",
+          "description": "Un pain rond et moelleux, deux steaks hachés, une tranche de cornichon, des oignons et surtout : deux tranches de Cheddar fondu",
+          "price": 66.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TDJnjPvWplSltQe.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Longs (Menu)",
+      "items": [
+        {
+          "name": "Menu Long Beef Spicy",
+          "description": "Un pain aux céréales, long et savoureux. Et dedans, trois délicieuses tranches de bacon de bœuf Halal, deux steaks hachés 100% pur bœuf, et des tranches de cheddar et de fromage fondu .",
+          "price": 82.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/S1p3bnwvVWaApTD.jpeg"
+        },
+        {
+          "name": "Menu Long Chicken",
+          "description": "Un pain aux céréales, long et savoureux. et sa préparation panée au poulet et la sauce, poivrée !",
+          "price": 82.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/0MuY0qIXKLwFCki.jpeg"
+        },
+        {
+          "name": "Menu Long Spicy",
+          "description": "Pain long aux céréales, sa spécialité panée au poulet croustillante, ses tranches de tomate, sa salade, ses oignons en lamelle et sa sauce piquante.",
+          "price": 82.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/prMiqZc2E7HyJMJ.jpeg"
+        },
+        {
+          "name": "Menu Long Fish Sauce Tartare",
+          "description": "Un pain long aux céréales, A l'intérieur, un délicieux filet de poisson blanc pané et sa fameuse sauce tartare.",
+          "price": 82.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/yUGXRElispsgFAb.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Mega Wraps (Menu)",
+      "items": [
+        {
+          "name": "Menu Méga Wrap Spicy Chicken",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, une tranche de tomate, du fromage fondu, des oignons frits, des Rustiques de pomme de terre et de la sauce Spicy.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/XVfNXRtFEWUDCGF.jpeg"
+        },
+        {
+          "name": "Menu Méga Wrap Giant",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, du Cheddar, des oignons en dés et la fameuse sauce Giant, tout ça dans une tortilla accompagné de rustiques de pomme de terre!",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/N180wzJrGxiCGKu.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Petites Faims (Menu)",
+      "items": [
+        {
+          "name": "Menu Chicken Délice",
+          "description": "Une tranche de poulet pané, des tomates, iceberg et une sauce chicken cheese pour un plaisir infini.",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/GY8knHglHY03UDJ.jpeg"
+        },
+        {
+          "name": "Menu Chicken Cheese",
+          "description": "Pain rond, poulet pané, fromage fondu, sauce chicken cheese",
+          "price": 53.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/khVIF1nzOVf0Fn8.jpeg"
+        },
+        {
+          "name": "Menu Junior Spicy",
+          "description": "Pain rond, steak haché, fromage fondu, sauce au goût fumé",
+          "price": 46.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/I8sed1nMEROCULB.jpeg"
+        },
+        {
+          "name": "Menu Junior Wrap Chicken Giant",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, du Cheddar, des oignons en dés et la fameuse sauce Giant, tout ça dans une tortilla accompagné de rustiques de pomme de terre!",
+          "price": 46.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/jAxyaeziyOf87MT.jpeg"
+        },
+        {
+          "name": "Menu Junior Wrap Chicken Spicy",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, une tranche de tomate, du fromage fondu, des oignons frits, des Rustiques de pomme de terre et de la sauce Spicy.",
+          "price": 46.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/theA21xPQFSsQVb.jpeg"
+        },
+        {
+          "name": "Menu Cheeseburger",
+          "description": "Un pain tout rond, chaud et tendre, un steak haché et une tranche de Cheddar, voilà la recette incontournable de ce grand standard.",
+          "price": 39.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qHkRahxP7A7I1fE.jpeg"
+        },
+        {
+          "name": "Menu Hamburger",
+          "description": "Un steak pur bœuf dans un petit pain rond, des oignons, une tranche de cornichon, ketchup et moutarde.",
+          "price": 36.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/iVvdlF2TrGrb0R2.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Remarquables (Menu)",
+      "items": [
+        {
+          "name": "Menu L'EMMENTAL 350 gr",
+          "description": "Du jamais vu : un mélange bœuf poulet : Un vrai bonheur pour les plus gourmands du burger : 1 steak haché pur bœuf, 1 patty poulet, roquette, salade iceberg, double emmental + 2 sauces inimitables : la chicken cheese + la barbecue avec un pain pavot.",
+          "price": 109.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/0waXLbNk84MFFv8.jpeg"
+        },
+        {
+          "name": "Menu XL Le Raclette Bacon Poulet",
+          "description": "Remarquable ! Ses tranches de bacon avec sa raclette bien onctueuse qui vient napper le steak poulet pané, franchement, il n'y a rien de meilleur! Et puis sa sauce Crémeuse ...",
+          "price": 104.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/u8tMV7cQ9Xr1O06.jpeg"
+        },
+        {
+          "name": "Menu L'emmental Rosti",
+          "description": "Un vrai bonheur pour les plus gourmands du burger : 1 steak haché pur bœuf, 1 pomme rosti, de la roquette, de la salade iceberg, double portion d'emmental + 2 sauces inimitables : la chicken cheese + la barbecue avec un pain pavot.",
+          "price": 99.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/lA2m2ZzfXUfjiu5.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Suprêmes (Menu)",
+      "items": [
+        {
+          "name": "Menu Suprême BBQ Beef",
+          "description": "Un bon pain au petit goût de levain de seigle parsemé de céréales, un steak haché pur bœuf, du fromage cheddar, de la salade, des tomates et de l'oignon frit ainsi qu'une sauce barbecue accompagnée d'une sauce légèrement poivrée",
+          "price": 86.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/tOIXp1tj6w1i4ZM.jpeg"
+        },
+        {
+          "name": "Menu Suprême BBQ Chicken",
+          "description": "Un bon pain au petit goût de levain de seigle parsemé de céréales, une spécialité au poulet croustillante, du fromage cheddar, de la salade, des tomates et de l'oignon frit ainsi qu'une sauce barbecue accompagnée d'une sauce légèrement poivrée",
+          "price": 86.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hKnwtFazPvpHU2Y.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Triples (Menu)",
+      "items": [
+        {
+          "name": "Menu Triple Spicy",
+          "description": "3 steaks hachés et 2 tranches de bacon de bœuf Halal, 1 tranche de fromage Cheddar, 2 tranches de fromage cheddar le tout souligné par l'unique sauce goût fumé dans un pain moelleux, c'est un vrai sommet de goût !",
+          "price": 82.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/kZthqlQjOdFzUkE.jpeg"
+        },
+        {
+          "name": "Menu Triple Cheese",
+          "description": "3 steaks hachés et 3 tranches de fromage fondu Cheddar, le tout relevé d'oignons, de ketchup et de moutarde. Dans son pain moelleux, c'est un vrai triple plaisir !",
+          "price": 78.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/jHQpv3cZI5c3Z28.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Menus Enfants",
+      "items": [
+        {
+          "name": "Fun Box : 8 - 11 ans",
+          "description": "Sandwich au choix (Junior Giant ou Giant, Junior Wrap Chicken ou boite de 7 Chicken Dips ) + boisson 25 cl + yaourt à boire + jouet du mois",
+          "price": 57.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bPVbBKP6hRrdSJk.png"
+        },
+        {
+          "name": "Magic Box (avec dessert)",
+          "description": "Magic box (avec dessert)",
+          "price": 46.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/PehNeK55fqO7Oug.jpeg"
+        },
+        {
+          "name": "Magic Box : 3 - 7 ans",
+          "description": "Sandwich au choix (hamburger ou cheeseburger ou boite de 4 Chicken Dips) + boisson 25 cl + 1 stick de fromage frais à boire + jouet du mois",
+          "price": 43.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/5c8mYfyoAon4qac.png"
+        }
+      ]
+    },
+    {
+      "name": "Giant Family",
+      "items": [
+        {
+          "name": "Méga Giant Beef",
+          "description": "En vrai fan, tu l'auras reconnu : voilà le Mega Giant ! Avec deux mégas steaks hachés généreux, une tranche de cheddar fondu, des petits morceaux d'oignons, de la salade et sa fameuse sauce Giant ! Simplement méga bon !",
+          "price": 87.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/CJyHAlTZh4AVY8n.jpeg"
+        },
+        {
+          "name": "Triple Giant",
+          "description": "3 steaks hachés, 2 tranches de fromage cheddar, de la salade, des oignons en dès le tout accompagné de l'inimitable sauce Giant. En ce début d'année, Quick décline son burger Mythique, le Giant en 1 version encore plus grande.",
+          "price": 66.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/kQU97wHRBZdMija.jpeg"
+        },
+        {
+          "name": "Giant",
+          "description": "2 steaks hachés pur bœuf, du Cheddar fondu, des oignons et de la salade craquante dans un pain chaud + sauce Giant inimitable, à base de mayonnaise, de ketchup et de notes de câpres.",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/HCenKf0zLCL8shc.jpeg"
+        },
+        {
+          "name": "Le Junior Giant",
+          "description": "Toutes les saveurs du Giant dans un petit format ! Retrouvez son steak haché 100% pur bœuf et sa tranche de cheddar accompagnés de dés d'oignon croquants. Et pour finir en beauté, sa délicieuse sauce Giant !",
+          "price": 41.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7ryVvmW76FOpgKM.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Burgers Incontournables",
+      "items": [
+        {
+          "name": "Quick'n Toast",
+          "description": "Deux tranches de pain toastées, ses tranches de bacon de bœuf Halal sur un steak haché pur bœuf et sa sauce délicatement poivrée",
+          "price": 74.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7YFVPeL8Rlrse69.jpeg"
+        },
+        {
+          "name": "Double Chicken",
+          "description": "Pain rond, double poulet pané, fromage fondu, sauce chicken, cheese",
+          "price": 58.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/0wgKIUrAahC9ahp.jpeg"
+        },
+        {
+          "name": "Double Spicy",
+          "description": "Pain rond, double steak haché, fromage fondu, sauce au goût fumé, cheddar",
+          "price": 56.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/FS2YjFbJszvo71F.jpeg"
+        },
+        {
+          "name": "Double Cheese",
+          "description": "Un pain rond et moelleux, deux steaks hachés, une tranche de cornichon, des oignons et surtout : deux tranches de Cheddar fondu",
+          "price": 53.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/kKfl94NmXLQ5Npc.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Longs",
+      "items": [
+        {
+          "name": "Long Beef Spicy",
+          "description": "Un pain aux céréales, long et savoureux. Et dedans, trois délicieuses tranches de bacon de bœuf Halal, deux steaks hachés 100% pur bœuf, et des tranches de cheddar et de fromage fondu.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/267AmJgz9XDowTp.jpeg"
+        },
+        {
+          "name": "Long Chicken",
+          "description": "Un pain aux céréales, long et savoureux. et sa préparation panée au poulet et la sauce, poivrée !",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/QIutE1wTbQKuXgF.jpeg"
+        },
+        {
+          "name": "Long Chicken Spicy",
+          "description": "Un pain long aux céréales, sa spécialité panée au poulet croustillante, ses tranches de tomate, sa salade, ses oignons en lamelle et sa sauce piquante.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/jSZSmekrLEbIWXx.jpeg"
+        },
+        {
+          "name": "Long Fish à la Sauce Tartare",
+          "description": "Un pain long aux céréales, A l'intérieur, un délicieux filet de poisson blanc pané et sa fameuse sauce tartare.",
+          "price": 69.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3N8Wz9VPTepgCtD.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Mega Wraps",
+      "items": [
+        {
+          "name": "Mega Wrap Spicy",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, une tranche de tomate, du fromage fondu, des oignons frits, des Rustiques de pomme de terre et de la sauce Spicy.",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/dWoulut9q8HvcIX.jpeg"
+        },
+        {
+          "name": "Mega Wrap Giant",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, du Cheddar, des oignons en dés et la fameuse sauce Giant, tout ça dans une tortilla accompagné de rustiques de pomme de terre!",
+          "price": 60.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/duITSzxehlo9SsR.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Petites Faims",
+      "items": [
+        {
+          "name": "Chicken Délice",
+          "description": "Une tranche de poulet pané, des tomates, iceberg et une sauce chicken cheese pour un plaisir infini.",
+          "price": 47.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/jrpoLQSTcLUAZKv.jpeg"
+        },
+        {
+          "name": "Chicken Cheese",
+          "description": "Pain rond, poulet pané, fromage fondu, sauce chicken, cheese",
+          "price": 44.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TwCAH7NfQaVwhLI.jpeg"
+        },
+        {
+          "name": "Junior Spicy",
+          "description": "Pain rond, steak haché, fromage fondu, sauce au goût fumé",
+          "price": 37.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/J2dGeY6jzpPTSyt.jpeg"
+        },
+        {
+          "name": "Junior Wrap Giant",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, du Cheddar, des oignons en dés et la fameuse sauce Giant, tout ça dans une tortilla accompagné de rustiques de pomme de terre!",
+          "price": 37.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qRHc0yR6ORG31i6.jpeg"
+        },
+        {
+          "name": "Junior Wrap Spicy",
+          "description": "Un morceau d'escalope de poulet pané, de la salade, une tranche de tomate, du fromage fondu, des oignons frits, des Rustiques de pomme de terre et de la sauce Spicy.",
+          "price": 37.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/6HdYY0kUnCX3vNn.jpeg"
+        },
+        {
+          "name": "Cheeseburger",
+          "description": "Un pain tout rond, chaud et tendre, un steak haché et une tranche de Cheddar, voilà la recette incontournable de ce grand standard.",
+          "price": 30.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/9E0Kcm1M8UqDJ7Y.jpeg"
+        },
+        {
+          "name": "Hamburger",
+          "description": "Un steak pur bœuf dans un petit pain rond, des oignons, une tranche de cornichon, ketchup et moutarde. Un classique qui a déjà fait ses preuves.",
+          "price": 27.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/SB4UALOc4Xfs2xC.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Remarquables",
+      "items": [
+        {
+          "name": "L'EMMENTAL 350 gr",
+          "description": "Du jamais vu : un mélange bœuf poulet : Un vrai bonheur pour les plus gourmands du burger : 1 steak haché pur bœuf, 1 patty poulet, roquette, salade iceberg, double emmental + 2 sauces inimitables : la chicken cheese + la barbecue avec un pain pavot.",
+          "price": 89.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/UUONT8bywqcLhx6.jpeg"
+        },
+        {
+          "name": "L'emmental Rosti",
+          "description": "Un vrai bonheur pour les plus gourmands du burger : 1 steak haché pur bœuf, 1 pomme rosti, de la roquette, de la salade iceberg, double portion d'emmental + 2 sauces inimitables : la chicken cheese + la barbecue avec un pain pavot.",
+          "price": 83.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/FiSdLSASt34M8WX.jpeg"
+        },
+        {
+          "name": "Le Raclette Bacon Poulet",
+          "description": "Remarquable ! Ses tranches de bacon avec sa raclette bien onctueuse qui vient napper le steak poulet pané, franchement, il n'y a rien de meilleur! Et puis sa sauce Crémeuse ...",
+          "price": 83.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OLhSvBxvCkWI1qp.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Suprêmes",
+      "items": [
+        {
+          "name": "Suprême BBQ Beef",
+          "description": "Un bon pain au petit goût de levain de seigle parsemé de céréales, un steak haché pur bœuf, du fromage cheddar, de la salade, des tomates et de l'oignon frit ainsi qu'une sauce barbecue accompagnée d'une sauce légèrement poivrée",
+          "price": 72.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/gvld71laOAdLPXB.jpeg"
+        },
+        {
+          "name": "Suprême BBQ Chicken",
+          "description": "Un bon pain au petit goût de levain de seigle parsemé de céréales, une spécialité au poulet croustillante, du fromage cheddar, de la salade, des tomates et de l'oignon frit ainsi qu'une sauce barbecue accompagnée d'une sauce légèrement poivrée",
+          "price": 72.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/UVOIloaiZhsMo2Y.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Triples",
+      "items": [
+        {
+          "name": "Triple Spicy",
+          "description": "3 steaks hachés et 2 tranches de bacon de bœuf Halal, 1 tranche de fromage Cheddar, 2 tranches de fromage cheddar le tout souligné par l'unique sauce goût fumé dans un pain moelleux, c'est un vrai sommet de goût !",
+          "price": 66.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/tv1nGz7VN4jofed.jpeg"
+        },
+        {
+          "name": "Triple Cheese",
+          "description": "3 steaks hachés et 2 tranches de fromage fondu, 1 tranche de fromage Cheddar, le tout relevé d'oignons, de ketchup et de moutarde. Dans son pain moelleux, c'est un vrai triple plaisir !",
+          "price": 64.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OhZuU9qivD2Qy2a.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Accompagnements",
+      "items": [
+        {
+          "name": "Salade au Thon",
+          "description": "Salade au thon",
+          "price": 48.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/C7Y4UNOBNckJBtK.png"
+        },
+        {
+          "name": "Salade Méditerranéenne",
+          "description": "Salade méditerranéenne",
+          "price": 48.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7Bt8K1qY11K6sGc.png"
+        },
+        {
+          "name": "Salade RustiQ",
+          "description": "Salade RustiQ",
+          "price": 48.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3bC2c6MyBwhE45V.png"
+        },
+        {
+          "name": "Chili Quick Box - 16 pcs",
+          "description": "4 Dips + 4 Rings + 4 Chili Nuggets + 4 Cheesy Camembert",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/CreWIzVdwWwRFRE.jpeg"
+        },
+        {
+          "name": "Chicken Wings - 5 pcs",
+          "description": "Les fameuses ailes de poulets marinées, au bon goût barbecue et délicieusement croustillantes.",
+          "price": 46.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/5I8CjLfoLYwr6sB.png"
+        },
+        {
+          "name": "Chili Cheese Nuggets x5",
+          "description": "Les Chili Cheese Nuggets sont de délicieux Fingers croustillants remplies de vrai fromage cheddar et de morceaux de poivron chili hachés. Méfiez-vous! Ils sont épicés!",
+          "price": 43.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/HY59u1zma6erzn1.png"
+        },
+        {
+          "name": "Chicken Dips",
+          "description": "4 ou 7 bâtonnets croustillants au poulet. A accompagner de la sauce de votre choix",
+          "price": 37.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/IMri5CDPCbC7QS9.png"
+        },
+        {
+          "name": "Cheesy Frites",
+          "description": "Longues et croustillantes, elles seront encore plus gourmandes avec la nouvelle sauce Cheesy et le topping d’oignons frits.",
+          "price": 33.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/pzrZO6BCtJqfNP2.jpeg"
+        },
+        {
+          "name": "Onion Rings - 6 pcs",
+          "description": "Vous n'avez pas encore fait votre choix ? Découvrez ces beignets d'oignons frits et croustillants. MMmmmhh vous n'allez pas résister longtemps ! On parie ?",
+          "price": 26.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/avkh0euzDcXulF5.png"
+        },
+        {
+          "name": "Frites",
+          "description": "Longues et croustillantes en format petit moyen ou maxi encore meilleures qu'à la maison",
+          "price": 29.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/FQIp4rq4I9hanZ0.png"
+        },
+        {
+          "name": "Rustiques",
+          "description": "De vrais quartiers avec leur peau, un cœur fondant rehaussé par un enrobage légèrement épicé et aillé. Fondant à l’intérieur, croustillant à l’extérieur.",
+          "price": 29.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/A84nxc46l7OMk6W.png"
+        },
+        {
+          "name": "Sauce Barbecue",
+          "description": "Sauce Barbecue",
+          "price": 13.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OsGIbzK02j6Vseq.jpeg"
+        },
+        {
+          "name": "Sauce Tomate Basilic",
+          "description": "Sauce Tomate Basilic",
+          "price": 13.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/XO9R5GxmMJPlBDk.jpeg"
+        },
+        {
+          "name": "Sauce Curry/Mangue",
+          "description": "Sauce Curry/Mangue",
+          "price": 13.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/56NsEkve3qcX2gA.jpeg"
+        },
+        {
+          "name": "Sauce Mayonnaise",
+          "description": "Sauce Mayonnaise",
+          "price": 12.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/oMLlI6nxNqESQ6m.jpeg"
+        },
+        {
+          "name": "Softy Chocolat",
+          "description": "De la crème glacée, des éclats de noisettes caramélisées, un généreux nappage au chocolat",
+          "price": 34.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/l92eUJGtrZCeISn.png"
+        },
+        {
+          "name": "Softy Caramel",
+          "description": "De la crème glacée, des éclats de noisettes caramélisées et un généreux nappage au caramel au beurre salé pour encore plus de plaisir.",
+          "price": 34.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/yMP8m5laVwlzNIV.png"
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Cœur Beignets",
+          "description": "Les trois cœurs de beignets avec leur fourrage au chocolat, fourrage aux noisettes et fourrage au chocolat blanc.",
+          "price": 30.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/D6OrpW1CbKH7cQA.png"
+        },
+        {
+          "name": "Churros",
+          "description": "Savourez ces délicieux churros, de succulents et croustillants beignets, à déguster chauds avec du sucre. Servis par 5 ou par 10",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1IzvVJSoa9mM7da.png"
+        },
+        {
+          "name": "Bigoût ChocoPépites",
+          "description": "Avis aux amateurs de saveurs ! Voici le Bigoût tout Chocolat aux pépites et fourrage chocolat.",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/eVLViO0b0Xn3xMR.jpeg"
+        },
+        {
+          "name": "Muffins Choco Banane",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/nqoRhInXIReb2tc.jpeg"
+        },
+        {
+          "name": "Mix Mania M&M'S",
+          "description": "le Mix Mania M&M'S® Choco avec son onctueuse crème glacée, ses M&M'S® et son nappage au chocolat",
+          "price": 37.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Zt5KA3j4f8wgaJM.png"
+        },
+        {
+          "name": "Softy Fraise",
+          "description": "Une gourmade crème glacée, d'éclats de noisettes caramélisées et d'un nappage à la fraise.",
+          "price": 34.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3OPspZIgba3Qebo.png"
+        }
+      ]
+    },
+    {
+      "name": "Boissons",
+      "items": [
+        {
+          "name": "Eau Pétillante (33 cl)",
+          "description": "Eau Pétillante (33 cl)",
+          "price": 26.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/eo9FomIwJjsthLh.jpeg"
+        },
+        {
+          "name": "Boisson XL",
+          "description": "Boisson XL",
+          "price": 26.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/71nTOkTUesJyIO0.jpeg"
+        }
+      ]
+    }
+  ]
+}

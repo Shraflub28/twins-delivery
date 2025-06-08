@@ -1,0 +1,438 @@
+{
+  "restaurant_name": "Patron de la Mer",
+  "categories": [
+    {
+      "name": "Les saveurs marocaines",
+      "items": [
+        {
+          "name": "Couscous aux sept légumes",
+          "description": "Sur commande 24h",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/8Bv0GYn86IpuL7y.jpeg"
+        },
+        {
+          "name": "Tagine kefta aux œufs",
+          "description": "",
+          "price": 160.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OT2H30w0FGt7Neu.jpeg"
+        },
+        {
+          "name": "Tagine de poulet aux citrons confits",
+          "description": "",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Duo de pastilla",
+          "description": "Fruits de mer & poulet aux amandes",
+          "price": 130.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/HTyRTrTi44nWzU9.jpeg"
+        },
+        {
+          "name": "Tagine de gigot d'agneau aux pruneaux",
+          "description": "",
+          "price": 170.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2o5v4WbclhQRvHf.jpeg"
+        },
+        {
+          "name": "Tagine de poulpe et moules",
+          "description": "A la sauce tomate",
+          "price": 180.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/UYESctujJP5ESyd.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Poissons sauvages",
+      "items": [
+        {
+          "name": "Turbot sauvage poêlé",
+          "description": "Cuit au feu de bois (portions)",
+          "price": 240.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3v4wgyRxBBkADhx.jpeg"
+        },
+        {
+          "name": "Belle sole préparée à la plancha",
+          "description": "Cuit au feu de bois (portions)",
+          "price": 270.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bar de ligne rôtie aux oignons doux Et Petits Calamars",
+          "description": "Lubina asada con chipirones y cebolitas dulces Cuit au feu de bois (portions)",
+          "price": 270.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Saumon d'Ecosse grillé",
+          "description": "Cuit au feu de bois (portions)",
+          "price": 220.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/g6lakvh46cXi3Sd.jpeg"
+        },
+        {
+          "name": "Daurade royale rôtie sauce de chaire de crabe royal",
+          "description": "Cuit au feu de bois (portions)",
+          "price": 250.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/92WC6Xf21TtkEuC.jpeg"
+        },
+        {
+          "name": "Daurade royale au four",
+          "description": "Cuit au feu de bois (portions)",
+          "price": 250.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/GFdRtlYYDTxh28m.jpeg"
+        },
+        {
+          "name": "Saint pierre au four",
+          "description": "Cuit au feu de bois (portions)",
+          "price": 240.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bar De Ligne Federcia Signature",
+          "description": "Sea Bass Federcia Signature",
+          "price": 270.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Suguet De Lotte Barceloneta",
+          "description": "Monkfish stew barceloneta",
+          "price": 270.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos fruits de mer",
+      "items": [
+        {
+          "name": "Poulpe à la galicienne",
+          "description": "Selon l'arrivage du jour",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Txangurro chair de crabe gratiné",
+          "description": "Selon l'arrivage du jour",
+          "price": 210.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crevettes royales à la plancha",
+          "description": "Selon l'arrivage du jour",
+          "price": 310.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Palourdes de Oualidia à la marinière",
+          "description": "Selon l'arrivage du jour",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cigales (langoustines) de méditerranée à la plancha",
+          "description": "Selon l'arrivage du jour",
+          "price": 310.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Poulpe Grillé Avec Hummus Et Paprika",
+          "description": "Griled octopus with paprika hummus",
+          "price": 175.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/nJgZqF07sp61AAr.jpeg"
+        },
+        {
+          "name": "Pastel De Chaire De Crabe Royal",
+          "description": "King crab cake",
+          "price": 230.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/F8iyJkMyaDTPeM4.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Paellas",
+      "items": [
+        {
+          "name": "Fideua aux gambas",
+          "description": "Paella de vermicelle (riz \"Bomba\" d.o.p. delta - Espagne, min. 2 portions - prix par personne)",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Paella aux fruits de mer",
+          "description": "Riz \"Bomba\" d.o.p. delta - Espagne (min. 2 portions - prix par personne)",
+          "price": 190.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/JXc7ld1iooPzLTb.jpeg"
+        },
+        {
+          "name": "Paella royale de homard",
+          "description": "Riz \"Bomba\" d.o.p. delta - Espagne, min. 2 portions - prix par personne)",
+          "price": 350.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1el0XbH4F9Tcw6E.jpeg"
+        },
+        {
+          "name": "Paella Royal De Homard",
+          "description": "Lobster Paella",
+          "price": 330.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tagliatelle aux fruits de mer",
+          "description": "",
+          "price": 170.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/1XANpkq57voNyGv.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Tapas",
+      "items": [
+        {
+          "name": "Patatas bravas",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/G4fN2HDSTFmLSoY.jpeg"
+        },
+        {
+          "name": "Calamars à la romaine",
+          "description": "",
+          "price": 130.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bouillabaisse de poissons de roche et fruits de mer",
+          "description": "Bullabesa pescadou de roca y marisco",
+          "price": 170.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/uuWabryAc13Ygzx.jpeg"
+        },
+        {
+          "name": "Chipirones à l'andalouse",
+          "description": "",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Aubergines Croustillantes au miel d'agrumes",
+          "description": "",
+          "price": 80.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gambas à l'ail doux",
+          "description": "",
+          "price": 170.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tempura de Gambas Et Kimchi Mayo",
+          "description": "Tampura de gambas con kimchi mayo",
+          "price": 170.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Anchois au vinaigre",
+          "description": "",
+          "price": 130.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Petits calamars de Dakhla à la plancha",
+          "description": "",
+          "price": 130.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Calamars à la diavola",
+          "description": "",
+          "price": 175.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Moules en tempura",
+          "description": "",
+          "price": 80.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Croquettes de fruits de mer",
+          "description": "",
+          "price": 100.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade russe et œuf de cailles frites",
+          "description": "",
+          "price": 100.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Dessert",
+      "items": [
+        {
+          "name": "Carpaccio de fruits de saison et suzette",
+          "description": "",
+          "price": 85.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Leche frita aux fruits rouges",
+          "description": "",
+          "price": 85.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "La poire gourmande, sorbet citron",
+          "description": "",
+          "price": 95.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crème catalane aux oranges",
+          "description": "",
+          "price": 85.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tarte aux amandes et vanille glacée",
+          "description": "",
+          "price": 85.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Arroz con leche",
+          "description": "Riz au lait",
+          "price": 85.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Moelleux au chocolat et vanille glacée",
+          "description": "",
+          "price": 105.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crème caramel",
+          "description": "",
+          "price": 85.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Les Entrées",
+      "items": [
+        {
+          "name": "Salpicon De Fruits De Mer",
+          "description": "",
+          "price": 140.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bscC2pZGnxiIEaz.jpeg"
+        },
+        {
+          "name": "Salade De Tomates Variées Et Burrata",
+          "description": "",
+          "price": 160.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/8UblFUandf7HbHS.jpeg"
+        },
+        {
+          "name": "Salade Méditerranéenne D'avocat",
+          "description": "",
+          "price": 110.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/O09mXnXEQSjqnj1.jpeg"
+        },
+        {
+          "name": "Salade Grecque",
+          "description": "",
+          "price": 120.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ylGVsV422lR1Iee.jpeg"
+        },
+        {
+          "name": "Salade Cobb Au Poulet Bio Marin",
+          "description": "",
+          "price": 120.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ylGVsV422lR1Iee.jpeg"
+        },
+        {
+          "name": "Salade De Saumon Fumé",
+          "description": "",
+          "price": 140.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/f3rRSWkzEV6lpQx.jpeg"
+        },
+        {
+          "name": "Saumon Fumé, Blinis Et Crème Fraiche",
+          "description": "",
+          "price": 175.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/axBZyFzY7atkQgT.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "De La Terre",
+      "items": [
+        {
+          "name": "Entrecôte De Bœuf",
+          "description": "(300 g)",
+          "price": 225.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/GzgcltwoCOH91ll.jpeg"
+        },
+        {
+          "name": "Filet De Bœuf Maturé",
+          "description": "200 gr",
+          "price": 255.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/80W0cu00vEa6dCO.jpeg"
+        },
+        {
+          "name": "Hamburger Premium Au Josper",
+          "description": "",
+          "price": 160.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/ZtaCVKm6UWkMOTq.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Les Huitres De Oualidia",
+      "items": [
+        {
+          "name": "Huitre de oualidia",
+          "description": "6 Piéces",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/4929k7OQZ9QrJPg.jpeg"
+        },
+        {
+          "name": "Huitre a la braise au sabayon de safran",
+          "description": "6 Piéces",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/hEc5UjuQ9ZsHZnj.jpeg"
+        }
+      ]
+    }
+  ]
+}

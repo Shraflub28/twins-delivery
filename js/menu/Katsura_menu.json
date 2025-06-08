@@ -1,0 +1,128 @@
+{
+  "restaurant_name": "Katsura",
+  "categories": [
+    {
+      "name": "SALADES THAÏ",
+      "items": [
+        {
+          "name": "SALADE THAI DE GAMBAS",
+          "description": "Piquant",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SALADE THAI DE POULET",
+          "description": "Piquant",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "SOM TAM VÉGÉTARIENNE",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "TEMAKI",
+      "items": [
+        {
+          "name": "TEMAKI (SAUMON, AVOCAT, CIBOULETTE)",
+          "description": "1 PIÈCE",
+          "price": 40.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b93bd0d18f8e37f8b7f24e93J2H.jpg"
+        }
+      ]
+    },
+    {
+      "name": "NOS PLATEAUX",
+      "items": [
+        {
+          "name": "KATSURA DECOUVERTE",
+          "description": "CR CRÈME CHEESE 4 PIÈCES\nFRY FUTOMAKI 4 PIÈCES\nSASHIMI SAUMON 4 PIÈCES\nGUNKAN SAUMON 2 PIÈCES\nDELICE CHAIR DE CRAB 4 PIÈCES\nCRUNCHY 4 PIÈCES\nSUSHI SAUMON 1 PIÈCES\nSUSHI POISSON BLANC 1 PIÈCES",
+          "price": 260.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b93099118f8e37f8b7f24441vdr.jpg"
+        },
+        {
+          "name": "KATSURA DELICE",
+          "description": "DELICE CHAIR DE CRABE 4 PIÈCES\nCRYSTAL SAUMON 6 PIÈCES\nSUSHI SAUMON 2 PIÈCES\nCRYSTAL CHEESE 6 PIÈCES\nGUNKAN SAUMON 2 PIÈCES\nCR CRÈME CHEES 4 PIÈCES\nCR TIGER ROLL 4 PIÈCES\nSASHIMI SAUMON 4 PIÈCES\nMAKI SAUMON 3 PIÈCES\nMAKI SURIMI 3 PIÈCES\nCR EBI FRY 4 PIÈCES",
+          "price": 410.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b930881a555ff7fe6f0a30c82Df.jpg"
+        },
+        {
+          "name": "Katsura Innovation",
+          "description": "gunkan saumon 2 pièces, maki saumon 6 pièces, sushi saumon 2 pièces, cr saumon 4 pièces, sashimi saumon 2 pièces",
+          "price": 155.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Katsura Sushi",
+          "description": "sushi saumon 3 pièces, sushi ebi 2 pièces, sushi surimi 2 pièces, sushi poisson blanc 3 pièces",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Katsura Horizon",
+          "description": "maki saumon 6 pièces, maki surimi 6 pièces, cr saumon 4 pièces, cr cheese 4 pièces, cr classique 4 pièces",
+          "price": 155.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Katsura Tradi",
+          "description": "sushi poisson blanc 1 pièce, sushi saumon 1 pièce, cr cheese 4 pièces, maki saumon 3 pièces, cr saumon 4 pièces",
+          "price": 125.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "KATSURA FRY",
+          "description": "CRUNCHY 4 PIÈCES\nFRY FUTOMAKI 4 PIÈCES\nDRAGON EYE 4 PIÈCES\nMYUKI 4 PIÈCES\nGIFU ROLL 6 PIÈCES\nEXOTIQUE 4 PIÈCES\nSHAKE YAKI 4 PIÈCES\nTIGER ROLL 4 PIÈCES\nCRYSTAL SAUMON 6 PIÈCES",
+          "price": 425.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b9309f118f8e37f8b7f24455W0X.jpg"
+        }
+      ]
+    },
+    {
+      "name": "NOS SPÉCIAUX",
+      "items": [
+        {
+          "name": "COLOR ROLL",
+          "description": "CHAIR DE CRABE, AVOCAT, EBI, THON, POISSON BLANC, SAUMON",
+          "price": 59.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b92fdc09e66307dff51a70eTDgv.jpg"
+        },
+        {
+          "name": "KATSURA SANDWICH",
+          "description": "SAUMON, AVOCAT, CHEESE, TOBIKO\n4 PIÈCES",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b9302129e66307dff51a713jgdA.jpg"
+        },
+        {
+          "name": "OSAKA ROLL",
+          "description": "SAUMON, SURIMI, CHEESE, TOBICO\n5 PIÈCES",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b93050018f8e37f8b7f243eQ90K.jpg"
+        }
+      ]
+    },
+    {
+      "name": "GUNKAN",
+      "items": [
+        {
+          "name": "IKURA",
+          "description": "OEUFS DE SAUMON\n2 PIÈCES",
+          "price": 55.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.amazonaws.com/images/5b93a08ced8a2a03a5a7f2c0cm38.jpg"
+        }
+      ]
+    }
+  ]
+}

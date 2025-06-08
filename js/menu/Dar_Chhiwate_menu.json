@@ -1,0 +1,427 @@
+{
+  "restaurant_name": "Dar Chhiwate",
+  "categories": [
+    {
+      "name": "ENTRÉES ET ASSIETTES",
+      "items": [
+        {
+          "name": "Salade Marocaine",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade Niçoise",
+          "description": "",
+          "price": 37.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade Dar Chhiwate",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assiette Frites",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assiette Zaalouk",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assiette Tektouka",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assiette Seffa",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assiette Gratin",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assiette Poisson",
+          "description": "",
+          "price": 33.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assortiment Briwattes",
+          "description": "5 PC",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Soupe de Légumes",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "PLATS",
+      "items": [
+        {
+          "name": "Plat Poulet au four",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Plat Coquelet",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Émincé de Poulet",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Émincé de Viande",
+          "description": "",
+          "price": 80.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Brochettes Viande hachée",
+          "description": "",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Brochettes de Poulet",
+          "description": "",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Grillades Mixtes",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Plat de Sardines",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Plat Calamar",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "TAJINES",
+      "items": [
+        {
+          "name": "Tajine de Viande aux Légumes",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tajine de Viande aux Pruneaux",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tajine de Poulet Frites",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tajine de Viande hachée aux Œufs",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tajine de Poisson",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tajine de Sardines",
+          "description": "",
+          "price": 60.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "PLATS TRADITIONNELS",
+      "items": [
+        {
+          "name": "Reffisa au Poulet",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Reffisa à la Viande",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Reffisa Nature",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Seffa au Poulet",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Seffa à la Viande",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Seffa Nature",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "PÂTES",
+      "items": [
+        {
+          "name": "Spaghetti Bolognaise",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Spaghetti Alfredo",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Spaghetti Carbonara",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "COUSCOUS",
+      "items": [
+        {
+          "name": "Couscous Viande",
+          "description": "Tous les vendredis",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Couscous Poulet",
+          "description": "Tous les vendredis",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Couscous Végétarien",
+          "description": "Tous les vendredis",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Couscous Royal",
+          "description": "Tous les vendredis",
+          "price": 85.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "PIZZA",
+      "items": [
+        {
+          "name": "Pizza Margharita",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Thon",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Dinde fumée",
+          "description": "",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Viande hachée",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pizza Poulet",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "SANDWICHS",
+      "items": [
+        {
+          "name": "Thon",
+          "description": "",
+          "price": 43.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Charcuterie",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Poulet",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Viande hachée",
+          "description": "",
+          "price": 47.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mix",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "BOISSONS CHAUDES / FROIDES",
+      "items": [
+        {
+          "name": "Coca-Cola",
+          "description": "",
+          "price": 17.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sprite",
+          "description": "",
+          "price": 17.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Hawai",
+          "description": "",
+          "price": 17.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sidi Ali 1L",
+          "description": "",
+          "price": 15.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sidi Ali 50cl",
+          "description": "",
+          "price": 13.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oulmès 50cl",
+          "description": "",
+          "price": 15.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Thé à la Menthe",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Lavazza Capsule",
+          "description": "",
+          "price": 20.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "JUS",
+      "items": [
+        {
+          "name": "Jus Betterave",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus Carotte",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus Concombre",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus Panaché de Légumes",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus Saisonnier",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        }
+      ]
+    }
+  ]
+} 

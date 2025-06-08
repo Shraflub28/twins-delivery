@@ -1,0 +1,516 @@
+{
+  "restaurant_name": "Brunch Terrasses",
+  "categories": [
+    {
+      "name": "Entrée Chaudes",
+      "items": [
+        {
+          "name": "Pastilla aux fruits de mer",
+          "description": "",
+          "price": 120.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OhiF8LtRUrHc4Tm.jpeg"
+        },
+        {
+          "name": "Pastilla poulet",
+          "description": "",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/w0WLLEINyIhRfjJ.jpeg"
+        },
+        {
+          "name": "Trio de briwats",
+          "description": "2 légumes - 2 poulet - 2 viande hachée (6 pièces)",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/rlJYSeycRibh2Z5.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Entrée Froides",
+      "items": [
+        {
+          "name": "Délices du brunch aux crevettes tigrées",
+          "description": "Fruits exotiques, émulsion huile de noix",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/0AFXo5WaioAR8uH.jpeg"
+        },
+        {
+          "name": "Chaire de crabe aux avocats",
+          "description": "Émulsion sauce framboise",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TojebmpCrywyXAD.jpeg"
+        },
+        {
+          "name": "Carpaccio de bœuf aux coupeaux de parmesan",
+          "description": "",
+          "price": 135.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/vRywvEnMSM5xKUV.jpeg"
+        },
+        {
+          "name": "Salade Quinoa",
+          "description": "Fruits secs, avocat émulsion huile argan",
+          "price": 120.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/POyTPEeg86WItAw.jpeg"
+        },
+        {
+          "name": "Trio de salades marocaines",
+          "description": "Zaalouk ,aktouka, tomate,poivron vert, citron confit",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sDHgVjHzbEqnnBI.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Salades",
+      "items": [
+        {
+          "name": "Salade tomate mozzarelle à la sauce pesto",
+          "description": "Salade verte, tomate, fromage mozzarella, pesto basilique.",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/rCXk7XN2aqOuK0l.jpeg"
+        },
+        {
+          "name": "Salade classique",
+          "description": "Tomate equartée, salade verte, avocat, Thon entier, les pousses, noix.   Sauce: (balsamique, citron, huile d’olive).",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Rs0ZzH94IINFZl6.jpeg"
+        },
+        {
+          "name": "Salade césar au poulet crunchy",
+          "description": "Laitue, anchois, œuf poché, parmesan, les croutons, poulet pané, tomate cerise.",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/gFBNfp34w9F6tQ6.jpeg"
+        },
+        {
+          "name": "Salade au fromage",
+          "description": "Salade verte, parmesan, brie, borata; fromage du jour, tomate equartée, sauce pesto ou sauce miel",
+          "price": 135.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/AzfJqdBLr7E4SD2.jpeg"
+        },
+        {
+          "name": "Salade massano",
+          "description": "Salade verte, Artichauts, ananas, fromage, tomate cerise, maïs, concombres, gambas (crevette gris)",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/mpEPIGENVLHafR3.jpeg"
+        },
+        {
+          "name": "Salade d’avocat crevette",
+          "description": "Avocat, crevette, sauce cocktail.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sRCFvBu24jaIb6N.jpeg"
+        },
+        {
+          "name": "Salade froide",
+          "description": "Mangue, ananas, crevettes, saumon, pousses betterave, salade variée.   Sauce:(miel, orange, huile d’olive)",
+          "price": 130.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/QULZR1u07T3NB3p.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Sandwichs",
+      "items": [
+        {
+          "name": "Sandwich thon au fromage",
+          "description": "Baguette, mayonnaise, salade, tomate, thon, fromage.",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Wag6U1mUTOylUsj.jpeg"
+        },
+        {
+          "name": "Sandwich poulet au fromage",
+          "description": "Baguette, mayonnaise, salade, tomate, poulet, fromage.",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Cf8kGpyWwrvhvQn.jpeg"
+        },
+        {
+          "name": "Sandwich viande hachée au fromage",
+          "description": "Baguette, mayonnaise, salade, tomate, viande hachée, fromage.",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sLyc6DUoJvnlAo0.jpeg"
+        },
+        {
+          "name": "Sandwich merguez au fromage",
+          "description": "",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/IqzQCJMz4NRmYXy.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Burgers",
+      "items": [
+        {
+          "name": "Burger américain",
+          "description": "Pain burger, viande hachée, oignons caramélisés, fromage sauce cheddar.",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/pTdXZ566eRmVNk9.jpeg"
+        },
+        {
+          "name": "Cheese burger aux oignons caramélisés",
+          "description": "Pain burger, viande hachée, oignons caramélisés, fromage sauce cheddar.",
+          "price": 120.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bjtyTixjuiNwwHO.jpeg"
+        },
+        {
+          "name": "Brunch burger",
+          "description": "Pain burger, viande hachée, jambon de dinde fumé, fromage, oignons étuvés, salade, tomate, cornichons, sauce cheddar.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/IOoYvaYuBD0grc5.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Pizza",
+      "items": [
+        {
+          "name": "Trio de mini pizzas",
+          "description": "Pizza fruits de mer, pizza viande hachée, pizza végétarienne.",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/NEzNbjLZiuTXEZb.jpeg"
+        },
+        {
+          "name": "Pizza Margherita",
+          "description": "Sauce tomate, fromage mozzarelle, tomate cerise.",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/j1RoHSLUVT3kKww.jpeg"
+        },
+        {
+          "name": "Pizza au thon",
+          "description": "Sauce tomate, fromage, thon, oignons, olives noir.",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/p79INCJmx8MP3X4.jpeg"
+        },
+        {
+          "name": "Pizza napolitaine",
+          "description": "Sauce tomate, anchois, câpre, fromage.",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2JUmMdhYdAtUvKw.jpeg"
+        },
+        {
+          "name": "Pizza 4 fromages",
+          "description": "Sauce tomate, edam, bleu, mozzarelle, ricotta.",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/JFdX30ILXDLaviR.jpeg"
+        },
+        {
+          "name": "Pizza massano",
+          "description": "Sauce tomate, viande hachée, oignons, poivrons, champignons de paris, fromage.",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/NFIvbCEeWGfwZpD.jpeg"
+        },
+        {
+          "name": "Pizza 4 saisons",
+          "description": "Sauce tomate, fromage, légumes de saison, poulet ou viande hachée.",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/fo9EwYiCuFXPgty.jpeg"
+        },
+        {
+          "name": "Pizza Pêcheur",
+          "description": "Sauce tomate ou sauce blanche, fruits de mer, fromage",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/IaNjnaJXxLzslNx.jpeg"
+        },
+        {
+          "name": "Pizza Brunch",
+          "description": "Sauce blanche, fromage (mascarpone), saumon fumé.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/3KLk5xxRDAkegCV.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Gratins",
+      "items": [
+        {
+          "name": "Gratin poulet",
+          "description": "Feuilles de lasagne, poulet, champignons, sauce crème, fromage.",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/GSTZ3VkiF6LQGC0.jpeg"
+        },
+        {
+          "name": "Lasagne al forno",
+          "description": "Feuilles de lasagne, sauce bolognaise, sauce blanche, fromage.",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/G6XnB5lqny8PSDO.jpeg"
+        },
+        {
+          "name": "Gratin fruits de mer",
+          "description": "Feuilles de lasagne, fruits de mer, sauce blanche, fromage.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/2MlwKADwCzkL5Po.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Pasta",
+      "items": [
+        {
+          "name": "Pâte siciliennes",
+          "description": "Feuille de courgette et d'aubergine, feuille charcuterie, Noisette de pesto, huile d'olive, ail.",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/qEZA2UkqnswUB5S.jpeg"
+        },
+        {
+          "name": "Pâte butanesca",
+          "description": "Olive, câpre, thon ou anchois, fromage, fondue de tomate.",
+          "price": 90.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/81kUeTLwJH9AMLE.jpeg"
+        },
+        {
+          "name": "Pâte bolognaise",
+          "description": "Viande hachée, fondue de tomate, fromage.",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/RWMNRQ5UTfvfnOd.jpeg"
+        },
+        {
+          "name": "Pâte poulet champignons",
+          "description": "Poulet, champignons, crème fraiche, fromage",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/WGg6WYPQ0ZmQT3v.jpeg"
+        },
+        {
+          "name": "Pâte à l’italienne",
+          "description": "Poulet, champignons, jambon, crème fraiche, fromage Façon CARBONARA.",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/eBmLYpISTMfS2vy.jpeg"
+        },
+        {
+          "name": "Pâte au saumon",
+          "description": "Saumon fumé, saumon frais et fromage.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/frN4VLF4ZPr6tPr.jpeg"
+        },
+        {
+          "name": "Pâte fruits de mer",
+          "description": "Crevette, calamar, fromage.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/8ChHlcOXIGpOYT3.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Coté Marocain",
+      "items": [
+        {
+          "name": "Tanjia Merrakchiya (2 Personnes)",
+          "description": "",
+          "price": 310.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Yz8ljFeCgSZ5SSC.jpeg"
+        },
+        {
+          "name": "Tajine viande de bœuf aux pruneaux",
+          "description": "",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/esf13pxW82lTZdB.jpeg"
+        },
+        {
+          "name": "Tajine poulet avec citron",
+          "description": "",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/D8Vv938nHphfKvc.jpeg"
+        },
+        {
+          "name": "Couscous aux 7 légumes",
+          "description": "(Vendredi)",
+          "price": 100.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sPEK3XHUq5MgNMq.jpeg"
+        },
+        {
+          "name": "Tanjiya Merrakchiya",
+          "description": "",
+          "price": 190.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Notre Viande D'Australie",
+      "items": [
+        {
+          "name": "Côte de bœuf  maturée grillé à la sauce poivre",
+          "description": "(2 Personnes)",
+          "price": 660.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/OL2Su6mATkcF9vj.jpeg"
+        },
+        {
+          "name": "Médaillon de bœuf accompagné d’une galette de pomme de terre",
+          "description": "",
+          "price": 275.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/va7rvGRp5Pn9edF.jpeg"
+        },
+        {
+          "name": "Entrecôte grillée sauce aux champignons (paris)",
+          "description": "Sauce rockford",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/rTgRuypNp4FaUqU.jpeg"
+        },
+        {
+          "name": "Carré d’agneau maturée grillé aux herbes sauvages",
+          "description": "",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/nmj6F27wI3D6MjA.jpeg"
+        },
+        {
+          "name": "Les jumelles poires de poulet",
+          "description": "",
+          "price": 175.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/XYVtGW7XcIRCxU1.jpeg"
+        },
+        {
+          "name": "Emincé de bœuf",
+          "description": "",
+          "price": 155.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/GJG3p3MjO58UsCZ.jpeg"
+        },
+        {
+          "name": "Emincé de poulet",
+          "description": "",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/VDJEhJSXoOC9SM4.jpeg"
+        },
+        {
+          "name": "Demi poulet fermier grillé",
+          "description": "",
+          "price": 360.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Poissons",
+      "items": [
+        {
+          "name": "Filet de loup bar a la façon coquillage",
+          "description": "Balsamique et sauce blanche",
+          "price": 195.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/nda6AUmjCNge5sv.jpeg"
+        },
+        {
+          "name": "Filet de saint pierre grillé",
+          "description": "Sauce gingembre frais",
+          "price": 195.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/cztIy2ueUkNoy4Y.jpeg"
+        },
+        {
+          "name": "Filet de sole meunière",
+          "description": "Sauce meunière.",
+          "price": 195.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/8NwsEhS4JxI6pml.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Crêpes Salées",
+      "items": [
+        {
+          "name": "Crêpe fromage",
+          "description": "Sauce blanche, fromage,  fromage (edam), Jebli, Mozzarelle.",
+          "price": 55.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/FINsN12mAH4NG3q.jpeg"
+        },
+        {
+          "name": "Crêpe poulet",
+          "description": "Sauce blanche, Poulet, champignons, fromage",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Qvm06EOHXo0Z0ri.jpeg"
+        },
+        {
+          "name": "Crêpe aux fruits de mer",
+          "description": "Sauce blanche, fruits de mer, fromage.",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Ft9zecmnUBPznqH.jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Crêpes Sucrées",
+      "items": [
+        {
+          "name": "Crêpes suzette à l’orange",
+          "description": "Cannelle, sucre glace spécial, tranche d’orange",
+          "price": 65.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/PZJ5VIL3i79Pzb0.jpeg"
+        },
+        {
+          "name": "Crêpes nutella",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/YswZbmVoAwodqXL.jpeg"
+        },
+        {
+          "name": "Crêpes nutella banane",
+          "description": "",
+          "price": 80.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/KQou3VK6CjGAUCs.jpeg"
+        },
+        {
+          "name": "Crêpes blender",
+          "description": "Fruits secs, Kit Kat, M&Ms",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/YmwdTYNfT2eEjWH.jpeg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Twins Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <!-- Custom Supabase Integration -->
+    <script src="js/supabase.js"></script>
+    <style>
+        /* Checkout specific styles */
+        .checkout-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .checkout-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 1rem;
+        }
+        
+        .checkout-header h1 {
+            font-size: 2rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .checkout-header h1 i {
+            color: var(--accent-color);
+        }
+        
+        .order-items {
+            margin-bottom: 2rem;
+        }
+        
+        .order-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #f1f1f1;
+            position: relative;
+        }
+        
+        .order-item-info {
+            flex: 1;
+        }
+        
+        .order-item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .order-item-price {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .order-quantity {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        
+        .quantity-btn {
+            background: #f1f1f1;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quantity-btn:hover {
+            background: var(--primary-light);
+            color: white;
+        }
+        
+        .quantity-number {
+            padding: 0 0.8rem;
+            font-weight: 600;
+        }
+        
+        .remove-item {
+            color: #ff3366;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+        
+        .remove-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .order-summary {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+        
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding-top: 0.8rem;
+            margin-top: 0.8rem;
+            border-top: 2px dashed #ddd;
+            color: var(--primary-dark);
+        }
+        
+        .customer-info {
+            margin: 2rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group label.required::after {
+            content: " *";
+            color: #ff3366;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .location-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+        
+        .location-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .location-button i {
+            font-size: 1.2rem;
+        }
+        
+        .location-details {
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .location-details.active {
+            display: block;
+        }
+        
+        .location-coordinates {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .checkout-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .back-to-menu {
+            background: #f1f1f1;
+            color: #333;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-menu:hover {
+            background: #e0e0e0;
+        }
+        
+        .whatsapp-checkout {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-checkout:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(37, 211, 102, 0.2);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .empty-cart i {
+            font-size: 4rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+        
+        .empty-cart h2 {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .browse-menu-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+        
+        .restaurant-info {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .restaurant-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .restaurant-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .whatsapp-checkout, .back-to-menu {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Header with diagonal design -->
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
+                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-header">
+            <h1><i class="fas fa-shopping-cart"></i> Your Order</h1>
+        </div>
+
+        <div id="restaurant-details" class="restaurant-info">
+            <!-- Restaurant info will be populated by JavaScript -->
+        </div>
+
+        <div id="order-content">
+            <!-- This will be populated by JavaScript -->
+            <div class="empty-cart" id="empty-cart" style="display:none;">
+                <i class="fas fa-shopping-basket"></i>
+                <h2>Your cart is empty</h2>
+                <p>Add some delicious items to your cart to proceed with checkout.</p>
+                <a href="index.html#restaurants" class="browse-menu-btn">
+                    <i class="fas fa-utensils"></i> Browse Restaurants
+                </a>
+            </div>
+        </div>
+
+        <div id="order-items-container" class="order-items">
+            <!-- Order items will be populated here -->
+        </div>
+
+        <div id="order-summary" class="order-summary" style="display:none;">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">0 MAD</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">0 MAD</span>
+            </div>
+        </div>
+
+        <div id="customer-info" class="customer-info" style="display:none;">
+            <h3>Your Information</h3>
+            <div class="form-group">
+                <label for="customer-name" class="required">Name</label>
+                <input type="text" id="customer-name" placeholder="Your name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="customer-phone" class="required">Phone Number</label>
+                <input type="tel" id="customer-phone" placeholder="Your phone number" required>
+            </div>
+            
+            <div class="form-group">
+                <button id="get-location-btn" class="location-button">
+                    <i class="fas fa-map-marker-alt"></i> Get My Location
+                </button>
+                <div class="location-coordinates" id="location-coordinates"></div>
+                <div class="location-details" id="location-details">
+                    <label for="customer-address-detail">Additional Address Details</label>
+                    <input type="text" id="customer-address-detail" placeholder="Apartment number, building, landmark, etc.">
+                </div>
+            </div>
+        </div>
+
+        <div id="checkout-actions" class="checkout-actions" style="display:none;">
+            <button class="back-to-menu" id="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </button>
+            <a href="#" class="whatsapp-checkout" id="whatsapp-checkout-btn">
+                <i class="fab fa-whatsapp"></i> Order via WhatsApp
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
+                <p>The best food delivery experience</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
+                <a href="index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a>
+                <a href="index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a>
+                <a href="index.html#download"><i class="fas fa-chevron-right"></i> Download App</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-address-book"></i> Contact</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Bar -->
+    <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="groceries.html" class="mobile-nav-item">
+            <i class="fas fa-shopping-basket"></i>
+            <span>Groceries</span>
+        </a>
+        <a href="index.html#categories" class="mobile-nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categories</span>
+        </a>
+        <a href="index.html#restaurants" class="mobile-nav-item">
+            <i class="fas fa-store"></i>
+            <span>Restaurants</span>
+        </a>
+        <a href="pages/search/search.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get elements
+            const orderItemsContainer = document.getElementById('order-items-container');
+            const orderSummary = document.getElementById('order-summary');
+            const customerInfo = document.getElementById('customer-info');
+            const checkoutActions = document.getElementById('checkout-actions');
+            const emptyCart = document.getElementById('empty-cart');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalEl = document.getElementById('total');
+            const backButton = document.getElementById('back-button');
+            const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout-btn');
+            const restaurantDetails = document.getElementById('restaurant-details');
+            const getLocationBtn = document.getElementById('get-location-btn');
+            const locationCoordinates = document.getElementById('location-coordinates');
+            const locationDetails = document.getElementById('location-details');
+            
+            // Location variables
+            let userLatitude = null;
+            let userLongitude = null;
+            
+            // WhatsApp phone number
+            const whatsappNumber = '+212621240971';
+            
+            // Get cart data from localStorage
+            let cart = JSON.parse(localStorage.getItem('twins_delivery_cart')) || [];
+            const restaurantInfo = JSON.parse(localStorage.getItem('twins_delivery_restaurant')) || null;
+
+            // Handle back button click
+            backButton.addEventListener('click', function() {
+                // If we have restaurant info, go back to that restaurant's menu
+                if (restaurantInfo) {
+                    window.location.href = `menu.html?restaurant=${restaurantInfo.name}`;
+                } else {
+                    // Otherwise go to the restaurants list
+                    window.location.href = 'index.html#restaurants';
+                }
+            });
+            
+            // Display restaurant info
+            if (restaurantInfo) {
+                restaurantDetails.innerHTML = `
+                    <img src="${restaurantInfo.image}" alt="${restaurantInfo.name}">
+                    <div>
+                        <div class="restaurant-name">${restaurantInfo.name}</div>
+                        <div>${restaurantInfo.cuisine}</div>
+                    </div>
+                `;
+            } else {
+                restaurantDetails.style.display = 'none';
+            }
+            
+            // Check if cart is empty
+            if (cart.length === 0) {
+                orderItemsContainer.style.display = 'none';
+                orderSummary.style.display = 'none';
+                customerInfo.style.display = 'none';
+                checkoutActions.style.display = 'none';
+                emptyCart.style.display = 'block';
+            } else {
+                // Display cart items
+                displayCartItems();
+                // Display order summary
+                calculateOrderTotal();
+                // Show customer info form and checkout actions
+                customerInfo.style.display = 'block';
+                checkoutActions.style.display = 'flex';
+                emptyCart.style.display = 'none';
+            }
+            
+            // Function to display cart items
+            function displayCartItems() {
+                orderItemsContainer.innerHTML = '';
+                cart.forEach((item, index) => {
+                    const orderItem = document.createElement('div');
+                    orderItem.className = 'order-item';
+                    orderItem.innerHTML = `
+                        <div class="order-item-info">
+                            <div class="order-item-name">${item.name}</div>
+                            <div class="order-item-price">${item.price} ${item.currency}</div>
+                        </div>
+                        <div class="order-quantity">
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <span class="quantity-number">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                        <div class="remove-item" onclick="removeItem(${index})">
+                            <i class="fas fa-trash"></i>
+                        </div>
+                    `;
+                    orderItemsContainer.appendChild(orderItem);
+                });
+            }
+            
+            // Function to calculate order total (without delivery fee)
+            function calculateOrderTotal() {
+                let subtotal = 0;
+                cart.forEach(item => {
+                    subtotal += parseFloat(item.price) * item.quantity;
+                });
+                
+                // Total is same as subtotal since we removed delivery fee
+                const total = subtotal;
+                
+                subtotalEl.textContent = `${subtotal.toFixed(2)} MAD`;
+                totalEl.textContent = `${total.toFixed(2)} MAD`;
+                
+                orderSummary.style.display = 'block';
+                
+                return { subtotal, total };
+            }
+            
+            // Get location functionality
+            getLocationBtn.addEventListener('click', function() {
+                if (navigator.geolocation) {
+                    getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Getting location...';
+                    getLocationBtn.disabled = true;
+                    
+                    navigator.geolocation.getCurrentPosition(
+                        // Success
+                        function(position) {
+                            userLatitude = position.coords.latitude;
+                            userLongitude = position.coords.longitude;
+                            
+                            locationCoordinates.innerHTML = `
+                                <i class="fas fa-map-marker-alt"></i> Location found: 
+                                <a href="https://maps.google.com/?q=${userLatitude},${userLongitude}" target="_blank">
+                                    View on map
+                                </a>
+                            `;
+                            
+                            locationDetails.classList.add('active');
+                            getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Location Received';
+                            getLocationBtn.disabled = false;
+                            
+                            // Update WhatsApp link with new location
+                            updateWhatsAppLink();
+                        },
+                        // Error
+                        function(error) {
+                            let errorMessage = 'Could not get your location. ';
+                            
+                            switch(error.code) {
+                                case error.PERMISSION_DENIED:
+                                    errorMessage += 'You denied the request for geolocation.';
+                                    break;
+                                case error.POSITION_UNAVAILABLE:
+                                    errorMessage += 'Location information is unavailable.';
+                                    break;
+                                case error.TIMEOUT:
+                                    errorMessage += 'The request to get your location timed out.';
+                                    break;
+                                case error.UNKNOWN_ERROR:
+                                    errorMessage += 'An unknown error occurred.';
+                                    break;
+                            }
+                            
+                            locationCoordinates.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${errorMessage}`;
+                            locationCoordinates.style.color = '#ff3366';
+                            
+                            getLocationBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Try Again';
+                            getLocationBtn.disabled = false;
+                            
+                            // Show address field anyway
+                            locationDetails.classList.add('active');
+                        }
+                    );
+                } else {
+                    locationCoordinates.innerHTML = 'Geolocation is not supported by this browser.';
+                    locationCoordinates.style.color = '#ff3366';
+                    
+                    // Show address field anyway
+                    locationDetails.classList.add('active');
+                }
+            });
+            
+            // Function to update WhatsApp checkout link
+            function updateWhatsAppLink() {
+                const customerName = document.getElementById('customer-name').value;
+                const customerPhone = document.getElementById('customer-phone').value;
+                const customerAddressDetail = document.getElementById('customer-address-detail')?.value || '';
+                
+                const { total } = calculateOrderTotal();
+                
+                // Check if name and phone are provided
+                if (!customerName.trim() || !customerPhone.trim()) {
+                    whatsappCheckoutBtn.disabled = true;
+                    whatsappCheckoutBtn.style.opacity = '0.5';
+                    whatsappCheckoutBtn.title = 'Please provide your name and phone number';
+                    return;
+                } else {
+                    whatsappCheckoutBtn.disabled = false;
+                    whatsappCheckoutBtn.style.opacity = '1';
+                    whatsappCheckoutBtn.title = '';
+                }
+
+                // Generate a unique order ID - combine timestamp with random string
+                const timestamp = new Date().getTime();
+                const randomStr = Math.random().toString(36).substring(2, 10);
+                const orderId = `TD-${timestamp}-${randomStr}`;
+                
+                // Construct the Order Tracking Link
+                const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+                const orderTrackingLink = `${window.location.origin}${basePath}confirmation.html#${orderId}`;
+                
+                // Save the order data but DON'T open confirmation page yet
+                const orderData = {
+                    orderId: orderId,
+                    items: JSON.stringify(cart),
+                    restaurant: restaurantInfo.name,
+                    customer: JSON.stringify({
+                        name: customerName,
+                        phone: customerPhone,
+                        address: customerAddressDetail,
+                        latitude: userLatitude || null,
+                        longitude: userLongitude || null
+                    }),
+                    orderDate: new Date().toISOString(),
+                    status: 'pending'
+                };
+
+                // Prepare order text but do not save or redirect yet
+                // Just prepare the WhatsApp link and store order ID
+                
+                // ENGLISH VERSION
+                let orderText = `*Order Reference: ${orderId}*\n`;
+                orderText += `View order details: ${orderTrackingLink}\n\n`;
+                orderText += "Hello! I would like to place an order:\n\n";
+                
+                // Add restaurant name
+                if (restaurantInfo) {
+                    orderText += `*Restaurant:* ${restaurantInfo.name}\n\n`;
+                }
+                
+                // Add order items
+                orderText += "*Order Items:*\n";
+                cart.forEach(item => {
+                    orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
+                });
+                
+                // Add total
+                orderText += `\n*Total:* ${totalEl.textContent}\n\n`;
+                
+                // Add customer info
+                orderText += "*Delivery Information:*\n";
+                orderText += `Name: ${customerName}\n`;
+                orderText += `Phone: ${customerPhone}\n`;
+                
+                // Add location info
+                if (userLatitude && userLongitude) {
+                    orderText += `Location: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                }
+                
+                // Add address details if provided
+                if (customerAddressDetail) {
+                    orderText += `Address Details: ${customerAddressDetail}\n`;
+                }
+
+                // SEPARATOR
+                orderText += "\n------------------\n\n";
+                
+                // FRENCH VERSION
+                orderText += `*Référence de commande: ${orderId}*\n`;
+                orderText += `Voir les détails de la commande: ${orderTrackingLink}\n\n`;
+                orderText += "Bonjour! Je voudrais passer une commande:\n\n";
+                
+                // Add restaurant name in French
+                if (restaurantInfo) {
+                    orderText += `*Restaurant:* ${restaurantInfo.name}\n\n`;
+                }
+                
+                // Add order items in French
+                orderText += "*Articles commandés:*\n";
+                cart.forEach(item => {
+                    orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
+                });
+                
+                // Add total in French
+                orderText += `\n*Total:* ${totalEl.textContent}\n\n`;
+                
+                // Add customer info in French
+                orderText += "*Information de livraison:*\n";
+                orderText += `Nom: ${customerName}\n`;
+                orderText += `Téléphone: ${customerPhone}\n`;
+                
+                // Add location info in French
+                if (userLatitude && userLongitude) {
+                    orderText += `Emplacement: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                }
+                
+                // Add address details if provided in French
+                if (customerAddressDetail) {
+                    orderText += `Détails de l'adresse: ${customerAddressDetail}\n`;
+                }
+
+                // SEPARATOR
+                orderText += "\n------------------\n\n";
+                
+                // ARABIC VERSION
+                orderText += `*رقم الطلب: ${orderId}*\n`;
+                orderText += `عرض تفاصيل الطلب: ${orderTrackingLink}\n\n`;
+                orderText += "مرحبا! أود طلب الطعام:\n\n";
+                
+                // Add restaurant name in Arabic
+                if (restaurantInfo) {
+                    orderText += `*المطعم:* ${restaurantInfo.name}\n\n`;
+                }
+                
+                // Add order items in Arabic
+                orderText += "*طلباتي:*\n";
+                cart.forEach(item => {
+                    orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
+                });
+                
+                // Add total in Arabic
+                orderText += `\n*المجموع:* ${totalEl.textContent}\n\n`;
+                
+                // Add customer info in Arabic
+                orderText += "*معلومات التوصيل:*\n";
+                orderText += `الاسم: ${customerName}\n`;
+                orderText += `الهاتف: ${customerPhone}\n`;
+                
+                // Add location info in Arabic
+                if (userLatitude && userLongitude) {
+                    orderText += `الموقع: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                }
+                
+                // Add address details if provided in Arabic
+                if (customerAddressDetail) {
+                    orderText += `تفاصيل العنوان: ${customerAddressDetail}\n`;
+                }
+                
+                // Store the order ID for later use when the button is clicked
+                whatsappCheckoutBtn.dataset.orderId = orderId;
+                whatsappCheckoutBtn.dataset.orderData = JSON.stringify(orderData);
+                
+                // Encode the message for URL
+                const encodedMessage = encodeURIComponent(orderText);
+                const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                
+                // Set the link but do NOT open the confirmation page yet
+                whatsappCheckoutBtn.href = whatsappLink;
+            }
+            
+            // Add a separate event listener to handle the checkout button click
+            document.getElementById('whatsapp-checkout-btn').addEventListener('click', function(e) {
+                // Get the saved order data and ID
+                const orderId = this.dataset.orderId;
+                const orderData = JSON.parse(this.dataset.orderData || "{}");
+                
+                // Now save the order to Supabase/localStorage and open confirmation page
+                saveOrder(orderData).then(() => {
+                    // Open confirmation page in a new tab AFTER WhatsApp
+                    setTimeout(() => {
+                        // Get the base path from the current URL
+                        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+                        window.open(`${window.location.origin}${basePath}confirmation.html#${orderId}`, '_blank');
+                    }, 500);
+                });
+                
+                // Let the default link click continue to WhatsApp
+            });
+            
+            // Update WhatsApp link when customer info changes
+            document.getElementById('customer-name').addEventListener('input', updateWhatsAppLink);
+            document.getElementById('customer-phone').addEventListener('input', updateWhatsAppLink);
+            if (document.getElementById('customer-address-detail')) {
+                document.getElementById('customer-address-detail').addEventListener('input', updateWhatsAppLink);
+            }
+            
+            // Initial WhatsApp link update
+            updateWhatsAppLink();
+            
+            // Make the checkout button disabled initially if name or phone is empty
+            if (!document.getElementById('customer-name').value.trim() || !document.getElementById('customer-phone').value.trim()) {
+                whatsappCheckoutBtn.disabled = true;
+                whatsappCheckoutBtn.style.opacity = '0.5';
+                whatsappCheckoutBtn.title = 'Please provide your name and phone number';
+            }
+            
+            // Global functions for quantity update and item removal
+            window.updateQuantity = function(index, change) {
+                cart[index].quantity += change;
+                
+                if (cart[index].quantity < 1) {
+                    cart[index].quantity = 1;
+                }
+                
+                // Update localStorage
+                localStorage.setItem('twins_delivery_cart', JSON.stringify(cart));
+                
+                // Refresh display
+                displayCartItems();
+                calculateOrderTotal();
+                updateWhatsAppLink();
+            };
+            
+            window.removeItem = function(index) {
+                cart.splice(index, 1);
+                
+                // Update localStorage
+                localStorage.setItem('twins_delivery_cart', JSON.stringify(cart));
+                
+                // Check if cart is now empty
+                if (cart.length === 0) {
+                    orderItemsContainer.style.display = 'none';
+                    orderSummary.style.display = 'none';
+                    customerInfo.style.display = 'none';
+                    checkoutActions.style.display = 'none';
+                    emptyCart.style.display = 'block';
+                } else {
+                    // Refresh display
+                    displayCartItems();
+                    calculateOrderTotal();
+                    updateWhatsAppLink();
+                }
+            };
+            
+            // Scroll Progress Indicator
+            window.addEventListener('scroll', () => {
+                const scrollProgress = document.querySelector('.scroll-progress');
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+            });
+
+            // Save order to Supabase and localStorage
+            async function saveOrder(orderData) {
+                try {
+                    // Try to save to Supabase first
+                    await window.initSupabase();
+                    const result = await window.SupabaseWrapper.orders.create(orderData);
+                    
+                    if (result.success) {
+                        console.log('Order saved to Supabase:', result.data);
+                    } else {
+                        console.warn('Failed to save order to Supabase:', result.error);
+                        // Fall back to localStorage
+                        saveOrderToLocalStorage(orderData);
+                    }
+                } catch (error) {
+                    console.error('Error saving order to Supabase:', error);
+                    // Fall back to localStorage
+                    saveOrderToLocalStorage(orderData);
+                }
+                
+                // Always save to localStorage as backup
+                saveOrderToLocalStorage(orderData);
+                
+                return orderData;
+            }
+
+            // Helper to save to localStorage
+            function saveOrderToLocalStorage(orderData) {
+                localStorage.setItem('twins_delivery_current_order', JSON.stringify(orderData));
+                
+                // Also save to order history
+                let orderHistory = JSON.parse(localStorage.getItem('twins_delivery_orders') || '[]');
+                orderHistory.unshift(orderData); // Add to beginning of array
+                
+                // Keep only the last 10 orders
+                if (orderHistory.length > 10) {
+                    orderHistory = orderHistory.slice(0, 10);
+                }
+                
+                localStorage.setItem('twins_delivery_orders', JSON.stringify(orderHistory));
+            }
+        });
+    </script>
+</body>
+</html> 

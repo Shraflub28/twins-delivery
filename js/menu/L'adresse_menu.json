@@ -1,0 +1,1123 @@
+{
+  "restaurant_name": "L'adresse",
+  "categories": [
+    {
+      "name": "Petits Dejeuners (09:00 à 12:00)",
+      "items": [
+        {
+          "name": "Continental",
+          "description": "Viennoiseries, pain beurre, confiture, pancake au miel, oeuf au plat ou omelette nature",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Marrakechi",
+          "description": "Harcha, baghrir, mssemen, miel, beurre confiture, soupe d'ilan",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fassi",
+          "description": "Omelette khlii aux oeufs, batbout, soupe d'ilan, olives noires, huile d'olive, extra vierge",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Equilibre",
+          "description": "Oeuf au plat ou omelette nature, grain de chia aux fruits frais, tartine fromage blanc avocat, jus d'orange pressé boisson chaude au choix (café crème, thé noir, ness ness, espresso",
+          "price": 85.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Fitness",
+          "description": "Bol flocon d'avoine au yaourt nature, fruits frais de saison et fruits secs, tartine jben avocat tomate, tartine jben oeuf au plat, jus de carotte ou jus de concombre ou jus d'orange, eau 33cl, boisson chaude au choix",
+          "price": 95.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "L'adresse",
+          "description": "Viennoiseries, toasts, pain grillé, confiture, beurre, huile d'olive extra vierge, charcuterie fromage, merguez, mesclun salade, tomate, concombre, pancake au nutella, yaourt aux fruits frais, omelette nature ou oeuf au plat, jus de carotte ou jus de concombre ou jus d'orange, eau 33cl, boisson chaude au choix",
+          "price": 120.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Menu Enfant",
+      "items": [
+        {
+          "name": "Menu enfant 1",
+          "description": "Spaghetti à la sauce tomate + deux boules de glace au choix",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Menu enfant 2",
+          "description": "Steak hachée grillé purée de pomme de terre + salade de fruits",
+          "price": 105.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Entrées",
+      "items": [
+        {
+          "name": "Briouates au poulet (6pcs)",
+          "description": "",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Briouates viande haché (6pcs)",
+          "description": "",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Briouates fruits de mer (6pcs)",
+          "description": "",
+          "price": 150.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assortiment de briouates (6pcs)",
+          "description": "",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pastilla poulet et amande torréfiée à la cannelle",
+          "description": "",
+          "price": 140.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pastilla aux fruits de mer",
+          "description": "",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade tomate mozzarella",
+          "description": "Tomate cerise, mozzarella, mesclun salade, sauce pitou",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade fraîcheur",
+          "description": "Mesclun salade, pomme de terre, haricot vert, tomate cerise, concombre, poivron mixte, oignon, thonn oeuf dure, vinaigrette citron vert",
+          "price": 125.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade césar",
+          "description": "Salade romaine, suprême de poulet, crouton, parmesan, sauce césar, tomate cerise",
+          "price": 130.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Salade chèvre chaud",
+          "description": "Mesclun salade, chèvre chaud sur sa tartine de de pain, tomates cerise, raisins sec, sauce balsamique",
+          "price": 140.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Quinoa au gambas",
+          "description": "Quinoa, avocat, gambas, tomates cerise, mangue, fromage fita, huile d'olive citronnée",
+          "price": 150.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Sandwichs Et Club",
+      "items": [
+        {
+          "name": "Sandwich poulet fermier",
+          "description": "Pain sandwich, poulet, tomate, salade, cornichons, fromage, sauce maison",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Club sandwich au poulet",
+          "description": "Pain demi, suprême de poulet mariné au romarin cuit à bas température, oeuf dur, tomate, salade verte",
+          "price": 125.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sandwich viande hachée",
+          "description": "Pain sandwich, viande haché, tomate, salade, fromage, sauce maison",
+          "price": 130.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Burgers",
+      "items": [
+        {
+          "name": "Chicken Burger",
+          "description": "Pain burger, sauce maison, salade iceberg, tomate, cornichons, poulet haché pané, fromage cheddar",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Classique Burger",
+          "description": "Pain burger, sauce maison, salade iceberg, tomate, cornichons, steak boeuf hachée, grillé, fromage cheddar",
+          "price": 125.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gourmet Burger",
+          "description": "Pain burger, sauce maison, salade iceberg, tomate, cornichons, double steak haché de boeuf grillé, double fromage cheddar",
+          "price": 140.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Plat Poisson",
+      "items": [
+        {
+          "name": "Filet de dourade grillé",
+          "description": "Accompagnement riz, légumes sautés, sauce poisson a l'étoile d'anis",
+          "price": 180.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Filet de saint pierre",
+          "description": "Accompagnement purée, riz, sauce fumet de poisson réduit",
+          "price": 180.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Filet d'espadon à la plancha",
+          "description": "Accompagnement riz, légume sautés, sauce poisson creme et citronnée",
+          "price": 190.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Plats Viande Et Volaille",
+      "items": [
+        {
+          "name": "Emincé de poulet à la crème aux champignons",
+          "description": "Accompagnement riz, légume sautés",
+          "price": 125.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Brochettes de poulet",
+          "description": "Accompagnement riz, légume sauté",
+          "price": 140.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Côtelettes d'agneau grillées",
+          "description": "Côtelettes d'agneau, légumes sautés, pomme de terre, grenaille sautés au thym romain, jus d'herbe",
+          "price": 180.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Médaillon filet de boeuf",
+          "description": "Légume sautés, purée maison, sauce champignon",
+          "price": 200.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Pâtes",
+      "items": [
+        {
+          "name": "Penne à l'arrabiata",
+          "description": "",
+          "price": 105.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Penne au thon",
+          "description": "",
+          "price": 120.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Penne au poulet et champignon",
+          "description": "",
+          "price": 140.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Penne aux quatre fromage",
+          "description": "",
+          "price": 150.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tagliatelle fruits de mer",
+          "description": "",
+          "price": 170.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Tagines",
+      "items": [
+        {
+          "name": "Tagine végétarien",
+          "description": "",
+          "price": 105.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tagine viande hachée aux oeufs",
+          "description": "",
+          "price": 125.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tagine poulet au citron confit et olives violettes",
+          "description": "",
+          "price": 140.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tagine d'agneau, aux légumes",
+          "description": "",
+          "price": 150.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tagine de boeuf aux pruneaux et abricots",
+          "description": "",
+          "price": 160.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tangia marrakchia",
+          "description": "",
+          "price": 180.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Couscous (Chaque Vendredi)",
+      "items": [
+        {
+          "name": "Couscous poulet aux légumes tfaya",
+          "description": "",
+          "price": 140.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Couscous d'agneau aux légumes",
+          "description": "",
+          "price": 155.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Spécialité L'adresse",
+      "items": [
+        {
+          "name": "Frappuccino",
+          "description": "Vanille, caramel, noisette, chocolat",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Choco vanille",
+          "description": "Chocolat chaud avec boule ge glace vanilla et chantilly",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Milke shake",
+          "description": "2 boules de glace au choix avec du lait frapé",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "A La Carte",
+      "items": [
+        {
+          "name": "Pain aux raisins",
+          "description": "",
+          "price": 30.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pain au chocolat",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Croissant pur beurre",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Croissant farci charcuterie et fromage",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Omelette nature",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oeuf au plat",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Toasts au fromage",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Oeuf brouillé",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Omelette aux champignons",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Omelette au fromage",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Omelette khlii",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Desserts",
+      "items": [
+        {
+          "name": "Salade de fruits frais",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Mille-feuille à la vanille",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Forêt -noire",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tiramisu",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Opéra",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cheese-cake",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cake americain fromboise",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cake americain oreo",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tarte citron",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tarte fromboise",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Assortiment de patisserie marocaine",
+          "description": "",
+          "price": 80.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Crêpes Sucrées",
+      "items": [
+        {
+          "name": "Crêpe Sucrée",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crêpe Confiture",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crêpe Miel",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crêpe Nutella",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crêpe nutella banane",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crêpe nutella banane boule de glace vanille",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Crêpes Salées",
+      "items": [
+        {
+          "name": "Crêpe au fromage",
+          "description": "",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crêpe charcuterie fromage",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Crêpe au poulet et champignons",
+          "description": "",
+          "price": 85.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Pancake",
+      "items": [
+        {
+          "name": "Pancakes sucrés",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pancakes confiture",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pancakes miel",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pancakes nutella banane boule de glace vanille",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pancakes nutella",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Pancakes nutella banane",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Les Gaufres",
+      "items": [
+        {
+          "name": "Gaufre miel",
+          "description": "",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gaufre nutella",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gaufre nutella banane",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Gaufre nutella banane boule de glace vanille",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Coupes De Glace",
+      "items": [
+        {
+          "name": "Coupe kids",
+          "description": "Snickers, oreo, cigare, créme chantilly",
+          "price": 45.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coupe moka",
+          "description": "Café, chocolat, créme chantilly, cigare",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Banana splite",
+          "description": "2 boules vanille, boule chocolat, banane, créme chantilly, cigare",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coupe americaine",
+          "description": "Cookies, nougat, caramel, créme chantilly, cigare",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coupe exotique",
+          "description": "Citron, mongue, ananas, créme chantilly, cigare",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coupe chococcino",
+          "description": "Snikers, oreo, bounty, créme chantilly, cigare",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coupe fraîcheur",
+          "description": "Fruits de la passion, fraise, fraise, citron, créme chantilly, cigare",
+          "price": 70.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Ice Tea / Ice Coffee",
+      "items": [
+        {
+          "name": "Ice citron",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Ice pêche",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Brséllia",
+          "description": "Banane, caramel, lait, café",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Aromatisé",
+          "description": "Caramel, noisette, chocolat, vanille",
+          "price": 55.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Boisson Energissantes",
+      "items": [
+        {
+          "name": "Red Bull",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Biere Sans Alcool",
+      "items": [
+        {
+          "name": "Bavaria original 0%",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bavaria fraise",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Bavaria pomegrante",
+          "description": "",
+          "price": 65.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Nos Jus",
+      "items": [
+        {
+          "name": "Jus d'orange",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de carotte",
+          "description": "",
+          "price": 37.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de concombre",
+          "description": "",
+          "price": 37.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de citron",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Citronnade",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de banane",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de pomme",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de fraise",
+          "description": "",
+          "price": 50.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Citronnade gingembre",
+          "description": "",
+          "price": 55.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus d'avocat",
+          "description": "",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus d'ananas",
+          "description": "",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Jus de mangue",
+          "description": "",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cocktail de fruits",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Avocat fruits sec",
+          "description": "",
+          "price": 75.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Virgin Mojito",
+      "items": [
+        {
+          "name": "Virgin mojito framboise",
+          "description": "",
+          "price": 70.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Virgin mojito classique",
+          "description": "",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Virgin mojito classique red bull",
+          "description": "",
+          "price": 95.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Smoothies & Detoxes",
+      "items": [
+        {
+          "name": "Avocat creamy",
+          "description": "Avocat, banane, datte, sirop de vanille, lait uht",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Red berry",
+          "description": "Fruits rouge, ananas, banane, jus d'ananas",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Arizana",
+          "description": "Kiwi, mangue, ananas, purée fruits passion, orange",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Red Energy",
+          "description": "Pomme, bettrave, carotte, citron",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Tropical",
+          "description": "Pomme, poire, kii, ananas, citron",
+          "price": 75.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Vitamine",
+          "description": "Banane, carotte, gingembre, orange",
+          "price": 75.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Infusions",
+      "items": [
+        {
+          "name": "Réglisse / anis",
+          "description": "Racine de règlisse, anis, bodione, fleurs de mauve, intense goût de réglisse avec une fraîche touche d'anis",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cerise de l'atlas",
+          "description": "Cerise entières, raisins de rorinthe, hibiscus, amandes hachées, mélange des baies infusion crémeuse, rouge et avec goût de cerise, baies et pâte d'amande",
+          "price": 60.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Corbeille de fruits",
+          "description": "Pétales de hibiscus, morceaux de pommes, mûres, pétales de mûre, baies de sureau, morceaux de fraises, groseilles noires, granulé de framboises, goût de framboise, de mûre, de grosielles et de crème fraîche",
+          "price": 60.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Soda",
+      "items": [
+        {
+          "name": "Coca Cola",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Coca Cola Zéro",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Sprite",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Hawaii",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Schweppes Citron",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Schweppes Tonic",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Poms",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Orangina",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Eaux Minérales",
+      "items": [
+        {
+          "name": "Eau plate (50cl)",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Eau plate (1,5L)",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Eau gazeuse oulmes (50cl)",
+          "description": "",
+          "price": 27.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Eau gazeuse oulmes (1L)",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "San pellegrino (25cl)",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "San pellegrino (1L)",
+          "description": "",
+          "price": 70.0,
+          "currency": "Dh"
+        }
+      ]
+    },
+    {
+      "name": "Boisson Chaude",
+      "items": [
+        {
+          "name": "Lait",
+          "description": "",
+          "price": 25.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Espresso",
+          "description": "",
+          "price": 32.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Ness Ness",
+          "description": "",
+          "price": 34.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café Crème",
+          "description": "",
+          "price": 34.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Americano",
+          "description": "",
+          "price": 34.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café Separé",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nespresso",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nespresso décafeiné",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nespresso au lait",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Nespresso décafeiné au lait",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cappuccino",
+          "description": "",
+          "price": 35.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Cappuccino viennois",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Chocolat chaud à l'ancienne",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Chocolat viennois",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Café double",
+          "description": "",
+          "price": 40.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Latté macchiato",
+          "description": "Sirop de vanille ou chocolat et caramel, noisette",
+          "price": 42.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Thé à la menthe",
+          "description": "",
+          "price": 34.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Verveine nature",
+          "description": "",
+          "price": 34.0,
+          "currency": "Dh"
+        },
+        {
+          "name": "Verveine au lait",
+          "description": "",
+          "price": 38.0,
+          "currency": "Dh"
+        }
+      ]
+    }
+  ]
+}

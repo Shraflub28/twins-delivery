@@ -1,0 +1,94 @@
+{
+  "restaurant_name": "Brunch Terrasses Petit Déjeuner",
+  "categories": [
+    {
+      "name": "Petit déjeuner",
+      "items": [
+        {
+          "name": "Petit déjeuner le parisien",
+          "description": "Ficelle grillée, beurre, confiture, miel. Boisson chaude, croissant, pain au chocolat, jus d'orange ou jus de carotte.",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/iOSAxtPshwFe4Ly.jpeg"
+        },
+        {
+          "name": "Sandwich omelette",
+          "description": "Sandwich omelette fromage charcuterie, ZA3ZA3, Salade de fruits.",
+          "price": 85.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/NkUoIMu0bjAwDnJ.jpeg"
+        },
+        {
+          "name": "Petit déjeuner enfant gâté",
+          "description": "Pancake  ou  crêpes  Nutella,  chocolat chaud, jus d'orange ou jus de carotte.",
+          "price": 95.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/bLcoyPMaFuHhxjf.jpeg"
+        },
+        {
+          "name": "English brunch",
+          "description": "Sucettes de pain perdu, merguez, jambon, œuf au plat, chocolat chaud, jus d'orange ou jus de carotte, salade de fruits.",
+          "price": 130.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/MZLMv6da7mNy2Zd.jpeg"
+        },
+        {
+          "name": "Petit déjeuner marrakchi",
+          "description": "Soupe balboula, batbouta charmoula (Oignon, viande hachée), omelette, msemen (Khlii, nature), jben, huile d’olive, beurre, miel, confiture, boisson chaude, jus d’orange ou jus de carotte.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/wAlMfvkdBvIKs0H.jpeg"
+        },
+        {
+          "name": "Gourmand brunch",
+          "description": "Pain toasté, omelette au choix  (Fromage, champignons ou charcuterie) huile d’olive, Viennoiserie, beurre, fromage, confiture, miel, boisson chaude, jus d'orange ou jus de carotte, salade de fruits, Yaourt.",
+          "price": 135.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/7D5LUVqe6SsIWze.jpeg"
+        },
+        {
+          "name": "Petit déjeunet jebli",
+          "description": "Baghrir à la façon Jebli, omlette Andalouse (Poivron   vert et rouge),panier marocain (Harcha, msemen),viennoiserie,  fromage blanc, amlou, boisson chaude, jus d’orange ou jus de carotte.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/fmOl91iWIMLZycw.jpeg"
+        },
+        {
+          "name": "Marocain brunch",
+          "description": "Omlette khlii, panier marocain (msemen, harcha, batbout), miel, beurre, confiture, jben, boisson chaude, jus d'orange ou jus de carotte.",
+          "price": 105.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/TZOHEiy0T564Nz7.jpeg"
+        },
+        {
+          "name": "Norvégien brunch",
+          "description": "Toast avocat saumon, omelette aux champignons, detox (green brunch), boisson chaude, Yaourt.",
+          "price": 145.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/sik8LOEqK01Vy22.jpeg"
+        },
+        {
+          "name": "Brunch Terrasses",
+          "description": "Viennoiserie, omelette  (Charcuterie  ou champignon), merguez, Assiette fromage edam, jben, charcuterie, msemen harcha, batbout, salade de fruits, beurre,confiture, miel, huile d’olive, boisson chaude, jus de fruits, Yaourt, eau plate (33cl).",
+          "price": 165.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/RHuSu1H3CiQBQBx.jpeg"
+        },
+        {
+          "name": "Royal brunch",
+          "description": "Ficelle (tomate, ail et parmesan) pancake Nutella, crêpe Nutella, crêpe fromage, Viennoiserie, baghrir, msemen, harcha, batbouta charmoula (oignon, viande hachée), beurre, fromage blanc, confiture, miel, amlou, salade de fruits, tajine œufs viande hachée, Yaourt, jus brunch, eau plate (33cl) boisson chaude et pâtisserie du Jour.",
+          "price": 205.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/Ke8KPvPCLGd5Wdu.jpeg"
+        },
+        {
+          "name": "Brunch toi et moi",
+          "description": "Jus de carrote et jus d’orange, thé à la menthe et café au lait, Yaourt et salade de fruits, toast au fromage et 2 viennoiseries msemen nature, msemen khliie et harcha, pain grillé, beurre, miel, confiture œuf au plat et omelette au fromage.",
+          "price": 205.0,
+          "currency": "Dh",
+          "image_url": "https://kaalixzone1.s3.eu-west-3.amazonaws.com/MS/images/service/9rN3BHGE3DIr0sr.jpeg"
+        }
+      ]
+    }
+  ]
+}

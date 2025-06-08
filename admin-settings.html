@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Twins Delivery Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-hover: #3a56d4;
+            --secondary-color: #484848;
+            --accent-color: #ff5a5f;
+            --light-color: #f7f7f7;
+            --dark-color: #222;
+            --danger-color: #e63946;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --info-color: #3498db;
+            --border-color: #e0e0e0;
+            --sidebar-width: 240px;
+            --header-height: 60px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--secondary-color);
+        }
+        
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: var(--shadow-sm);
+            z-index: 100;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+        
+        .sidebar.collapsed { width: 60px; }
+        .sidebar-header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            height: var(--header-height);
+        }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { font-size: 24px; color: var(--primary-color); }
+        .logo-text { font-weight: 700; font-size: 18px; color: var(--dark-color); white-space: nowrap; overflow: hidden; }
+        .sidebar.collapsed .logo-text { display: none; }
+        .toggle-sidebar { background: none; border: none; font-size: 18px; color: var(--secondary-color); cursor: pointer; transition: var(--transition); }
+        .toggle-sidebar:hover { color: var(--primary-color); }
+        .sidebar-menu { padding: 20px 0; }
+        .menu-label { padding: 10px 15px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #999; overflow: hidden; white-space: nowrap; }
+        .sidebar.collapsed .menu-label { display: none; }
+        .sidebar-link { display: flex; align-items: center; padding: 12px 15px; color: var(--secondary-color); text-decoration: none; transition: var(--transition); position: relative; }
+        .sidebar-link:hover { background-color: rgba(67, 97, 238, 0.05); color: var(--primary-color); }
+        .sidebar-link.active { background-color: rgba(67, 97, 238, 0.1); color: var(--primary-color); font-weight: 500; }
+        .sidebar-link.active::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background-color: var(--primary-color); }
+        .sidebar-icon { font-size: 18px; width: 30px; text-align: center; }
+        .sidebar-text { margin-left: 10px; white-space: nowrap; overflow: hidden; }
+        .sidebar.collapsed .sidebar-text { display: none; }
+        
+        /* Main content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            transition: var(--transition);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-content.expanded { margin-left: 60px; }
+        
+        /* Header styles */
+        .admin-header {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--header-height);
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+        .header-search { position: relative; width: 300px; }
+        .header-search input { width: 100%; padding: 8px 12px 8px 35px; border: 1px solid var(--border-color); border-radius: 5px; font-size: 14px; transition: var(--transition); }
+        .header-search input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15); }
+        .header-search i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #999; }
+        .header-actions { display: flex; align-items: center; gap: 10px; }
+        .header-button { background: none; border: none; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); cursor: pointer; transition: var(--transition); }
+        .header-button:hover { background-color: var(--light-color); color: var(--primary-color); }
+        .logout-button { background-color: rgba(230, 57, 70, 0.1); color: var(--danger-color); }
+        .logout-button:hover { background-color: rgba(230, 57, 70, 0.2); color: var(--danger-color); }
+        .user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 6px 10px; border-radius: 50px; transition: var(--transition); }
+        .user-profile:hover { background-color: var(--light-color); }
+        .user-avatar { width: 32px; height: 32px; border-radius: 50%; background-color: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; }
+        .user-info { font-size: 14px; white-space: nowrap; }
+        .user-name { font-weight: 500; }
+        .user-role { color: #999; font-size: 12px; }
+        
+        /* Dashboard container */
+        .dashboard-container {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .admin-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            padding: 25px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 50px 0;
+            color: var(--secondary-color);
+        }
+        .empty-state h3 { margin-top: 15px; font-weight: 500; }
+        .empty-state i { font-size: 50px; color: #ccc; margin-bottom: 15px; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar { transform: translateX(-100%); }
+            .sidebar.mobile-visible { transform: translateX(0); }
+            .main-content, .main-content.expanded { margin-left: 0; }
+            .header-search, .user-info { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">Twins Delivery</span>
+            </div>
+            <button class="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="sidebar-menu">
+            <div class="menu-label">Management</div>
+            <a href="admin-dashboard.html" class="sidebar-link">
+                <i class="fas fa-th-large sidebar-icon"></i>
+                <span class="sidebar-text">Restaurants</span>
+            </a>
+            <a href="admin-orders.html" class="sidebar-link">
+                <i class="fas fa-shopping-bag sidebar-icon"></i>
+                <span class="sidebar-text">Orders</span>
+            </a>
+            <a href="admin-grocery-orders.html" class="sidebar-link">
+                <i class="fas fa-shopping-basket sidebar-icon"></i>
+                <span class="sidebar-text">Grocery Orders</span>
+            </a>
+            <div class="menu-label">Settings</div>
+            <a href="admin-settings.html" class="sidebar-link active">
+                <i class="fas fa-cog sidebar-icon"></i>
+                <span class="sidebar-text">Settings</span>
+            </a>
+            <a href="#" id="sidebar-logout" class="sidebar-link">
+                <i class="fas fa-sign-out-alt sidebar-icon"></i>
+                <span class="sidebar-text">Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search settings...">
+            </div>
+            <div class="header-actions">
+                <button class="header-button">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button id="logout-btn" class="header-button logout-button">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+                <div class="user-profile">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info">
+                        <div class="user-name">Admin</div>
+                        <div class="user-role">Administrator</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-container">
+            <div class="page-header">
+                <h1 class="page-title">Settings</h1>
+            </div>
+            
+            <div class="admin-card">
+                 <div class="empty-state">
+                    <i class="fas fa-tools"></i>
+                    <h3>Settings Page is Under Construction</h3>
+                    <p>This section will contain general application settings.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auth check
+            if (localStorage.getItem('adminLoggedIn') !== 'true') {
+                window.location.href = 'admin-login.html';
+                return;
+            }
+
+            // Sidebar and Header Logic
+            const sidebar = document.querySelector('.sidebar');
+            const toggleSidebar = document.querySelector('.toggle-sidebar');
+            const mainContent = document.querySelector('.main-content');
+            
+            toggleSidebar.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('expanded');
+            });
+
+            function handleLogout() {
+                localStorage.removeItem('adminLoggedIn');
+                window.location.href = 'admin-login.html';
+            }
+            document.getElementById('logout-btn').addEventListener('click', handleLogout);
+            document.getElementById('sidebar-logout').addEventListener('click', handleLogout);
+        });
+    </script>
+</body>
+</html> 

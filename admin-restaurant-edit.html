@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Restaurant - Twins Delivery Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-hover: #3a56d4;
+            --secondary-color: #484848;
+            --accent-color: #ff5a5f;
+            --light-color: #f7f7f7;
+            --dark-color: #222;
+            --danger-color: #e63946;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --info-color: #3498db;
+            --border-color: #e0e0e0;
+            --sidebar-width: 240px;
+            --header-height: 60px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--secondary-color);
+        }
+        
+        /* Sidebar styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: var(--shadow-sm);
+            z-index: 100;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+        
+        .sidebar.collapsed {
+            width: 60px;
+        }
+        
+        .sidebar-header {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+            height: var(--header-height);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark-color);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        .sidebar.collapsed .logo-text {
+            display: none;
+        }
+        
+        .toggle-sidebar {
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .toggle-sidebar:hover {
+            color: var(--primary-color);
+        }
+        
+        .sidebar-menu {
+            padding: 20px 0;
+        }
+        
+        .menu-label {
+            padding: 10px 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .sidebar.collapsed .menu-label {
+            display: none;
+        }
+        
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .sidebar-link:hover {
+            background-color: rgba(67, 97, 238, 0.05);
+            color: var(--primary-color);
+        }
+        
+        .sidebar-link.active {
+            background-color: rgba(67, 97, 238, 0.1);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .sidebar-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .sidebar-icon {
+            font-size: 18px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .sidebar-text {
+            margin-left: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        
+        .sidebar.collapsed .sidebar-text {
+            display: none;
+        }
+        
+        /* Main content */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            transition: var(--transition);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-content.expanded {
+            margin-left: 60px;
+        }
+        
+        /* Header styles */
+        .admin-header {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: var(--header-height);
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+        
+        .header-search {
+            position: relative;
+            width: 300px;
+        }
+        
+        .header-search input {
+            width: 100%;
+            padding: 8px 12px 8px 35px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .header-search input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+        }
+        
+        .header-search i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .header-button {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .header-button:hover {
+            background-color: var(--light-color);
+            color: var(--primary-color);
+        }
+        
+        .logout-button {
+            background-color: rgba(230, 57, 70, 0.1);
+            color: var(--danger-color);
+        }
+        
+        .logout-button:hover {
+            background-color: rgba(230, 57, 70, 0.2);
+            color: var(--danger-color);
+        }
+        
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        
+        .user-profile:hover {
+            background-color: var(--light-color);
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .user-info {
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .user-name {
+            font-weight: 500;
+        }
+        
+        .user-role {
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Container for the form */
+        .form-container {
+            padding: 20px;
+        }
+        
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .admin-btn {
+            padding: 10px 16px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .admin-btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .admin-btn-primary:hover {
+            background-color: var(--primary-hover);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .admin-btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .admin-btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        
+        .admin-btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .admin-btn-danger:hover {
+            background-color: #c82333;
+        }
+        
+        /* Form styles */
+        .admin-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .admin-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-text {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        /* Image preview */
+        .image-preview-container {
+            margin-top: 10px;
+        }
+        
+        .image-preview {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            display: none;
+            border: 1px solid var(--border-color);
+        }
+        
+        /* Alert messages */
+        .alert-container {
+            margin-bottom: 20px;
+        }
+        
+        .alert {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow-sm);
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .alert-success {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: var(--success-color);
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .alert-danger {
+            background-color: rgba(230, 57, 70, 0.1);
+            color: var(--danger-color);
+            border-left: 4px solid var(--danger-color);
+        }
+        
+        .alert-info {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--info-color);
+            border-left: 4px solid var(--info-color);
+        }
+
+        .alert-icon {
+            font-size: 18px;
+        }
+        
+        /* Loading state */
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(67, 97, 238, 0.1);
+            border-left-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            margin-top: 15px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        /* Action buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 0 0 12px 12px;
+            margin: 0 -25px -25px -25px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            
+            .sidebar.mobile-visible {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .main-content.expanded {
+                margin-left: 0;
+            }
+            
+            .header-search {
+                display: none;
+            }
+
+            .user-info {
+                display: none;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">Twins Delivery</span>
+            </div>
+            <button class="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="sidebar-menu">
+            <div class="menu-label">Management</div>
+            <a href="admin-dashboard.html" class="sidebar-link active">
+                <i class="fas fa-th-large sidebar-icon"></i>
+                <span class="sidebar-text">Restaurants</span>
+            </a>
+            <a href="admin-orders.html" class="sidebar-link">
+                <i class="fas fa-shopping-bag sidebar-icon"></i>
+                <span class="sidebar-text">Orders</span>
+            </a>
+            <a href="admin-grocery-orders.html" class="sidebar-link">
+                <i class="fas fa-shopping-basket sidebar-icon"></i>
+                <span class="sidebar-text">Grocery Orders</span>
+            </a>
+            <div class="menu-label">Settings</div>
+            <a href="admin-settings.html" class="sidebar-link">
+                <i class="fas fa-cog sidebar-icon"></i>
+                <span class="sidebar-text">Settings</span>
+            </a>
+            <a href="#" id="sidebar-logout" class="sidebar-link">
+                <i class="fas fa-sign-out-alt sidebar-icon"></i>
+                <span class="sidebar-text">Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="header-actions">
+                <button class="header-button">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button id="logout-btn" class="header-button logout-button">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+                <div class="user-profile">
+                    <div class="user-avatar">A</div>
+                    <div class="user-info">
+                        <div class="user-name">Admin</div>
+                        <div class="user-role">Administrator</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <div class="page-header">
+                <h1 id="page-title" class="page-title">Add New Restaurant</h1>
+                <a href="admin-dashboard.html" class="admin-btn admin-btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+            </div>
+            
+            <!-- Alert messages will be displayed here -->
+            <div id="alert-container" class="alert-container"></div>
+            
+            <!-- Loading state -->
+            <div id="loading-container" class="loading-container">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Loading restaurant data...</div>
+            </div>
+            
+            <!-- Restaurant form -->
+            <div id="restaurant-form-container" style="display: none;">
+                <form id="restaurant-form">
+                    <div class="admin-card">
+                        <h3 class="admin-card-title">Basic Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Restaurant Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="slug">URL Slug *</label>
+                                <input type="text" id="slug" name="slug" class="form-control" required>
+                                <div class="form-text">Unique identifier for URLs (e.g., "burger-palace")</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cuisine">Cuisine Type</label>
+                                <input type="text" id="cuisine" name="cuisine" class="form-control">
+                                <div class="form-text">E.g., Italian, Japanese, Mexican, etc.</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="delivery_time">Delivery Time</label>
+                                <input type="text" id="delivery_time" name="delivery_time" class="form-control">
+                                <div class="form-text">E.g., "20-30 min"</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rating">Rating (0-5)</label>
+                                <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="reviews">Number of Reviews</label>
+                                <input type="number" id="reviews" name="reviews" min="0" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="price">Price Level (1-4)</label>
+                                <input type="number" id="price" name="price" min="1" max="4" class="form-control">
+                                <div class="form-text">1 = $, 2 = $$, 3 = $$$, 4 = $$$$</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-card">
+                        <h3 class="admin-card-title">Images & Description</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="image_url">Restaurant Image URL</label>
+                                <input type="url" id="image_url" name="image_url" class="form-control">
+                                <div class="form-text">Direct link to restaurant image (JPG, PNG, WebP)</div>
+                                <div class="image-preview-container">
+                                    <img id="image-preview" class="image-preview" alt="Restaurant image preview">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="banner_url">Banner Image URL (Optional)</label>
+                                <input type="url" id="banner_url" name="banner_url" class="form-control">
+                                <div class="form-text">Direct link to banner image for restaurant page</div>
+                                <div class="image-preview-container">
+                                    <img id="banner-preview" class="image-preview" alt="Banner image preview">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Restaurant Description</label>
+                            <textarea id="description" name="description" class="form-control"></textarea>
+                            <div class="form-text">Brief description of the restaurant</div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button type="button" id="cancel-btn" class="admin-btn admin-btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                            <button type="submit" id="save-btn" class="admin-btn admin-btn-primary">
+                                <i class="fas fa-save"></i> Save Restaurant
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.8/dist/umd/supabase.min.js"></script>
+    <script src="js/supabase.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication
+            if (localStorage.getItem('adminLoggedIn') !== 'true') {
+                window.location.href = 'admin-login.html';
+                return;
+            }
+
+            // Sidebar and Header Logic
+            const sidebar = document.querySelector('.sidebar');
+            const toggleSidebar = document.querySelector('.toggle-sidebar');
+            const mainContent = document.querySelector('.main-content');
+            const sidebarLogout = document.getElementById('sidebar-logout');
+            
+            toggleSidebar.addEventListener('click', function() {
+                sidebar.classList.toggle('collapsed');
+                mainContent.classList.toggle('expanded');
+            });
+            
+            // Initialize variables
+            let isEditMode = false;
+            let restaurantId = null;
+            
+            // DOM elements
+            const pageTitle = document.getElementById('page-title');
+            const loadingContainer = document.getElementById('loading-container');
+            const formContainer = document.getElementById('restaurant-form-container');
+            const restaurantForm = document.getElementById('restaurant-form');
+            const saveBtn = document.getElementById('save-btn');
+            const cancelBtn = document.getElementById('cancel-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            const alertContainer = document.getElementById('alert-container');
+            const imagePreview = document.getElementById('image-preview');
+            const bannerPreview = document.getElementById('banner-preview');
+            
+            // Get restaurant ID from URL if present
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('id')) {
+                restaurantId = urlParams.get('id');
+                isEditMode = true;
+                pageTitle.textContent = 'Edit Restaurant';
+            }
+            
+            // Initialize Supabase and load restaurant data if in edit mode
+            async function init() {
+                try {
+                    await window.SupabaseWrapper.init();
+                    
+                    if (isEditMode && restaurantId) {
+                        await loadRestaurantData(restaurantId);
+                    } else {
+                        // For new restaurant, just show the form
+                        hideLoading();
+                    }
+                } catch (error) {
+                    console.error('Error initializing:', error);
+                    showAlert('Failed to connect to the database. Please try again later.', 'danger');
+                    hideLoading();
+                }
+            }
+            
+            // Load restaurant data for editing
+            async function loadRestaurantData(id) {
+                try {
+                    const { success, data, error } = await window.SupabaseWrapper.restaurants.getById(id);
+                    
+                    if (!success || error) {
+                        throw new Error(error || 'Failed to load restaurant data');
+                    }
+                    
+                    if (!data) {
+                        throw new Error('Restaurant not found');
+                    }
+                    
+                    // Populate form with restaurant data
+                    populateForm(data);
+                    hideLoading();
+                } catch (error) {
+                    console.error('Error loading restaurant:', error);
+                    showAlert('Failed to load restaurant data. Please try again.', 'danger');
+                    hideLoading();
+                }
+            }
+            
+            // Populate form with restaurant data
+            function populateForm(restaurant) {
+                document.getElementById('name').value = restaurant.name || '';
+                document.getElementById('slug').value = restaurant.slug || '';
+                document.getElementById('cuisine').value = restaurant.cuisine || '';
+                document.getElementById('delivery_time').value = restaurant.delivery_time || '';
+                document.getElementById('rating').value = restaurant.rating || '';
+                document.getElementById('reviews').value = restaurant.reviews || '';
+                document.getElementById('price').value = restaurant.price || '';
+                document.getElementById('image_url').value = restaurant.image_url || '';
+                document.getElementById('banner_url').value = restaurant.banner_url || '';
+                document.getElementById('description').value = restaurant.description || '';
+                
+                // Show image previews if URLs are provided
+                if (restaurant.image_url) {
+                    imagePreview.src = restaurant.image_url;
+                    imagePreview.style.display = 'block';
+                }
+                
+                if (restaurant.banner_url) {
+                    bannerPreview.src = restaurant.banner_url;
+                    bannerPreview.style.display = 'block';
+                }
+            }
+            
+            // Save restaurant data
+            async function saveRestaurant(formData) {
+                try {
+                    let result;
+                    
+                    if (isEditMode && restaurantId) {
+                        // Update existing restaurant
+                        result = await window.SupabaseWrapper.restaurants.update(restaurantId, formData);
+                    } else {
+                        // Create new restaurant
+                        result = await window.SupabaseWrapper.restaurants.create(formData);
+                    }
+                    
+                    const { success, data, error } = result;
+                    
+                    if (!success || error) {
+                        throw new Error(error || 'Failed to save restaurant');
+                    }
+                    
+                    // Show success message and redirect
+                    showAlert(`Restaurant ${isEditMode ? 'updated' : 'created'} successfully!`, 'success');
+                    
+                    // Redirect after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'admin-dashboard.html';
+                    }, 1500);
+                    
+                } catch (error) {
+                    console.error('Error saving restaurant:', error);
+                    showAlert(`Failed to ${isEditMode ? 'update' : 'create'} restaurant. Please try again.`, 'danger');
+                }
+            }
+            
+            // Show alert message
+            function showAlert(message, type, duration = 5000) {
+                const alert = document.createElement('div');
+                alert.className = `alert alert-${type}`;
+                
+                let iconClass = 'info-circle';
+                if (type === 'success') iconClass = 'check-circle';
+                if (type === 'danger') iconClass = 'exclamation-circle';
+                
+                alert.innerHTML = `
+                    <i class="fas fa-${iconClass} alert-icon"></i>
+                    <span>${message}</span>
+                `;
+                
+                alertContainer.innerHTML = '';
+                alertContainer.appendChild(alert);
+                
+                setTimeout(() => {
+                    alert.style.opacity = '0';
+                    alert.style.transform = 'translateY(-10px)';
+                    setTimeout(() => alert.remove(), 300);
+                }, duration);
+            }
+            
+            // Hide loading state and show form
+            function hideLoading() {
+                loadingContainer.style.display = 'none';
+                formContainer.style.display = 'block';
+            }
+            
+            // Event Listeners
+            
+            // Form submission
+            restaurantForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value.trim(),
+                    slug: document.getElementById('slug').value.trim(),
+                    cuisine: document.getElementById('cuisine').value.trim(),
+                    delivery_time: document.getElementById('delivery_time').value.trim(),
+                    rating: parseFloat(document.getElementById('rating').value) || null,
+                    reviews: parseInt(document.getElementById('reviews').value) || null,
+                    price: parseInt(document.getElementById('price').value) || null,
+                    image_url: document.getElementById('image_url').value.trim(),
+                    banner_url: document.getElementById('banner_url').value.trim(),
+                    description: document.getElementById('description').value.trim()
+                };
+                
+                // Validate required fields
+                if (!formData.name) {
+                    showAlert('Restaurant name is required', 'danger');
+                    return;
+                }
+                
+                if (!formData.slug) {
+                    showAlert('URL slug is required', 'danger');
+                    return;
+                }
+                
+                // Save restaurant
+                saveRestaurant(formData);
+            });
+            
+            // Cancel button
+            cancelBtn.addEventListener('click', function() {
+                window.location.href = 'admin-dashboard.html';
+            });
+            
+            // Logout buttons
+            function handleLogout() {
+                localStorage.removeItem('adminLoggedIn');
+                window.location.href = 'admin-login.html';
+            }
+            logoutBtn.addEventListener('click', handleLogout);
+            sidebarLogout.addEventListener('click', handleLogout);
+            
+            // Image preview for restaurant image
+            document.getElementById('image_url').addEventListener('input', function() {
+                const url = this.value.trim();
+                if (url) {
+                    imagePreview.src = url;
+                    imagePreview.style.display = 'block';
+                    imagePreview.onerror = function() {
+                        imagePreview.style.display = 'none';
+                    };
+                } else {
+                    imagePreview.style.display = 'none';
+                }
+            });
+            
+            // Image preview for banner image
+            document.getElementById('banner_url').addEventListener('input', function() {
+                const url = this.value.trim();
+                if (url) {
+                    bannerPreview.src = url;
+                    bannerPreview.style.display = 'block';
+                    bannerPreview.onerror = function() {
+                        bannerPreview.style.display = 'none';
+                    };
+                } else {
+                    bannerPreview.style.display = 'none';
+                }
+            });
+            
+            // Auto-generate slug from name
+            document.getElementById('name').addEventListener('input', function() {
+                const nameValue = this.value.trim();
+                const slugField = document.getElementById('slug');
+                
+                // Only auto-generate if slug field is empty or hasn't been manually edited
+                if (!slugField.value || slugField.getAttribute('data-auto-generated') === 'true') {
+                    const slug = nameValue
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, '-')
+                        .replace(/^-+|-+$/g, '');
+                    
+                    slugField.value = slug;
+                    slugField.setAttribute('data-auto-generated', 'true');
+                }
+            });
+            
+            // Mark slug as manually edited
+            document.getElementById('slug').addEventListener('input', function() {
+                this.setAttribute('data-auto-generated', 'false');
+            });
+            
+            // Initialize
+            init();
+        });
+    </script>
+</body>
+</html> 
