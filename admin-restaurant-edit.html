@@ -548,7 +548,7 @@
             .header-search {
                 display: none;
             }
-
+            
             .user-info {
                 display: none;
             }
@@ -566,7 +566,7 @@
             <div class="logo-container">
                 <i class="fas fa-utensils logo-icon"></i>
                 <span class="logo-text">Twins Delivery</span>
-            </div>
+        </div>
             <button class="toggle-sidebar">
                 <i class="fas fa-bars"></i>
             </button>
@@ -608,7 +608,7 @@
             <div class="header-actions">
                 <button class="header-button">
                     <i class="fas fa-bell"></i>
-                </button>
+        </button>
                 <button id="logout-btn" class="header-button logout-button">
                     <i class="fas fa-sign-out-alt"></i>
                 </button>
@@ -620,119 +620,110 @@
                     </div>
                 </div>
             </div>
-        </header>
+    </header>
 
         <!-- Form Container -->
         <div class="form-container">
             <div class="page-header">
                 <h1 id="page-title" class="page-title">Add New Restaurant</h1>
-                <a href="admin-dashboard.html" class="admin-btn admin-btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Back to Dashboard
-                </a>
-            </div>
-            
-            <!-- Alert messages will be displayed here -->
+            <a href="admin-dashboard.html" class="admin-btn admin-btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+        
+        <!-- Alert messages will be displayed here -->
             <div id="alert-container" class="alert-container"></div>
-            
-            <!-- Loading state -->
-            <div id="loading-container" class="loading-container">
-                <div class="loading-spinner"></div>
-                <div class="loading-text">Loading restaurant data...</div>
-            </div>
-            
-            <!-- Restaurant form -->
-            <div id="restaurant-form-container" style="display: none;">
-                <form id="restaurant-form">
-                    <div class="admin-card">
-                        <h3 class="admin-card-title">Basic Information</h3>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Restaurant Name *</label>
-                                <input type="text" id="name" name="name" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="slug">URL Slug *</label>
-                                <input type="text" id="slug" name="slug" class="form-control" required>
-                                <div class="form-text">Unique identifier for URLs (e.g., "burger-palace")</div>
-                            </div>
+        
+        <!-- Loading state -->
+        <div id="loading-container" class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading restaurant data...</div>
+        </div>
+        
+        <!-- Restaurant form -->
+        <div id="restaurant-form-container" style="display: none;">
+            <form id="restaurant-form">
+                <div class="admin-card">
+                    <h3 class="admin-card-title">Basic Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Restaurant Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cuisine">Cuisine Type</label>
-                                <input type="text" id="cuisine" name="cuisine" class="form-control">
-                                <div class="form-text">E.g., Italian, Japanese, Mexican, etc.</div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="delivery_time">Delivery Time</label>
-                                <input type="text" id="delivery_time" name="delivery_time" class="form-control">
-                                <div class="form-text">E.g., "20-30 min"</div>
-                            </div>
+                        <div class="form-group">
+                            <label for="slug">URL Slug *</label>
+                            <input type="text" id="slug" name="slug" class="form-control" required>
+                            <div class="form-text">Unique identifier for URLs (e.g., "burger-palace")</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cuisine">Cuisine Type</label>
+                            <input type="text" id="cuisine" name="cuisine" class="form-control">
+                            <div class="form-text">E.g., Italian, Japanese, Mexican, etc.</div>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="rating">Rating (0-5)</label>
-                                <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="reviews">Number of Reviews</label>
-                                <input type="number" id="reviews" name="reviews" min="0" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="price">Price Level (1-4)</label>
-                                <input type="number" id="price" name="price" min="1" max="4" class="form-control">
-                                <div class="form-text">1 = $, 2 = $$, 3 = $$$, 4 = $$$$</div>
+                        <div class="form-group">
+                            <label for="delivery_time">Delivery Time</label>
+                            <input type="text" id="delivery_time" name="delivery_time" class="form-control">
+                            <div class="form-text">E.g., "20-30 min"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rating">Rating (0-5)</label>
+                            <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reviews">Number of Reviews</label>
+                            <input type="number" id="reviews" name="reviews" min="0" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="price">Price Level (1-4)</label>
+                            <input type="number" id="price" name="price" min="1" max="4" class="form-control">
+                            <div class="form-text">1 = $, 2 = $$, 3 = $$$, 4 = $$$$</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-card">
+                    <h3 class="admin-card-title">Images & Description</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="image_url">Restaurant Image URL</label>
+                            <input type="url" id="image_url" name="image_url" class="form-control">
+                            <div class="form-text">Direct link to restaurant image (JPG, PNG, WebP)</div>
+                            <div class="image-preview-container">
+                                <img id="image-preview" class="image-preview" alt="Restaurant image preview">
                             </div>
                         </div>
                     </div>
                     
-                    <div class="admin-card">
-                        <h3 class="admin-card-title">Images & Description</h3>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="image_url">Restaurant Image URL</label>
-                                <input type="url" id="image_url" name="image_url" class="form-control">
-                                <div class="form-text">Direct link to restaurant image (JPG, PNG, WebP)</div>
-                                <div class="image-preview-container">
-                                    <img id="image-preview" class="image-preview" alt="Restaurant image preview">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="banner_url">Banner Image URL (Optional)</label>
-                                <input type="url" id="banner_url" name="banner_url" class="form-control">
-                                <div class="form-text">Direct link to banner image for restaurant page</div>
-                                <div class="image-preview-container">
-                                    <img id="banner-preview" class="image-preview" alt="Banner image preview">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="description">Restaurant Description</label>
-                            <textarea id="description" name="description" class="form-control"></textarea>
-                            <div class="form-text">Brief description of the restaurant</div>
-                        </div>
-
-                        <div class="action-buttons">
-                            <button type="button" id="cancel-btn" class="admin-btn admin-btn-secondary">
-                                <i class="fas fa-times"></i> Cancel
-                            </button>
-                            <button type="submit" id="save-btn" class="admin-btn admin-btn-primary">
-                                <i class="fas fa-save"></i> Save Restaurant
-                            </button>
-                        </div>
+                    <div class="form-group">
+                        <label for="description">Restaurant Description</label>
+                        <textarea id="description" name="description" class="form-control"></textarea>
+                        <div class="form-text">Brief description of the restaurant</div>
                     </div>
-                </form>
-            </div>
+                
+                    <div class="action-buttons">
+                        <button type="button" id="cancel-btn" class="admin-btn admin-btn-secondary">
+                            <i class="fas fa-times"></i> Cancel
+                        </button>
+                        <button type="submit" id="save-btn" class="admin-btn admin-btn-primary">
+                            <i class="fas fa-save"></i> Save Restaurant
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
+    </div>
     </main>
 
     <!-- Supabase Integration -->
@@ -772,7 +763,6 @@
             const logoutBtn = document.getElementById('logout-btn');
             const alertContainer = document.getElementById('alert-container');
             const imagePreview = document.getElementById('image-preview');
-            const bannerPreview = document.getElementById('banner-preview');
             
             // Get restaurant ID from URL if present
             const urlParams = new URLSearchParams(window.location.search);
@@ -833,18 +823,12 @@
                 document.getElementById('reviews').value = restaurant.reviews || '';
                 document.getElementById('price').value = restaurant.price || '';
                 document.getElementById('image_url').value = restaurant.image_url || '';
-                document.getElementById('banner_url').value = restaurant.banner_url || '';
                 document.getElementById('description').value = restaurant.description || '';
                 
                 // Show image previews if URLs are provided
                 if (restaurant.image_url) {
                     imagePreview.src = restaurant.image_url;
                     imagePreview.style.display = 'block';
-                }
-                
-                if (restaurant.banner_url) {
-                    bannerPreview.src = restaurant.banner_url;
-                    bannerPreview.style.display = 'block';
                 }
             }
             
@@ -898,7 +882,7 @@
                 alertContainer.innerHTML = '';
                 alertContainer.appendChild(alert);
                 
-                setTimeout(() => {
+                    setTimeout(() => {
                     alert.style.opacity = '0';
                     alert.style.transform = 'translateY(-10px)';
                     setTimeout(() => alert.remove(), 300);
@@ -927,7 +911,6 @@
                     reviews: parseInt(document.getElementById('reviews').value) || null,
                     price: parseInt(document.getElementById('price').value) || null,
                     image_url: document.getElementById('image_url').value.trim(),
-                    banner_url: document.getElementById('banner_url').value.trim(),
                     description: document.getElementById('description').value.trim()
                 };
                 
@@ -970,20 +953,6 @@
                     };
                 } else {
                     imagePreview.style.display = 'none';
-                }
-            });
-            
-            // Image preview for banner image
-            document.getElementById('banner_url').addEventListener('input', function() {
-                const url = this.value.trim();
-                if (url) {
-                    bannerPreview.src = url;
-                    bannerPreview.style.display = 'block';
-                    bannerPreview.onerror = function() {
-                        bannerPreview.style.display = 'none';
-                    };
-                } else {
-                    bannerPreview.style.display = 'none';
                 }
             });
             
