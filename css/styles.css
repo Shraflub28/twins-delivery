@@ -57,6 +57,16 @@ header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 110px;
+    width: auto;
+}
+
+.logo span {
+    display: none;
 }
 
 .logo i {
@@ -569,6 +579,18 @@ footer {
     .newsletter-form button {
         width: 100%;
         border-radius: 25px;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+    nav {
+        justify-content: center;
+    }
+    
+    .nav-links {
+        display: none;
     }
 }
 

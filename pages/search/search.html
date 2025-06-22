@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search - Twins Delivery</title>
+    <title>Recherche - Twins Delivery</title>
+    <meta name="description" content="Recherchez parmi des centaines de restaurants et de plats disponibles pour une livraison rapide à Marrakech avec Twins Delivery.">
+    <meta name="keywords" content="recherche, restaurants, plats, cuisine, livraison Marrakech, service de livraison Marrakech, livraison à domicile, livraison rapide, livraison express Marrakech, Twins Delivery, meilleure livraison à Marrakech, livraison de nourriture, application livraison locale, Twins Delivery Marrakech, Twins Delivery service, Twins Delivery livraison gratuite, Twins Delivery application">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,21 +18,25 @@
     <!-- Header with diagonal design -->
     <header>
         <nav>
-            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="../../logo/logo white.png" alt="Twins Delivery Logo">
+                </a>
+            </div>
             <div class="nav-links">
-                <a href="../../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="../../groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
-                <a href="../../index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="../../index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="../../groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Courses</a>
+                <a href="../../index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Catégories</a>
                 <a href="../../index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
-                <a href="search.html" class="nav-link active"><i class="fas fa-search"></i> Search</a>
+                <a href="search.html" class="nav-link active"><i class="fas fa-search"></i> Rechercher</a>
             </div>
         </nav>
         <div class="hero-content">
-            <h1>Find Your Perfect Meal</h1>
-            <p>Search through our extensive collection of restaurants and cuisines</p>
+            <h1>Trouvez Votre Repas Idéal</h1>
+            <p>Recherchez parmi notre vaste collection de restaurants et de cuisines</p>
             <div class="search-bar">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Search for restaurants, cuisines, or dishes..." autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Rechercher des restaurants, cuisines, ou plats..." autocomplete="off">
                 <div id="suggestions" class="suggestions-dropdown" style="display:none;"></div>
             </div>
         </div>
@@ -42,14 +48,14 @@
     <main class="search-container">
         <div class="search-results">
             <div class="results-header">
-                <h2><i class="fas fa-utensils"></i> Search Results</h2>
+                <h2><i class="fas fa-utensils"></i> Résultats de la Recherche</h2>
             </div>
 
             <div class="restaurant-grid" id="searchResults">
                 <!-- Loading placeholder -->
                 <div class="loading-spinner">
                     <i class="fas fa-spinner fa-spin fa-3x"></i>
-                    <p>Loading restaurants...</p>
+                    <p>Chargement des restaurants...</p>
                 </div>
             </div>
         </div>
@@ -60,15 +66,15 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
-                <p>The best food delivery experience</p>
+                <p>La meilleure expérience de livraison de repas</p>
             </div>
             
             <div class="footer-section">
-                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <h3><i class="fas fa-link"></i> Liens Rapides</h3>
                 <ul class="footer-links">
-                    <li><a href="../../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="../../groceries.html"><i class="fas fa-chevron-right"></i> Groceries</a></li>
-                    <li><a href="../../index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="../../index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="../../groceries.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="../../index.html#categories"><i class="fas fa-chevron-right"></i> Catégories</a></li>
                     <li><a href="../../index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
                 </ul>
             </div>
@@ -76,11 +82,11 @@
             <div class="footer-section">
                 <h3><i class="fas fa-envelope"></i> Contact</h3>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212753208591" target="_blank">+212 753-208591</a></p>
             </div>
             
             <div class="footer-section">
-                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <h3><i class="fas fa-share-alt"></i> Suivez-nous</h3>
                 <div class="social-links">
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
@@ -90,7 +96,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+            <p>&copy; 2025 Twins Delivery. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -98,15 +104,15 @@
     <div class="mobile-nav">
         <a href="../../index.html" class="mobile-nav-item">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span>Accueil</span>
         </a>
         <a href="../../groceries.html" class="mobile-nav-item">
             <i class="fas fa-shopping-basket"></i>
-            <span>Groceries</span>
+            <span>Courses</span>
         </a>
         <a href="../../index.html#categories" class="mobile-nav-item">
             <i class="fas fa-th-large"></i>
-            <span>Categories</span>
+            <span>Catégories</span>
         </a>
         <a href="../../index.html#restaurants" class="mobile-nav-item">
             <i class="fas fa-store"></i>
@@ -114,7 +120,7 @@
         </a>
         <a href="search.html" class="mobile-nav-item active">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span>Rechercher</span>
         </a>
     </div>
 
@@ -136,8 +142,8 @@
                 const { success, data, error } = await window.SupabaseWrapper.restaurants.getAll();
                 
                 if (!success || error) {
-                    console.error('Failed to load restaurants from database:', error);
-                    displayError('Could not load restaurant data from the database.');
+                    console.error('Échec du chargement des restaurants depuis la base de données:', error);
+                    displayError('Impossible de charger les données des restaurants depuis la base de données.');
                     return;
                 }
                 
@@ -161,9 +167,19 @@
                 // Update UI with the data
                 displayResults(restaurants);
                 setupSearch();
+
+                // Check for search query from URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const query = urlParams.get('q');
+                if (query) {
+                    const searchInput = document.getElementById('searchInput');
+                    searchInput.value = query;
+                    // Trigger the search
+                    searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+                }
             } catch (error) {
-                console.error('Error loading data from Supabase:', error);
-                displayError('There was an error connecting to the restaurant database.');
+                console.error('Erreur lors du chargement des données depuis Supabase:', error);
+                displayError('Une erreur est survenue lors de la connexion à la base de données des restaurants.');
             }
         });
         
@@ -171,7 +187,7 @@
             document.getElementById('searchResults').innerHTML = `
                 <div class="no-results">
                     <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Error</h3>
+                    <h3>Erreur</h3>
                     <p>${message}</p>
                 </div>
             `;
@@ -180,26 +196,26 @@
         // Generate a badge for a restaurant
         function getBadgeForRestaurant(restaurant, index) {
             const badges = [
-                { text: "20% OFF", icon: "percent", color: "#ff458b" },
-                { text: "Fast", icon: "bolt", color: "#ff7a2d" },
-                { text: "Popular", icon: "fire", color: "#ff5722" },
+                { text: "20% DE RÉDUC", icon: "percent", color: "#ff458b" },
+                { text: "Rapide", icon: "bolt", color: "#ff7a2d" },
+                { text: "Populaire", icon: "fire", color: "#ff5722" },
                 { text: "Premium", icon: "gem", color: "#9c27b0" },
-                { text: "New", icon: "utensils", color: "#4caf50" },
-                { text: "Sweet", icon: "cookie", color: "#e91e63" },
-                { text: "Top Rated", icon: "star", color: "#ffc107" },
-                { text: "Fresh", icon: "fish", color: "#00bcd4" }
+                { text: "Nouveau", icon: "utensils", color: "#4caf50" },
+                { text: "Sucré", icon: "cookie", color: "#e91e63" },
+                { text: "Mieux Noté", icon: "star", color: "#ffc107" },
+                { text: "Frais", icon: "fish", color: "#00bcd4" }
             ];
             
             // Try to assign badges intelligently
             if (restaurant.cuisine) {
                 const cuisine = restaurant.cuisine.toLowerCase();
-                if (cuisine.includes('sushi')) return { text: "Fresh", icon: "fish", color: "#00bcd4" };
+                if (cuisine.includes('sushi')) return { text: "Frais", icon: "fish", color: "#00bcd4" };
                 if (cuisine.includes('burger')) return { text: "Gourmet", icon: "hamburger", color: "#ff9800" };
-                if (cuisine.includes('pizza')) return { text: "Italian", icon: "pizza-slice", color: "#4caf50" };
-                if (cuisine.includes('dessert')) return { text: "Sweet", icon: "cookie", color: "#e91e63" };
+                if (cuisine.includes('pizza')) return { text: "Italien", icon: "pizza-slice", color: "#4caf50" };
+                if (cuisine.includes('dessert')) return { text: "Sucré", icon: "cookie", color: "#e91e63" };
             }
             
-            if (restaurant.rating >= 4.8) return { text: "Top Rated", icon: "star", color: "#ffc107" };
+            if (restaurant.rating >= 4.8) return { text: "Mieux Noté", icon: "star", color: "#ffc107" };
             
             return badges[index % badges.length];
         }
@@ -285,8 +301,8 @@
                 searchResults.innerHTML = `
                     <div class="no-results">
                         <i class="fas fa-search"></i>
-                        <h3>No Results Found</h3>
-                        <p>Try different search criteria or filters</p>
+                        <h3>Aucun Résultat Trouvé</h3>
+                        <p>Essayez différents critères de recherche ou filtres</p>
                     </div>
                 `;
                 return;
@@ -323,7 +339,7 @@
                 const cuisines = [...new Set(restaurants.map(r => r.cuisine))];
                 
                 // Combine with popular dishes (just for demonstration)
-                const popularDishes = ["Burger", "Pizza", "Sushi", "Pasta", "Chicken", "Salad", "Ice Cream"];
+                const popularDishes = ["Burger", "Pizza", "Sushi", "Pâtes", "Poulet", "Salade", "Glace"];
                 
                 const all = [...names, ...cuisines, ...popularDishes];
                 

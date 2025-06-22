@@ -456,7 +456,7 @@
             background: #f0f0f0;
             border: 2px dashed var(--primary-color);
         }
-
+        
         .restaurant-details {
             display: flex;
             flex-wrap: wrap;
@@ -648,12 +648,12 @@
             
             .sidebar.mobile-visible {
                 transform: translateX(0);
-            }
-            
+        }
+        
             .main-content {
                 margin-left: 0;
-            }
-            
+        }
+        
             .main-content.expanded {
                 margin-left: 0;
             }
@@ -683,7 +683,7 @@
             <div class="logo-container">
                 <i class="fas fa-utensils logo-icon"></i>
                 <span class="logo-text">Twins Delivery</span>
-            </div>
+        </div>
             <button class="toggle-sidebar">
                 <i class="fas fa-bars"></i>
             </button>
@@ -743,22 +743,22 @@
         <div class="dashboard-container">
             <div class="page-header">
                 <h1 class="page-title">Manage Restaurants</h1>
-                <button id="add-restaurant-btn" class="admin-btn admin-btn-primary">
-                    <i class="fas fa-plus"></i> Add Restaurant
-                </button>
-            </div>
-            
-            <!-- Alert messages will be displayed here -->
+            <button id="add-restaurant-btn" class="admin-btn admin-btn-primary">
+                <i class="fas fa-plus"></i> Add Restaurant
+            </button>
+        </div>
+        
+        <!-- Alert messages will be displayed here -->
             <div id="alert-container" class="alert-container"></div>
-            
-            <!-- Restaurant listing -->
-            <div id="restaurant-container">
-                <div class="loading-container">
-                    <div class="loading-spinner"></div>
-                    <div class="loading-text">Loading restaurants...</div>
-                </div>
+        
+        <!-- Restaurant listing -->
+        <div id="restaurant-container">
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Loading restaurants...</div>
             </div>
         </div>
+    </div>
     </main>
     
     <!-- Delete Confirmation Modal -->
@@ -869,7 +869,7 @@
                     }
                 }
             }
-
+            
             // Render restaurants grid
             function renderRestaurants() {
                 if (!restaurants || restaurants.length === 0) {
@@ -887,7 +887,7 @@
                                 onerror="this.src='https://via.placeholder.com/300x180?text=Image+Error'">
                             <div class="restaurant-info">
                                 <div class="restaurant-header">
-                                    <h3 class="restaurant-name">${restaurant.name}</h3>
+                                <h3 class="restaurant-name">${restaurant.name}</h3>
                                     <i class="fas fa-grip-vertical drag-handle" title="Drag to reorder"></i>
                                 </div>
                                 <div class="restaurant-details">
@@ -1010,7 +1010,7 @@
                     await loadRestaurants();
                 }
             }
-
+            
             // Delete restaurant
             async function deleteRestaurant(restaurantId) {
                 try {
@@ -1054,8 +1054,8 @@
                 setTimeout(() => {
                     alert.style.opacity = '0';
                     alert.style.transform = 'translateY(-10px)';
-                    setTimeout(() => {
-                        alert.remove();
+                setTimeout(() => {
+                    alert.remove();
                     }, 300);
                 }, duration);
             }
