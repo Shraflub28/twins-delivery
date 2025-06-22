@@ -1,9 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twins Delivery - Unique Food Delivery Experience</title>
+    <title>Twins Delivery - Expérience de Livraison de Repas Unique</title>
+    <meta name="description" content="Twins Delivery offre une expérience de livraison de repas et de courses unique à Marrakech. Commandez vos plats préférés ou faites vos courses et soyez livré rapidement à votre porte.">
+    <meta name="keywords" content="livraison Marrakech, twins delivery, service de livraison Marrakech, livraison à domicile, livraison rapide, livraison express Marrakech, Twins Delivery, meilleure livraison à Marrakech, livraison de nourriture, application livraison locale, Twins Delivery Marrakech, Twins Delivery service, Twins Delivery livraison gratuite, Twins Delivery application">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FoodEstablishment",
+      "name": "Twins Delivery",
+      "description": "Twins Delivery offre une expérience de livraison de repas et de courses unique à Marrakech. Commandez vos plats préférés ou faites vos courses et soyez livré rapidement à votre porte.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Marrakech",
+        "addressCountry": "MA"
+      },
+      "telephone": "+212 753-208591",
+      "url": "https://twins-delivery.com",
+      "image": "https://twins-delivery.com/logo/logo white.png",
+      "servesCuisine": [
+        "Pizza",
+        "Burgers",
+        "Sushi",
+        "Sain"
+      ],
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "11:00",
+          "closes": "23:00"
+        }
+      ],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://twins-delivery.com/pages/search/search.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -16,22 +62,26 @@
     <!-- Header with diagonal design -->
     <header>
         <nav>
-            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo/logo white.png" alt="Twins Delivery Logo">
+                </a>
+            </div>
             <div class="nav-links">
-                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
-                <a href="#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Accueil</a>
+                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Courses</a>
+                <a href="#categories" class="nav-link"><i class="fas fa-th-large"></i> Catégories</a>
                 <a href="#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
-                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Rechercher</a>
             </div>
         </nav>
         <div class="hero-content">
-            <h1>Delicious Food<br>Delivered To Your Door</h1>
-            <p>Choose from thousands of restaurants and get your food delivered fast</p>
+            <h1>Des Plats Délicieux<br>Livrés à Votre Porte</h1>
+            <p>Choisissez parmi des milliers de restaurants et faites-vous livrer rapidement</p>
             <div class="location-bar">
-                <i class="fas fa-map-marker-alt"></i>
-                <input type="text" placeholder="Enter your delivery address" id="location-input">
-                <button class="search-btn"><i class="fas fa-search"></i> Find Food</button>
+                <i class="fas fa-utensils"></i>
+                <input type="text" placeholder="Rechercher des plats, des cuisines..." id="menu-search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
         </div>
         <div class="pattern-grid"></div>
@@ -64,26 +114,26 @@
                 <div class="category-icon">
                     <i class="fas fa-seedling"></i>
                 </div>
-                <h3>Healthy</h3>
+                <h3>Sain</h3>
             </div>
         </div>
     </section>
 
     <!-- Restaurants with unique grid layout -->
     <section id="restaurants" class="overlap-section">
-        <h2><i class="fas fa-star"></i> Popular Restaurants</h2>
+        <h2><i class="fas fa-star"></i> Restaurants Populaires</h2>
         <div class="restaurant-grid" id="restaurantGrid">
             <!-- Restaurants will be loaded dynamically from Supabase -->
             <div class="loading-spinner">
                 <i class="fas fa-spinner fa-spin fa-3x"></i>
-                <p>Loading restaurants...</p>
+                <p>Chargement des restaurants...</p>
             </div>
         </div>
         
         <!-- See More Button -->
         <div class="see-more-container">
             <button id="see-more-btn" class="see-more-btn">
-                <span>See More Restaurants</span>
+                <span>Voir Plus de Restaurants</span>
                 <i class="fas fa-chevron-down"></i>
             </button>
         </div>
@@ -96,22 +146,22 @@
                 <div class="feature-icon">
                     <i class="fas fa-rocket"></i>
                 </div>
-                <h3>Lightning Fast Delivery</h3>
-                <p>Get your food delivered in under 30 minutes</p>
+                <h3>Livraison Ultra Rapide</h3>
+                <p>Faites-vous livrer en moins de 30 minutes</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">
                     <i class="fas fa-award"></i>
                 </div>
-                <h3>Best Restaurants</h3>
-                <p>Partner with top-rated local restaurants</p>
+                <h3>Meilleurs Restaurants</h3>
+                <p>En partenariat avec les meilleurs restaurants locaux</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">
                     <i class="fas fa-map-marked-alt"></i>
                 </div>
-                <h3>Real-time Tracking</h3>
-                <p>Track your order from restaurant to doorstep</p>
+                <h3>Suivi en Temps Réel</h3>
+                <p>Suivez votre commande du restaurant à votre porte</p>
             </div>
         </div>
     </section>
@@ -120,21 +170,21 @@
     <section id="download" class="app-download diagonal-section">
         <div class="app-container">
             <div class="app-content">
-                <h2><i class="fas fa-mobile-alt"></i> Download Our App</h2>
-                <p>Get the best food delivery experience on your phone</p>
+                <h2><i class="fas fa-mobile-alt"></i> Téléchargez Notre Application</h2>
+                <p>Obtenez la meilleure expérience de livraison sur votre téléphone</p>
             </div>
             <div class="app-image">
                 <a href="#" class="store-button app-store-btn">
                     <i class="fab fa-apple"></i>
                     <span>
-                        <small>Download on the</small>
+                        <small>Télécharger sur</small>
                         App Store
                     </span>
                 </a>
                 <a href="#" class="store-button play-store-btn">
                     <i class="fab fa-google-play"></i>
                     <span>
-                        <small>Get it on</small>
+                        <small>Disponible sur</small>
                         Google Play
                     </span>
                 </a>
@@ -149,27 +199,27 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
-                <p>The best food delivery experience</p>
+                <p>La meilleure expérience de livraison de repas</p>
             </div>
             
             <div class="footer-section">
-                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <h3><i class="fas fa-link"></i> Liens Rapides</h3>
                 <ul class="footer-links">
-                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#categories"><i class="fas fa-chevron-right"></i> Catégories</a></li>
                     <li><a href="#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
-                    <li><a href="#download"><i class="fas fa-chevron-right"></i> Download App</a></li>
+                    <li><a href="#download"><i class="fas fa-chevron-right"></i> Télécharger l'App</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h3><i class="fas fa-envelope"></i> Contact</h3>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212753208591" target="_blank">+212 753-208591</a></p>
             </div>
             
             <div class="footer-section">
-                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <h3><i class="fas fa-share-alt"></i> Suivez-nous</h3>
                 <div class="social-links">
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
@@ -179,7 +229,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+            <p>&copy; 2025 Twins Delivery. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -187,15 +237,15 @@
     <div class="mobile-nav">
         <a href="#home" class="mobile-nav-item active">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span>Accueil</span>
         </a>
         <a href="groceries.html" class="mobile-nav-item">
             <i class="fas fa-shopping-basket"></i>
-            <span>Groceries</span>
+            <span>Courses</span>
         </a>
         <a href="#categories" class="mobile-nav-item">
             <i class="fas fa-th-large"></i>
-            <span>Categories</span>
+            <span>Catégories</span>
         </a>
         <a href="#restaurants" class="mobile-nav-item">
             <i class="fas fa-store"></i>
@@ -203,7 +253,7 @@
         </a>
         <a href="pages/search/search.html" class="mobile-nav-item">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span>Rechercher</span>
         </a>
     </div>
 
@@ -236,26 +286,26 @@
         // Function to determine badge for restaurant (adapted from search.html)
         function getBadgeForRestaurant(restaurant, index) {
             const badges = [
-                { text: "20% OFF", icon: "percent", color: "#ff458b" },
-                { text: "Fast", icon: "bolt", color: "#ff7a2d" },
-                { text: "Popular", icon: "fire", color: "#ff5722" },
+                { text: "20% DE RÉDUC", icon: "percent", color: "#ff458b" },
+                { text: "Rapide", icon: "bolt", color: "#ff7a2d" },
+                { text: "Populaire", icon: "fire", color: "#ff5722" },
                 { text: "Premium", icon: "gem", color: "#9c27b0" },
-                { text: "New", icon: "utensils", color: "#4caf50" },
-                { text: "Sweet", icon: "cookie", color: "#e91e63" },
-                { text: "Top Rated", icon: "star", color: "#ffc107" },
-                { text: "Fresh", icon: "fish", color: "#00bcd4" }
+                { text: "Nouveau", icon: "utensils", color: "#4caf50" },
+                { text: "Sucré", icon: "cookie", color: "#e91e63" },
+                { text: "Mieux Noté", icon: "star", color: "#ffc107" },
+                { text: "Frais", icon: "fish", color: "#00bcd4" }
             ];
 
             // Try to assign badges intelligently
             if (restaurant.cuisine) {
                 const cuisine = restaurant.cuisine.toLowerCase();
-                if (cuisine.includes('sushi')) return { text: "Fresh", icon: "fish", color: "#00bcd4" };
+                if (cuisine.includes('sushi')) return { text: "Frais", icon: "fish", color: "#00bcd4" };
                 if (cuisine.includes('burger')) return { text: "Gourmet", icon: "hamburger", color: "#ff9800" };
-                if (cuisine.includes('pizza')) return { text: "Italian", icon: "pizza-slice", color: "#4caf50" };
-                if (cuisine.includes('dessert')) return { text: "Sweet", icon: "cookie", color: "#e91e63" };
+                if (cuisine.includes('pizza')) return { text: "Italien", icon: "pizza-slice", color: "#4caf50" };
+                if (cuisine.includes('dessert')) return { text: "Sucré", icon: "cookie", color: "#e91e63" };
             }
 
-            if (restaurant.rating >= 4.8) return { text: "Top Rated", icon: "star", color: "#ffc107" };
+            if (restaurant.rating >= 4.8) return { text: "Mieux Noté", icon: "star", color: "#ffc107" };
 
             // Use a different badge for each item based on its index relative to the *total* number of items displayed so far
             const restaurantGrid = document.getElementById('restaurantGrid');
@@ -284,7 +334,7 @@
                      restaurantGrid.innerHTML = `
                         <div class="no-restaurants">
                             <i class="fas fa-exclamation-circle fa-3x"></i>
-                            <p>No restaurants found.</p>
+                            <p>Aucun restaurant trouvé.</p>
                         </div>
                     `;
                  }
@@ -342,12 +392,12 @@
                      restaurantGrid.innerHTML = `
                         <div class="loading-spinner">
                             <i class="fas fa-spinner fa-spin fa-3x"></i>
-                            <p>Loading restaurants...</p>
+                            <p>Chargement des restaurants...</p>
                         </div>
                      `;
                  }
              } else if (seeMoreBtn) {
-                 seeMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+                 seeMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Chargement...';
                  seeMoreBtn.disabled = true; // Disable button while loading
                  seeMoreBtn.classList.add('loading');
              }
@@ -384,23 +434,23 @@
                 } else {
                      // Restore button state if more restaurants were loaded
                      if (seeMoreBtn) {
-                         seeMoreBtn.innerHTML = '<span>See More Restaurants</span><i class="fas fa-chevron-down"></i>';
+                         seeMoreBtn.innerHTML = '<span>Voir Plus de Restaurants</span><i class="fas fa-chevron-down"></i>';
                          seeMoreBtn.disabled = false;
                          seeMoreBtn.classList.remove('loading');
                      }
                 }
 
             } catch (error) {
-                console.error('Error fetching or loading restaurants:', error);
+                console.error('Erreur lors du chargement des restaurants: ' + error.message);
                 if (restaurantGrid.querySelector('.loading-spinner')) {
                      restaurantGrid.innerHTML = `
                         <div class="no-restaurants">
                             <i class="fas fa-exclamation-triangle fa-3x"></i>
-                            <p>Error loading restaurants: ${error.message}</p>
+                            <p>Erreur lors du chargement des restaurants: ${error.message}</p>
                         </div>
                     `;
                 } else if (seeMoreBtn) {
-                     seeMoreBtn.innerHTML = '<span>Error loading</span><i class="fas fa-exclamation-circle"></i>';
+                     seeMoreBtn.innerHTML = '<span>Erreur de chargement</span><i class="fas fa-exclamation-circle"></i>';
                      seeMoreBtn.disabled = true; // Disable button on error
                      seeMoreBtn.classList.remove('loading');
                 }
@@ -472,27 +522,30 @@
         });
 
         // Location Input Enhancement
-        const addressInput = document.getElementById('location-input');
+        const menuSearchInput = document.getElementById('menu-search-input');
         const searchBtn = document.querySelector('.search-btn');
 
-        if (addressInput && searchBtn) {
-            addressInput.addEventListener('focus', () => {
-                addressInput.parentElement.classList.add('focused');
+        if (menuSearchInput && searchBtn) {
+            menuSearchInput.addEventListener('focus', () => {
+                menuSearchInput.parentElement.classList.add('focused');
             });
 
-            addressInput.addEventListener('blur', () => {
-                addressInput.parentElement.classList.remove('focused');
+            menuSearchInput.addEventListener('blur', () => {
+                menuSearchInput.parentElement.classList.remove('focused');
             });
 
-            searchBtn.addEventListener('click', () => {
-                if (addressInput.value.trim() !== '') {
-                    searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
-                    // Simulate search delay
-                    setTimeout(() => {
-                        searchBtn.innerHTML = '<i class="fas fa-search"></i> Find Food';
-                        // TODO: Implement actual search functionality
-                        alert('Searching for: ' + addressInput.value);
-                    }, 1500);
+            const performMenuSearch = () => {
+                const query = menuSearchInput.value.trim();
+                if (query !== '') {
+                    window.location.href = `pages/search/search.html?q=${encodeURIComponent(query)}`;
+                }
+            };
+
+            searchBtn.addEventListener('click', performMenuSearch);
+
+            menuSearchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    performMenuSearch();
                 }
             });
         }

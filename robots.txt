@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://twins-delivery.com/sitemap.xml 
