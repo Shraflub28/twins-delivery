@@ -23,9 +23,21 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html,
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 body {
     background-color: var(--background-light);
     color: var(--text-color);
+}
+
+img,
+video,
+iframe {
+    max-width: 100%; /* Ensure media doesn't overflow */
+    height: auto;    /* Maintain aspect ratio */
 }
 
 /* Header Styles */
@@ -45,6 +57,16 @@ header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
+.logo span {
+    display: none;
 }
 
 .logo i {
@@ -268,6 +290,14 @@ nav {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.restaurant-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .restaurant-card:hover {
@@ -549,6 +579,18 @@ footer {
     .newsletter-form button {
         width: 100%;
         border-radius: 25px;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+    nav {
+        justify-content: center;
+    }
+    
+    .nav-links {
+        display: none;
     }
 }
 
@@ -1187,30 +1229,9 @@ html {
     animation: flyIcon 1s infinite;
 }
 
-@keyframes flyIcon {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(3px);
-    }
-}
 
 .newsletter-form button.success i {
     display: none;
-}
-
-/* Remove all newsletter-related styles */
-.newsletter,
-.newsletter-content,
-.newsletter-form,
-.newsletter-form button,
-.newsletter-form button.ready,
-.newsletter-form button.success,
-.newsletter-form button.success::before,
-.newsletter-form button i,
-.newsletter-form button:hover i {
-    /* These elements have been removed from the HTML */
 }
 
 /* Remove unused keyframes */
