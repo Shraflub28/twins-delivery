@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Twins Delivery</title>
+    <title>Paiement - Twins Delivery</title>
+    <meta name="description" content="Finalisez votre commande de repas ou de courses sur Twins Delivery. Processus de paiement simple et sécurisé pour votre livraison à Marrakech.">
+    <meta name="keywords" content="paiement, commande, checkout, livraison Marrakech, service de livraison Marrakech, livraison à domicile, livraison rapide, livraison express Marrakech, Twins Delivery, meilleure livraison à Marrakech, livraison de nourriture, application livraison locale, Twins Delivery Marrakech, Twins Delivery service, Twins Delivery livraison gratuite, Twins Delivery application">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -326,20 +328,24 @@
     <!-- Header with diagonal design -->
     <header>
         <nav>
-            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo/logo white.png" alt="Twins Delivery Logo">
+                </a>
+            </div>
             <div class="nav-links">
-                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
-                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Courses</a>
+                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Catégories</a>
                 <a href="index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
-                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Rechercher</a>
             </div>
         </nav>
     </header>
 
     <main class="checkout-container">
         <div class="checkout-header">
-            <h1><i class="fas fa-shopping-cart"></i> Your Order</h1>
+            <h1><i class="fas fa-shopping-cart"></i> Votre Commande</h1>
         </div>
 
         <div id="restaurant-details" class="restaurant-info">
@@ -350,10 +356,10 @@
             <!-- This will be populated by JavaScript -->
             <div class="empty-cart" id="empty-cart" style="display:none;">
                 <i class="fas fa-shopping-basket"></i>
-                <h2>Your cart is empty</h2>
-                <p>Add some delicious items to your cart to proceed with checkout.</p>
+                <h2>Votre panier est vide</h2>
+                <p>Ajoutez de délicieux articles à votre panier pour procéder au paiement.</p>
                 <a href="index.html#restaurants" class="browse-menu-btn">
-                    <i class="fas fa-utensils"></i> Browse Restaurants
+                    <i class="fas fa-utensils"></i> Parcourir les Restaurants
                 </a>
             </div>
         </div>
@@ -363,9 +369,9 @@
         </div>
 
         <div id="order-summary" class="order-summary" style="display:none;">
-            <h3>Order Summary</h3>
+            <h3>Résumé de la Commande</h3>
             <div class="summary-row">
-                <span>Subtotal</span>
+                <span>Sous-total</span>
                 <span id="subtotal">0 MAD</span>
             </div>
             <div class="summary-row total">
@@ -375,35 +381,35 @@
         </div>
 
         <div id="customer-info" class="customer-info" style="display:none;">
-            <h3>Your Information</h3>
+            <h3>Vos Informations</h3>
             <div class="form-group">
-                <label for="customer-name" class="required">Name</label>
-                <input type="text" id="customer-name" placeholder="Your name" required>
+                <label for="customer-name" class="required">Nom</label>
+                <input type="text" id="customer-name" placeholder="Votre nom" required>
             </div>
             
             <div class="form-group">
-                <label for="customer-phone" class="required">Phone Number</label>
-                <input type="tel" id="customer-phone" placeholder="Your phone number" required>
+                <label for="customer-phone" class="required">Numéro de Téléphone</label>
+                <input type="tel" id="customer-phone" placeholder="Votre numéro de téléphone" required>
             </div>
             
             <div class="form-group">
                 <button id="get-location-btn" class="location-button">
-                    <i class="fas fa-map-marker-alt"></i> Get My Location
+                    <i class="fas fa-map-marker-alt"></i> Obtenir Ma Position
                 </button>
                 <div class="location-coordinates" id="location-coordinates"></div>
                 <div class="location-details" id="location-details">
-                    <label for="customer-address-detail">Additional Address Details</label>
-                    <input type="text" id="customer-address-detail" placeholder="Apartment number, building, landmark, etc.">
+                    <label for="customer-address-detail">Détails d'Adresse Supplémentaires</label>
+                    <input type="text" id="customer-address-detail" placeholder="Numéro d'appartement, immeuble, point de repère, etc.">
                 </div>
             </div>
         </div>
 
         <div id="checkout-actions" class="checkout-actions" style="display:none;">
             <button class="back-to-menu" id="back-button">
-                <i class="fas fa-arrow-left"></i> Back to Menu
+                <i class="fas fa-arrow-left"></i> Retour au Menu
             </button>
             <a href="#" class="whatsapp-checkout" id="whatsapp-checkout-btn">
-                <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                <i class="fab fa-whatsapp"></i> Commander via WhatsApp
             </a>
         </div>
     </main>
@@ -413,22 +419,22 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
-                <p>The best food delivery experience</p>
+                <p>La meilleure expérience de livraison de repas</p>
             </div>
             <div class="footer-section">
-                <h3><i class="fas fa-link"></i> Quick Links</h3>
-                <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
-                <a href="index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a>
+                <h3><i class="fas fa-link"></i> Liens Rapides</h3>
+                <a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a>
+                <a href="index.html#categories"><i class="fas fa-chevron-right"></i> Catégories</a>
                 <a href="index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a>
-                <a href="index.html#download"><i class="fas fa-chevron-right"></i> Download App</a>
+                <a href="index.html#download"><i class="fas fa-chevron-right"></i> Télécharger l'App</a>
             </div>
             <div class="footer-section">
                 <h3><i class="fas fa-address-book"></i> Contact</h3>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212753208591" target="_blank">+212 753-208591</a></p>
             </div>
             <div class="footer-section">
-                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <h3><i class="fas fa-share-alt"></i> Suivez-nous</h3>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
@@ -437,7 +443,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+            <p>&copy; 2025 Twins Delivery. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -445,15 +451,15 @@
     <div class="mobile-nav">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span>Accueil</span>
         </a>
         <a href="groceries.html" class="mobile-nav-item">
             <i class="fas fa-shopping-basket"></i>
-            <span>Groceries</span>
+            <span>Courses</span>
         </a>
         <a href="index.html#categories" class="mobile-nav-item">
             <i class="fas fa-th-large"></i>
-            <span>Categories</span>
+            <span>Catégories</span>
         </a>
         <a href="index.html#restaurants" class="mobile-nav-item">
             <i class="fas fa-store"></i>
@@ -461,7 +467,7 @@
         </a>
         <a href="pages/search/search.html" class="mobile-nav-item">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span>Rechercher</span>
         </a>
     </div>
 
@@ -487,7 +493,7 @@
             let userLongitude = null;
             
             // WhatsApp phone number
-            const whatsappNumber = '+212621240971';
+            const whatsappNumber = '+212753208591';
             
             // Get cart data from localStorage
             let cart = JSON.parse(localStorage.getItem('twins_delivery_cart')) || [];
@@ -580,7 +586,7 @@
             // Get location functionality
             getLocationBtn.addEventListener('click', function() {
                 if (navigator.geolocation) {
-                    getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Getting location...';
+                    getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Obtenir la position...';
                     getLocationBtn.disabled = true;
                     
                     navigator.geolocation.getCurrentPosition(
@@ -590,14 +596,14 @@
                             userLongitude = position.coords.longitude;
                             
                             locationCoordinates.innerHTML = `
-                                <i class="fas fa-map-marker-alt"></i> Location found: 
+                                <i class="fas fa-map-marker-alt"></i> Position trouvée : 
                                 <a href="https://maps.google.com/?q=${userLatitude},${userLongitude}" target="_blank">
-                                    View on map
+                                    Voir sur la carte
                                 </a>
                             `;
                             
                             locationDetails.classList.add('active');
-                            getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Location Received';
+                            getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Position Reçue';
                             getLocationBtn.disabled = false;
                             
                             // Update WhatsApp link with new location
@@ -605,27 +611,27 @@
                         },
                         // Error
                         function(error) {
-                            let errorMessage = 'Could not get your location. ';
+                            let errorMessage = 'Impossible d\'obtenir votre position. ';
                             
                             switch(error.code) {
                                 case error.PERMISSION_DENIED:
-                                    errorMessage += 'You denied the request for geolocation.';
+                                    errorMessage += 'Vous avez refusé la demande de géolocalisation.';
                                     break;
                                 case error.POSITION_UNAVAILABLE:
-                                    errorMessage += 'Location information is unavailable.';
+                                    errorMessage += 'L\'information de position est indisponible.';
                                     break;
                                 case error.TIMEOUT:
-                                    errorMessage += 'The request to get your location timed out.';
+                                    errorMessage += 'La demande de géolocalisation a expiré.';
                                     break;
                                 case error.UNKNOWN_ERROR:
-                                    errorMessage += 'An unknown error occurred.';
+                                    errorMessage += 'Une erreur inconnue est survenue.';
                                     break;
                             }
                             
                             locationCoordinates.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${errorMessage}`;
                             locationCoordinates.style.color = '#ff3366';
                             
-                            getLocationBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Try Again';
+                            getLocationBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Réessayer';
                             getLocationBtn.disabled = false;
                             
                             // Show address field anyway
@@ -633,7 +639,7 @@
                         }
                     );
                 } else {
-                    locationCoordinates.innerHTML = 'Geolocation is not supported by this browser.';
+                    locationCoordinates.innerHTML = 'La géolocalisation n\'est pas supportée par ce navigateur.';
                     locationCoordinates.style.color = '#ff3366';
                     
                     // Show address field anyway
@@ -653,7 +659,7 @@
                 if (!customerName.trim() || !customerPhone.trim()) {
                     whatsappCheckoutBtn.disabled = true;
                     whatsappCheckoutBtn.style.opacity = '0.5';
-                    whatsappCheckoutBtn.title = 'Please provide your name and phone number';
+                    whatsappCheckoutBtn.title = 'Veuillez fournir votre nom et votre numéro de téléphone';
                     return;
                 } else {
                     whatsappCheckoutBtn.disabled = false;
@@ -689,45 +695,8 @@
                 // Prepare order text but do not save or redirect yet
                 // Just prepare the WhatsApp link and store order ID
                 
-                // ENGLISH VERSION
-                let orderText = `*Order Reference: ${orderId}*\n`;
-                orderText += `View order details: ${orderTrackingLink}\n\n`;
-                orderText += "Hello! I would like to place an order:\n\n";
-                
-                // Add restaurant name
-                if (restaurantInfo) {
-                    orderText += `*Restaurant:* ${restaurantInfo.name}\n\n`;
-                }
-                
-                // Add order items
-                orderText += "*Order Items:*\n";
-                cart.forEach(item => {
-                    orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
-                });
-                
-                // Add total
-                orderText += `\n*Total:* ${totalEl.textContent}\n\n`;
-                
-                // Add customer info
-                orderText += "*Delivery Information:*\n";
-                orderText += `Name: ${customerName}\n`;
-                orderText += `Phone: ${customerPhone}\n`;
-                
-                // Add location info
-                if (userLatitude && userLongitude) {
-                    orderText += `Location: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
-                }
-                
-                // Add address details if provided
-                if (customerAddressDetail) {
-                    orderText += `Address Details: ${customerAddressDetail}\n`;
-                }
-
-                // SEPARATOR
-                orderText += "\n------------------\n\n";
-                
-                // FRENCH VERSION
-                orderText += `*Référence de commande: ${orderId}*\n`;
+                // FRENCH VERSION (Primary)
+                let orderText = `*Référence de commande: ${orderId}*\n`;
                 orderText += `Voir les détails de la commande: ${orderTrackingLink}\n\n`;
                 orderText += "Bonjour! Je voudrais passer une commande:\n\n";
                 
@@ -746,7 +715,7 @@
                 orderText += `\n*Total:* ${totalEl.textContent}\n\n`;
                 
                 // Add customer info in French
-                orderText += "*Information de livraison:*\n";
+                orderText += "*Informations de livraison:*\n";
                 orderText += `Nom: ${customerName}\n`;
                 orderText += `Téléphone: ${customerPhone}\n`;
                 
@@ -758,43 +727,6 @@
                 // Add address details if provided in French
                 if (customerAddressDetail) {
                     orderText += `Détails de l'adresse: ${customerAddressDetail}\n`;
-                }
-
-                // SEPARATOR
-                orderText += "\n------------------\n\n";
-                
-                // ARABIC VERSION
-                orderText += `*رقم الطلب: ${orderId}*\n`;
-                orderText += `عرض تفاصيل الطلب: ${orderTrackingLink}\n\n`;
-                orderText += "مرحبا! أود طلب الطعام:\n\n";
-                
-                // Add restaurant name in Arabic
-                if (restaurantInfo) {
-                    orderText += `*المطعم:* ${restaurantInfo.name}\n\n`;
-                }
-                
-                // Add order items in Arabic
-                orderText += "*طلباتي:*\n";
-                cart.forEach(item => {
-                    orderText += `${item.quantity}x ${item.name} - ${item.price} ${item.currency}\n`;
-                });
-                
-                // Add total in Arabic
-                orderText += `\n*المجموع:* ${totalEl.textContent}\n\n`;
-                
-                // Add customer info in Arabic
-                orderText += "*معلومات التوصيل:*\n";
-                orderText += `الاسم: ${customerName}\n`;
-                orderText += `الهاتف: ${customerPhone}\n`;
-                
-                // Add location info in Arabic
-                if (userLatitude && userLongitude) {
-                    orderText += `الموقع: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
-                }
-                
-                // Add address details if provided in Arabic
-                if (customerAddressDetail) {
-                    orderText += `تفاصيل العنوان: ${customerAddressDetail}\n`;
                 }
                 
                 // Store the order ID for later use when the button is clicked
@@ -842,7 +774,7 @@
             if (!document.getElementById('customer-name').value.trim() || !document.getElementById('customer-phone').value.trim()) {
                 whatsappCheckoutBtn.disabled = true;
                 whatsappCheckoutBtn.style.opacity = '0.5';
-                whatsappCheckoutBtn.title = 'Please provide your name and phone number';
+                whatsappCheckoutBtn.title = 'Veuillez fournir votre nom et votre numéro de téléphone';
             }
             
             // Global functions for quantity update and item removal
@@ -898,14 +830,14 @@
                     const result = await window.SupabaseWrapper.orders.create(orderData);
                     
                     if (result.success) {
-                        console.log('Order saved to Supabase:', result.data);
+                        console.log('Commande enregistrée sur Supabase:', result.data);
                     } else {
-                        console.warn('Failed to save order to Supabase:', result.error);
+                        console.warn('Échec de l\'enregistrement de la commande sur Supabase:', result.error);
                         // Fall back to localStorage
                         saveOrderToLocalStorage(orderData);
                     }
                 } catch (error) {
-                    console.error('Error saving order to Supabase:', error);
+                    console.error('Erreur lors de l\'enregistrement de la commande sur Supabase:', error);
                     // Fall back to localStorage
                     saveOrderToLocalStorage(orderData);
                 }

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmation - Twins Delivery</title>
+    <title>Confirmation de Commande - Twins Delivery</title>
+    <meta name="description" content="Confirmation et suivi de votre commande sur Twins Delivery. Suivez votre livraison en temps réel à Marrakech.">
+    <meta name="keywords" content="confirmation de commande, suivi de commande, livraison Marrakech, service de livraison Marrakech, livraison à domicile, livraison rapide, livraison express Marrakech, Twins Delivery, meilleure livraison à Marrakech, livraison de nourriture, application livraison locale, Twins Delivery Marrakech, Twins Delivery service, Twins Delivery livraison gratuite, Twins Delivery application">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -318,101 +320,105 @@
     <!-- Header with diagonal design -->
     <header>
         <nav>
-            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo/logo white.png" alt="Twins Delivery Logo">
+                </a>
+            </div>
             <div class="nav-links">
-                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Groceries</a>
-                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="groceries.html" class="nav-link"><i class="fas fa-shopping-basket"></i> Courses</a>
+                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Catégories</a>
                 <a href="index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
-                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Rechercher</a>
             </div>
         </nav>
     </header>
 
     <main class="confirmation-container">
         <div class="confirmation-header">
-            <h1><i class="fas fa-check-circle"></i> Order Confirmed</h1>
+            <h1><i class="fas fa-check-circle"></i> Commande Confirmée</h1>
             <button class="copy-link" id="copy-link-btn">
-                <i class="fas fa-copy"></i> Copy Link
+                <i class="fas fa-copy"></i> Copier le Lien
             </button>
-            <span class="status-badge" id="status-badge">Pending</span>
+            <span class="status-badge" id="status-badge">En attente</span>
         </div>
 
         <div class="order-id">
-            <h2>Order Reference:</h2>
-            <p id="order-reference">Loading...</p>
+            <h2>Référence de la Commande :</h2>
+            <p id="order-reference">Chargement...</p>
         </div>
 
         <div class="order-section">
             <h3><i class="fas fa-store"></i> Restaurant</h3>
             <div id="restaurant-details" class="restaurant-info">
                 <div>
-                    <div class="restaurant-name" id="restaurant-name">Loading...</div>
+                    <div class="restaurant-name" id="restaurant-name">Chargement...</div>
                 </div>
             </div>
-            <p>Order Date: <span id="order-date">Loading...</span></p>
+            <p>Date de la Commande : <span id="order-date">Chargement...</span></p>
         </div>
 
         <div class="order-section">
-            <h3><i class="fas fa-shopping-cart"></i> Order Items</h3>
+            <h3><i class="fas fa-shopping-cart"></i> Articles de la Commande</h3>
             <table class="order-items-table" style="width: 100%; border-collapse: collapse;">
                 <thead>
                     <tr>
-                        <th style="text-align: left; padding: 10px; border-bottom: 1px solid #ddd;">Item</th>
-                        <th style="text-align: center; padding: 10px; border-bottom: 1px solid #ddd;">Quantity</th>
-                        <th style="text-align: right; padding: 10px; border-bottom: 1px solid #ddd;">Price</th>
+                        <th style="text-align: left; padding: 10px; border-bottom: 1px solid #ddd;">Article</th>
+                        <th style="text-align: center; padding: 10px; border-bottom: 1px solid #ddd;">Quantité</th>
+                        <th style="text-align: right; padding: 10px; border-bottom: 1px solid #ddd;">Prix</th>
                         <th style="text-align: right; padding: 10px; border-bottom: 1px solid #ddd;">Total</th>
                     </tr>
                 </thead>
                 <tbody id="order-items">
-                    <!-- Order items will be populated by JavaScript -->
+                    <!-- Les articles de la commande seront remplis par JavaScript -->
                 </tbody>
             </table>
 
             <div class="order-total">
                 <div class="total-row">
-                    <span>Total:</span>
+                    <span>Total :</span>
                     <span id="order-total">0 MAD</span>
                 </div>
             </div>
         </div>
 
         <div class="order-section">
-            <h3><i class="fas fa-user"></i> Customer Details</h3>
+            <h3><i class="fas fa-user"></i> Détails du Client</h3>
             <div class="customer-details">
                 <div class="detail-item">
-                    <h4>Name</h4>
-                    <p id="customer-name">Loading...</p>
+                    <h4>Nom</h4>
+                    <p id="customer-name">Chargement...</p>
                 </div>
                 <div class="detail-item">
-                    <h4>Phone</h4>
-                    <p id="customer-phone">Loading...</p>
+                    <h4>Téléphone</h4>
+                    <p id="customer-phone">Chargement...</p>
                 </div>
                 <div class="detail-item">
-                    <h4>Address</h4>
-                    <p id="customer-address">Loading...</p>
+                    <h4>Adresse</h4>
+                    <p id="customer-address">Chargement...</p>
                     <div class="location-map" id="location-map">
-                        <!-- Map link will be added by JavaScript -->
+                        <!-- Le lien de la carte sera ajouté par JavaScript -->
                     </div>
                 </div>
                 <div class="detail-item">
-                    <h4>Status</h4>
-                    <p id="order-status">Loading...</p>
+                    <h4>Statut</h4>
+                    <p id="order-status">Chargement...</p>
                 </div>
             </div>
         </div>
 
         <div class="qr-code">
             <div id="qrcode"></div>
-            <p>Scan this QR code to view order details</p>
+            <p>Scannez ce code QR pour voir les détails de la commande</p>
         </div>
 
         <div class="actions">
             <button class="print-btn" onclick="window.print()">
-                <i class="fas fa-print"></i> Print Order
+                <i class="fas fa-print"></i> Imprimer la Commande
             </button>
             <button class="share-btn" id="share-btn">
-                <i class="fas fa-share-alt"></i> Share Order
+                <i class="fas fa-share-alt"></i> Partager la Commande
             </button>
         </div>
     </main>
@@ -422,15 +428,15 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
-                <p>The best food delivery experience</p>
+                <p>La meilleure expérience de livraison de repas</p>
             </div>
             
             <div class="footer-section">
-                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <h3><i class="fas fa-link"></i> Liens Rapides</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="groceries.html"><i class="fas fa-chevron-right"></i> Groceries</a></li>
-                    <li><a href="index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="groceries.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="index.html#categories"><i class="fas fa-chevron-right"></i> Catégories</a></li>
                     <li><a href="index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
                 </ul>
             </div>
@@ -438,11 +444,11 @@
             <div class="footer-section">
                 <h3><i class="fas fa-envelope"></i> Contact</h3>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212753208591" target="_blank">+212 753-208591</a></p>
             </div>
             
             <div class="footer-section">
-                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <h3><i class="fas fa-share-alt"></i> Suivez-nous</h3>
                 <div class="social-links">
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
@@ -452,7 +458,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+            <p>&copy; 2025 Twins Delivery. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -465,14 +471,14 @@
             // Get order ID from URL hash
             const orderId = window.location.hash.substring(1);
             if (!orderId) {
-                showError('No order ID provided');
+                showError('Aucun ID de commande fourni');
                 return;
             }
             
             // Get order data
             const orderData = await getOrderData(orderId);
             if (!orderData) {
-                showError('Order not found');
+                showError('Commande non trouvée');
                 return;
             }
             
@@ -489,7 +495,7 @@
                     const currentUrl = window.location.href;
                     navigator.clipboard.writeText(currentUrl).then(() => {
                         const originalText = copyLinkBtn.innerHTML;
-                        copyLinkBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        copyLinkBtn.innerHTML = '<i class="fas fa-check"></i> Copié !';
                         setTimeout(() => {
                             copyLinkBtn.innerHTML = originalText;
                         }, 2000);
@@ -503,14 +509,14 @@
                 shareBtn.addEventListener('click', function() {
                     if (navigator.share) {
                         navigator.share({
-                            title: 'My Order from Twins Delivery',
-                            text: 'Check out my order from Twins Delivery',
+                            title: 'Ma Commande de Twins Delivery',
+                            text: 'Consultez ma commande de Twins Delivery',
                             url: window.location.href
                         }).catch(console.error);
                     } else {
                         // Fallback if Web Share API is not available
                         copyLinkBtn.click();
-                        alert('Link copied to clipboard! You can now share it manually.');
+                        alert('Lien copié dans le presse-papiers ! Vous pouvez maintenant le partager manuellement.');
                     }
                 });
             }
@@ -520,10 +526,10 @@
             const container = document.querySelector('.container');
             container.innerHTML = `
                 <div class="alert alert-danger mt-4">
-                    <h4><i class="fas fa-exclamation-triangle"></i> Error</h4>
+                    <h4><i class="fas fa-exclamation-triangle"></i> Erreur</h4>
                     <p>${message}</p>
                     <a href="index.html" class="btn btn-primary mt-2">
-                        <i class="fas fa-home"></i> Return to Home
+                        <i class="fas fa-home"></i> Retour à l'accueil
                     </a>
                 </div>
             `;
@@ -554,8 +560,8 @@
                         correctLevel: QRCode.CorrectLevel.H
                     });
                 } catch (e) {
-                    console.error('Error generating QR code:', e);
-                    qrcodeElement.innerHTML = '<p>Could not generate QR code</p>';
+                    console.error('Erreur lors de la génération du code QR:', e);
+                    qrcodeElement.innerHTML = '<p>Impossible de générer le code QR</p>';
                 }
             }
         }
@@ -567,33 +573,33 @@
 
                 let result;
                 if (orderId.startsWith('TDG-')) { // Check for grocery order prefix
-                    console.log('Fetching grocery order from Supabase:', orderId);
+                    console.log('Récupération de la commande de courses depuis Supabase :', orderId);
                     if (window.SupabaseWrapper && window.SupabaseWrapper.groceryOrders && typeof window.SupabaseWrapper.groceryOrders.getById === 'function') {
                         result = await window.SupabaseWrapper.groceryOrders.getById(orderId);
                     } else {
-                        console.warn('SupabaseWrapper.groceryOrders.getById function not found.');
-                        result = { success: false, error: 'Grocery order function not available.' };
+                        console.warn('La fonction SupabaseWrapper.groceryOrders.getById n\'a pas été trouvée.');
+                        result = { success: false, error: 'Fonction de commande de courses non disponible.' };
                     }
                 } else { // Assume it's a restaurant order
-                    console.log('Fetching restaurant order from Supabase:', orderId);
+                    console.log('Récupération de la commande de restaurant depuis Supabase :', orderId);
                     if (window.SupabaseWrapper && window.SupabaseWrapper.orders && typeof window.SupabaseWrapper.orders.getById === 'function') {
                         result = await window.SupabaseWrapper.orders.getById(orderId);
                     } else {
-                        console.warn('SupabaseWrapper.orders.getById function not found.');
-                        result = { success: false, error: 'Restaurant order function not available.' };
+                        console.warn('La fonction SupabaseWrapper.orders.getById n\'a pas été trouvée.');
+                        result = { success: false, error: 'Fonction de commande de restaurant non disponible.' };
                     }
                 }
                 
                 if (result && result.success && result.data) {
-                    console.log('Order retrieved from Supabase:', result.data);
+                    console.log('Commande récupérée depuis Supabase :', result.data);
                     return processOrderData(result.data, orderId.startsWith('TDG-'));
                 } else {
-                    console.warn('Order not found in Supabase or error occurred:', result ? result.error : 'Unknown error');
+                    console.warn('Commande non trouvée dans Supabase ou une erreur est survenue :', result ? result.error : 'Erreur inconnue');
                     // Fall back to localStorage
                     return getOrderFromLocalStorage(orderId);
                 }
             } catch (error) {
-                console.error('Error retrieving order from Supabase:', error);
+                console.error('Erreur lors de la récupération de la commande depuis Supabase :', error);
                 // Fall back to localStorage
                 return getOrderFromLocalStorage(orderId);
             }
@@ -601,21 +607,21 @@
         
         // Helper function to get order from localStorage
         function getOrderFromLocalStorage(orderId) {
-            console.log('Attempting to get order from localStorage for ID:', orderId);
+            console.log('Tentative de récupération de la commande depuis localStorage pour l\'ID :', orderId);
             const storedOrder = localStorage.getItem('twins_delivery_current_order');
             if (storedOrder) {
                 try {
                     const orderData = JSON.parse(storedOrder);
                     if (orderData.orderId === orderId) {
-                        console.log('Order found in localStorage');
+                        console.log('Commande trouvée dans localStorage');
                         return processOrderData(orderData, orderId.startsWith('TDG-')); // Pass grocery status
                     }
                 } catch (e) {
-                    console.error('Error parsing order from localStorage:', e);
+                    console.error('Erreur lors de l\'analyse de la commande depuis localStorage :', e);
                 }
             }
             
-            console.warn('Order not found in localStorage for ID:', orderId);
+            console.warn('Commande non trouvée dans localStorage pour l\'ID :', orderId);
             return null;
         }
         
@@ -637,7 +643,7 @@
                 try {
                     orderData.customer = JSON.parse(orderData.customer);
                 } catch (e) {
-                    console.error('Error parsing customer JSON:', e);
+                    console.error('Erreur lors de l\'analyse du JSON client :', e);
                     orderData.customer = {};
                 }
             } else if (isGroceryOrder && orderData.customer_details) {
@@ -650,7 +656,7 @@
                 try {
                     orderData.items = JSON.parse(orderData.items);
                 } catch (e) {
-                    console.error('Error parsing items JSON:', e);
+                    console.error('Erreur lors de l\'analyse du JSON des articles :', e);
                     orderData.items = [];
                 }
             }
@@ -660,7 +666,7 @@
                 orderData.actual_grocery_list = orderData.grocery_list || orderData.notes; // `notes` from localStorage, `grocery_list` from Supabase
                 // Ensure items array exists for display logic, even if it's just the placeholder
                 if (!orderData.items || typeof orderData.items === 'string') {
-                     orderData.items = [{ name: "Grocery List", quantity: 1, price: "N/A", currency: "Details below" }];
+                     orderData.items = [{ name: "Liste de courses", quantity: 1, price: "N/A", currency: "Détails ci-dessous" }];
                 }
             }
             
@@ -673,7 +679,7 @@
 
             // Set restaurant name or grocery indication
             if (isGroceryOrder) {
-                document.getElementById('restaurant-name').textContent = orderData.restaurant || "Personal Grocery Shopper";
+                document.getElementById('restaurant-name').textContent = orderData.restaurant || "Acheteur de Courses Personnel";
             } else {
                 document.getElementById('restaurant-name').textContent = orderData.restaurant || 'N/A';
             }
@@ -691,8 +697,8 @@
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td colspan="3">
-                        <strong>Grocery Items:</strong><br>
-                        <pre style="white-space: pre-wrap; word-break: break-word;">${orderData.actual_grocery_list || 'No list provided.'}</pre>
+                        <strong>Articles d'épicerie :</strong><br>
+                        <pre style="white-space: pre-wrap; word-break: break-word;">${orderData.actual_grocery_list || 'Aucune liste fournie.'}</pre>
                     </td>
                     <td style="text-align: right;">N/A</td>
                 `;
@@ -729,10 +735,10 @@
             if (statusBadge) {
                 statusBadge.textContent = statusToDisplay.charAt(0).toUpperCase() + statusToDisplay.slice(1);
                 switch (statusToDisplay.toLowerCase()) {
-                    case 'completed': statusBadge.style.backgroundColor = '#4CAF50'; break;
-                    case 'processing': statusBadge.style.backgroundColor = '#2196F3'; break;
-                    case 'cancelled': statusBadge.style.backgroundColor = '#f44336'; break;
-                    case 'pending': default: statusBadge.style.backgroundColor = '#ff9800'; break;
+                    case 'completed': statusBadge.style.backgroundColor = '#4CAF50'; break; // Terminé
+                    case 'processing': statusBadge.style.backgroundColor = '#2196F3'; break; // En cours
+                    case 'cancelled': statusBadge.style.backgroundColor = '#f44336'; break; // Annulé
+                    case 'pending': default: statusBadge.style.backgroundColor = '#ff9800'; break; // En attente
                 }
             }
             
@@ -740,11 +746,11 @@
             if (customer.latitude && customer.longitude) {
                 locationMap.innerHTML = `
                     <a href="https://maps.google.com/?q=${customer.latitude},${customer.longitude}" target="_blank">
-                        <i class="fas fa-map-marker-alt"></i> View on map
+                        <i class="fas fa-map-marker-alt"></i> Voir sur la carte
                     </a>
                 `;
             } else {
-                locationMap.innerHTML = '<p>No location coordinates provided</p>';
+                locationMap.innerHTML = '<p>Aucune coordonnée de localisation fournie</p>';
             }
         }
     </script>

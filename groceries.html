@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery Order - Twins Delivery</title>
+    <title>Commande de Courses - Twins Delivery</title>
+    <meta name="description" content="Commandez vos courses en ligne avec Twins Delivery à Marrakech. Service de livraison à domicile rapide et fiable pour tous vos besoins quotidiens.">
+    <meta name="keywords" content="courses en ligne, livraison de courses, livraison Marrakech, service de livraison Marrakech, livraison à domicile, livraison rapide, livraison express Marrakech, Twins Delivery, meilleure livraison à Marrakech, livraison de nourriture, application livraison locale, Twins Delivery Marrakech, Twins Delivery service, Twins Delivery livraison gratuite, Twins Delivery application">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -172,55 +174,59 @@
     <!-- Header with diagonal design -->
     <header>
         <nav>
-            <div class="logo"><i class="fas fa-utensils"></i> Twins Delivery</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo/logo white.png" alt="Twins Delivery Logo">
+                </a>
+            </div>
             <div class="nav-links">
-                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
-                <a href="groceries.html" class="nav-link active"><i class="fas fa-shopping-basket"></i> Groceries</a>
-                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Accueil</a>
+                <a href="groceries.html" class="nav-link active"><i class="fas fa-shopping-basket"></i> Courses</a>
+                <a href="index.html#categories" class="nav-link"><i class="fas fa-th-large"></i> Catégories</a>
                 <a href="index.html#restaurants" class="nav-link"><i class="fas fa-store"></i> Restaurants</a>
-                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Search</a>
+                <a href="pages/search/search.html" class="nav-link"><i class="fas fa-search"></i> Rechercher</a>
             </div>
         </nav>
     </header>
 
     <main class="groceries-container">
         <div class="groceries-header">
-            <h1><i class="fas fa-shopping-basket"></i> Order Your Groceries</h1>
+            <h1><i class="fas fa-shopping-basket"></i> Commandez Vos Courses</h1>
         </div>
 
         <form id="groceries-form">
             <div class="form-group">
-                <label for="grocery-list" class="required">Your Grocery List</label>
-                <textarea id="grocery-list" placeholder="e.g., 2L Milk, 1kg Apples, Bread, Eggs..." required></textarea>
+                <label for="grocery-list" class="required">Votre Liste de Courses</label>
+                <textarea id="grocery-list" placeholder="ex: 2L de Lait, 1kg de Pommes, Pain, Œufs..." required></textarea>
             </div>
 
             <div class="customer-info">
-                <h3>Your Information</h3>
+                <h3>Vos Informations</h3>
                 <div class="form-group">
-                    <label for="customer-name" class="required">Name</label>
-                    <input type="text" id="customer-name" placeholder="Your name" required>
+                    <label for="customer-name" class="required">Nom</label>
+                    <input type="text" id="customer-name" placeholder="Votre nom" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="customer-phone" class="required">Phone Number</label>
-                    <input type="tel" id="customer-phone" placeholder="Your phone number (e.g., +2126...)" required>
+                    <label for="customer-phone" class="required">Numéro de Téléphone</label>
+                    <input type="tel" id="customer-phone" placeholder="Votre numéro de téléphone (ex: +2126...)" required>
                 </div>
                 
                 <div class="form-group">
                     <button type="button" id="get-location-btn" class="location-button">
-                        <i class="fas fa-map-marker-alt"></i> Get My Location
+                        <i class="fas fa-map-marker-alt"></i> Obtenir Ma Position
                     </button>
                     <div class="location-coordinates" id="location-coordinates"></div>
                     <div class="location-details" id="location-details">
-                        <label for="customer-address-detail">Additional Address Details (Optional)</label>
-                        <input type="text" id="customer-address-detail" placeholder="Apartment number, building, landmark, etc.">
+                        <label for="customer-address-detail">Détails d'Adresse Supplémentaires (Optionnel)</label>
+                        <input type="text" id="customer-address-detail" placeholder="Numéro d'appartement, immeuble, point de repère, etc.">
                     </div>
                 </div>
             </div>
 
             <div class="groceries-actions">
                 <a href="#" class="whatsapp-order-btn" id="whatsapp-order-btn">
-                    <i class="fab fa-whatsapp"></i> Order via WhatsApp
+                    <i class="fab fa-whatsapp"></i> Commander via WhatsApp
                 </a>
             </div>
         </form>
@@ -231,25 +237,25 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3><i class="fas fa-utensils"></i> Twins Delivery</h3>
-                <p>The best food delivery experience</p>
+                <p>La meilleure expérience de livraison de repas</p>
             </div>
             <div class="footer-section">
-                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <h3><i class="fas fa-link"></i> Liens Rapides</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="groceries.html"><i class="fas fa-chevron-right"></i> Groceries</a></li>
-                    <li><a href="index.html#categories"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="groceries.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                    <li><a href="index.html#categories"><i class="fas fa-chevron-right"></i> Catégories</a></li>
                     <li><a href="index.html#restaurants"><i class="fas fa-chevron-right"></i> Restaurants</a></li>
-                    <li><a href="index.html#download"><i class="fas fa-chevron-right"></i> Download App</a></li>
+                    <li><a href="index.html#download"><i class="fas fa-chevron-right"></i> Télécharger l'App</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3><i class="fas fa-envelope"></i> Contact</h3>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:ismailmousex@gmail.com">ismailmousex@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212621240971" target="_blank">+212 621240971</a></p>
+                <p><i class="fas fa-phone"></i> <a href="https://wa.me/212753208591" target="_blank">+212 753-208591</a></p>
             </div>
             <div class="footer-section">
-                <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+                <h3><i class="fas fa-share-alt"></i> Suivez-nous</h3>
                 <div class="social-links">
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="#" class="tiktok"><i class="fab fa-tiktok"></i> TikTok</a>
@@ -258,7 +264,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Twins Delivery. All rights reserved.</p>
+            <p>&copy; 2025 Twins Delivery. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -266,15 +272,15 @@
     <div class="mobile-nav">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span>Accueil</span>
         </a>
         <a href="groceries.html" class="mobile-nav-item active"> <!-- Active state for groceries page -->
             <i class="fas fa-shopping-basket"></i>
-            <span>Groceries</span>
+            <span>Courses</span>
         </a>
         <a href="index.html#categories" class="mobile-nav-item">
             <i class="fas fa-th-large"></i>
-            <span>Categories</span>
+            <span>Catégories</span>
         </a>
         <a href="index.html#restaurants" class="mobile-nav-item">
             <i class="fas fa-store"></i>
@@ -282,7 +288,7 @@
         </a>
         <a href="pages/search/search.html" class="mobile-nav-item">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span>Rechercher</span>
         </a>
     </div>
 
@@ -300,7 +306,7 @@
 
             let userLatitude = null;
             let userLongitude = null;
-            const whatsappNumber = '+212621240971'; // Same number as in checkout/confirmation
+            const whatsappNumber = '+212753208591'; // Same number as in checkout/confirmation
 
             // Function to check form validity for enabling button
             function checkFormValidity() {
@@ -310,7 +316,7 @@
                 
                 whatsappOrderBtn.disabled = !(isGroceryListValid && isNameValid && isPhoneValid);
                 if (whatsappOrderBtn.disabled) {
-                    whatsappOrderBtn.title = 'Please fill in all required fields.';
+                    whatsappOrderBtn.title = 'Veuillez remplir tous les champs requis.';
                 } else {
                     whatsappOrderBtn.title = '';
                 }
@@ -327,7 +333,7 @@
 
             getLocationBtn.addEventListener('click', function() {
                 if (navigator.geolocation) {
-                    getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Getting location...';
+                    getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Obtenir la position...';
                     getLocationBtn.disabled = true;
                     
                     navigator.geolocation.getCurrentPosition(
@@ -336,32 +342,32 @@
                             userLongitude = position.coords.longitude;
                             
                             locationCoordinatesEl.innerHTML = `
-                                <i class="fas fa-map-marker-alt"></i> Location found: 
+                                <i class="fas fa-map-marker-alt"></i> Position trouvée : 
                                 <a href="https://maps.google.com/?q=${userLatitude},${userLongitude}" target="_blank">
-                                    View on map
+                                    Voir sur la carte
                                 </a>`;
                             locationCoordinatesEl.style.color = '#666'; // Reset color
                             locationDetailsEl.classList.add('active');
-                            getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Location Received';
+                            getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Position Reçue';
                             getLocationBtn.disabled = false;
                         },
                         function(error) { // Error
-                            let errorMessage = 'Could not get your location. ';
+                            let errorMessage = 'Impossible d\'obtenir votre position. ';
                             switch(error.code) {
-                                case error.PERMISSION_DENIED: errorMessage += 'Permission denied.'; break;
-                                case error.POSITION_UNAVAILABLE: errorMessage += 'Location unavailable.'; break;
-                                case error.TIMEOUT: errorMessage += 'Timeout.'; break;
-                                default: errorMessage += 'Unknown error.'; break;
+                                case error.PERMISSION_DENIED: errorMessage += 'Permission refusée.'; break;
+                                case error.POSITION_UNAVAILABLE: errorMessage += 'Position non disponible.'; break;
+                                case error.TIMEOUT: errorMessage += 'Délai d\'attente dépassé.'; break;
+                                default: errorMessage += 'Erreur inconnue.'; break;
                             }
                             locationCoordinatesEl.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${errorMessage}`;
                             locationCoordinatesEl.style.color = '#ff3366';
-                            getLocationBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Try Again';
+                            getLocationBtn.innerHTML = '<i class="fas fa-map-marker-alt"></i> Réessayer';
                             getLocationBtn.disabled = false;
                             locationDetailsEl.classList.add('active'); // Show address field anyway
                         }
                     );
                 } else {
-                    locationCoordinatesEl.innerHTML = 'Geolocation is not supported by this browser.';
+                    locationCoordinatesEl.innerHTML = 'La géolocalisation n\'est pas supportée par ce navigateur.';
                     locationCoordinatesEl.style.color = '#ff3366';
                     locationDetailsEl.classList.add('active'); // Show address field anyway
                 }
@@ -377,7 +383,7 @@
                     orderHistory = orderHistory.slice(0, 10);
                 }
                 localStorage.setItem('twins_delivery_orders', JSON.stringify(orderHistory));
-                console.log('Grocery order saved to localStorage:', orderData);
+                console.log('Commande de courses enregistrée dans localStorage:', orderData);
             }
 
             // Save order to Supabase and localStorage (similar to checkout.html)
@@ -395,18 +401,18 @@
                         const result = await window.SupabaseWrapper.groceryOrders.create(orderData);
                         
                         if (result && result.success) {
-                            console.log('Grocery order saved to Supabase (grocery_orders table):', result.data);
+                            console.log('Commande de courses enregistrée sur Supabase (table grocery_orders):', result.data);
                         } else {
-                            console.warn('Failed to save grocery order to Supabase (grocery_orders table). Result:', result);
+                            console.warn('Échec de l\'enregistrement de la commande de courses sur Supabase (table grocery_orders). Résultat:', result);
                             // Fall back to localStorage
                             saveOrderToLocalStorage(orderData);
                         }
                     } else {
-                        console.warn('SupabaseWrapper.groceryOrders.create function not found. Falling back to localStorage.');
+                        console.warn('Fonction SupabaseWrapper.groceryOrders.create non trouvée. Retour à localStorage.');
                         saveOrderToLocalStorage(orderData);
                     }
                 } catch (error) {
-                    console.error('Error saving grocery order to Supabase (grocery_orders table):', error);
+                    console.error('Erreur lors de l\'enregistrement de la commande de courses sur Supabase (table grocery_orders):', error);
                     // Fall back to localStorage
                     saveOrderToLocalStorage(orderData);
                 }
@@ -423,7 +429,7 @@
                 const customerAddressDetail = customerAddressDetailInput.value.trim();
 
                 if (!groceryList || !customerName || !customerPhone) {
-                    alert('Please fill in all required fields: Grocery List, Name, and Phone Number.');
+                    alert('Veuillez remplir tous les champs obligatoires : Liste de Courses, Nom et Numéro de Téléphone.');
                     return;
                 }
 
@@ -456,23 +462,23 @@
 
 
                 // Construct WhatsApp message
-                let message = `*Grocery Order Request: ${orderId}*\n`;
-                message += `View order details: ${orderTrackingLink}\n\n`;
-                message += "Hello! I would like to order the following groceries:\n\n";
-                message += "*Grocery List:*\n";
+                let message = `*Demande de Commande de Courses: ${orderId}*\n`;
+                message += `Voir les détails de la commande: ${orderTrackingLink}\n\n`;
+                message += "Bonjour! J'aimerais commander les courses suivantes:\n\n";
+                message += "*Liste de Courses:*\n";
                 message += `${groceryList}\n\n`;
                 
-                message += "*Delivery Information:*\n";
-                message += `Name: ${customerName}\n`;
-                message += `Phone: ${customerPhone}\n`;
+                message += "*Informations de Livraison:*\n";
+                message += `Nom: ${customerName}\n`;
+                message += `Téléphone: ${customerPhone}\n`;
                 
                 if (userLatitude && userLongitude) {
-                    message += `Location: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
+                    message += `Position: https://maps.google.com/?q=${userLatitude},${userLongitude}\n`;
                 }
                 if (customerAddressDetail) {
-                    message += `Address Details: ${customerAddressDetail}\n`;
+                    message += `Détails de l'adresse: ${customerAddressDetail}\n`;
                 }
-                message += "\nThank you!";
+                message += "\nMerci!";
                 
                 const encodedMessage = encodeURIComponent(message);
                 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
@@ -491,7 +497,7 @@
                 // userLatitude = null; userLongitude = null;
                 // locationCoordinatesEl.innerHTML = '';
                 // locationDetailsEl.classList.remove('active');
-                alert('Your grocery order request has been prepared for WhatsApp! A confirmation link has also been opened.');
+                alert('Votre demande de commande de courses a été préparée pour WhatsApp ! Un lien de confirmation a également été ouvert.');
                 checkFormValidity(); // Re-check validity to disable button
             });
 
